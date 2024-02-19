@@ -1,0 +1,77 @@
+{
+    "id": "016e56f3-93b3-492f-b5ad-99762c26fbd1",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "709742f8-9f74-4542-85e6-a88d74bb28ee",
+            "label": "taskBar",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "d9ae8828-4c10-49a8-9003-325ea269cae8",
+                    "label": "bar",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 1420,
+                    "height": 70
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a137ce90-362f-4c92-84e3-47d86633f13d",
+                    "label": "startButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#c9c9c9",
+                    "width": 200,
+                    "height": 70
+                },
+                {
+                    "type": "Text",
+                    "id": "9481bef4-2eed-463f-ab9c-5cd15e9e9198",
+                    "label": "timeText",
+                    "x": 1287,
+                    "y": 22,
+                    "text": "9:05 am",
+                    "fontSize": "24px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Text",
+                    "id": "95ddb7b9-1d7e-4562-bc2c-d7bae4d979bb",
+                    "label": "startButtonText",
+                    "x": 62,
+                    "y": 22,
+                    "text": "START",
+                    "fontSize": "24px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

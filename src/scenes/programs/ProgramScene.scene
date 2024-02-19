@@ -1,0 +1,71 @@
+{
+    "id": "377ee9e8-7e78-4c4a-91ad-b97a2d924e25",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "program-scene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1000,
+        "borderHeight": 800
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "829a8bcd-fbdf-493f-8d30-824826b28ab2",
+            "label": "backing",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 1000,
+            "height": 800
+        },
+        {
+            "type": "Image",
+            "id": "c2645fd3-e880-49cb-abb1-5ce6f9921866",
+            "label": "toidSketch",
+            "texture": {
+                "key": "ToidSketch"
+            },
+            "x": 224,
+            "y": 216
+        },
+        {
+            "type": "Image",
+            "id": "540bec73-9922-48ee-b85e-d84c517bba66",
+            "label": "toidSketch_1",
+            "texture": {
+                "key": "ToidSketch"
+            },
+            "x": 973,
+            "y": 913,
+            "scaleX": 5.137692520457458,
+            "scaleY": 3.6653923432747124
+        },
+        {
+            "type": "Rectangle",
+            "id": "1a619ca7-7464-47d6-895a-122afe696af2",
+            "label": "backing_1",
+            "components": [
+                "PointerButton"
+            ],
+            "x": 875,
+            "y": 13,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#b1b1b1",
+            "width": 100,
+            "height": 100
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

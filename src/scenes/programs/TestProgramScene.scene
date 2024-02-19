@@ -1,0 +1,89 @@
+{
+    "id": "8dae4504-0977-482a-b0d7-e83bb3151be5",
+    "sceneType": "SCENE",
+    "settings": {
+        "onlyGenerateMethods": true,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [
+            "office OS simulator source/public/assets/lazy-load-asset-pack.json"
+        ],
+        "createMethodName": "editorCreate",
+        "sceneKey": "test-program-scene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1000,
+        "borderHeight": 800
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "81b6a150-3952-49fd-9d5e-4f1c44831fd5",
+            "label": "rectangle_1",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 2000,
+            "height": 1000
+        },
+        {
+            "type": "Image",
+            "id": "643922da-09af-4f4f-80f9-ef1a325a85db",
+            "label": "desktop_gen",
+            "scope": "CLASS",
+            "texture": {
+                "key": "desktop-gen"
+            },
+            "x": 511,
+            "y": 298,
+            "scaleX": 0.23635837612124844,
+            "scaleY": 0.23635837612124844
+        },
+        {
+            "type": "Image",
+            "id": "d42d1d4d-9338-4e56-bf91-b14ffa5d3149",
+            "label": "tank",
+            "texture": {
+                "key": "Tank"
+            },
+            "x": 224,
+            "y": 370
+        },
+        {
+            "type": "Image",
+            "id": "06c89e38-f54f-48f1-b0a2-11431c2f08a3",
+            "label": "tank_1",
+            "texture": {
+                "key": "Tank"
+            },
+            "x": 532,
+            "y": 378
+        },
+        {
+            "type": "Image",
+            "id": "89ae07e6-ba98-4fa2-84f5-e72454e179db",
+            "label": "tank_2",
+            "texture": {
+                "key": "Tank"
+            },
+            "x": 839,
+            "y": 398
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "8214adad-d4b3-4c5a-908a-60baceb34977",
+            "label": "lazyLoading",
+            "objectIds": [
+                "643922da-09af-4f4f-80f9-ef1a325a85db",
+                "d42d1d4d-9338-4e56-bf91-b14ffa5d3149"
+            ]
+        }
+    ]
+}

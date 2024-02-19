@@ -1,0 +1,112 @@
+{
+    "id": "79d35193-dec9-44de-9723-118724af6221",
+    "sceneType": "PREFAB",
+    "settings": {
+        "snapWidth": 1400,
+        "snapHeight": 3000,
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "10a4f8a1-d384-47d4-ae83-0ccb45ad9ddc",
+            "label": "window",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "29895d6d-041e-4422-9b89-ed6d3b6db51a",
+                    "label": "window",
+                    "scope": "PUBLIC",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 1000,
+                    "height": 800
+                },
+                {
+                    "prefabId": "a14d12df-be65-4c1e-9c02-e28c5d869fec",
+                    "id": "d84259d3-349b-49f4-bc69-6e0738272bdf",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "page",
+                    "scope": "CLASS",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "964d1970-577f-4ca7-b938-2e74e48c6a44",
+                    "label": "topBar",
+                    "scope": "CLASS",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#bfbfbf",
+                    "width": 1000,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a1471c7d-d54e-4396-94fa-934bb4cdd8eb",
+                    "label": "exitButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "x": 900,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#e67878",
+                    "width": 100,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "38c5d29f-2078-401b-8645-481af511846f",
+                    "label": "minimizeButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "x": 799,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#dddddd",
+                    "width": 100,
+                    "height": 50
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "displayName",
+            "label": "DisplayName",
+            "tooltip": "",
+            "defValue": "Unnamed Window",
+            "customDefinition": false,
+            "type": {
+                "id": "string"
+            }
+        }
+    ]
+}

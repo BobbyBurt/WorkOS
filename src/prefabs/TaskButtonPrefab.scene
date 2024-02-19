@@ -1,0 +1,68 @@
+{
+    "id": "cce5918b-25b4-4f2d-be2e-a7bfe6f2ff19",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 200,
+        "borderHeight": 50
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "cacd41cf-b1ee-4473-959f-311651d91df2",
+            "label": "taskContainer",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "20d86ddd-da74-4005-a00f-86b60f17f71d",
+                    "label": "backing",
+                    "scope": "PUBLIC",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#c9c9c9",
+                    "width": 200,
+                    "height": 50
+                },
+                {
+                    "type": "Text",
+                    "id": "34effd11-3334-4852-92e5-826b93a5d86f",
+                    "label": "nameText",
+                    "scope": "PUBLIC",
+                    "x": 47,
+                    "y": 13,
+                    "text": "Task Name",
+                    "fontSize": "24px",
+                    "fontStyle": "bold",
+                    "color": "#000000ff"
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "b371d300-93ab-4def-979c-42347d34d596",
+                    "label": "ellipse_1",
+                    "x": 23,
+                    "y": 25,
+                    "isFilled": true,
+                    "fillColor": "#000000",
+                    "width": 20,
+                    "height": 20
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

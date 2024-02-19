@@ -1,0 +1,28 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/Tank.png",
+                "type": "image",
+                "key": "Tank"
+            },
+            {
+                "url": "assets/ToidSketch.png",
+                "type": "image",
+                "key": "ToidSketch"
+            },
+            {
+                "url": "assets/white-px.png",
+                "type": "image",
+                "key": "white-px"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}

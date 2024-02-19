@@ -1,0 +1,185 @@
+{
+    "id": "4735a6a5-7881-4ad6-9af8-f3b7ca5ff055",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "desktop-scene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "37f8ce35-86b7-48c5-a337-3001329efd2a",
+            "label": "background",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#81c8b8",
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "63f9d523-5528-4864-be6d-62224ada1dd2",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName",
+                "pageKey"
+            ],
+            "label": "icon",
+            "programName": "Browser",
+            "iconTextureKey": "Tank",
+            "pageKey": "web-page",
+            "x": 758,
+            "y": 65
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "c1bfd185-6fd9-4076-8743-6f4338d91305",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName"
+            ],
+            "label": "icon_1",
+            "programName": "Fullscreen",
+            "iconTextureKey": "ToidSketch",
+            "x": 936,
+            "y": 101
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "03bb0a27-7ca9-483f-9b60-fa2afd37c3ed",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName",
+                "pageKey"
+            ],
+            "label": "icon_2",
+            "programName": "Browser",
+            "iconTextureKey": "Tank",
+            "pageKey": "zoom-page",
+            "x": 596,
+            "y": 106
+        },
+        {
+            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
+            "id": "b09385d3-d725-4c42-8020-1f05ff0a8de9",
+            "unlock": [
+                "x",
+                "y",
+                "displayName",
+                "visible"
+            ],
+            "label": "window",
+            "displayName": "Homepage",
+            "scope": "PUBLIC",
+            "x": 1754,
+            "y": 810,
+            "visible": false
+        },
+        {
+            "type": "Image",
+            "id": "bc3253dd-684f-4de8-897f-b762e63d012c",
+            "label": "windowMask",
+            "scope": "CLASS",
+            "texture": {
+                "key": "white-px"
+            },
+            "x": 456,
+            "y": 209,
+            "scaleX": 1400,
+            "scaleY": 800,
+            "originX": 0,
+            "originY": 0,
+            "visible": false
+        },
+        {
+            "prefabId": "016e56f3-93b3-492f-b5ad-99762c26fbd1",
+            "id": "f25e1d16-36a0-475d-b743-509512b453ea",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "taskBar",
+            "x": 250,
+            "y": 985
+        },
+        {
+            "type": "Rectangle",
+            "id": "d11522b7-7124-4b1d-824c-cbe858541d8e",
+            "label": "monitorEdge1",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#dfd398",
+            "width": 250,
+            "height": 1080
+        },
+        {
+            "type": "Rectangle",
+            "id": "965f9cdc-cc62-424d-a976-f4f0be5234be",
+            "label": "monitorEdge2",
+            "x": 1920,
+            "originX": 1,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#dfd398",
+            "width": 250,
+            "height": 1080
+        },
+        {
+            "type": "Rectangle",
+            "id": "f6bdd874-a762-4b9c-8146-ea1e4b96236d",
+            "label": "monitorEdge3",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#dfd398",
+            "width": 1920,
+            "height": 25
+        },
+        {
+            "type": "Rectangle",
+            "id": "b2cfef1e-0328-4ce3-9d48-6c55db43e450",
+            "label": "monitorEdge4",
+            "y": 1080,
+            "originX": 0,
+            "originY": 1,
+            "isFilled": true,
+            "fillColor": "#dfd398",
+            "width": 1920,
+            "height": 25
+        },
+        {
+            "type": "Rectangle",
+            "id": "948d80d0-d86b-45ba-aeab-043f12172816",
+            "label": "windowTopBar",
+            "scope": "CLASS",
+            "x": 421,
+            "y": 357,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 1000,
+            "height": 50
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}
