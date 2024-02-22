@@ -14,14 +14,25 @@
     "displayList": [
         {
             "type": "Rectangle",
-            "id": "37f8ce35-86b7-48c5-a337-3001329efd2a",
-            "label": "background",
+            "id": "d11522b7-7124-4b1d-824c-cbe858541d8e",
+            "label": "monitorEdge1",
             "originX": 0,
             "originY": 0,
             "isFilled": true,
-            "fillColor": "#81c8b8",
+            "fillColor": "#d3d3d3",
             "width": 1920,
             "height": 1080
+        },
+        {
+            "type": "Image",
+            "id": "00da9b37-1eae-430a-8a36-cfb5abfd0197",
+            "label": "desktop_bg",
+            "texture": {
+                "key": "desktop-bg"
+            },
+            "x": 334,
+            "originX": 0,
+            "originY": 0
         },
         {
             "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
@@ -36,7 +47,6 @@
             "label": "icon",
             "programName": "Browser",
             "iconTextureKey": "Tank",
-            "pageKey": "web-page",
             "x": 758,
             "y": 65
         },
@@ -63,12 +73,13 @@
                 "y",
                 "iconTextureKey",
                 "programName",
-                "pageKey"
+                "pageKey",
+                "sceneKey"
             ],
             "label": "icon_2",
-            "programName": "Browser",
+            "programName": "Program",
             "iconTextureKey": "Tank",
-            "pageKey": "zoom-page",
+            "sceneKey": "program-scene",
             "x": 596,
             "y": 106
         },
@@ -83,10 +94,10 @@
             ],
             "label": "window",
             "displayName": "Homepage",
-            "scope": "PUBLIC",
-            "x": 1754,
-            "y": 810,
-            "visible": false
+            "scope": "CLASS",
+            "x": 405,
+            "y": 93,
+            "visible": true
         },
         {
             "type": "Image",
@@ -112,67 +123,118 @@
                 "y"
             ],
             "label": "taskBar",
-            "x": 250,
-            "y": 985
+            "x": 323,
+            "y": 934
         },
         {
-            "type": "Rectangle",
-            "id": "d11522b7-7124-4b1d-824c-cbe858541d8e",
-            "label": "monitorEdge1",
+            "type": "Image",
+            "id": "37e9d9cf-2704-4077-9525-36ceb06e901c",
+            "label": "moniter",
+            "texture": {
+                "key": "moniter"
+            },
+            "x": 127,
             "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#dfd398",
-            "width": 250,
-            "height": 1080
+            "originY": 0
         },
         {
-            "type": "Rectangle",
-            "id": "965f9cdc-cc62-424d-a976-f4f0be5234be",
-            "label": "monitorEdge2",
-            "x": 1920,
-            "originX": 1,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#dfd398",
-            "width": 250,
-            "height": 1080
+            "type": "Container",
+            "id": "291b6b7d-a1a4-466f-a1ed-3e9af85aa239",
+            "label": "windowContainer",
+            "x": 2316,
+            "y": 697,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "9b9f5ae7-770a-41b3-95f7-e8467918583a",
+                    "label": "backing",
+                    "x": 11,
+                    "y": 13,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 980,
+                    "height": 280
+                },
+                {
+                    "type": "NineSlice",
+                    "id": "cdcbdf62-40b8-4c38-8262-30f5809a1d5e",
+                    "label": "windowBorder",
+                    "texture": {
+                        "key": "window-title-bar"
+                    },
+                    "originX": 0,
+                    "originY": 0,
+                    "width": 1000,
+                    "height": 300,
+                    "leftWidth": 43,
+                    "rightWidth": 39,
+                    "topHeight": 63,
+                    "bottomHeight": 20
+                },
+                {
+                    "type": "Image",
+                    "id": "51e0bd96-1a55-458f-abdf-1c374e3739b5",
+                    "label": "closeButton",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "window-close-button"
+                    },
+                    "x": 925,
+                    "y": -1,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "4f5c7e7e-3725-4c48-aaec-960c66d8974f",
+                    "label": "minimizeButton",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "window-minimize-button"
+                    },
+                    "x": 862,
+                    "y": -5,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
         },
         {
-            "type": "Rectangle",
-            "id": "f6bdd874-a762-4b9c-8146-ea1e4b96236d",
-            "label": "monitorEdge3",
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#dfd398",
-            "width": 1920,
-            "height": 25
-        },
-        {
-            "type": "Rectangle",
-            "id": "b2cfef1e-0328-4ce3-9d48-6c55db43e450",
-            "label": "monitorEdge4",
-            "y": 1080,
-            "originX": 0,
-            "originY": 1,
-            "isFilled": true,
-            "fillColor": "#dfd398",
-            "width": 1920,
-            "height": 25
-        },
-        {
-            "type": "Rectangle",
-            "id": "948d80d0-d86b-45ba-aeab-043f12172816",
-            "label": "windowTopBar",
+            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
+            "id": "f6207585-dfe4-4028-81b0-7200d1c3c7e8",
+            "unlock": [
+                "x",
+                "y",
+                "displayName",
+                "visible"
+            ],
+            "label": "window_1",
+            "displayName": "Homepage",
             "scope": "CLASS",
-            "x": 421,
-            "y": 357,
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "width": 1000,
-            "height": 50
+            "x": 420,
+            "y": 492,
+            "visible": true
+        },
+        {
+            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
+            "id": "b0d00d57-a9f9-4ee0-bb6f-c782fb305e69",
+            "unlock": [
+                "x",
+                "y",
+                "displayName",
+                "visible"
+            ],
+            "label": "window_2",
+            "displayName": "Homepage",
+            "scope": "CLASS",
+            "x": 888,
+            "y": 344,
+            "visible": true
         }
     ],
     "plainObjects": [],

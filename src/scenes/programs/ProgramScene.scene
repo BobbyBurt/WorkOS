@@ -29,7 +29,7 @@
             "texture": {
                 "key": "ToidSketch"
             },
-            "x": 224,
+            "x": 270,
             "y": 216
         },
         {
@@ -43,22 +43,6 @@
             "y": 913,
             "scaleX": 5.137692520457458,
             "scaleY": 3.6653923432747124
-        },
-        {
-            "type": "Rectangle",
-            "id": "1a619ca7-7464-47d6-895a-122afe696af2",
-            "label": "backing_1",
-            "components": [
-                "PointerButton"
-            ],
-            "x": 875,
-            "y": 13,
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#b1b1b1",
-            "width": 100,
-            "height": 100
         }
     ],
     "plainObjects": [],

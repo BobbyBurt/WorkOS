@@ -100,8 +100,8 @@
             }
         },
         {
-            "name": "pageKey",
-            "label": "Page Key",
+            "name": "sceneKey",
+            "label": "Scene Key",
             "tooltip": "",
             "defValue": "",
             "customDefinition": false,

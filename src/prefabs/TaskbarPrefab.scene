@@ -18,51 +18,64 @@
             "label": "taskBar",
             "list": [
                 {
-                    "type": "Rectangle",
-                    "id": "d9ae8828-4c10-49a8-9003-325ea269cae8",
-                    "label": "bar",
+                    "type": "Image",
+                    "id": "655c35da-ab20-46d6-9c14-56c430c26bdc",
+                    "label": "taskbar",
+                    "texture": {
+                        "key": "taskbar"
+                    },
                     "originX": 0,
-                    "originY": 0,
-                    "isFilled": true,
-                    "width": 1420,
-                    "height": 70
+                    "originY": 0
                 },
                 {
-                    "type": "Rectangle",
-                    "id": "a137ce90-362f-4c92-84e3-47d86633f13d",
-                    "label": "startButton",
-                    "scope": "CLASS",
+                    "type": "Image",
+                    "id": "5666cdce-7076-4e7b-bf4c-9344901919b8",
+                    "label": "start_button",
                     "components": [
                         "PointerButton"
                     ],
+                    "texture": {
+                        "key": "start-button"
+                    },
+                    "x": 66,
+                    "y": -9,
                     "originX": 0,
-                    "originY": 0,
-                    "isFilled": true,
-                    "fillColor": "#c9c9c9",
-                    "width": 200,
-                    "height": 70
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "5e066084-9f1c-4049-8ee0-f62c7457e748",
+                    "label": "taskbar_window_button",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "taskbar-window-button"
+                    },
+                    "x": 301,
+                    "y": 15,
+                    "originX": 0,
+                    "originY": 0
                 },
                 {
                     "type": "Text",
-                    "id": "9481bef4-2eed-463f-ab9c-5cd15e9e9198",
-                    "label": "timeText",
-                    "x": 1287,
-                    "y": 22,
-                    "text": "9:05 am",
-                    "fontSize": "24px",
-                    "fontStyle": "bold",
-                    "color": "#000000ff"
+                    "id": "481321fc-e96e-4025-8a54-7b0c94f339ed",
+                    "label": "text_1",
+                    "x": 325,
+                    "y": 29,
+                    "text": "Program name",
+                    "fontFamily": "Verdana",
+                    "fontSize": "20px"
                 },
                 {
                     "type": "Text",
-                    "id": "95ddb7b9-1d7e-4562-bc2c-d7bae4d979bb",
-                    "label": "startButtonText",
-                    "x": 62,
-                    "y": 22,
-                    "text": "START",
-                    "fontSize": "24px",
-                    "fontStyle": "bold",
-                    "color": "#000000ff"
+                    "id": "ba41bb3c-dbe3-4f8e-8199-7f4fab524cee",
+                    "label": "text",
+                    "x": 1094,
+                    "y": 29,
+                    "text": "9:04 am",
+                    "fontFamily": "Verdana",
+                    "fontSize": "24px"
                 }
             ]
         }

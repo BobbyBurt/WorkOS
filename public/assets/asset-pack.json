@@ -2,9 +2,34 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/Desktop_BG0001(1).png",
+                "type": "image",
+                "key": "desktop-bg"
+            },
+            {
+                "url": "assets/images/Moniter0001(1).png",
+                "type": "image",
+                "key": "moniter"
+            },
+            {
+                "url": "assets/images/Start0001(1).png",
+                "type": "image",
+                "key": "start-button"
+            },
+            {
                 "url": "assets/Tank.png",
                 "type": "image",
                 "key": "Tank"
+            },
+            {
+                "url": "assets/images/Taskbar0001(1).png",
+                "type": "image",
+                "key": "taskbar"
+            },
+            {
+                "url": "assets/images/Taskbar_Window_Button0001(1).png",
+                "type": "image",
+                "key": "taskbar-window-button"
             },
             {
                 "url": "assets/ToidSketch.png",
@@ -15,6 +40,21 @@
                 "url": "assets/white-px.png",
                 "type": "image",
                 "key": "white-px"
+            },
+            {
+                "url": "assets/images/Window_Close_Button0001(1).png",
+                "type": "image",
+                "key": "window-close-button"
+            },
+            {
+                "url": "assets/images/Window_Minimize_Button0001(1).png",
+                "type": "image",
+                "key": "window-minimize-button"
+            },
+            {
+                "url": "assets/images/Window_Title_Bar0001(1).png",
+                "type": "image",
+                "key": "window-title-bar"
             }
         ]
     },

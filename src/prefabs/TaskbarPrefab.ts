@@ -15,35 +15,38 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
-		// bar
-		const bar = scene.add.rectangle(0, 0, 1420, 70);
-		bar.setOrigin(0, 0);
-		bar.isFilled = true;
-		this.add(bar);
+		// taskbar
+		const taskbar = scene.add.image(0, 0, "taskbar");
+		taskbar.setOrigin(0, 0);
+		this.add(taskbar);
 
-		// startButton
-		const startButton = scene.add.rectangle(0, 0, 200, 70);
-		startButton.setOrigin(0, 0);
-		startButton.isFilled = true;
-		startButton.fillColor = 13224393;
-		this.add(startButton);
+		// start_button
+		const start_button = scene.add.image(66, -9, "start-button");
+		start_button.setOrigin(0, 0);
+		this.add(start_button);
 
-		// timeText
-		const timeText = scene.add.text(1287, 22, "", {});
-		timeText.text = "9:05 am";
-		timeText.setStyle({ "color": "#000000ff", "fontSize": "24px", "fontStyle": "bold" });
-		this.add(timeText);
+		// taskbar_window_button
+		const taskbar_window_button = scene.add.image(301, 15, "taskbar-window-button");
+		taskbar_window_button.setOrigin(0, 0);
+		this.add(taskbar_window_button);
 
-		// startButtonText
-		const startButtonText = scene.add.text(62, 22, "", {});
-		startButtonText.text = "START";
-		startButtonText.setStyle({ "color": "#000000ff", "fontSize": "24px", "fontStyle": "bold" });
-		this.add(startButtonText);
+		// text_1
+		const text_1 = scene.add.text(325, 29, "", {});
+		text_1.text = "Program name";
+		text_1.setStyle({ "fontFamily": "Verdana", "fontSize": "20px" });
+		this.add(text_1);
 
-		// startButton (components)
-		new PointerButton(startButton);
+		// text
+		const text = scene.add.text(1094, 29, "", {});
+		text.text = "9:04 am";
+		text.setStyle({ "fontFamily": "Verdana", "fontSize": "24px" });
+		this.add(text);
 
-		this.startButton = startButton;
+		// start_button (components)
+		new PointerButton(start_button);
+
+		// taskbar_window_button (components)
+		new PointerButton(taskbar_window_button);
 
 		/* START-USER-CTR-CODE */
 
@@ -51,8 +54,6 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
 
 		/* END-USER-CTR-CODE */
 	}
-
-	private startButton: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 

@@ -5,7 +5,6 @@ import DebugScene from './scenes/DebugScene';
 import DesktopScene from './scenes/DesktopScene';
 import Preload from './scenes/Preload';
 import ProgramScene from './scenes/programs/ProgramScene';
-// import TestProgramScene from './scenes/programs/TestProgramScene';
 
 
 window.addEventListener('load', function ()
@@ -48,7 +47,6 @@ window.addEventListener('load', function ()
 
 	// programs
 	game.scene.add('program-scene', ProgramScene);
-	// game.scene.add('test-program-scene', TestProgramScene);
 });
 
 class Boot extends Phaser.Scene
@@ -63,7 +61,10 @@ class Boot extends Phaser.Scene
 		this.load.pack("pack", "assets/preload-asset-pack.json");
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("Preload"));
 
-		console.clear();
+		if (__DEV__)
+		{
+			console.clear();
+		}
 	}
 
 	create()

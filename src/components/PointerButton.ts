@@ -9,26 +9,26 @@ import Phaser from "phaser";
 
 export default class PointerButton {
 
-	constructor(gameObject: Phaser.GameObjects.Rectangle) {
+	constructor(gameObject: Phaser.GameObjects.Image) {
 		this.gameObject = gameObject;
 		(gameObject as any)["__PointerButton"] = this;
 
 		/* START-USER-CTR-CODE */
 
-		this.gameObject.setInteractive();
+		this.gameObject.setInteractive({ useHandCursor: true });
 		this.gameObject.on('pointerover', this.pointerOver, this);
 		this.gameObject.on('pointerout', this.pointerOut, this);
 		this.gameObject.on('pointerdown', this.pointerDown, this);
 		this.gameObject.on('pointerup', this.pointerUp, this);
-		
+
 		/* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Rectangle): PointerButton {
+	static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
 		return (gameObject as any)["__PointerButton"];
 	}
 
-	private gameObject: Phaser.GameObjects.Rectangle;
+	private gameObject: Phaser.GameObjects.Image;
 
 	/* START-USER-CODE */
 

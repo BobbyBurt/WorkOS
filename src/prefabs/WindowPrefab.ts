@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import webPage from "./pages/webPage";
 import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
 import DebugScene from "~/scenes/DebugScene";
@@ -18,45 +17,51 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		// window
 		const window = scene.add.rectangle(0, 0, 1000, 800);
 		window.setOrigin(0, 0);
+		window.visible = false;
 		window.isFilled = true;
 		this.add(window);
-
-		// page
-		const page = new webPage(scene, 0, 0);
-		this.add(page);
 
 		// topBar
 		const topBar = scene.add.rectangle(0, 0, 1000, 50);
 		topBar.setOrigin(0, 0);
+		topBar.visible = false;
 		topBar.isFilled = true;
 		topBar.fillColor = 12566463;
 		this.add(topBar);
 
-		// exitButton
-		const exitButton = scene.add.rectangle(900, 0, 100, 50);
-		exitButton.setOrigin(0, 0);
-		exitButton.isFilled = true;
-		exitButton.fillColor = 15104120;
-		this.add(exitButton);
+		// backing
+		const backing = scene.add.rectangle(9, 7, 983, 284);
+		backing.setOrigin(0, 0);
+		backing.isFilled = true;
+		this.add(backing);
+
+		// windowBorder
+		const windowBorder = scene.add.nineslice(0, 0, "window-title-bar", undefined, 1000, 300, 43, 39, 63, 20);
+		windowBorder.setOrigin(0, 0);
+		this.add(windowBorder);
 
 		// minimizeButton
-		const minimizeButton = scene.add.rectangle(799, 0, 100, 50);
+		const minimizeButton = scene.add.image(862, -6, "window-minimize-button");
 		minimizeButton.setOrigin(0, 0);
-		minimizeButton.isFilled = true;
-		minimizeButton.fillColor = 14540253;
 		this.add(minimizeButton);
 
-		// exitButton (components)
-		new PointerButton(exitButton);
+		// closeButton
+		const closeButton = scene.add.image(925, -2, "window-close-button");
+		closeButton.setOrigin(0, 0);
+		this.add(closeButton);
 
 		// minimizeButton (components)
 		new PointerButton(minimizeButton);
 
+		// closeButton (components)
+		new PointerButton(closeButton);
+
 		this.window = window;
-		this.page = page;
 		this.topBar = topBar;
-		this.exitButton = exitButton;
+		this.backing = backing;
+		this.windowBorder = windowBorder;
 		this.minimizeButton = minimizeButton;
+		this.closeButton = closeButton;
 
 		/* START-USER-CTR-CODE */
 
@@ -68,10 +73,11 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 	}
 
 	public window: Phaser.GameObjects.Rectangle;
-	private page: webPage;
 	private topBar: Phaser.GameObjects.Rectangle;
-	private exitButton: Phaser.GameObjects.Rectangle;
-	private minimizeButton: Phaser.GameObjects.Rectangle;
+	private backing: Phaser.GameObjects.Rectangle;
+	private windowBorder: Phaser.GameObjects.NineSlice;
+	private minimizeButton: Phaser.GameObjects.Image;
+	private closeButton: Phaser.GameObjects.Image;
 	public displayName: string = "Unnamed Window";
 
 	/* START-USER-CODE */
@@ -94,13 +100,13 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.window.setInteractive();
 		this.window.on('wheel', (pointer: any, deltaX: any, deltaY: any, deltaZ: any) =>
 		{
-			let y = this.page.y - deltaY;
-			y = Phaser.Math.Clamp(y, -this.pageSize.height + this.window.height, 0);
-			this.page.setY(y);
+			// let y = this.page.y - deltaY;
+			// y = Phaser.Math.Clamp(y, -this.pageSize.height + this.window.height, 0);
+			// this.page.setY(y);
 		});
 
-		this.topBar.setInteractive({ draggable: true });
-		this.topBar.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
+		this.windowBorder.setInteractive({ draggable: true });
+		this.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
 		{
 			this.setPosition(dragX, dragY);
 
@@ -109,7 +115,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 			this.y = Phaser.Math.Clamp(this.y, 0, 2000);
 		});
 
-		this.exitButton.on('pointerdown', this.close, this);
+		this.closeButton.on('pointerdown', this.close, this);
 
 		this.minimizeButton.on('click', this.setMinimize, this);
 	}
@@ -149,6 +155,19 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 	update()
 	{
+	}
+
+	/**
+	 * To be called after create, before render
+	 * @param width 
+	 * @param height 
+	 */
+	public setWindowSize(width: number, height: number)
+	{
+		this.windowBorder.setSize(width, height);
+		this.minimizeButton.setX(width - 138);
+		this.closeButton.setX(width - 75);
+		this.backing.setSize(width - 17, height - 16);
 	}
 
 	/* END-USER-CODE */

@@ -57,7 +57,7 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 	private selectRect: Phaser.GameObjects.Rectangle;
 	public programName: string = "";
 	public iconTextureKey: string = "ToidSketch";
-	public pageKey: string = "";
+	public sceneKey: string = "";
 
 	/* START-USER-CODE */
 
@@ -102,7 +102,7 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 		// TODO: put this somewhere else
 
 		let desktopScene = this.scene as DesktopScene;
-		desktopScene.addWindow(this.pageKey);
+		desktopScene.addWindow(this.sceneKey);
 	}
 
 

@@ -7,8 +7,8 @@ import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
 import WindowPrefab from "../prefabs/WindowPrefab";
 import TaskbarPrefab from "../prefabs/TaskbarPrefab";
+import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
-import { preload, editorCreate } from "./programs/TestProgramScene";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
@@ -23,11 +23,15 @@ export default class DesktopScene extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// background
-		const background = this.add.rectangle(0, 0, 1920, 1080);
-		background.setOrigin(0, 0);
-		background.isFilled = true;
-		background.fillColor = 8505528;
+		// monitorEdge1
+		const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
+		monitorEdge1.setOrigin(0, 0);
+		monitorEdge1.isFilled = true;
+		monitorEdge1.fillColor = 13882323;
+
+		// desktop_bg
+		const desktop_bg = this.add.image(334, 0, "desktop-bg");
+		desktop_bg.setOrigin(0, 0);
 
 		// icon
 		const icon = new IconPrefab(this, 758, 65);
@@ -42,9 +46,9 @@ export default class DesktopScene extends Phaser.Scene {
 		this.add.existing(icon_2);
 
 		// window
-		const window = new WindowPrefab(this, 1754, 810);
+		const window = new WindowPrefab(this, 405, 93);
 		this.add.existing(window);
-		window.visible = false;
+		window.visible = true;
 
 		// windowMask
 		const windowMask = this.add.image(456, 209, "white-px");
@@ -54,71 +58,94 @@ export default class DesktopScene extends Phaser.Scene {
 		windowMask.visible = false;
 
 		// taskBar
-		const taskBar = new TaskbarPrefab(this, 250, 985);
+		const taskBar = new TaskbarPrefab(this, 323, 934);
 		this.add.existing(taskBar);
 
-		// monitorEdge1
-		const monitorEdge1 = this.add.rectangle(0, 0, 250, 1080);
-		monitorEdge1.setOrigin(0, 0);
-		monitorEdge1.isFilled = true;
-		monitorEdge1.fillColor = 14668696;
+		// moniter
+		const moniter = this.add.image(127, 0, "moniter");
+		moniter.setOrigin(0, 0);
 
-		// monitorEdge2
-		const monitorEdge2 = this.add.rectangle(1920, 0, 250, 1080);
-		monitorEdge2.setOrigin(1, 0);
-		monitorEdge2.isFilled = true;
-		monitorEdge2.fillColor = 14668696;
+		// windowContainer
+		const windowContainer = this.add.container(2316, 697);
 
-		// monitorEdge3
-		const monitorEdge3 = this.add.rectangle(0, 0, 1920, 25);
-		monitorEdge3.setOrigin(0, 0);
-		monitorEdge3.isFilled = true;
-		monitorEdge3.fillColor = 14668696;
+		// backing
+		const backing = this.add.rectangle(11, 13, 980, 280);
+		backing.setOrigin(0, 0);
+		backing.isFilled = true;
+		windowContainer.add(backing);
 
-		// monitorEdge4
-		const monitorEdge4 = this.add.rectangle(0, 1080, 1920, 25);
-		monitorEdge4.setOrigin(0, 1);
-		monitorEdge4.isFilled = true;
-		monitorEdge4.fillColor = 14668696;
+		// windowBorder
+		const windowBorder = this.add.nineslice(0, 0, "window-title-bar", undefined, 1000, 300, 43, 39, 63, 20);
+		windowBorder.setOrigin(0, 0);
+		windowContainer.add(windowBorder);
 
-		// windowTopBar
-		const windowTopBar = this.add.rectangle(421, 357, 1000, 50);
-		windowTopBar.setOrigin(0, 0);
-		windowTopBar.isFilled = true;
+		// closeButton
+		const closeButton = this.add.image(925, -1, "window-close-button");
+		closeButton.setOrigin(0, 0);
+		windowContainer.add(closeButton);
+
+		// minimizeButton
+		const minimizeButton = this.add.image(862, -5, "window-minimize-button");
+		minimizeButton.setOrigin(0, 0);
+		windowContainer.add(minimizeButton);
+
+		// window_1
+		const window_1 = new WindowPrefab(this, 420, 492);
+		this.add.existing(window_1);
+		window_1.visible = true;
+
+		// window_2
+		const window_2 = new WindowPrefab(this, 888, 344);
+		this.add.existing(window_2);
+		window_2.visible = true;
 
 		// icon (prefab fields)
 		icon.programName = "Browser";
 		icon.iconTextureKey = "Tank";
-		icon.pageKey = "web-page";
 
 		// icon_1 (prefab fields)
 		icon_1.programName = "Fullscreen";
 		icon_1.iconTextureKey = "ToidSketch";
 
 		// icon_2 (prefab fields)
-		icon_2.programName = "Browser";
+		icon_2.programName = "Program";
 		icon_2.iconTextureKey = "Tank";
-		icon_2.pageKey = "zoom-page";
+		icon_2.sceneKey = "program-scene";
 
 		// window (prefab fields)
 		window.displayName = "Homepage";
 
+		// closeButton (components)
+		new PointerButton(closeButton);
+
+		// minimizeButton (components)
+		new PointerButton(minimizeButton);
+
+		// window_1 (prefab fields)
+		window_1.displayName = "Homepage";
+
+		// window_2 (prefab fields)
+		window_2.displayName = "Homepage";
+
 		this.window = window;
 		this.windowMask = windowMask;
-		this.windowTopBar = windowTopBar;
+		this.window_1 = window_1;
+		this.window_2 = window_2;
 
 		this.events.emit("scene-awake");
 	}
 
-	public window!: WindowPrefab;
+	private window!: WindowPrefab;
 	private windowMask!: Phaser.GameObjects.Image;
-	private windowTopBar!: Phaser.GameObjects.Rectangle;
+	private window_1!: WindowPrefab;
+	private window_2!: WindowPrefab;
 
 	/* START-USER-CODE */
 
-	private masko!: Phaser.Display.Masks.BitmapMask;
-
-	private windows: Array<WindowPrefab>;
+	private programs: Array<{
+		scene: Phaser.Scene,
+		window: WindowPrefab
+	}>;
 
 	create() {
 
@@ -130,24 +157,29 @@ export default class DesktopScene extends Phaser.Scene {
 		this.cameras.main.setZoom(.5);
 		this.cameras.main.centerOn(960, 540);
 
-		this.windowTopBar.setInteractive({ draggable: true });
-		this.windowTopBar.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
+		// this.windowTopBar.setInteractive({ draggable: true });
+		// this.windowTopBar.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
+		// {
+		// 	this.windowTopBar.setPosition(dragX, dragY);
+
+		// 	// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
+
+		// 	// this.windowTopBar.y = Phaser.Math.Clamp(this.windowTopBar.y, 0, 2000);
+		// });
+
+		this.game.events.on('scene-created: program-scene', () =>
 		{
-			this.windowTopBar.setPosition(dragX, dragY);
 
-			// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
-
-			// this.windowTopBar.y = Phaser.Math.Clamp(this.windowTopBar.y, 0, 2000);
 		});
+
+		this.window.setWindowSize(700, 300);
+		this.window_1.setWindowSize(500, 500);
+		this.window_2.setWindowSize(700, 500);
 	}
 
 	update()
 	{
-		// this.windowMask.setPosition(this.window.x, this.window.y);
-		// this.windowMask.setScale(this.window.window.width, this.window.window.height);
 
-		// let testProgramScene = this.scene.get('test-program-scene');
-		// testProgramScene.cameras.main.setViewport(this.windowTopBar.x / 2, this.windowTopBar.y /2, 500, 400)
 	}
 
 	resize(gameSize: any, baseSize: any, displaySize: any, resolution: any)
@@ -170,13 +202,8 @@ export default class DesktopScene extends Phaser.Scene {
 
 	public addWindow(sceneKey: string)
 	{
-		// const window = new WindowPrefab(this, 300, 300);
-		// this.add.existing(window);
-		// window.setMask(this.windowMask.createBitmapMask());
-
-		// this.scene.launch('test-program-scene');
-
-		editorCreate.call(this);
+		// LEFTOFF: How do I know once the scene is ready so I can make a reference to it?
+		this.scene.launch(sceneKey, { test: 'test: hello!' });
 	}
 
 	/* END-USER-CODE */

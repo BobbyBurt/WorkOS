@@ -4,8 +4,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import PointerButton from "../../components/PointerButton";
 /* START-USER-IMPORTS */
+import WindowPrefab from "~/prefabs/WindowPrefab";
 /* END-USER-IMPORTS */
 
 export default class ProgramScene extends Phaser.Scene {
@@ -26,28 +26,22 @@ export default class ProgramScene extends Phaser.Scene {
 		backing.isFilled = true;
 
 		// toidSketch
-		this.add.image(224, 216, "ToidSketch");
+		this.add.image(270, 216, "ToidSketch");
 
 		// toidSketch_1
 		const toidSketch_1 = this.add.image(973, 913, "ToidSketch");
 		toidSketch_1.scaleX = 5.137692520457458;
 		toidSketch_1.scaleY = 3.6653923432747124;
 
-		// backing_1
-		const backing_1 = this.add.rectangle(875, 13, 100, 100);
-		backing_1.setOrigin(0, 0);
-		backing_1.isFilled = true;
-		backing_1.fillColor = 11645361;
-
-		// backing_1 (components)
-		new PointerButton(backing_1);
-
 		this.events.emit("scene-awake");
 	}
 
 	/* START-USER-CODE */
 
-	// Write your code here
+	init(data:any)
+	{
+		console.debug(data)
+	}
 
 	create() {
 
@@ -59,7 +53,12 @@ export default class ProgramScene extends Phaser.Scene {
 		this.cameras.main.setZoom(.5);
 		this.cameras.main.centerOn(960, 540);
 
-		this.cameras.main.setViewport(0, 0, 100, 100)
+		this.cameras.main.setViewport(0, 0, 100, 100);
+
+		const window_2 = new WindowPrefab(this, 888, 344);
+		this.add.existing(window_2);
+
+		this.game.events.emit('scene-created: ' + this.scene.key);
 	}
 
 	resize(gameSize: any, baseSize: any, displaySize: any, resolution: any)
