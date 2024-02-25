@@ -3,6 +3,7 @@ import medalScene from './API/medalScene';
 import { newgroundsIOWrapper } from './API/newgroundsIOWrapper';
 import DebugScene from './scenes/DebugScene';
 import DesktopScene from './scenes/DesktopScene';
+import OverlapScene from './scenes/OverlapScene';
 import Preload from './scenes/Preload';
 import ProgramScene from './scenes/programs/ProgramScene';
 import TemplateProgramScene from './scenes/programs/TemplateProgramScene';
@@ -34,6 +35,7 @@ window.addEventListener('load', function ()
 	game.scene.add("Boot", Boot, true);
 	game.scene.add('medal-scene', medalScene);
 	game.scene.add('desktop-scene', DesktopScene);
+	game.scene.add('overlap-scene', OverlapScene);
 	game.scene.add('debug-scene', DebugScene);
 
 	// programs

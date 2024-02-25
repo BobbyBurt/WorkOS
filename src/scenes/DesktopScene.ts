@@ -5,8 +5,6 @@
 
 import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
-import TaskbarPrefab from "../prefabs/TaskbarPrefab";
-import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -51,37 +49,15 @@ export default class DesktopScene extends Phaser.Scene {
 		windowMask.setOrigin(0, 0);
 		windowMask.visible = false;
 
-		// taskBar
-		const taskBar = new TaskbarPrefab(this, 323, 934);
-		this.add.existing(taskBar);
-
 		// moniter
 		const moniter = this.add.image(127, 0, "moniter");
 		moniter.setOrigin(0, 0);
 
-		// windowContainer
-		const windowContainer = this.add.container(2316, 697);
-
-		// backing
-		const backing = this.add.rectangle(11, 13, 980, 280);
-		backing.setOrigin(0, 0);
-		backing.isFilled = true;
-		windowContainer.add(backing);
-
-		// windowBorder
-		const windowBorder = this.add.nineslice(0, 0, "window-title-bar", undefined, 1000, 300, 43, 39, 63, 20);
-		windowBorder.setOrigin(0, 0);
-		windowContainer.add(windowBorder);
-
-		// closeButton
-		const closeButton = this.add.image(925, -1, "window-close-button");
-		closeButton.setOrigin(0, 0);
-		windowContainer.add(closeButton);
-
-		// minimizeButton
-		const minimizeButton = this.add.image(862, -5, "window-minimize-button");
-		minimizeButton.setOrigin(0, 0);
-		windowContainer.add(minimizeButton);
+		// desktopRect
+		const desktopRect = this.add.rectangle(387, 70, 1165, 860);
+		desktopRect.setOrigin(0, 0);
+		desktopRect.visible = false;
+		desktopRect.isFilled = true;
 
 		// icon (prefab fields)
 		icon.programName = "Browser";
@@ -96,25 +72,18 @@ export default class DesktopScene extends Phaser.Scene {
 		icon_2.iconTextureKey = "Tank";
 		icon_2.sceneKey = "program-scene";
 
-		// closeButton (components)
-		new PointerButton(closeButton);
-
-		// minimizeButton (components)
-		new PointerButton(minimizeButton);
-
 		this.windowMask = windowMask;
+		this.desktopRect = desktopRect;
 
 		this.events.emit("scene-awake");
 	}
 
 	private windowMask!: Phaser.GameObjects.Image;
+	public desktopRect!: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
-	// private programs: Array<{
-	// 	scene: Phaser.Scene,
-	// 	window: WindowPrefab
-	// }>;
+	public desktopGeomRect!: Phaser.Geom.Rectangle;
 
 	create() {
 
@@ -124,6 +93,14 @@ export default class DesktopScene extends Phaser.Scene {
 		// this.scale.on('leavefullscreen', this.unFullscreen, this);
 
 		this.cameras.main.centerOn(960, 540);
+
+		this.desktopGeomRect = new Phaser.Geom.Rectangle
+		(
+			this.desktopRect.x,
+			this.desktopRect.y,
+			this.desktopRect.width,
+			this.desktopRect.height
+		);
 
 		// this.windowTopBar.setInteractive({ draggable: true });
 		// this.windowTopBar.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
@@ -154,6 +131,7 @@ export default class DesktopScene extends Phaser.Scene {
 	{
 		// this.scene.launch(sceneKey);
 		this.scene.launch('template-program-scene');
+		this.scene.bringToTop('overlap-scene');
 	}
 
 	/* END-USER-CODE */

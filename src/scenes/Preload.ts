@@ -89,6 +89,7 @@ export default class Preload extends Phaser.Scene {
 			{
 				this.scene.stop(this);
 				this.scene.launch("desktop-scene");
+				this.scene.launch("overlap-scene");
 			});
 		});
 

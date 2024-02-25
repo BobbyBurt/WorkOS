@@ -84,6 +84,18 @@
                     "y": 5,
                     "originX": 0,
                     "originY": 0
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "412c747e-4d5a-4304-9d81-353620645ca4",
+                    "label": "dragRect",
+                    "scope": "PUBLIC",
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.001,
+                    "isFilled": true,
+                    "width": 850,
+                    "height": 65
                 }
             ]
         }

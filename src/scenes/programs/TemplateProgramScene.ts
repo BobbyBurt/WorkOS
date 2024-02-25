@@ -62,18 +62,24 @@ export default class TemplateProgramScene extends ProgramBaseScene {
 	readonly width = 700;
 	readonly height = 500;
 
-	create() {
-
+	/**
+	 * Boilerplate setup for all program classes
+	 */
+	setup()
+	{
+		// create
 		super.editorCreate();
 		super.create(this.width, this.height);
 		this.editorCreate();	
 
+		// mask
 		super.programContainer = this.mainContainer;
+		super.setMask();
+	}
 
-		super.setMask(this.mainLayer);
-		// this.windowMasko = super.indowPrefab.insideRect.createBitmapMask();
-		// this.mainLayer.setMask(this.windowMasko);
-
+	create()
+	{
+		this.setup();
 	}
 
 	/* END-USER-CODE */

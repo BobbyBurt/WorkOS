@@ -37,6 +37,13 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		closeButton.setOrigin(0, 0);
 		this.add(closeButton);
 
+		// dragRect
+		const dragRect = scene.add.rectangle(0, 0, 850, 65);
+		dragRect.setOrigin(0, 0);
+		dragRect.alpha = 0.001;
+		dragRect.isFilled = true;
+		this.add(dragRect);
+
 		// minimizeButton (components)
 		new PointerButton(minimizeButton);
 
@@ -47,6 +54,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.windowBorder = windowBorder;
 		this.minimizeButton = minimizeButton;
 		this.closeButton = closeButton;
+		this.dragRect = dragRect;
 
 		/* START-USER-CTR-CODE */
 
@@ -61,6 +69,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 	public windowBorder: Phaser.GameObjects.NineSlice;
 	private minimizeButton: Phaser.GameObjects.Image;
 	private closeButton: Phaser.GameObjects.Image;
+	public dragRect: Phaser.GameObjects.Rectangle;
 	public displayName: string = "Unnamed Window";
 
 	/* START-USER-CODE */
@@ -94,6 +103,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.minimizeButton.setX(width - 138);
 		this.closeButton.setX(width - 75);
 		this.insideRect.setSize(width - 17, height - 63);
+		this.dragRect.setSize(width - 150, this.dragRect.height);
 	}
 
 	/* END-USER-CODE */
