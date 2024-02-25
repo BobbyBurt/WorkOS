@@ -11,11 +11,11 @@ export default class TaskButton extends TaskButtonPrefab
         this.window = window;
 
         // callbacks
-        this.backing.on('click', this.onClick, this);
-        this.window.on('destroy', this.onClose, this);
+        // this.backing.on('click', this.onClick, this);
+        // this.window.on('destroy', this.onClose, this);
 
         // set name text
-        this.nameText.setText(window.displayName);
+        // this.nameText.setText(window.displayName);
         // TODO: Get window name
     }
 

@@ -66,9 +66,9 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
 	 */
 	start()
 	{
-		let desktopScene = this.scene as DesktopScene;
-		const taskButtonContainer = new TaskButton(this.scene, desktopScene.window, 217, 10);
-		this.add(taskButtonContainer);
+		// let desktopScene = this.scene as DesktopScene;
+		// const taskButtonContainer = new TaskButton(this.scene, desktopScene.window, 217, 10);
+		// this.add(taskButtonContainer);
 		// taskButtonContainer.start();
 		// taskButtonContainer.backing.on('click', () =>
 		// {

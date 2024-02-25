@@ -80,24 +80,8 @@
             "programName": "Program",
             "iconTextureKey": "Tank",
             "sceneKey": "program-scene",
-            "x": 596,
-            "y": 106
-        },
-        {
-            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
-            "id": "b09385d3-d725-4c42-8020-1f05ff0a8de9",
-            "unlock": [
-                "x",
-                "y",
-                "displayName",
-                "visible"
-            ],
-            "label": "window",
-            "displayName": "Homepage",
-            "scope": "CLASS",
-            "x": 405,
-            "y": 93,
-            "visible": true
+            "x": 794,
+            "y": 368
         },
         {
             "type": "Image",
@@ -205,36 +189,70 @@
             ]
         },
         {
-            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
-            "id": "f6207585-dfe4-4028-81b0-7200d1c3c7e8",
-            "unlock": [
-                "x",
-                "y",
-                "displayName",
-                "visible"
-            ],
-            "label": "window_1",
-            "displayName": "Homepage",
-            "scope": "CLASS",
-            "x": 420,
-            "y": 492,
-            "visible": true
+            "type": "Image",
+            "id": "ed6fc954-e810-4ba7-aaf4-45f5ac1517ba",
+            "label": "start_button_1",
+            "texture": {
+                "key": "start-button"
+            },
+            "x": 1015,
+            "y": 603,
+            "scaleX": 0.5,
+            "scaleY": 0.5
         },
         {
-            "prefabId": "79d35193-dec9-44de-9723-118724af6221",
-            "id": "b0d00d57-a9f9-4ee0-bb6f-c782fb305e69",
-            "unlock": [
-                "x",
-                "y",
-                "displayName",
-                "visible"
-            ],
-            "label": "window_2",
-            "displayName": "Homepage",
-            "scope": "CLASS",
-            "x": 888,
-            "y": 344,
-            "visible": true
+            "type": "Image",
+            "id": "2437703e-137d-41a2-aee8-cd45df1369b1",
+            "label": "tank",
+            "texture": {
+                "key": "Tank"
+            },
+            "x": 784,
+            "y": 673
+        },
+        {
+            "type": "Image",
+            "id": "8cd7731c-bfca-4949-96ed-0514543abfd4",
+            "label": "tank_1",
+            "texture": {
+                "key": "Tank"
+            },
+            "x": 1164,
+            "y": 390,
+            "scaleX": 0.5,
+            "scaleY": 0.5
+        },
+        {
+            "type": "Image",
+            "id": "2fa83e96-a84c-43d4-b369-da7053cd8b5c",
+            "label": "toidSketch",
+            "texture": {
+                "key": "ToidSketch"
+            },
+            "x": 972,
+            "y": 371
+        },
+        {
+            "type": "Image",
+            "id": "3a25f2fa-dca3-42a3-833e-2235e951992f",
+            "label": "toidSketch_1",
+            "texture": {
+                "key": "ToidSketch"
+            },
+            "x": 1196,
+            "y": 622,
+            "scaleX": 0.5,
+            "scaleY": 0.5
+        },
+        {
+            "type": "Image",
+            "id": "bcd832af-49fe-4c68-8bbf-d344a05fe7e7",
+            "label": "start_button_2",
+            "texture": {
+                "key": "start-button"
+            },
+            "x": 1013,
+            "y": 678
         }
     ],
     "plainObjects": [],

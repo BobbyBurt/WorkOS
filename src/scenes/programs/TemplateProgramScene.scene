@@ -1,0 +1,78 @@
+{
+    "id": "e447fa3d-1fd8-4350-8b88-c525e217bbf5",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "ProgramBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "template-program-scene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60,
+        "borderWidth": 700,
+        "borderHeight": 500
+    },
+    "displayList": [
+        {
+            "type": "Layer",
+            "id": "60df11c1-aead-4951-b829-6256d2af63af",
+            "label": "mainLayer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "1c9867ac-c853-49d7-b192-c95298990022",
+                    "label": "backing",
+                    "y": 60,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 700,
+                    "height": 500
+                },
+                {
+                    "type": "Image",
+                    "id": "65a914e0-e5c1-4db2-9738-1b44d6cf1870",
+                    "label": "tank",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "Tank"
+                    },
+                    "x": 9,
+                    "y": 87
+                },
+                {
+                    "type": "Image",
+                    "id": "bca48b41-534b-4eff-861e-853dd6b3b1f6",
+                    "label": "taskbar_window_button",
+                    "texture": {
+                        "key": "taskbar-window-button"
+                    },
+                    "y": 60,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "2323a411-c159-41a3-966e-035b7866e21a",
+                    "label": "taskbar_window_button_1",
+                    "texture": {
+                        "key": "taskbar-window-button"
+                    },
+                    "x": 591,
+                    "y": 532,
+                    "originX": 0,
+                    "originY": 0
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

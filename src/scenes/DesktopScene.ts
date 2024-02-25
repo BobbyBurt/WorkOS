@@ -5,7 +5,6 @@
 
 import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
-import WindowPrefab from "../prefabs/WindowPrefab";
 import TaskbarPrefab from "../prefabs/TaskbarPrefab";
 import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
@@ -42,13 +41,8 @@ export default class DesktopScene extends Phaser.Scene {
 		this.add.existing(icon_1);
 
 		// icon_2
-		const icon_2 = new IconPrefab(this, 596, 106);
+		const icon_2 = new IconPrefab(this, 794, 368);
 		this.add.existing(icon_2);
-
-		// window
-		const window = new WindowPrefab(this, 405, 93);
-		this.add.existing(window);
-		window.visible = true;
 
 		// windowMask
 		const windowMask = this.add.image(456, 209, "white-px");
@@ -89,15 +83,29 @@ export default class DesktopScene extends Phaser.Scene {
 		minimizeButton.setOrigin(0, 0);
 		windowContainer.add(minimizeButton);
 
-		// window_1
-		const window_1 = new WindowPrefab(this, 420, 492);
-		this.add.existing(window_1);
-		window_1.visible = true;
+		// start_button_1
+		const start_button_1 = this.add.image(1015, 603, "start-button");
+		start_button_1.scaleX = 0.5;
+		start_button_1.scaleY = 0.5;
 
-		// window_2
-		const window_2 = new WindowPrefab(this, 888, 344);
-		this.add.existing(window_2);
-		window_2.visible = true;
+		// tank
+		this.add.image(784, 673, "Tank");
+
+		// tank_1
+		const tank_1 = this.add.image(1164, 390, "Tank");
+		tank_1.scaleX = 0.5;
+		tank_1.scaleY = 0.5;
+
+		// toidSketch
+		this.add.image(972, 371, "ToidSketch");
+
+		// toidSketch_1
+		const toidSketch_1 = this.add.image(1196, 622, "ToidSketch");
+		toidSketch_1.scaleX = 0.5;
+		toidSketch_1.scaleY = 0.5;
+
+		// start_button_2
+		this.add.image(1013, 678, "start-button");
 
 		// icon (prefab fields)
 		icon.programName = "Browser";
@@ -112,49 +120,33 @@ export default class DesktopScene extends Phaser.Scene {
 		icon_2.iconTextureKey = "Tank";
 		icon_2.sceneKey = "program-scene";
 
-		// window (prefab fields)
-		window.displayName = "Homepage";
-
 		// closeButton (components)
 		new PointerButton(closeButton);
 
 		// minimizeButton (components)
 		new PointerButton(minimizeButton);
 
-		// window_1 (prefab fields)
-		window_1.displayName = "Homepage";
-
-		// window_2 (prefab fields)
-		window_2.displayName = "Homepage";
-
-		this.window = window;
 		this.windowMask = windowMask;
-		this.window_1 = window_1;
-		this.window_2 = window_2;
 
 		this.events.emit("scene-awake");
 	}
 
-	private window!: WindowPrefab;
 	private windowMask!: Phaser.GameObjects.Image;
-	private window_1!: WindowPrefab;
-	private window_2!: WindowPrefab;
 
 	/* START-USER-CODE */
 
-	private programs: Array<{
-		scene: Phaser.Scene,
-		window: WindowPrefab
-	}>;
+	// private programs: Array<{
+	// 	scene: Phaser.Scene,
+	// 	window: WindowPrefab
+	// }>;
 
 	create() {
 
 		this.editorCreate();
 
-		this.scale.on('enterfullscreen', this.resize, this);
-		this.scale.on('leavefullscreen', this.unFullscreen, this);
+		// this.scale.on('enterfullscreen', this.resize, this);
+		// this.scale.on('leavefullscreen', this.unFullscreen, this);
 
-		this.cameras.main.setZoom(.5);
 		this.cameras.main.centerOn(960, 540);
 
 		// this.windowTopBar.setInteractive({ draggable: true });
@@ -172,9 +164,9 @@ export default class DesktopScene extends Phaser.Scene {
 
 		});
 
-		this.window.setWindowSize(700, 300);
-		this.window_1.setWindowSize(500, 500);
-		this.window_2.setWindowSize(700, 500);
+		// this.window.setWindowSize(700, 300);
+		// this.window_1.setWindowSize(500, 500);
+		// this.window_2.setWindowSize(700, 500);
 	}
 
 	update()
@@ -182,28 +174,10 @@ export default class DesktopScene extends Phaser.Scene {
 
 	}
 
-	resize(gameSize: any, baseSize: any, displaySize: any, resolution: any)
-	{
-		// console.debug(gameSize, baseSize, displaySize, resolution);
-		console.debug('resize');
-
-		// this.scale.setGameSize(this.scale.displaySize.width, this.scale.displaySize.height);
-		this.scale.setGameSize(1920, 1080);
-		this.cameras.main.setZoom(1);
-		this.cameras.main.centerOn(960, 540);
-	}
-
-	unFullscreen()
-	{
-		this.scale.setGameSize(960, 540);
-		this.cameras.main.setZoom(.5);
-		this.cameras.main.centerOn(960, 540);
-	}
-
 	public addWindow(sceneKey: string)
 	{
-		// LEFTOFF: How do I know once the scene is ready so I can make a reference to it?
-		this.scene.launch(sceneKey, { test: 'test: hello!' });
+		// this.scene.launch(sceneKey);
+		this.scene.launch('template-program-scene');
 	}
 
 	/* END-USER-CODE */

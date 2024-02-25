@@ -29,24 +29,24 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		topBar.fillColor = 12566463;
 		this.add(topBar);
 
-		// backing
-		const backing = scene.add.rectangle(9, 7, 983, 284);
-		backing.setOrigin(0, 0);
-		backing.isFilled = true;
-		this.add(backing);
+		// insideRect
+		const insideRect = scene.add.rectangle(9, 60, 983, 240);
+		insideRect.setOrigin(0, 0);
+		insideRect.isFilled = true;
+		this.add(insideRect);
 
 		// windowBorder
-		const windowBorder = scene.add.nineslice(0, 0, "window-title-bar", undefined, 1000, 300, 43, 39, 63, 20);
+		const windowBorder = scene.add.nineslice(0, 7, "window-title-bar", undefined, 1000, 300, 43, 39, 63, 20);
 		windowBorder.setOrigin(0, 0);
 		this.add(windowBorder);
 
 		// minimizeButton
-		const minimizeButton = scene.add.image(862, -6, "window-minimize-button");
+		const minimizeButton = scene.add.image(862, 1, "window-minimize-button");
 		minimizeButton.setOrigin(0, 0);
 		this.add(minimizeButton);
 
 		// closeButton
-		const closeButton = scene.add.image(925, -2, "window-close-button");
+		const closeButton = scene.add.image(925, 5, "window-close-button");
 		closeButton.setOrigin(0, 0);
 		this.add(closeButton);
 
@@ -58,7 +58,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 		this.window = window;
 		this.topBar = topBar;
-		this.backing = backing;
+		this.insideRect = insideRect;
 		this.windowBorder = windowBorder;
 		this.minimizeButton = minimizeButton;
 		this.closeButton = closeButton;
@@ -74,8 +74,8 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 	public window: Phaser.GameObjects.Rectangle;
 	private topBar: Phaser.GameObjects.Rectangle;
-	private backing: Phaser.GameObjects.Rectangle;
-	private windowBorder: Phaser.GameObjects.NineSlice;
+	public insideRect: Phaser.GameObjects.Rectangle;
+	public windowBorder: Phaser.GameObjects.NineSlice;
 	private minimizeButton: Phaser.GameObjects.Image;
 	private closeButton: Phaser.GameObjects.Image;
 	public displayName: string = "Unnamed Window";
@@ -105,15 +105,15 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 			// this.page.setY(y);
 		});
 
-		this.windowBorder.setInteractive({ draggable: true });
-		this.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
-		{
-			this.setPosition(dragX, dragY);
+		// this.windowBorder.setInteractive({ draggable: true });
+		// this.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
+		// {
+		// 	this.setPosition(dragX, dragY);
 
-			// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
+		// 	// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
 
-			this.y = Phaser.Math.Clamp(this.y, 0, 2000);
-		});
+		// 	this.y = Phaser.Math.Clamp(this.y, 0, 2000);
+		// });
 
 		this.closeButton.on('pointerdown', this.close, this);
 
@@ -167,7 +167,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.windowBorder.setSize(width, height);
 		this.minimizeButton.setX(width - 138);
 		this.closeButton.setX(width - 75);
-		this.backing.setSize(width - 17, height - 16);
+		this.insideRect.setSize(width - 17, height - 63);
 	}
 
 	/* END-USER-CODE */

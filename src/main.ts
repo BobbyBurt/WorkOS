@@ -5,6 +5,7 @@ import DebugScene from './scenes/DebugScene';
 import DesktopScene from './scenes/DesktopScene';
 import Preload from './scenes/Preload';
 import ProgramScene from './scenes/programs/ProgramScene';
+import TemplateProgramScene from './scenes/programs/TemplateProgramScene';
 
 
 window.addEventListener('load', function ()
@@ -24,18 +25,8 @@ window.addEventListener('load', function ()
 		scale: {
 			mode: Phaser.Scale.ScaleModes.FIT,
 			autoCenter: Phaser.Scale.CENTER_BOTH,
-			width: 960,
-			height: 540,
-			min: 
-			{
-				width: 960,
-				height: 540
-			},
-			max: 
-			{
-				width: 1920,
-				height: 1080
-			}
+			width: 1920,
+			height: 1080
 		}
 	});
 	
@@ -46,7 +37,7 @@ window.addEventListener('load', function ()
 	game.scene.add('debug-scene', DebugScene);
 
 	// programs
-	game.scene.add('program-scene', ProgramScene);
+	game.scene.add('template-program-scene', TemplateProgramScene);
 });
 
 class Boot extends Phaser.Scene

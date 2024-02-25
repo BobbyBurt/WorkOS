@@ -14,69 +14,91 @@ export default class ProgramScene extends Phaser.Scene {
 		super("program-scene");
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+	}
+}
+
+export class ProgramBaseScene extends Phaser.Scene {
+
+	constructor(key: string)
+	{
+		super(key);
+
 		/* END-USER-CTR-CODE */
 	}
 
 	editorCreate(): void {
 
-		// backing
-		const backing = this.add.rectangle(0, 0, 1000, 800);
-		backing.setOrigin(0, 0);
-		backing.isFilled = true;
+		// start_button
+		const start_button = this.add.image(48, 166, "start-button");
 
-		// toidSketch
-		this.add.image(270, 216, "ToidSketch");
-
-		// toidSketch_1
-		const toidSketch_1 = this.add.image(973, 913, "ToidSketch");
-		toidSketch_1.scaleX = 5.137692520457458;
-		toidSketch_1.scaleY = 3.6653923432747124;
+		this.start_button = start_button;
 
 		this.events.emit("scene-awake");
 	}
 
+	private start_button!: Phaser.GameObjects.Image;
+
 	/* START-USER-CODE */
+
+	readonly width = 700;
+	readonly height = 500;
+
+	private windowPrefab!: WindowPrefab;
+	protected get indowPrefab()
+	{
+		return this.windowPrefab;
+	}
+
+	private windowMask!: Phaser.Display.Masks.BitmapMask;
 
 	init(data:any)
 	{
-		console.debug(data)
+
 	}
 
 	create() {
 
 		this.editorCreate();
 
-		this.scale.on('enterfullscreen', this.resize, this);
-		this.scale.on('leavefullscreen', this.unFullscreen, this);
+		// this.scale.on('enterfullscreen', this.resize, this);
+		// this.scale.on('leavefullscreen', this.unFullscreen, this);
 
-		this.cameras.main.setZoom(.5);
-		this.cameras.main.centerOn(960, 540);
+		this.cameras.main.setViewport
+		(
+			450 * this.cameras.main.zoom, 
+			100 * this.cameras.main.zoom,
+			this.width * this.cameras.main.zoom, 
+			this.height * this.cameras.main.zoom
+			);
+		this.cameras.main.centerOn(this.width / 2, this.height / 2);
 
-		this.cameras.main.setViewport(0, 0, 100, 100);
+		this.windowPrefab = new WindowPrefab(this, 0, 0);
+		this.add.existing(this.windowPrefab);
+		this.windowPrefab.setWindowSize(this.width, this.height);
 
-		const window_2 = new WindowPrefab(this, 888, 344);
-		this.add.existing(window_2);
+		this.windowPrefab.windowBorder.setInteractive({ draggable: true });
+		this.windowPrefab.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
+		{
+			this.cameras.main.setViewport(pointer.x, pointer.y, this.width * this.cameras.main.zoom, this.height * this.cameras.main.zoom);
 
-		this.game.events.emit('scene-created: ' + this.scene.key);
+			// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
+
+			// TODO: create border rect in desktop scene and clamp window
+		});
 	}
 
-	resize(gameSize: any, baseSize: any, displaySize: any, resolution: any)
+	/**
+	 * 
+	 * @param layer All objects in the layer will be masked to `windowPrefabs`'s `insideRect`
+	 */
+	setMask(layer: Phaser.GameObjects.Layer | Phaser.GameObjects.Image)
 	{
-		// console.debug(gameSize, baseSize, displaySize, resolution);
-		console.debug('resize');
-
-		// this.scale.setGameSize(this.scale.displaySize.width, this.scale.displaySize.height);
-		this.scale.setGameSize(1920, 1080);
-		this.cameras.main.setZoom(1);
-		this.cameras.main.centerOn(960, 540);
-	}
-
-	unFullscreen()
-	{
-		this.scale.setGameSize(960, 540);
-		this.cameras.main.setZoom(.5);
-		this.cameras.main.centerOn(960, 540);
+		// LEFTOFF: mask won't work. Both the layer and mask are defined. The mask itself works on other objects added to the scene from this class, but not the other class.
+		
+		this.windowMask = this.windowPrefab.insideRect.createBitmapMask();
+		layer.setMask(this.windowMask);
+		
+		this.windowPrefab.insideRect.setVisible(false);
 	}
 
 	/* END-USER-CODE */

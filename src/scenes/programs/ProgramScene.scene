@@ -2,47 +2,29 @@
     "id": "377ee9e8-7e78-4c4a-91ad-b97a2d924e25",
     "sceneType": "SCENE",
     "settings": {
+        "snapWidth": 10,
+        "snapHeight": 10,
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "program-scene",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderWidth": 1000,
-        "borderHeight": 800
+        "borderY": 60,
+        "borderWidth": 700,
+        "borderHeight": 500
     },
     "displayList": [
         {
-            "type": "Rectangle",
-            "id": "829a8bcd-fbdf-493f-8d30-824826b28ab2",
-            "label": "backing",
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "width": 1000,
-            "height": 800
-        },
-        {
             "type": "Image",
-            "id": "c2645fd3-e880-49cb-abb1-5ce6f9921866",
-            "label": "toidSketch",
+            "id": "c6c23f29-f302-4118-81f1-84af7c407c1e",
+            "label": "start_button",
+            "scope": "CLASS",
             "texture": {
-                "key": "ToidSketch"
+                "key": "start-button"
             },
-            "x": 270,
-            "y": 216
-        },
-        {
-            "type": "Image",
-            "id": "540bec73-9922-48ee-b85e-d84c517bba66",
-            "label": "toidSketch_1",
-            "texture": {
-                "key": "ToidSketch"
-            },
-            "x": 973,
-            "y": 913,
-            "scaleX": 5.137692520457458,
-            "scaleY": 3.6653923432747124
+            "x": 48,
+            "y": 166
         }
     ],
     "plainObjects": [],

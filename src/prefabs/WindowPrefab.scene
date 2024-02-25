@@ -48,24 +48,25 @@
                 {
                     "type": "Rectangle",
                     "id": "b3d1e332-f720-465d-93c8-f8de62237cb0",
-                    "label": "backing",
-                    "scope": "CLASS",
+                    "label": "insideRect",
+                    "scope": "PUBLIC",
                     "x": 9,
-                    "y": 7,
+                    "y": 60,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
                     "width": 983,
-                    "height": 284
+                    "height": 240
                 },
                 {
                     "type": "NineSlice",
                     "id": "0cc1d3fc-3d3a-4105-9da7-f28b2978cc74",
                     "label": "windowBorder",
-                    "scope": "CLASS",
+                    "scope": "PUBLIC",
                     "texture": {
                         "key": "window-title-bar"
                     },
+                    "y": 7,
                     "originX": 0,
                     "originY": 0,
                     "width": 1000,
@@ -87,7 +88,7 @@
                         "key": "window-minimize-button"
                     },
                     "x": 862,
-                    "y": -6,
+                    "y": 1,
                     "originX": 0,
                     "originY": 0
                 },
@@ -103,7 +104,7 @@
                         "key": "window-close-button"
                     },
                     "x": 925,
-                    "y": -2,
+                    "y": 5,
                     "originX": 0,
                     "originY": 0
                 }
