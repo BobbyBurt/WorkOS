@@ -18,6 +18,12 @@
             "type": "Layer",
             "id": "60df11c1-aead-4951-b829-6256d2af63af",
             "label": "mainLayer",
+            "scope": "CLASS"
+        },
+        {
+            "type": "Container",
+            "id": "5628b6df-975c-4c9a-975f-a7121e68bded",
+            "label": "mainContainer",
             "scope": "CLASS",
             "list": [
                 {
@@ -27,6 +33,7 @@
                     "y": 60,
                     "originX": 0,
                     "originY": 0,
+                    "visible": false,
                     "isFilled": true,
                     "width": 700,
                     "height": 500
@@ -39,8 +46,8 @@
                     "texture": {
                         "key": "Tank"
                     },
-                    "x": 9,
-                    "y": 87
+                    "x": 13,
+                    "y": 505
                 },
                 {
                     "type": "Image",
@@ -60,8 +67,8 @@
                     "texture": {
                         "key": "taskbar-window-button"
                     },
-                    "x": 591,
-                    "y": 532,
+                    "x": 583,
+                    "y": 520,
                     "originX": 0,
                     "originY": 0
                 }

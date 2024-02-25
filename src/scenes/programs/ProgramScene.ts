@@ -28,63 +28,98 @@ export class ProgramBaseScene extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// start_button
-		const start_button = this.add.image(48, 166, "start-button");
+		// programMaskRect
+		const programMaskRect = this.add.rectangle(0, 60, 700, 500);
+		programMaskRect.setOrigin(0, 0);
+		programMaskRect.isFilled = true;
 
-		this.start_button = start_button;
+		this.programMaskRect = programMaskRect;
 
 		this.events.emit("scene-awake");
 	}
 
-	private start_button!: Phaser.GameObjects.Image;
+	private programMaskRect!: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
-	readonly width = 700;
-	readonly height = 500;
-
-	private windowPrefab!: WindowPrefab;
-	protected get indowPrefab()
+	readonly programMaskSizeOffset = 
 	{
-		return this.windowPrefab;
+		X: 9,
+		Y: 60,
+		width: -17,
+		height: -63,
 	}
 
-	private windowMask!: Phaser.Display.Masks.BitmapMask;
+	private windowPrefab!: WindowPrefab;
+
+
+	private programMask!: Phaser.Display.Masks.GeometryMask;
+
+	public _programContainer!: Phaser.GameObjects.Container;
+	protected get programContainer()
+	{
+		return this._programContainer;
+	}
+	protected set programContainer(value: Phaser.GameObjects.Container)
+	{
+		this._programContainer = value;
+	}
+
 
 	init(data:any)
 	{
 
 	}
 
-	create() {
+	create(width: number, height: number)
+	{
+		// I have a feeling I'll need to have need to access the width and height in this class later on, which isn't possible this way. But I don't want duplicate vars.
 
-		this.editorCreate();
+		// usually I'd call editorCreate() here but for some reason when the child calls super.create() then editorCreate() doesn't seem to run? So I'm calling both in the child class
 
-		// this.scale.on('enterfullscreen', this.resize, this);
-		// this.scale.on('leavefullscreen', this.unFullscreen, this);
+		// camera
+		this.cameras.main.centerOn(960, 540);
 
-		this.cameras.main.setViewport
-		(
-			450 * this.cameras.main.zoom, 
-			100 * this.cameras.main.zoom,
-			this.width * this.cameras.main.zoom, 
-			this.height * this.cameras.main.zoom
-			);
-		this.cameras.main.centerOn(this.width / 2, this.height / 2);
-
+		// window
 		this.windowPrefab = new WindowPrefab(this, 0, 0);
 		this.add.existing(this.windowPrefab);
-		this.windowPrefab.setWindowSize(this.width, this.height);
+		this.windowPrefab.setDepth(10);
+		this.windowPrefab.setWindowSize(width, height);
+		
+		// program mask
+		this.programMaskRect.setSize
+		(
+			width + this.programMaskSizeOffset.width, 
+			height + this.programMaskSizeOffset.height
+		);
+		this.programMaskRect.setPosition
+		(
+			this.programMaskSizeOffset.X, 
+			this.programMaskSizeOffset.Y
+		);
 
+		// drag
 		this.windowPrefab.windowBorder.setInteractive({ draggable: true });
 		this.windowPrefab.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
 		{
-			this.cameras.main.setViewport(pointer.x, pointer.y, this.width * this.cameras.main.zoom, this.height * this.cameras.main.zoom);
+			this.windowPrefab.setPosition(dragX, dragY);
+			this.programMaskRect.setPosition
+			(
+				dragX + this.programMaskSizeOffset.X, 
+				dragY + this.programMaskSizeOffset.Y
+			);
+			this.programContainer.setPosition(dragX, dragY);
+
 
 			// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
 
 			// TODO: create border rect in desktop scene and clamp window
 		});
+	}
+
+	update()
+	{
+
 	}
 
 	/**
@@ -93,12 +128,8 @@ export class ProgramBaseScene extends Phaser.Scene {
 	 */
 	setMask(layer: Phaser.GameObjects.Layer | Phaser.GameObjects.Image)
 	{
-		// LEFTOFF: mask won't work. Both the layer and mask are defined. The mask itself works on other objects added to the scene from this class, but not the other class.
-		
-		this.windowMask = this.windowPrefab.insideRect.createBitmapMask();
-		layer.setMask(this.windowMask);
-		
-		this.windowPrefab.insideRect.setVisible(false);
+		this.programMask = this.programMaskRect.createGeometryMask();
+		this.programContainer.setMask(this.programMask);
 	}
 
 	/* END-USER-CODE */

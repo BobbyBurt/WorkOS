@@ -22,31 +22,6 @@
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "29895d6d-041e-4422-9b89-ed6d3b6db51a",
-                    "label": "window",
-                    "scope": "PUBLIC",
-                    "originX": 0,
-                    "originY": 0,
-                    "visible": false,
-                    "isFilled": true,
-                    "width": 1000,
-                    "height": 800
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "964d1970-577f-4ca7-b938-2e74e48c6a44",
-                    "label": "topBar",
-                    "scope": "CLASS",
-                    "originX": 0,
-                    "originY": 0,
-                    "visible": false,
-                    "isFilled": true,
-                    "fillColor": "#bfbfbf",
-                    "width": 1000,
-                    "height": 50
-                },
-                {
-                    "type": "Rectangle",
                     "id": "b3d1e332-f720-465d-93c8-f8de62237cb0",
                     "label": "insideRect",
                     "scope": "PUBLIC",
@@ -54,7 +29,9 @@
                     "y": 60,
                     "originX": 0,
                     "originY": 0,
+                    "visible": false,
                     "isFilled": true,
+                    "fillColor": "#ad2d2d",
                     "width": 983,
                     "height": 240
                 },

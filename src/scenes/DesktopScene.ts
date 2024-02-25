@@ -83,30 +83,6 @@ export default class DesktopScene extends Phaser.Scene {
 		minimizeButton.setOrigin(0, 0);
 		windowContainer.add(minimizeButton);
 
-		// start_button_1
-		const start_button_1 = this.add.image(1015, 603, "start-button");
-		start_button_1.scaleX = 0.5;
-		start_button_1.scaleY = 0.5;
-
-		// tank
-		this.add.image(784, 673, "Tank");
-
-		// tank_1
-		const tank_1 = this.add.image(1164, 390, "Tank");
-		tank_1.scaleX = 0.5;
-		tank_1.scaleY = 0.5;
-
-		// toidSketch
-		this.add.image(972, 371, "ToidSketch");
-
-		// toidSketch_1
-		const toidSketch_1 = this.add.image(1196, 622, "ToidSketch");
-		toidSketch_1.scaleX = 0.5;
-		toidSketch_1.scaleY = 0.5;
-
-		// start_button_2
-		this.add.image(1013, 678, "start-button");
-
 		// icon (prefab fields)
 		icon.programName = "Browser";
 		icon.iconTextureKey = "Tank";

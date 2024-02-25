@@ -14,25 +14,12 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
-		// window
-		const window = scene.add.rectangle(0, 0, 1000, 800);
-		window.setOrigin(0, 0);
-		window.visible = false;
-		window.isFilled = true;
-		this.add(window);
-
-		// topBar
-		const topBar = scene.add.rectangle(0, 0, 1000, 50);
-		topBar.setOrigin(0, 0);
-		topBar.visible = false;
-		topBar.isFilled = true;
-		topBar.fillColor = 12566463;
-		this.add(topBar);
-
 		// insideRect
 		const insideRect = scene.add.rectangle(9, 60, 983, 240);
 		insideRect.setOrigin(0, 0);
+		insideRect.visible = false;
 		insideRect.isFilled = true;
+		insideRect.fillColor = 11349293;
 		this.add(insideRect);
 
 		// windowBorder
@@ -56,8 +43,6 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		// closeButton (components)
 		new PointerButton(closeButton);
 
-		this.window = window;
-		this.topBar = topBar;
 		this.insideRect = insideRect;
 		this.windowBorder = windowBorder;
 		this.minimizeButton = minimizeButton;
@@ -72,8 +57,6 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public window: Phaser.GameObjects.Rectangle;
-	private topBar: Phaser.GameObjects.Rectangle;
 	public insideRect: Phaser.GameObjects.Rectangle;
 	public windowBorder: Phaser.GameObjects.NineSlice;
 	private minimizeButton: Phaser.GameObjects.Image;
@@ -82,79 +65,22 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
-	private pageSize: { width: number, height: number }
-	public minimized = false;
-
-	private debugScene: DebugScene;
-
-	private minimizeTween: Phaser.Tweens.Tween;
-
 	create()
 	{
-		this.debugScene = this.scene.scene.get('debug-scene') as DebugScene;
 
-		this.pageSize = { height: 0, width: 0};
-		this.pageSize.height = this.getBounds().height;
-		this.pageSize.width = this.getBounds().width;
+		this.closeButton.on('pointerdown', this.onCloseButton, this);
 
-		this.window.setInteractive();
-		this.window.on('wheel', (pointer: any, deltaX: any, deltaY: any, deltaZ: any) =>
-		{
-			// let y = this.page.y - deltaY;
-			// y = Phaser.Math.Clamp(y, -this.pageSize.height + this.window.height, 0);
-			// this.page.setY(y);
-		});
-
-		// this.windowBorder.setInteractive({ draggable: true });
-		// this.windowBorder.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
-		// {
-		// 	this.setPosition(dragX, dragY);
-
-		// 	// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
-
-		// 	this.y = Phaser.Math.Clamp(this.y, 0, 2000);
-		// });
-
-		this.closeButton.on('pointerdown', this.close, this);
-
-		this.minimizeButton.on('click', this.setMinimize, this);
+		this.minimizeButton.on('click', this.onMinimizeButton, this);
 	}
 
-	/**
-	 * Toggle minimize
-	 * 
-	 * Later this will be an actual set with a bool parameter
-	 */
-	public setMinimize()
-	{
-		let endAlpha = (this.minimized ? 1 : 0);
-		let endScale = (this.minimized ? 1 : .8);
-
-		if (this.minimizeTween)
-		{
-			this.minimizeTween.stop();
-		}
-		this.minimizeTween = this.scene.tweens.add
-		({
-			targets: this,
-			duration: 1000,
-			ease: Phaser.Math.Easing.Linear,
-			alpha: endAlpha,
-			scale: endScale,
-			onComplete: () =>
-			{
-				this.minimized = !this.minimized
-			}
-		});
-	}
-
-	private close()
+	private onCloseButton()
 	{	
-		this.destroy();
+		this.scene.events.emit('close');
 	}
 
-	update()
+	private onMinimizeButton()
 	{
+		this.scene.events.emit('minimize');
 	}
 
 	/**

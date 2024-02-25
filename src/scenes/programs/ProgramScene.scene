@@ -16,15 +16,16 @@
     },
     "displayList": [
         {
-            "type": "Image",
-            "id": "c6c23f29-f302-4118-81f1-84af7c407c1e",
-            "label": "start_button",
+            "type": "Rectangle",
+            "id": "1e5c9896-2610-4789-8b01-ddc2432f462d",
+            "label": "programMaskRect",
             "scope": "CLASS",
-            "texture": {
-                "key": "start-button"
-            },
-            "x": 48,
-            "y": 166
+            "y": 60,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 700,
+            "height": 500
         }
     ],
     "plainObjects": [],
