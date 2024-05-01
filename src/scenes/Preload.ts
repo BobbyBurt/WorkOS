@@ -10,7 +10,7 @@ import Phaser from "phaser";
 export default class Preload extends Phaser.Scene {
 
 	constructor() {
-		super("Preload");
+		super("preload");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -41,8 +41,7 @@ export default class Preload extends Phaser.Scene {
 
 	loaded = false
 
-	preload()
-	{
+	preload() {
 		this.editorCreate();
 
 		this.editorPreload();
@@ -54,48 +53,43 @@ export default class Preload extends Phaser.Scene {
 		// TEMP 
 		this.game.registry.set('total-score', 0);
 
-	// camera
-		this.cameras.main.setOrigin(0, 0); 	
+		// camera
+		this.cameras.main.setOrigin(0, 0);
 		this.cameras.main.setViewport(0, 0, this.scale.width, this.scale.height);
 		this.cameras.main.setBackgroundColor(0x242424);
 
-	// start input
+		// start input
 		// window.addEventListener('touchstart', this.onPointer);
 		// window.addEventListener('click', this.onPointer);
 
-	// load event
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => 
-		{
+		// load event
+		this.load.on(Phaser.Loader.Events.COMPLETE, () => {
 			this.loaded = true;
 
-		// DEBUG: auto load
-			if (__DEV__)
-			{
+			// DEBUG: auto load
+			if (__DEV__) {
 				// this.start();
-					// mobile detection will not run if enabled
+				// mobile detection will not run if enabled
 			}
 		});
 
-		this.load.on('filecomplete', (key: string, type: string, data: any) =>
-		{
+		this.load.on('filecomplete', (key: string, type: string, data: any) => {
 			// this.fileText.setText(this.fileText.text + `\nloaded: ${key} ${type}`)
 			// this.fileText.setY(this.fileText.y - 10)
 		});
 
-		this.load.on('complete', (key: string, type: string, data: any) =>
-		{
+		this.load.on('complete', (key: string, type: string, data: any) => {
 			this.cameras.main.fadeOut(200, 255, 255, 255);
-			this.time.delayedCall(1000, () =>
-			{
+			this.time.delayedCall(1000, () => {
 				this.scene.stop(this);
-				this.scene.launch("desktop-scene");
-				this.scene.launch("overlap-scene");
+				this.scene.launch("desktop");
+				this.scene.launch("overlap");
 			});
 		});
 
-		this.scene.launch('medal-scene');
+		this.scene.launch('medal');
 
-		this.scene.launch('debug-scene');
+		this.scene.launch('debug');
 	}
 
 	/** 
@@ -152,8 +146,7 @@ export default class Preload extends Phaser.Scene {
 	// 	// this.scene.launch("LevelSelect");
 	// }
 
-	resize()
-	{
+	resize() {
 		// this.cameras.main.centerOn(0, 0);
 	}
 

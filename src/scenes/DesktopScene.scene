@@ -6,7 +6,7 @@
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "desktop-scene",
+        "sceneKey": "desktop",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
@@ -42,11 +42,13 @@
                 "y",
                 "iconTextureKey",
                 "programName",
-                "pageKey"
+                "pageKey",
+                "sceneKey"
             ],
             "label": "icon",
             "programName": "Browser",
             "iconTextureKey": "Tank",
+            "sceneKey": "email-program",
             "x": 758,
             "y": 65
         },
@@ -79,7 +81,7 @@
             "label": "icon_2",
             "programName": "Program",
             "iconTextureKey": "Tank",
-            "sceneKey": "program-scene",
+            "sceneKey": "template-program",
             "x": 794,
             "y": 368
         },

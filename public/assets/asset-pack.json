@@ -7,9 +7,27 @@
                 "key": "desktop-bg"
             },
             {
+                "url": "assets/images/icon-temp.png",
+                "type": "image",
+                "key": "icon-temp"
+            },
+            {
                 "url": "assets/images/Moniter0001(1).png",
                 "type": "image",
                 "key": "moniter"
+            },
+            {
+                "textureURL": "assets/fonts/nokia.png",
+                "fontDataURL": "assets/fonts/nokia.xml",
+                "type": "bitmapFont",
+                "key": "nokia"
+            },
+            {
+                "url": [
+                    "assets/music/StanleyParable-ExploringStanley.wav"
+                ],
+                "type": "audio",
+                "key": "StanleyParable-ExploringStanley"
             },
             {
                 "url": "assets/images/Start0001(1).png",

@@ -6,7 +6,7 @@
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "overlap-scene",
+        "sceneKey": "overlap",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
@@ -43,6 +43,7 @@
                 "y"
             ],
             "label": "taskbarPrefab",
+            "scope": "PUBLIC",
             "x": 323,
             "y": 934
         },

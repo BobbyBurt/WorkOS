@@ -18,42 +18,44 @@
             "label": "taskContainer",
             "list": [
                 {
-                    "type": "Rectangle",
-                    "id": "20d86ddd-da74-4005-a00f-86b60f17f71d",
-                    "label": "backing",
+                    "type": "ThreeSlice",
+                    "id": "d6da8b89-8d08-4286-b83a-1d8883bad17d",
+                    "label": "backSlice",
                     "scope": "PUBLIC",
-                    "components": [
-                        "PointerButton"
-                    ],
+                    "texture": {
+                        "key": "taskbar-window-button"
+                    },
                     "originX": 0,
                     "originY": 0,
-                    "isFilled": true,
-                    "fillColor": "#c9c9c9",
-                    "width": 200,
-                    "height": 50
+                    "width": 220,
+                    "height": 55,
+                    "leftWidth": 22,
+                    "rightWidth": 20
                 },
                 {
-                    "type": "Text",
-                    "id": "34effd11-3334-4852-92e5-826b93a5d86f",
+                    "type": "Image",
+                    "id": "a9364742-a64d-4ee4-8276-9260c2eb5074",
+                    "label": "window_minimize_button",
+                    "scope": "PUBLIC",
+                    "texture": {
+                        "key": "window-minimize-button"
+                    },
+                    "x": 33,
+                    "y": 27,
+                    "scaleX": 0.3645750561186374,
+                    "scaleY": 0.3645750561186374,
+                    "angle": -90
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "3b872389-15e4-4d32-8c5a-95c51c634a3f",
                     "label": "nameText",
                     "scope": "PUBLIC",
-                    "x": 47,
-                    "y": 13,
-                    "text": "Task Name",
-                    "fontSize": "24px",
-                    "fontStyle": "bold",
-                    "color": "#000000ff"
-                },
-                {
-                    "type": "Ellipse",
-                    "id": "b371d300-93ab-4def-979c-42347d34d596",
-                    "label": "ellipse_1",
-                    "x": 23,
-                    "y": 25,
-                    "isFilled": true,
-                    "fillColor": "#000000",
-                    "width": 20,
-                    "height": 20
+                    "x": 56,
+                    "y": 20,
+                    "text": "New BitmapText",
+                    "font": "nokia",
+                    "fontSize": -16
                 }
             ]
         }

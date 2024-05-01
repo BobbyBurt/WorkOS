@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -9,132 +10,114 @@ import IconPrefab from "../prefabs/IconPrefab";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
+  constructor() {
+    super("desktop");
 
-	constructor() {
-		super("desktop-scene");
+    /* START-USER-CTR-CODE */
+    // Write your code here.
+    /* END-USER-CTR-CODE */
+  }
 
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
+  editorCreate(): void {
+    // monitorEdge1
+    const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
+    monitorEdge1.setOrigin(0, 0);
+    monitorEdge1.isFilled = true;
+    monitorEdge1.fillColor = 13882323;
 
-	editorCreate(): void {
+    // desktop_bg
+    const desktop_bg = this.add.image(334, 0, "desktop-bg");
+    desktop_bg.setOrigin(0, 0);
 
-		// monitorEdge1
-		const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
-		monitorEdge1.setOrigin(0, 0);
-		monitorEdge1.isFilled = true;
-		monitorEdge1.fillColor = 13882323;
+    // icon
+    const icon = new IconPrefab(this, 758, 65);
+    this.add.existing(icon);
 
-		// desktop_bg
-		const desktop_bg = this.add.image(334, 0, "desktop-bg");
-		desktop_bg.setOrigin(0, 0);
+    // icon_1
+    const icon_1 = new IconPrefab(this, 936, 101);
+    this.add.existing(icon_1);
 
-		// icon
-		const icon = new IconPrefab(this, 758, 65);
-		this.add.existing(icon);
+    // icon_2
+    const icon_2 = new IconPrefab(this, 794, 368);
+    this.add.existing(icon_2);
 
-		// icon_1
-		const icon_1 = new IconPrefab(this, 936, 101);
-		this.add.existing(icon_1);
+    // windowMask
+    const windowMask = this.add.image(456, 209, "white-px");
+    windowMask.scaleX = 1400;
+    windowMask.scaleY = 800;
+    windowMask.setOrigin(0, 0);
+    windowMask.visible = false;
 
-		// icon_2
-		const icon_2 = new IconPrefab(this, 794, 368);
-		this.add.existing(icon_2);
+    // moniter
+    const moniter = this.add.image(127, 0, "moniter");
+    moniter.setOrigin(0, 0);
 
-		// windowMask
-		const windowMask = this.add.image(456, 209, "white-px");
-		windowMask.scaleX = 1400;
-		windowMask.scaleY = 800;
-		windowMask.setOrigin(0, 0);
-		windowMask.visible = false;
+    // desktopRect
+    const desktopRect = this.add.rectangle(387, 70, 1165, 860);
+    desktopRect.setOrigin(0, 0);
+    desktopRect.visible = false;
+    desktopRect.isFilled = true;
 
-		// moniter
-		const moniter = this.add.image(127, 0, "moniter");
-		moniter.setOrigin(0, 0);
+    // icon (prefab fields)
+    icon.programName = "Browser";
+    icon.iconTextureKey = "Tank";
+    icon.sceneKey = "email-program";
 
-		// desktopRect
-		const desktopRect = this.add.rectangle(387, 70, 1165, 860);
-		desktopRect.setOrigin(0, 0);
-		desktopRect.visible = false;
-		desktopRect.isFilled = true;
+    // icon_1 (prefab fields)
+    icon_1.programName = "Fullscreen";
+    icon_1.iconTextureKey = "ToidSketch";
 
-		// icon (prefab fields)
-		icon.programName = "Browser";
-		icon.iconTextureKey = "Tank";
+    // icon_2 (prefab fields)
+    icon_2.programName = "Program";
+    icon_2.iconTextureKey = "Tank";
+    icon_2.sceneKey = "template-program";
 
-		// icon_1 (prefab fields)
-		icon_1.programName = "Fullscreen";
-		icon_1.iconTextureKey = "ToidSketch";
+    this.windowMask = windowMask;
+    this.desktopRect = desktopRect;
 
-		// icon_2 (prefab fields)
-		icon_2.programName = "Program";
-		icon_2.iconTextureKey = "Tank";
-		icon_2.sceneKey = "program-scene";
+    this.events.emit("scene-awake");
+  }
 
-		this.windowMask = windowMask;
-		this.desktopRect = desktopRect;
+  private windowMask!: Phaser.GameObjects.Image;
+  public desktopRect!: Phaser.GameObjects.Rectangle;
 
-		this.events.emit("scene-awake");
-	}
+  /* START-USER-CODE */
 
-	private windowMask!: Phaser.GameObjects.Image;
-	public desktopRect!: Phaser.GameObjects.Rectangle;
+  public desktopGeomRect!: Phaser.Geom.Rectangle;
 
-	/* START-USER-CODE */
+  create() {
+    this.editorCreate();
 
-	public desktopGeomRect!: Phaser.Geom.Rectangle;
+    this.scale.on("enterfullscreen", this.resize, this);
+    this.scale.on("leavefullscreen", this.unFullscreen, this);
 
-	create() {
+    this.cameras.main.centerOn(960, 540);
 
-		this.editorCreate();
+    this.desktopGeomRect = new Phaser.Geom.Rectangle(
+      this.desktopRect.x,
+      this.desktopRect.y,
+      this.desktopRect.width,
+      this.desktopRect.height
+    );
 
-		// this.scale.on('enterfullscreen', this.resize, this);
-		// this.scale.on('leavefullscreen', this.unFullscreen, this);
+    // this.cameras.main.postFX.addBarrel(1.05);
 
-		this.cameras.main.centerOn(960, 540);
+    this.game.events.on("scene-created: program", () => {});
 
-		this.desktopGeomRect = new Phaser.Geom.Rectangle
-		(
-			this.desktopRect.x,
-			this.desktopRect.y,
-			this.desktopRect.width,
-			this.desktopRect.height
-		);
+    // this.window.setWindowSize(700, 300);
+    // this.window_1.setWindowSize(500, 500);
+    // this.window_2.setWindowSize(700, 500);
+  }
 
-		// this.windowTopBar.setInteractive({ draggable: true });
-		// this.windowTopBar.on('drag', (pointer: Phaser.Input.Pointer, dragX: any, dragY: any) =>
-		// {
-		// 	this.windowTopBar.setPosition(dragX, dragY);
+  update() {}
 
-		// 	// Okay im not having any luck fixing this. The issue has to do with the top bar being the interactable thing but the container is what's being moved. Dragging resets it to 0, 0. I tried having the container interactive with a set size, but that size is really small for some reason, the size is wack.
+  public addWindow(sceneKey: string) {
+    // this.scene.launch(sceneKey);
+    this.scene.launch(sceneKey);
+    this.scene.bringToTop("overlap");
+  }
 
-		// 	// this.windowTopBar.y = Phaser.Math.Clamp(this.windowTopBar.y, 0, 2000);
-		// });
-
-		this.game.events.on('scene-created: program-scene', () =>
-		{
-
-		});
-
-		// this.window.setWindowSize(700, 300);
-		// this.window_1.setWindowSize(500, 500);
-		// this.window_2.setWindowSize(700, 500);
-	}
-
-	update()
-	{
-
-	}
-
-	public addWindow(sceneKey: string)
-	{
-		// this.scene.launch(sceneKey);
-		this.scene.launch('template-program-scene');
-		this.scene.bringToTop('overlap-scene');
-	}
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

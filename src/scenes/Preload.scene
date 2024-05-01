@@ -9,7 +9,7 @@
             "starter-template-basic-typescript/assets/asset-pack.json"
         ],
         "createMethodName": "editorCreate",
-        "sceneKey": "Preload",
+        "sceneKey": "preload",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 480,
         "borderHeight": 270

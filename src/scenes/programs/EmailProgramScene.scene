@@ -1,0 +1,97 @@
+{
+    "id": "81b464ea-02dc-4a0d-b05b-650922c0fc8c",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "ProgramBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "email-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60,
+        "borderWidth": 700,
+        "borderHeight": 500
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "f605efc4-d1b9-4067-baa0-236f9d3064cb",
+            "label": "scrollTestMask",
+            "scope": "CLASS",
+            "x": 371,
+            "y": 110,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#cdcdcd",
+            "width": 300,
+            "height": 400
+        },
+        {
+            "type": "Container",
+            "id": "4da26455-46c0-430c-baac-938793d1b553",
+            "label": "scrollContainerTest",
+            "scope": "CLASS",
+            "components": [
+                "ScrollField"
+            ],
+            "ScrollField.maskRect": "scrollTestMask",
+            "x": 361,
+            "y": 122,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "db2b75c8-f730-44f9-b0a2-79d77a785f0e",
+                    "label": "rectangle_1",
+                    "x": 287,
+                    "y": 229,
+                    "isFilled": true,
+                    "fillColor": "#c95757",
+                    "width": 128,
+                    "height": 128
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "58e1a708-5d33-488e-9561-3e37a63b3808",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "97345c33-528f-47a8-ad78-e62dd23f3c06",
+                    "label": "start_button",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "start-button"
+                    },
+                    "x": 182,
+                    "y": 245
+                },
+                {
+                    "type": "Image",
+                    "id": "23dbd81e-ea3a-4eb9-bca8-43a36f8c2f9a",
+                    "label": "desktop_gen",
+                    "texture": {
+                        "key": "desktop-gen"
+                    },
+                    "x": 219,
+                    "y": 291,
+                    "scaleX": 0.2451008495379191,
+                    "scaleY": 0.2451008495379191
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

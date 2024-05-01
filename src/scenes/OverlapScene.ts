@@ -11,7 +11,7 @@ import TaskbarPrefab from "../prefabs/TaskbarPrefab";
 export default class OverlapScene extends Phaser.Scene {
 
 	constructor() {
-		super("overlap-scene");
+		super("overlap");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
@@ -40,8 +40,12 @@ export default class OverlapScene extends Phaser.Scene {
 		const moniter = this.add.image(127, 0, "moniter");
 		moniter.setOrigin(0, 0);
 
+		this.taskbarPrefab = taskbarPrefab;
+
 		this.events.emit("scene-awake");
 	}
+
+	public taskbarPrefab!: TaskbarPrefab;
 
 	/* START-USER-CODE */
 
@@ -51,7 +55,12 @@ export default class OverlapScene extends Phaser.Scene {
 
 		this.editorCreate();
 
+		this.input.keyboard?.on('keydown', () =>
+		{
+			this.taskbarPrefab.start();
+		})
 
+		// this.cameras.main.postFX.addBarrel(1.05);
 
 	}
 

@@ -31,25 +31,6 @@
                     "originY": 0
                 },
                 {
-                    "type": "Text",
-                    "id": "70c7c84f-8987-419d-b960-57026689b73c",
-                    "label": "nameText",
-                    "scope": "CLASS",
-                    "x": 45,
-                    "y": 129,
-                    "originX": 0.5,
-                    "originY": 0.5,
-                    "text": "Untitled Icon",
-                    "align": "center",
-                    "fontSize": "24px",
-                    "fontStyle": "bold",
-                    "stroke": "#000000ff",
-                    "strokeThickness": 5,
-                    "backgroundColor": "",
-                    "shadow.offsetY": 1,
-                    "wordWrapWidth": 100
-                },
-                {
                     "type": "Rectangle",
                     "id": "8376a6f7-3165-45b8-aa9b-861efaf4ba11",
                     "label": "selectRect",
@@ -67,6 +48,19 @@
                     "isStroked": true,
                     "width": 140,
                     "height": 170
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "265ef0a6-24e9-41b7-a432-d6c99ab9a29f",
+                    "label": "nameText",
+                    "scope": "CLASS",
+                    "x": 44,
+                    "y": 120,
+                    "originX": 0.5,
+                    "text": "New BitmapText",
+                    "font": "nokia",
+                    "align": 1,
+                    "fontSize": -16
                 }
             ]
         }

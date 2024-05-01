@@ -20,14 +20,6 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 		iconImage.setOrigin(0, 0);
 		this.add(iconImage);
 
-		// nameText
-		const nameText = scene.add.text(45, 129, "", {});
-		nameText.setOrigin(0.5, 0.5);
-		nameText.text = "Untitled Icon";
-		nameText.setStyle({ "align": "center", "backgroundColor": "", "fontSize": "24px", "fontStyle": "bold", "stroke": "#000000ff", "strokeThickness":5,"shadow.offsetY":1});
-		nameText.setWordWrapWidth(100);
-		this.add(nameText);
-
 		// selectRect
 		const selectRect = scene.add.rectangle(-25, 0, 140, 170);
 		selectRect.setOrigin(0, 0);
@@ -41,9 +33,17 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 		selectRect.lineWidth = 2;
 		this.add(selectRect);
 
+		// nameText
+		const nameText = scene.add.bitmapText(44, 120, "nokia", "New BitmapText");
+		nameText.setOrigin(0.5, 0);
+		nameText.text = "New BitmapText";
+		nameText.fontSize = -16;
+		nameText.align = 1;
+		this.add(nameText);
+
 		this.iconImage = iconImage;
-		this.nameText = nameText;
 		this.selectRect = selectRect;
+		this.nameText = nameText;
 
 		/* START-USER-CTR-CODE */
 
@@ -53,8 +53,8 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 	}
 
 	private iconImage: Phaser.GameObjects.Image;
-	private nameText: Phaser.GameObjects.Text;
 	private selectRect: Phaser.GameObjects.Rectangle;
+	private nameText: Phaser.GameObjects.BitmapText;
 	public programName: string = "";
 	public iconTextureKey: string = "ToidSketch";
 	public sceneKey: string = "";

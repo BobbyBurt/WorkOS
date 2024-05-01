@@ -96,6 +96,30 @@
                     "isFilled": true,
                     "width": 850,
                     "height": 65
+                },
+                {
+                    "type": "Image",
+                    "id": "d387a8b5-272e-4db5-998d-95c856ef54a2",
+                    "label": "icon_temp",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "icon-temp"
+                    },
+                    "x": 38,
+                    "y": 35,
+                    "scaleX": 1.7389250244694119,
+                    "scaleY": 1.7389250244694119
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "4d7ddf47-6a31-4a7f-9843-fdd40fb7b3c4",
+                    "label": "programNameText",
+                    "scope": "PUBLIC",
+                    "x": 63,
+                    "y": 27,
+                    "text": "New BitmapText",
+                    "font": "nokia",
+                    "fontSize": -16
                 }
             ]
         }
@@ -106,17 +130,5 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    },
-    "prefabProperties": [
-        {
-            "name": "displayName",
-            "label": "DisplayName",
-            "tooltip": "",
-            "defValue": "Unnamed Window",
-            "customDefinition": false,
-            "type": {
-                "id": "string"
-            }
-        }
-    ]
+    }
 }

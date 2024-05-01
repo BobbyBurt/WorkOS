@@ -6,7 +6,7 @@
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "debug-scene",
+        "sceneKey": "debug",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 960,
         "borderHeight": 540

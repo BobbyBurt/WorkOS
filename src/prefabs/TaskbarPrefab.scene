@@ -52,30 +52,10 @@
                     "texture": {
                         "key": "taskbar-window-button"
                     },
-                    "x": 301,
-                    "y": 15,
+                    "x": 340,
+                    "y": 155,
                     "originX": 0,
                     "originY": 0
-                },
-                {
-                    "type": "Text",
-                    "id": "481321fc-e96e-4025-8a54-7b0c94f339ed",
-                    "label": "text_1",
-                    "x": 325,
-                    "y": 29,
-                    "text": "Program name",
-                    "fontFamily": "Verdana",
-                    "fontSize": "20px"
-                },
-                {
-                    "type": "Text",
-                    "id": "ba41bb3c-dbe3-4f8e-8199-7f4fab524cee",
-                    "label": "text",
-                    "x": 1094,
-                    "y": 29,
-                    "text": "9:04 am",
-                    "fontFamily": "Verdana",
-                    "fontSize": "24px"
                 }
             ]
         }

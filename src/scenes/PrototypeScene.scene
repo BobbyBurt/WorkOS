@@ -1,0 +1,148 @@
+{
+    "id": "faae212b-f0a5-4089-99ff-f9d6a3c860fa",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [
+            "WorkOS-source/public/assets/prototype/prototype-asset-pack.json"
+        ],
+        "createMethodName": "editorCreate",
+        "sceneKey": "prototype",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "70e8dcb1-e737-47db-85ab-53c83b767275",
+            "label": "rectangle_1",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#354771",
+            "fillAlpha": 0.75,
+            "width": 1920,
+            "height": 1080
+        },
+        {
+            "type": "Image",
+            "id": "5be8b5a9-aad3-4d59-9fb7-0bba00cefac8",
+            "label": "dopamineButton",
+            "scope": "CLASS",
+            "components": [
+                "PointerButton"
+            ],
+            "texture": {
+                "key": "taskbar-window-button"
+            },
+            "x": 1412,
+            "y": 196,
+            "scaleX": 3.106751341815151,
+            "scaleY": 4.077769383057117
+        },
+        {
+            "type": "Text",
+            "id": "74832662-3659-49d0-a84d-8810f9e25feb",
+            "label": "text_1",
+            "x": 1181,
+            "y": 161,
+            "text": "Dopamine hit",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Image",
+            "id": "05161ebc-ba80-4b25-ad1b-33ab222c5f37",
+            "label": "dismissBossButton",
+            "scope": "CLASS",
+            "components": [
+                "PointerButton"
+            ],
+            "texture": {
+                "key": "taskbar-window-button"
+            },
+            "x": 1406,
+            "y": 569,
+            "scaleX": 3.106751341815151,
+            "scaleY": 4.077769383057117
+        },
+        {
+            "type": "Text",
+            "id": "92918ebb-dcde-420b-b16e-e534c93f15a8",
+            "label": "text",
+            "x": 1175,
+            "y": 534,
+            "text": "Dismiss boss",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "c9f5a40d-1a7c-4ce4-ba55-5389fb6bc22c",
+            "label": "dayTimeText",
+            "scope": "CLASS",
+            "x": 899,
+            "y": 857,
+            "text": "Time left in day: 9999",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Image",
+            "id": "4fff9455-de46-4a1b-8a29-2abe510025fd",
+            "label": "resetDayButton",
+            "scope": "CLASS",
+            "components": [
+                "PointerButton"
+            ],
+            "texture": {
+                "key": "taskbar-window-button"
+            },
+            "x": 423,
+            "y": 872,
+            "scaleX": 3.106751341815151,
+            "scaleY": 4.077769383057117
+        },
+        {
+            "type": "Text",
+            "id": "b224ee50-c124-44e2-82d0-2eb265c2e3c3",
+            "label": "text_3",
+            "x": 192,
+            "y": 837,
+            "text": "Reset day",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "3f71263d-3528-4d0e-976d-056ab0ffb4bc",
+            "label": "boredomText",
+            "scope": "CLASS",
+            "x": 119,
+            "y": 524,
+            "text": "Boredom: 99",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        },
+        {
+            "type": "Text",
+            "id": "ff3a9478-a119-4ddd-a403-1eecdc827999",
+            "label": "dopamineText",
+            "scope": "CLASS",
+            "x": 127,
+            "y": 160,
+            "text": "Total dopamine: 99",
+            "fontSize": "64px",
+            "fontStyle": "bold"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

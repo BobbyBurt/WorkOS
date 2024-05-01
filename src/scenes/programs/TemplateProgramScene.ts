@@ -10,7 +10,7 @@ import { ProgramBaseScene } from "./ProgramScene";
 export default class TemplateProgramScene extends ProgramBaseScene {
 
 	constructor() {
-		super("template-program-scene");
+		super("template-program");
 
 		/* START-USER-CTR-CODE */
 
@@ -18,9 +18,6 @@ export default class TemplateProgramScene extends ProgramBaseScene {
 	}
 
 	editorCreate(): void {
-
-		// mainLayer
-		const mainLayer = this.add.layer();
 
 		// mainContainer
 		const mainContainer = this.add.container(0, 0);
@@ -32,29 +29,19 @@ export default class TemplateProgramScene extends ProgramBaseScene {
 		backing.isFilled = true;
 		mainContainer.add(backing);
 
+		// toidSketch_1
+		const toidSketch_1 = this.add.image(53, 312, "ToidSketch");
+		mainContainer.add(toidSketch_1);
+
 		// tank
-		const tank = this.add.image(13, 505, "Tank");
+		const tank = this.add.image(481, 387, "Tank");
 		mainContainer.add(tank);
 
-		// taskbar_window_button
-		const taskbar_window_button = this.add.image(0, 60, "taskbar-window-button");
-		taskbar_window_button.setOrigin(0, 0);
-		mainContainer.add(taskbar_window_button);
-
-		// taskbar_window_button_1
-		const taskbar_window_button_1 = this.add.image(583, 520, "taskbar-window-button");
-		taskbar_window_button_1.setOrigin(0, 0);
-		mainContainer.add(taskbar_window_button_1);
-
-		this.mainLayer = mainLayer;
-		this.tank = tank;
 		this.mainContainer = mainContainer;
 
 		this.events.emit("scene-awake");
 	}
 
-	private mainLayer!: Phaser.GameObjects.Layer;
-	private tank!: Phaser.GameObjects.Image;
 	private mainContainer!: Phaser.GameObjects.Container;
 
 	/* START-USER-CODE */
@@ -65,20 +52,19 @@ export default class TemplateProgramScene extends ProgramBaseScene {
 	/**
 	 * Boilerplate setup for all program classes
 	 */
-	setup()
-	{
+	setup() {
 		// create
 		super.editorCreate();
-		super.create(this.width, this.height);
-		this.editorCreate();	
+		super.create(this.width, this.height, 'Template Program.exe');
+		this.editorCreate();
 
 		// mask
 		super.programContainer = this.mainContainer;
 		super.setMask();
+
 	}
 
-	create()
-	{
+	create() {
 		this.setup();
 	}
 

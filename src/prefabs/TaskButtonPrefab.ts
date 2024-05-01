@@ -4,7 +4,6 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
 import WindowPrefab from "./WindowPrefab";
 /* END-USER-IMPORTS */
@@ -14,29 +13,26 @@ export default class TaskButtonPrefab extends Phaser.GameObjects.Container {
 	constructor(scene: Phaser.Scene, x?: number, y?: number) {
 		super(scene, x ?? 0, y ?? 0);
 
-		// backing
-		const backing = scene.add.rectangle(0, 0, 200, 50);
-		backing.setOrigin(0, 0);
-		backing.isFilled = true;
-		backing.fillColor = 13224393;
-		this.add(backing);
+		// backSlice
+		const backSlice = scene.add.nineslice(0, 0, "taskbar-window-button", undefined, 220, 0, 22, 20, 0, 0);
+		backSlice.setOrigin(0, 0);
+		this.add(backSlice);
+
+		// window_minimize_button
+		const window_minimize_button = scene.add.image(33, 27, "window-minimize-button");
+		window_minimize_button.scaleX = 0.3645750561186374;
+		window_minimize_button.scaleY = 0.3645750561186374;
+		window_minimize_button.angle = -90;
+		this.add(window_minimize_button);
 
 		// nameText
-		const nameText = scene.add.text(47, 13, "", {});
-		nameText.text = "Task Name";
-		nameText.setStyle({ "color": "#000000ff", "fontSize": "24px", "fontStyle": "bold" });
+		const nameText = scene.add.bitmapText(56, 20, "nokia", "New BitmapText");
+		nameText.text = "New BitmapText";
+		nameText.fontSize = -16;
 		this.add(nameText);
 
-		// ellipse_1
-		const ellipse_1 = scene.add.ellipse(23, 25, 20, 20);
-		ellipse_1.isFilled = true;
-		ellipse_1.fillColor = 0;
-		this.add(ellipse_1);
-
-		// backing (components)
-		new PointerButton(backing);
-
-		this.backing = backing;
+		this.backSlice = backSlice;
+		this.window_minimize_button = window_minimize_button;
 		this.nameText = nameText;
 
 		/* START-USER-CTR-CODE */
@@ -45,8 +41,9 @@ export default class TaskButtonPrefab extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
-	public backing: Phaser.GameObjects.Rectangle;
-	public nameText: Phaser.GameObjects.Text;
+	public backSlice: Phaser.GameObjects.NineSlice;
+	public window_minimize_button: Phaser.GameObjects.Image;
+	public nameText: Phaser.GameObjects.BitmapText;
 
 	/* START-USER-CODE */
 

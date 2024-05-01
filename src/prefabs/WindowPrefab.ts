@@ -7,6 +7,8 @@ import Phaser from "phaser";
 import PointerButton from "../components/PointerButton";
 /* START-USER-IMPORTS */
 import DebugScene from "~/scenes/DebugScene";
+import eventKeys from "~/data/eventKeys";
+import { ProgramBaseScene } from "~/scenes/programs/ProgramScene";
 /* END-USER-IMPORTS */
 
 export default class WindowPrefab extends Phaser.GameObjects.Container {
@@ -44,6 +46,18 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		dragRect.isFilled = true;
 		this.add(dragRect);
 
+		// icon_temp
+		const icon_temp = scene.add.image(38, 35, "icon-temp");
+		icon_temp.scaleX = 1.7389250244694119;
+		icon_temp.scaleY = 1.7389250244694119;
+		this.add(icon_temp);
+
+		// programNameText
+		const programNameText = scene.add.bitmapText(63, 27, "nokia", "New BitmapText");
+		programNameText.text = "New BitmapText";
+		programNameText.fontSize = -16;
+		this.add(programNameText);
+
 		// minimizeButton (components)
 		new PointerButton(minimizeButton);
 
@@ -55,6 +69,8 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.minimizeButton = minimizeButton;
 		this.closeButton = closeButton;
 		this.dragRect = dragRect;
+		this.icon_temp = icon_temp;
+		this.programNameText = programNameText;
 
 		/* START-USER-CTR-CODE */
 
@@ -70,26 +86,29 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 	private minimizeButton: Phaser.GameObjects.Image;
 	private closeButton: Phaser.GameObjects.Image;
 	public dragRect: Phaser.GameObjects.Rectangle;
-	public displayName: string = "Unnamed Window";
+	private icon_temp: Phaser.GameObjects.Image;
+	public programNameText: Phaser.GameObjects.BitmapText;
 
 	/* START-USER-CODE */
 
-	create()
-	{
+	private programScene: ProgramBaseScene;
 
-		this.closeButton.on('pointerdown', this.onCloseButton, this);
+	create() {
+		this.programScene = this.scene as ProgramBaseScene;
 
-		this.minimizeButton.on('click', this.onMinimizeButton, this);
+		this.closeButton.on(eventKeys.UI.click, this.onCloseButton, this);
+		this.minimizeButton.on(eventKeys.UI.click, this.onMinimizeButton, this);
+
+		this.programNameText.setText(this.programScene.name);
+		// TODO: set icon
 	}
 
-	private onCloseButton()
-	{	
-		this.scene.events.emit('close');
+	private onCloseButton() {
+		this.programScene.close();
 	}
 
-	private onMinimizeButton()
-	{
-		this.scene.events.emit('minimize');
+	private onMinimizeButton() {
+		this.programScene.setMinimize(true);
 	}
 
 	/**
@@ -97,8 +116,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 	 * @param width 
 	 * @param height 
 	 */
-	public setWindowSize(width: number, height: number)
-	{
+	public setWindowSize(width: number, height: number) {
 		this.windowBorder.setSize(width, height);
 		this.minimizeButton.setX(width - 138);
 		this.closeButton.setX(width - 75);

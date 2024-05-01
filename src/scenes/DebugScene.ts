@@ -10,7 +10,7 @@ import Phaser from "phaser";
 export default class DebugScene extends Phaser.Scene {
 
 	constructor() {
-		super("debug-scene");
+		super("debug");
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
