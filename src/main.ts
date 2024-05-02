@@ -3,6 +3,7 @@
 import cloudSaves from "./API/SavesData";
 import medalScene from "./API/medalScene";
 import { newgroundsIOWrapper } from "./API/newgroundsIOWrapper";
+import fullscreenHandler from "./FullscreenHandler";
 import DebugScene from "./scenes/DebugScene";
 import DesktopScene from "./scenes/DesktopScene";
 import OverlapScene from "./scenes/OverlapScene";
@@ -22,13 +23,14 @@ window.addEventListener("load", function () {
     // url: 'https://www.newgrounds.com/projects/games/1923225/preview',
     version: "0",
 
-    type: __DEV__ ? Phaser.CANVAS : Phaser.AUTO,
+    // type: __DEV__ ? Phaser.CANVAS : Phaser.AUTO,
+    type: Phaser.AUTO,
     backgroundColor: "#333333",
     scale: {
       mode: Phaser.Scale.ScaleModes.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
-      height: 720,
-      width: 1280,
+      height: fullscreenHandler.windowedRes.height,
+      width: fullscreenHandler.windowedRes.width,
       // width: 1920,
       // height: 1080,
     },

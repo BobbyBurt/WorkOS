@@ -7,6 +7,7 @@
 import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
 /* START-USER-IMPORTS */
+import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
@@ -34,7 +35,7 @@ export default class DesktopScene extends Phaser.Scene {
     this.add.existing(icon);
 
     // icon_1
-    const icon_1 = new IconPrefab(this, 936, 101);
+    const icon_1 = new IconPrefab(this, 1402, 826);
     this.add.existing(icon_1);
 
     // icon_2
@@ -88,10 +89,10 @@ export default class DesktopScene extends Phaser.Scene {
   create() {
     this.editorCreate();
 
-    this.scale.on("enterfullscreen", this.resize, this);
-    this.scale.on("leavefullscreen", this.unFullscreen, this);
+    // this.scale.on("enterfullscreen", this.resize, this);
+    // this.scale.on("leavefullscreen", this.unFullscreen, this);
 
-    this.cameras.main.centerOn(960, 540);
+    fullscreenHandler.adjustCamera(this.cameras.main);
 
     this.desktopGeomRect = new Phaser.Geom.Rectangle(
       this.desktopRect.x,

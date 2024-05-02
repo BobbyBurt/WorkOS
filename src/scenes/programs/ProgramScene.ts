@@ -13,6 +13,7 @@ import dataManagerKeys from "~/data/dataManagerKeys";
 import eventKeys from "~/data/eventKeys";
 import TaskButton from "~/prefabs/TaskButton";
 import OverlapScene from "../OverlapScene";
+import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class ProgramScene extends Phaser.Scene {
@@ -80,7 +81,7 @@ export class ProgramBaseScene extends Phaser.Scene {
     return this._programContainer;
   }
   /**
-   * set: Also sets the position to windowOpenPosition, as this should only be set on create.
+   * To be set by the extending scene: Also sets the position to windowOpenPosition, as this should only be set on create.
    */
   protected set programContainer(value: Phaser.GameObjects.Container) {
     this._programContainer = value;
@@ -89,6 +90,12 @@ export class ProgramBaseScene extends Phaser.Scene {
       this.windowInitialPosition.y
     );
   }
+
+  /**
+   * The objects to move on drag.
+   *
+   * On setup, all objects parented by the display list instead of a container are added. */
+  private draggedObjects: Array<Phaser.GameObjects.GameObject>;
 
   // program info
   public name = "Cool Program";
@@ -116,7 +123,7 @@ export class ProgramBaseScene extends Phaser.Scene {
     this.name = name;
     this.minimized = false;
 
-    this.cameras.main.centerOn(960, 540);
+    fullscreenHandler.adjustCamera(this.cameras.main);
 
     this.setupWindow(width, height);
 
@@ -156,6 +163,13 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   update() {}
 
+  /**
+   * Pointer input callback. Moves all necessary objects.
+   * @param pointer
+   * @param dragX
+   * @param dragY
+   * @returns
+   */
   private dragWindow(pointer: Phaser.Input.Pointer, dragX: any, dragY: any) {
     if (!this.desktopScene.desktopGeomRect.contains(pointer.x, pointer.y)) {
       return;
@@ -164,15 +178,18 @@ export class ProgramBaseScene extends Phaser.Scene {
       return;
     }
 
-    // x & y with offset and clamped to desktop bounds
+    let pointerCameraPos = pointer.positionToCamera(
+      this.cameras.main
+    ) as Phaser.Math.Vector2;
+
     let x = Phaser.Math.Clamp(
-      pointer.x - this.dragOffset.x,
+      pointerCameraPos.x - this.dragOffset.x,
       this.desktopScene.desktopRect.x -
         (this.windowPrefab.windowBorder.width - 50),
       this.desktopScene.desktopRect.x + this.desktopScene.desktopRect.width - 50
     );
     let y = Phaser.Math.Clamp(
-      pointer.y - this.dragOffset.y,
+      pointerCameraPos.y - this.dragOffset.y,
       this.desktopScene.desktopRect.y - 15,
       this.desktopScene.desktopRect.y +
         this.desktopScene.desktopRect.height -
@@ -182,12 +199,12 @@ export class ProgramBaseScene extends Phaser.Scene {
     // let y = pointer.y;
 
     this.windowPrefab.setPosition(x, y);
-    this.programMaskRect.setPosition(
+    this.programContainer.setPosition(x, y);
+    this.refocusInputRect.setPosition(
       x + this.programMaskOffset.x,
       y + this.programMaskOffset.y
     );
-    this.programContainer.setPosition(x, y);
-    this.refocusInputRect.setPosition(
+    this.programMaskRect.setPosition(
       x + this.programMaskOffset.x,
       y + this.programMaskOffset.y
     );
@@ -257,8 +274,11 @@ export class ProgramBaseScene extends Phaser.Scene {
     if (!this.desktopScene.desktopGeomRect.contains(pointer.x, pointer.y)) {
       return;
     }
-    this.dragOffset.x = pointer.x - this.windowPrefab.x;
-    this.dragOffset.y = pointer.y - this.windowPrefab.y;
+    let pointerCameraPos = pointer.positionToCamera(
+      this.cameras.main
+    ) as Phaser.Math.Vector2;
+    this.dragOffset.x = pointerCameraPos.x - this.windowPrefab.x;
+    this.dragOffset.y = pointerCameraPos.y - this.windowPrefab.y;
   }
 
   /** Creates `refocusInputRect`  */

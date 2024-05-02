@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -6,65 +7,63 @@
 import Phaser from "phaser";
 import TaskbarPrefab from "../prefabs/TaskbarPrefab";
 /* START-USER-IMPORTS */
+import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class OverlapScene extends Phaser.Scene {
+  constructor() {
+    super("overlap");
 
-	constructor() {
-		super("overlap");
+    /* START-USER-CTR-CODE */
+    // Write your code here.
+    /* END-USER-CTR-CODE */
+  }
 
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
+  editorCreate(): void {
+    // rectangle_1
+    const rectangle_1 = this.add.rectangle(0, 0, 200, 1080);
+    rectangle_1.setOrigin(0, 0);
+    rectangle_1.isFilled = true;
+    rectangle_1.fillColor = 9413286;
 
-	editorCreate(): void {
+    // rectangle
+    const rectangle = this.add.rectangle(1920, 0, 200, 1080);
+    rectangle.setOrigin(1, 0);
+    rectangle.isFilled = true;
+    rectangle.fillColor = 9413286;
 
-		// rectangle_1
-		const rectangle_1 = this.add.rectangle(0, 0, 200, 1080);
-		rectangle_1.setOrigin(0, 0);
-		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 9413286;
+    // taskbarPrefab
+    const taskbarPrefab = new TaskbarPrefab(this, 323, 934);
+    this.add.existing(taskbarPrefab);
 
-		// rectangle
-		const rectangle = this.add.rectangle(1920, 0, 200, 1080);
-		rectangle.setOrigin(1, 0);
-		rectangle.isFilled = true;
-		rectangle.fillColor = 9413286;
+    // moniter
+    const moniter = this.add.image(127, 0, "moniter");
+    moniter.setOrigin(0, 0);
 
-		// taskbarPrefab
-		const taskbarPrefab = new TaskbarPrefab(this, 323, 934);
-		this.add.existing(taskbarPrefab);
+    this.taskbarPrefab = taskbarPrefab;
 
-		// moniter
-		const moniter = this.add.image(127, 0, "moniter");
-		moniter.setOrigin(0, 0);
+    this.events.emit("scene-awake");
+  }
 
-		this.taskbarPrefab = taskbarPrefab;
+  public taskbarPrefab!: TaskbarPrefab;
 
-		this.events.emit("scene-awake");
-	}
+  /* START-USER-CODE */
 
-	public taskbarPrefab!: TaskbarPrefab;
+  // Write your code here
 
-	/* START-USER-CODE */
+  create() {
+    this.editorCreate();
 
-	// Write your code here
+    fullscreenHandler.adjustCamera(this.cameras.main);
 
-	create() {
+    this.input.keyboard?.on("keydown", () => {
+      this.taskbarPrefab.start();
+    });
 
-		this.editorCreate();
+    // this.cameras.main.postFX.addBarrel(1.05);
+  }
 
-		this.input.keyboard?.on('keydown', () =>
-		{
-			this.taskbarPrefab.start();
-		})
-
-		// this.cameras.main.postFX.addBarrel(1.05);
-
-	}
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

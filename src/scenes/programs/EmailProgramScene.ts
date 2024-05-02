@@ -12,64 +12,62 @@ import PointerButton from "../../components/PointerButton";
 /* END-USER-IMPORTS */
 
 export default class EmailProgramScene extends ProgramBaseScene {
+  constructor() {
+    super("email-program");
 
-	constructor() {
-		super("email-program");
-
-		/* START-USER-CTR-CODE */
+    /* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-	}
+  }
 
-	editorCreate(): void {
+  editorCreate(): void {
+    // scrollTestMask
+    const scrollTestMask = this.add.rectangle(371, 110, 300, 400);
+    scrollTestMask.setOrigin(0, 0);
+    scrollTestMask.isFilled = true;
+    scrollTestMask.fillColor = 13487565;
 
-		// scrollTestMask
-		const scrollTestMask = this.add.rectangle(371, 110, 300, 400);
-		scrollTestMask.setOrigin(0, 0);
-		scrollTestMask.isFilled = true;
-		scrollTestMask.fillColor = 13487565;
+    // scrollContainerTest
+    const scrollContainerTest = this.add.container(361, 122);
 
-		// scrollContainerTest
-		const scrollContainerTest = this.add.container(361, 122);
+    // rectangle_1
+    const rectangle_1 = this.add.rectangle(287, 229, 128, 128);
+    rectangle_1.isFilled = true;
+    rectangle_1.fillColor = 13195095;
+    scrollContainerTest.add(rectangle_1);
 
-		// rectangle_1
-		const rectangle_1 = this.add.rectangle(287, 229, 128, 128);
-		rectangle_1.isFilled = true;
-		rectangle_1.fillColor = 13195095;
-		scrollContainerTest.add(rectangle_1);
+    // mainContainer
+    const mainContainer = this.add.container(0, 0);
 
-		// mainContainer
-		const mainContainer = this.add.container(0, 0);
+    // start_button
+    const start_button = this.add.image(182, 245, "start-button");
+    mainContainer.add(start_button);
 
-		// start_button
-		const start_button = this.add.image(182, 245, "start-button");
-		mainContainer.add(start_button);
+    // desktop_gen
+    const desktop_gen = this.add.image(219, 291, "desktop-gen");
+    desktop_gen.scaleX = 0.2451008495379191;
+    desktop_gen.scaleY = 0.2451008495379191;
+    mainContainer.add(desktop_gen);
 
-		// desktop_gen
-		const desktop_gen = this.add.image(219, 291, "desktop-gen");
-		desktop_gen.scaleX = 0.2451008495379191;
-		desktop_gen.scaleY = 0.2451008495379191;
-		mainContainer.add(desktop_gen);
+    // scrollContainerTest (components)
+    const scrollContainerTestScrollField = new ScrollField(scrollContainerTest);
+    scrollContainerTestScrollField.maskRect = scrollTestMask;
 
-		// scrollContainerTest (components)
-		const scrollContainerTestScrollField = new ScrollField(scrollContainerTest);
-		scrollContainerTestScrollField.maskRect = scrollTestMask;
+    // start_button (components)
+    new PointerButton(start_button);
 
-		// start_button (components)
-		new PointerButton(start_button);
+    this.scrollTestMask = scrollTestMask;
+    this.scrollContainerTest = scrollContainerTest;
+    this.mainContainer = mainContainer;
 
-		this.scrollTestMask = scrollTestMask;
-		this.scrollContainerTest = scrollContainerTest;
-		this.mainContainer = mainContainer;
+    this.events.emit("scene-awake");
+  }
 
-		this.events.emit("scene-awake");
-	}
+  private scrollTestMask!: Phaser.GameObjects.Rectangle;
+  private scrollContainerTest!: Phaser.GameObjects.Container;
+  private mainContainer!: Phaser.GameObjects.Container;
 
-	private scrollTestMask!: Phaser.GameObjects.Rectangle;
-	private scrollContainerTest!: Phaser.GameObjects.Container;
-	private mainContainer!: Phaser.GameObjects.Container;
-
-	/* START-USER-CODE */
+  /* START-USER-CODE */
 
   // Write your code here
 
@@ -87,7 +85,6 @@ export default class EmailProgramScene extends ProgramBaseScene {
     super.create(this.width, this.height, "Email Looker 2001");
     this.editorCreate();
 
-    // mask
     super.programContainer = this.mainContainer;
     super.setMask();
 

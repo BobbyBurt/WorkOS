@@ -1,156 +1,157 @@
+/** @format */
 
 // You can write more code here
 
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import fullscreenHandler from "~/FullscreenHandler";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
 export default class Preload extends Phaser.Scene {
+  constructor() {
+    super("preload");
 
-	constructor() {
-		super("preload");
+    /* START-USER-CTR-CODE */
+    // Write your code here.
+    /* END-USER-CTR-CODE */
+  }
 
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
+  editorPreload(): void {
+    this.load.pack("asset-pack", "assets/asset-pack.json");
+  }
 
-	editorPreload(): void {
+  editorCreate(): void {
+    // progress
+    const progress = this.add.text(240, 104, "", {});
+    progress.setOrigin(0.5, 0.5);
+    progress.tintTopLeft = 9737364;
+    progress.tintTopRight = 9737364;
+    progress.tintBottomLeft = 9737364;
+    progress.tintBottomRight = 9737364;
+    progress.text = "0%";
+    progress.setStyle({ fontSize: "-32px" });
 
-		this.load.pack("asset-pack", "assets/asset-pack.json");
-	}
+    this.events.emit("scene-awake");
+  }
 
-	editorCreate(): void {
+  /* START-USER-CODE */
 
-		// progress
-		const progress = this.add.text(240, 104, "", {});
-		progress.setOrigin(0.5, 0.5);
-		progress.tintTopLeft = 9737364;
-		progress.tintTopRight = 9737364;
-		progress.tintBottomLeft = 9737364;
-		progress.tintBottomRight = 9737364;
-		progress.text = "0%";
-		progress.setStyle({ "fontSize": "-32px" });
+  loaded = false;
 
-		this.events.emit("scene-awake");
-	}
+  preload() {
+    this.editorCreate();
 
-	/* START-USER-CODE */
+    this.editorPreload();
 
-	loaded = false
+    this.resize();
 
-	preload() {
-		this.editorCreate();
+    this.scale.autoRound = true;
 
-		this.editorPreload();
+    let _fullscreenHandler = new fullscreenHandler(this.game);
+    // is this garbage collected when this scene stops?
 
-		this.resize();
+    // TEMP
+    this.game.registry.set("total-score", 0);
 
-		this.scale.autoRound = true;
+    // camera
+    this.cameras.main.setOrigin(0, 0);
+    this.cameras.main.setViewport(0, 0, this.scale.width, this.scale.height);
+    this.cameras.main.setBackgroundColor(0x242424);
 
-		// TEMP 
-		this.game.registry.set('total-score', 0);
+    // start input
+    // window.addEventListener('touchstart', this.onPointer);
+    // window.addEventListener('click', this.onPointer);
 
-		// camera
-		this.cameras.main.setOrigin(0, 0);
-		this.cameras.main.setViewport(0, 0, this.scale.width, this.scale.height);
-		this.cameras.main.setBackgroundColor(0x242424);
+    // load event
+    this.load.on(Phaser.Loader.Events.COMPLETE, () => {
+      this.loaded = true;
 
-		// start input
-		// window.addEventListener('touchstart', this.onPointer);
-		// window.addEventListener('click', this.onPointer);
+      // DEBUG: auto load
+      if (__DEV__) {
+        // this.start();
+        // mobile detection will not run if enabled
+      }
+    });
 
-		// load event
-		this.load.on(Phaser.Loader.Events.COMPLETE, () => {
-			this.loaded = true;
+    this.load.on("filecomplete", (key: string, type: string, data: any) => {
+      // this.fileText.setText(this.fileText.text + `\nloaded: ${key} ${type}`)
+      // this.fileText.setY(this.fileText.y - 10)
+    });
 
-			// DEBUG: auto load
-			if (__DEV__) {
-				// this.start();
-				// mobile detection will not run if enabled
-			}
-		});
+    this.load.on("complete", (key: string, type: string, data: any) => {
+      this.cameras.main.fadeOut(200, 255, 255, 255);
+      this.time.delayedCall(1000, () => {
+        this.scene.stop(this);
+        this.scene.launch("desktop");
+        this.scene.launch("overlap");
+      });
+    });
 
-		this.load.on('filecomplete', (key: string, type: string, data: any) => {
-			// this.fileText.setText(this.fileText.text + `\nloaded: ${key} ${type}`)
-			// this.fileText.setY(this.fileText.y - 10)
-		});
+    this.scene.launch("medal");
 
-		this.load.on('complete', (key: string, type: string, data: any) => {
-			this.cameras.main.fadeOut(200, 255, 255, 255);
-			this.time.delayedCall(1000, () => {
-				this.scene.stop(this);
-				this.scene.launch("desktop");
-				this.scene.launch("overlap");
-			});
-		});
+    this.scene.launch("debug");
+  }
 
-		this.scene.launch('medal');
+  /**
+   * Set registry's mobile value based on input.
+   *
+   * Start the game if loaded.
+   */
+  // onPointer = (event:any) =>
+  // {
+  // // set registry's mobile value
+  // 	if (event.type == 'touchstart')
+  // 	{
+  // 		this.registry.set('mobile', true);
+  // 		InputManager.activeInputMode = 'touch';
+  // 		this.input.addPointer(3);
 
-		this.scene.launch('debug');
-	}
+  // 		NGIO.logEvent('Mobile Start', (event) =>
+  // 		{
+  // 			console.debug(`logEvent: ${event}`);
+  // 		});
+  // 	}
+  // 	else if (event.type == 'click')
+  // 	{
+  // 		this.registry.set('mobile', false);
 
-	/** 
-	 * Set registry's mobile value based on input.
-	 * 
-	 * Start the game if loaded.
-	 */
-	// onPointer = (event:any) => 
-	// {
-	// // set registry's mobile value
-	// 	if (event.type == 'touchstart')
-	// 	{
-	// 		this.registry.set('mobile', true);
-	// 		InputManager.activeInputMode = 'touch';
-	// 		this.input.addPointer(3);
+  // 		NGIO.logEvent('Desktop Start', (event) =>
+  // 		{
+  // 			console.debug(`logEvent: ${event}`);
+  // 		});
+  // 	}
 
-	// 		NGIO.logEvent('Mobile Start', (event) => 
-	// 		{
-	// 			console.debug(`logEvent: ${event}`);
-	// 		});
-	// 	}
-	// 	else if (event.type == 'click')
-	// 	{
-	// 		this.registry.set('mobile', false);
+  // 	if (this.loaded)
+  // 	{
+  // 		this.start();
+  // 	}
+  // }
 
-	// 		NGIO.logEvent('Desktop Start', (event) => 
-	// 		{
-	// 			console.debug(`logEvent: ${event}`);
-	// 		});
-	// 	}
+  /**s
+   * loads next scene
+   */
+  // start()
+  // {
 
-	// 	if (this.loaded)
-	// 	{
-	// 		this.start();
-	// 	}
-	// }
+  // 	window.removeEventListener('touchstart', this.onPointer);
+  // 	window.removeEventListener('click', this.onPointer);
 
-	/**s
-	 * loads next scene
-	 */
-	// start()
-	// {
+  // 	// remove music here if applicable
 
+  // 	this.scene.stop(this);
+  // 	this.scene.launch("Titlescreen");
 
-	// 	window.removeEventListener('touchstart', this.onPointer);
-	// 	window.removeEventListener('click', this.onPointer);
+  // 	// LevelSelect.levelSelectEntry = 'titlescreen';
+  // 	// this.scene.launch("LevelSelect");
+  // }
 
-	// 	// remove music here if applicable
+  resize() {
+    // this.cameras.main.centerOn(0, 0);
+  }
 
-	// 	this.scene.stop(this);
-	// 	this.scene.launch("Titlescreen");
-
-	// 	// LevelSelect.levelSelectEntry = 'titlescreen';
-	// 	// this.scene.launch("LevelSelect");
-	// }
-
-	resize() {
-		// this.cameras.main.centerOn(0, 0);
-	}
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
