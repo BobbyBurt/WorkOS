@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -8,104 +9,102 @@ import Phaser from "phaser";
 /* END-USER-IMPORTS */
 
 export default class DebugScene extends Phaser.Scene {
+  constructor() {
+    super("debug");
 
-	constructor() {
-		super("debug");
+    /* START-USER-CTR-CODE */
+    // Write your code here.
+    /* END-USER-CTR-CODE */
+  }
 
-		/* START-USER-CTR-CODE */
-		// Write your code here.
-		/* END-USER-CTR-CODE */
-	}
+  editorCreate(): void {
+    // displayVarBack
+    const displayVarBack = this.add.rectangle(10, 10, 50, 40);
+    displayVarBack.setOrigin(0, 0);
+    displayVarBack.isFilled = true;
+    displayVarBack.fillColor = 0;
+    displayVarBack.fillAlpha = 0.5;
 
-	editorCreate(): void {
+    this.displayVarBack = displayVarBack;
 
-		// displayVarBack
-		const displayVarBack = this.add.rectangle(10, 10, 50, 40);
-		displayVarBack.setOrigin(0, 0);
-		displayVarBack.isFilled = true;
-		displayVarBack.fillColor = 0;
-		displayVarBack.fillAlpha = 0.5;
+    this.events.emit("scene-awake");
+  }
 
-		this.displayVarBack = displayVarBack;
+  private displayVarBack!: Phaser.GameObjects.Rectangle;
 
-		this.events.emit("scene-awake");
-	}
+  /* START-USER-CODE */
 
-	private displayVarBack!: Phaser.GameObjects.Rectangle;
+  private displayVarMap: Map<string, any>;
 
-	/* START-USER-CODE */
+  /**
+   * Keys are the same as `displayVarMap` and correlate to text object.
+   */
+  private displayVarTextMap: Map<string, Phaser.GameObjects.BitmapText>;
 
-	private displayVarMap: Map<string, any>
+  private timeAtLastDisplay: number;
 
-	/**
-	 * Keys are the same as `displayVarMap` and correlate to text object.
-	 */
-	private displayVarTextMap: Map<string, Phaser.GameObjects.Text>
+  create() {
+    this.editorCreate();
 
-	create() {
+    this.displayVarMap = new Map<string, any>();
+    this.displayVarTextMap = new Map<string, Phaser.GameObjects.BitmapText>();
 
-		this.editorCreate();
+    // Hide scene
+    this.scene.setVisible(false);
+    this.input.keyboard!.on("keydown-F2", () => {
+      if (__DEV__) {
+        this.scene.setVisible(!this.scene.isVisible());
+        this.scene.bringToTop();
+      }
+    });
+  }
 
-		this.displayVarMap = new Map<string, any>();
-		this.displayVarTextMap = new Map<string, Phaser.GameObjects.Text>();
+  /**
+   * Display a variable on screen.
+   *
+   * Variables will be listed in the order that they're passed.
+   *
+   * @param label Also used as a key to store vars. Var will overwrite existing vars with the same key.
+   * @param variable
+   */
+  public DisplayVar(label: string, variable: any) {
+    // Update or create text object
+    variable = JSON.stringify(variable);
+    const text = `${label}: ${variable}`;
+    if (this.displayVarMap.has(label)) {
+      // Var exists in map
 
-		// Hide scene
-		this.scene.setVisible(false);
-		this.input.keyboard!.on('keydown-F2', () =>
-		{
-			this.scene.setVisible(!this.scene.isVisible())
+      this.displayVarTextMap.get(label)?.setText(text);
+    } else {
+      // Var doesn't exist in map
 
-			// TODO: disable this before release
-		});
+      // Create text object
+      const textY = (this.displayVarMap.size + 1) * 20;
+      const textObject = this.add.bitmapText(20, textY, "nokia", text, -16);
+      this.displayVarTextMap.set(label, textObject);
+    }
 
-		// Reset back width
-		this.events.on('preupdate', () =>
-		{
-			this.displayVarBack.width = 10;
-		});
-	}
+    // reset backing size on new frame
+    if (this.timeAtLastDisplay !== this.time.now) {
+      this.displayVarBack.width = 10;
+    }
 
-	/**
-	 * Display a variable on screen.
-	 * 
-	 * Variables will be listed in the order that they're passed.
-	 * 
-	 * @param label Also used as a key to store vars. Var will overwrite existing vars with the same key.
-	 * @param variable
-	 */
-	public DisplayVar(label: string, variable: any)
-	{	
-		// Update or create text object
-		variable = JSON.stringify(variable);
-		const text = `${label}: ${variable}`;
-		if (this.displayVarMap.has(label))
-		{
-			// Var exists in map
+    // Resize backing
+    const textObject = this.displayVarTextMap.get(label)!;
+    this.displayVarBack.setSize(
+      textObject.displayWidth > this.displayVarBack.width
+        ? textObject.displayWidth + 20
+        : this.displayVarBack.width + 20,
+      this.displayVarTextMap.size * 20 + 20
+    );
+    this.timeAtLastDisplay = this.time.now;
 
-			this.displayVarTextMap.get(label)?.setText(text);
-		}
-		else
-		{
-			// Var doesn't exist in map
+    this.displayVarMap.set(label, variable);
 
-			// Create text object
-			const textY = (this.displayVarMap.size + 1) * 20;
-			const textObject = this.add.text(20, textY, text, { fontStyle: 'bold' });
-			this.displayVarTextMap.set(label, textObject);
-		}
+    // Is there any way to show objects?
+  }
 
-		// Resize backing
-		const textObject = this.displayVarTextMap.get(label)!;
-		this.displayVarBack.setSize((textObject.displayWidth > this.displayVarBack.width ? textObject.displayWidth + 20 : this.displayVarBack.width + 20), (this.displayVarTextMap.size * 20) + 20)
-
-		this.displayVarMap.set(label, variable);
-
-		// Is there any way to show objects?
-	}
-
-
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

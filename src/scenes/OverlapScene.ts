@@ -60,6 +60,8 @@ export default class OverlapScene extends Phaser.Scene {
       this.taskbarPrefab.start();
     });
 
+    this.sound.play("office-ambience", { loop: true, volume: 0.2 });
+
     // this.cameras.main.postFX.addBarrel(1.05);
   }
 

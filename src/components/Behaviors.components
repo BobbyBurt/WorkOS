@@ -105,8 +105,19 @@
             "gameObjectType": "Phaser.GameObjects.Container",
             "properties": [
                 {
-                    "name": "maskRect",
-                    "label": "Mask rect",
+                    "name": "BGRect",
+                    "label": "BG Rect",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.Rectangle"
+                    }
+                },
+                {
+                    "name": "scrollbarRect",
+                    "label": "Scrollbar Rect",
                     "tooltip": "",
                     "defValue": "",
                     "customDefinition": false,

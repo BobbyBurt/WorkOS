@@ -15,45 +15,6 @@
     },
     "displayList": [
         {
-            "type": "Rectangle",
-            "id": "f605efc4-d1b9-4067-baa0-236f9d3064cb",
-            "label": "scrollTestMask",
-            "scope": "CLASS",
-            "x": 371,
-            "y": 110,
-            "originX": 0,
-            "originY": 0,
-            "isFilled": true,
-            "fillColor": "#cdcdcd",
-            "width": 300,
-            "height": 400
-        },
-        {
-            "type": "Container",
-            "id": "4da26455-46c0-430c-baac-938793d1b553",
-            "label": "scrollContainerTest",
-            "scope": "CLASS",
-            "components": [
-                "ScrollField"
-            ],
-            "ScrollField.maskRect": "scrollTestMask",
-            "x": 361,
-            "y": 122,
-            "list": [
-                {
-                    "type": "Rectangle",
-                    "id": "db2b75c8-f730-44f9-b0a2-79d77a785f0e",
-                    "label": "rectangle_1",
-                    "x": 287,
-                    "y": 229,
-                    "isFilled": true,
-                    "fillColor": "#c95757",
-                    "width": 128,
-                    "height": 128
-                }
-            ]
-        },
-        {
             "type": "Container",
             "id": "58e1a708-5d33-488e-9561-3e37a63b3808",
             "label": "mainContainer",
@@ -63,6 +24,7 @@
                     "type": "Image",
                     "id": "97345c33-528f-47a8-ad78-e62dd23f3c06",
                     "label": "start_button",
+                    "scope": "CLASS",
                     "components": [
                         "PointerButton"
                     ],
@@ -73,16 +35,58 @@
                     "y": 245
                 },
                 {
-                    "type": "Image",
-                    "id": "23dbd81e-ea3a-4eb9-bca8-43a36f8c2f9a",
-                    "label": "desktop_gen",
-                    "texture": {
-                        "key": "desktop-gen"
-                    },
-                    "x": 219,
-                    "y": 291,
-                    "scaleX": 0.2451008495379191,
-                    "scaleY": 0.2451008495379191
+                    "type": "Container",
+                    "id": "81a241e2-9068-4fe7-a749-5ee7a2253613",
+                    "label": "scrollTest",
+                    "scope": "CLASS",
+                    "components": [
+                        "ScrollField"
+                    ],
+                    "ScrollField.BGRect": "rectangle_1",
+                    "ScrollField.scrollbarRect": "rectangle_2",
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "4060799e-2a9d-4831-ac6b-bc0bf6fe527e",
+                            "label": "rectangle_1",
+                            "x": 389,
+                            "y": 60,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#dfdfdf",
+                            "width": 330,
+                            "height": 1000
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "2a8c6491-6796-476e-9086-83de76857aaf",
+                            "label": "bitmaptext_1",
+                            "x": 404,
+                            "y": 80,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, dolor ac egestas tincidunt, felis magna vehicula nunc, quis lobortis erat arcu vel odio. Vestibulum vestibulum ultrices quam, euismod viverra diam fringilla in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas ultricies sem nec mauris aliquet mattis. Duis at dolor posuere, efficitur lacus id, lacinia tellus. Pellentesque quis tristique dui. Vivamus molestie lacus eu dolor eleifend, vel mattis est blandit.\n\nPraesent a varius lacus. Sed efficitur lorem in eros dictum, facilisis tempor odio vulputate. Proin justo ex, interdum ut quam in, tempus molestie velit. Aenean iaculis tortor in condimentum suscipit. Phasellus sagittis lacinia massa. Nullam euismod nisl eget nunc vehicula fringilla. Mauris eget fermentum libero. In tellus ipsum, pharetra a sodales ut, placerat vitae nibh. Fusce porta congue nulla sodales dictum. Sed in interdum augue. Phasellus dapibus tincidunt orci, in condimentum metus scelerisque a. Sed dignissim leo sit amet elit lacinia, vel pharetra mi viverra. Mauris mollis lacinia tellus vel efficitur. Morbi ultrices dui enim, sed pulvinar nisi aliquet at.",
+                            "font": "nokia",
+                            "fontSize": -16,
+                            "maxWidth": 270
+                        }
+                    ]
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a8daf815-b03e-42d3-82c5-cf11a08591e8",
+                    "label": "rectangle_2",
+                    "x": 687,
+                    "y": 70,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#ababab",
+                    "width": 4,
+                    "height": 128
                 }
             ]
         }

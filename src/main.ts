@@ -4,11 +4,13 @@ import cloudSaves from "./API/SavesData";
 import medalScene from "./API/medalScene";
 import { newgroundsIOWrapper } from "./API/newgroundsIOWrapper";
 import fullscreenHandler from "./FullscreenHandler";
+import EmployeeDirectory from "./employees/EmployeeDirectory";
 import DebugScene from "./scenes/DebugScene";
 import DesktopScene from "./scenes/DesktopScene";
 import OverlapScene from "./scenes/OverlapScene";
 import Preload from "./scenes/Preload";
 import PrototypeScene from "./scenes/PrototypeScene";
+import CameraProgramScene from "./scenes/programs/CameraProgramScene";
 import EmailProgramScene from "./scenes/programs/EmailProgramScene";
 import ProgramScene from "./scenes/programs/ProgramScene";
 import TemplateProgramScene from "./scenes/programs/TemplateProgramScene";
@@ -47,6 +49,7 @@ window.addEventListener("load", function () {
   // programs
   game.scene.add("template-program", TemplateProgramScene);
   game.scene.add("email-program", EmailProgramScene);
+  game.scene.add("camera-program", CameraProgramScene);
 });
 
 class Boot extends Phaser.Scene {
@@ -76,6 +79,8 @@ class Boot extends Phaser.Scene {
     });
 
     this.setSaveDataKeys();
+
+    EmployeeDirectory.createEmployees(this.game);
   }
 
   /**

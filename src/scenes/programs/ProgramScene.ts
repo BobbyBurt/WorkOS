@@ -56,6 +56,22 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   /* START-USER-CODE */
 
+  private _width: number;
+  private set width(value: number) {
+    this._width = value;
+  }
+  public get width() {
+    return this._width;
+  }
+
+  private _height: number;
+  private set height(value: number) {
+    this._height = value;
+  }
+  public get height() {
+    return this._height;
+  }
+
   readonly programMaskOffset = {
     x: 9,
     y: 60,
@@ -126,6 +142,8 @@ export class ProgramBaseScene extends Phaser.Scene {
     fullscreenHandler.adjustCamera(this.cameras.main);
 
     this.setupWindow(width, height);
+    this.width = width;
+    this.height = height;
 
     // program mask
     this.programMaskRect.setSize(width, height);
@@ -260,6 +278,7 @@ export class ProgramBaseScene extends Phaser.Scene {
     if (value) {
       this.scene.bringToTop();
       this.scene.bringToTop("overlap");
+      this.scene.bringToTop("debug");
     }
 
     if (value) {
@@ -292,7 +311,8 @@ export class ProgramBaseScene extends Phaser.Scene {
       this.windowInitialPosition.y + this.programMaskOffset.y
     );
     this.refocusInputRect.setDepth(100);
-    this.refocusInputRect.setAlpha(0.2);
+    // this.refocusInputRect.setAlpha(0.2);
+    this.refocusInputRect.setAlpha(0.01);
     this.refocusInputRect.setInteractive();
     this.refocusInputRect.on(
       "pointerdown",

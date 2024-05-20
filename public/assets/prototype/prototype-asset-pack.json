@@ -3,10 +3,17 @@
         "files": [
             {
                 "url": [
-                    "assets/prototype/00027 (0x01E0).wav"
+                    "assets/prototype/heartrate-monitor-beep.mp3"
                 ],
                 "type": "audio",
-                "key": "dopamine"
+                "key": "boredom-beep"
+            },
+            {
+                "url": [
+                    "assets/prototype/heartrate-monitor-flatline.mp3"
+                ],
+                "type": "audio",
+                "key": "boredom-death"
             },
             {
                 "url": [
@@ -38,24 +45,10 @@
             },
             {
                 "url": [
-                    "assets/prototype/heartrate-monitor-beep.mp3"
+                    "assets/prototype/00027 (0x01E0).wav"
                 ],
                 "type": "audio",
-                "key": "boredom-beep"
-            },
-            {
-                "url": [
-                    "assets/prototype/heartrate-monitor-flatline.mp3"
-                ],
-                "type": "audio",
-                "key": "boredom-death"
-            },
-            {
-                "url": [
-                    "assets/prototype/office ambience RRR2.mp3"
-                ],
-                "type": "audio",
-                "key": "office-ambience"
+                "key": "dopamine"
             }
         ]
     },

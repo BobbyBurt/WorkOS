@@ -125,6 +125,24 @@
             "isFilled": true,
             "width": 1165,
             "height": 860
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "ee797f72-ded1-4018-8ad2-b6c9a457c6bd",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName",
+                "pageKey",
+                "sceneKey"
+            ],
+            "label": "icon_3",
+            "programName": "Zoom",
+            "iconTextureKey": "Tank",
+            "sceneKey": "camera-program",
+            "x": 1194,
+            "y": 274
         }
     ],
     "plainObjects": [],

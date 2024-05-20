@@ -11,78 +11,89 @@ import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
-  constructor() {
-    super("desktop");
 
-    /* START-USER-CTR-CODE */
+	constructor() {
+		super("desktop");
+
+		/* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  editorCreate(): void {
-    // monitorEdge1
-    const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
-    monitorEdge1.setOrigin(0, 0);
-    monitorEdge1.isFilled = true;
-    monitorEdge1.fillColor = 13882323;
+	editorCreate(): void {
 
-    // desktop_bg
-    const desktop_bg = this.add.image(334, 0, "desktop-bg");
-    desktop_bg.setOrigin(0, 0);
+		// monitorEdge1
+		const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
+		monitorEdge1.setOrigin(0, 0);
+		monitorEdge1.isFilled = true;
+		monitorEdge1.fillColor = 13882323;
 
-    // icon
-    const icon = new IconPrefab(this, 758, 65);
-    this.add.existing(icon);
+		// desktop_bg
+		const desktop_bg = this.add.image(334, 0, "desktop-bg");
+		desktop_bg.setOrigin(0, 0);
 
-    // icon_1
-    const icon_1 = new IconPrefab(this, 1402, 826);
-    this.add.existing(icon_1);
+		// icon
+		const icon = new IconPrefab(this, 758, 65);
+		this.add.existing(icon);
 
-    // icon_2
-    const icon_2 = new IconPrefab(this, 794, 368);
-    this.add.existing(icon_2);
+		// icon_1
+		const icon_1 = new IconPrefab(this, 1402, 826);
+		this.add.existing(icon_1);
 
-    // windowMask
-    const windowMask = this.add.image(456, 209, "white-px");
-    windowMask.scaleX = 1400;
-    windowMask.scaleY = 800;
-    windowMask.setOrigin(0, 0);
-    windowMask.visible = false;
+		// icon_2
+		const icon_2 = new IconPrefab(this, 794, 368);
+		this.add.existing(icon_2);
 
-    // moniter
-    const moniter = this.add.image(127, 0, "moniter");
-    moniter.setOrigin(0, 0);
+		// windowMask
+		const windowMask = this.add.image(456, 209, "white-px");
+		windowMask.scaleX = 1400;
+		windowMask.scaleY = 800;
+		windowMask.setOrigin(0, 0);
+		windowMask.visible = false;
 
-    // desktopRect
-    const desktopRect = this.add.rectangle(387, 70, 1165, 860);
-    desktopRect.setOrigin(0, 0);
-    desktopRect.visible = false;
-    desktopRect.isFilled = true;
+		// moniter
+		const moniter = this.add.image(127, 0, "moniter");
+		moniter.setOrigin(0, 0);
 
-    // icon (prefab fields)
-    icon.programName = "Browser";
-    icon.iconTextureKey = "Tank";
-    icon.sceneKey = "email-program";
+		// desktopRect
+		const desktopRect = this.add.rectangle(387, 70, 1165, 860);
+		desktopRect.setOrigin(0, 0);
+		desktopRect.visible = false;
+		desktopRect.isFilled = true;
 
-    // icon_1 (prefab fields)
-    icon_1.programName = "Fullscreen";
-    icon_1.iconTextureKey = "ToidSketch";
+		// icon_3
+		const icon_3 = new IconPrefab(this, 1194, 274);
+		this.add.existing(icon_3);
 
-    // icon_2 (prefab fields)
-    icon_2.programName = "Program";
-    icon_2.iconTextureKey = "Tank";
-    icon_2.sceneKey = "template-program";
+		// icon (prefab fields)
+		icon.programName = "Browser";
+		icon.iconTextureKey = "Tank";
+		icon.sceneKey = "email-program";
 
-    this.windowMask = windowMask;
-    this.desktopRect = desktopRect;
+		// icon_1 (prefab fields)
+		icon_1.programName = "Fullscreen";
+		icon_1.iconTextureKey = "ToidSketch";
 
-    this.events.emit("scene-awake");
-  }
+		// icon_2 (prefab fields)
+		icon_2.programName = "Program";
+		icon_2.iconTextureKey = "Tank";
+		icon_2.sceneKey = "template-program";
 
-  private windowMask!: Phaser.GameObjects.Image;
-  public desktopRect!: Phaser.GameObjects.Rectangle;
+		// icon_3 (prefab fields)
+		icon_3.programName = "Zoom";
+		icon_3.iconTextureKey = "Tank";
+		icon_3.sceneKey = "camera-program";
 
-  /* START-USER-CODE */
+		this.windowMask = windowMask;
+		this.desktopRect = desktopRect;
+
+		this.events.emit("scene-awake");
+	}
+
+	private windowMask!: Phaser.GameObjects.Image;
+	public desktopRect!: Phaser.GameObjects.Rectangle;
+
+	/* START-USER-CODE */
 
   public desktopGeomRect!: Phaser.Geom.Rectangle;
 

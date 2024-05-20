@@ -6,6 +6,8 @@
 
 import Phaser from "phaser";
 /* START-USER-IMPORTS */
+import DebugScene from "~/scenes/DebugScene";
+import { ProgramBaseScene } from "~/scenes/programs/ProgramScene";
 /* END-USER-IMPORTS */
 
 export default class ScrollField {
@@ -17,7 +19,7 @@ export default class ScrollField {
 
     this.gameObject.scene.events.once(
       Phaser.Scenes.Events.UPDATE,
-      this.setupMask,
+      this.setup,
       this
     );
 
@@ -29,15 +31,46 @@ export default class ScrollField {
   }
 
   private gameObject: Phaser.GameObjects.Container;
-  public maskRect!: Phaser.GameObjects.Rectangle;
+  public BGRect!: Phaser.GameObjects.Rectangle;
+  public scrollbarRect!: Phaser.GameObjects.Rectangle;
 
   /* START-USER-CODE */
 
-  private mask!: Phaser.Display.Masks.GeometryMask;
+  private initalY: number;
 
-  setupMask() {
-    // this.mask = this.maskRect.createGeometryMask();
-    // this.gameObject.setMask(this.mask);
+  private debugScene: DebugScene;
+  private parentScene: ProgramBaseScene;
+
+  setup() {
+    if (!this.BGRect) {
+      console.warn(`BGRect is undefined. Scroll field will not work.`);
+      return;
+    }
+
+    this.debugScene = this.gameObject.scene.scene.get("debug") as DebugScene;
+    this.initalY = this.gameObject.y;
+
+    this.parentScene = this.gameObject.scene as ProgramBaseScene;
+
+    this.scrollbarRect.setSize(
+      this.scrollbarRect.width,
+      this.parentScene.height / (this.BGRect.height / this.parentScene.height)
+    );
+
+    this.BGRect.setInteractive();
+    this.BGRect.on("wheel", this.scroll, this);
+  }
+
+  scroll(pointer: Phaser.Input.Pointer, deltaX: number, deltaY: number) {
+    this.gameObject.y -= deltaY;
+    this.gameObject.y = Phaser.Math.Clamp(
+      this.gameObject.y,
+      -this.BGRect.height + this.parentScene.height,
+      this.initalY
+    );
+
+    // this.scrollbarRect.setY((this.parentScene.height - this.scrollbarRect.height) + this.initalY);
+    // LEFTOFF:
   }
 
   /* END-USER-CODE */

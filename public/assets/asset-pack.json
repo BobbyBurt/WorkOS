@@ -12,6 +12,33 @@
                 "key": "icon-temp"
             },
             {
+                "url": "assets/images/meeting/meeting-boss-1.png",
+                "type": "image",
+                "key": "meeting-boss-1"
+            },
+            {
+                "url": "assets/images/meeting/meeting-boss-2.png",
+                "type": "image",
+                "key": "meeting-boss-2"
+            },
+            {
+                "url": [
+                    "assets/sfx/meeting-busted-TEMP.mp3"
+                ],
+                "type": "audio",
+                "key": "meeting-busted"
+            },
+            {
+                "url": "assets/images/meeting/meeting-distracted.png",
+                "type": "image",
+                "key": "meeting-distracted"
+            },
+            {
+                "url": "assets/images/meeting/meeting-working.png",
+                "type": "image",
+                "key": "meeting-working"
+            },
+            {
                 "url": "assets/images/Moniter0001(1).png",
                 "type": "image",
                 "key": "moniter"
@@ -21,6 +48,13 @@
                 "fontDataURL": "assets/fonts/nokia.xml",
                 "type": "bitmapFont",
                 "key": "nokia"
+            },
+            {
+                "url": [
+                    "assets/sfx/office ambience RRR2-TEMP.mp3"
+                ],
+                "type": "audio",
+                "key": "office-ambience"
             },
             {
                 "url": [
