@@ -9,6 +9,8 @@ export default class Employee {
 
   private name: employeeName;
 
+  // private state: ''
+
   // private state:
 
   constructor(game: Phaser.Game, name: employeeName) {
@@ -35,7 +37,7 @@ export default class Employee {
       });
       cameraProgram.time.delayedCall(10000, () => {
         cameraProgram.setCameraImage(this.name, "meeting-boss-1");
-        cameraProgram.sound.play("meeting-busted", { volume: 0.4 });
+        cameraProgram.sound.play("meeting-busted", { volume: 0.2 });
       });
       cameraProgram.time.delayedCall(13000, () => {
         cameraProgram.setCameraImage(this.name, "meeting-boss-2");

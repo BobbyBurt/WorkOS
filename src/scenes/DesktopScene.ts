@@ -37,11 +37,11 @@ export default class DesktopScene extends Phaser.Scene {
 		this.add.existing(icon);
 
 		// icon_1
-		const icon_1 = new IconPrefab(this, 1402, 826);
+		const icon_1 = new IconPrefab(this, 1420, 759);
 		this.add.existing(icon_1);
 
 		// icon_2
-		const icon_2 = new IconPrefab(this, 794, 368);
+		const icon_2 = new IconPrefab(this, 1419, 86);
 		this.add.existing(icon_2);
 
 		// windowMask
@@ -62,7 +62,7 @@ export default class DesktopScene extends Phaser.Scene {
 		desktopRect.isFilled = true;
 
 		// icon_3
-		const icon_3 = new IconPrefab(this, 1194, 274);
+		const icon_3 = new IconPrefab(this, 416, 90);
 		this.add.existing(icon_3);
 
 		// icon (prefab fields)
