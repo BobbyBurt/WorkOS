@@ -50,7 +50,7 @@
             "iconTextureKey": "Tank",
             "sceneKey": "email-program",
             "x": 758,
-            "y": 65
+            "y": 113
         },
         {
             "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
@@ -138,11 +138,29 @@
                 "sceneKey"
             ],
             "label": "icon_3",
-            "programName": "Zoom",
-            "iconTextureKey": "Tank",
+            "programName": "Camera",
+            "iconTextureKey": "camera-icon",
             "sceneKey": "camera-program",
-            "x": 416,
-            "y": 90
+            "x": 475,
+            "y": 116
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "d4a16d27-1118-4737-9177-13d2db5e8ed5",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName",
+                "pageKey",
+                "sceneKey"
+            ],
+            "label": "icon_4",
+            "programName": "DATABASE",
+            "iconTextureKey": "skull-icon",
+            "sceneKey": "database-program",
+            "x": 516,
+            "y": 686
         }
     ],
     "plainObjects": [],

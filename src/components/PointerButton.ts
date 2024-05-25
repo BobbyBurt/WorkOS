@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -8,55 +9,59 @@ import Phaser from "phaser";
 /* END-USER-IMPORTS */
 
 export default class PointerButton {
+  constructor(gameObject: Phaser.GameObjects.Image) {
+    this.gameObject = gameObject;
+    (gameObject as any)["__PointerButton"] = this;
 
-	constructor(gameObject: Phaser.GameObjects.Image) {
-		this.gameObject = gameObject;
-		(gameObject as any)["__PointerButton"] = this;
+    /* START-USER-CTR-CODE */
 
-		/* START-USER-CTR-CODE */
+    this.gameObject.setInteractive({ useHandCursor: true });
+    this.gameObject.on("pointerover", this.pointerOver, this);
+    this.gameObject.on("pointerout", this.pointerOut, this);
+    this.gameObject.on("pointerdown", this.pointerDown, this);
+    this.gameObject.on("pointerup", this.pointerUp, this);
 
-		this.gameObject.setInteractive({ useHandCursor: true });
-		this.gameObject.on('pointerover', this.pointerOver, this);
-		this.gameObject.on('pointerout', this.pointerOut, this);
-		this.gameObject.on('pointerdown', this.pointerDown, this);
-		this.gameObject.on('pointerup', this.pointerUp, this);
+    /* END-USER-CTR-CODE */
+  }
 
-		/* END-USER-CTR-CODE */
-	}
+  static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
+    return (gameObject as any)["__PointerButton"];
+  }
 
-	static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
-		return (gameObject as any)["__PointerButton"];
-	}
+  private gameObject: Phaser.GameObjects.Image;
+  public setAlpha: boolean = false;
 
-	private gameObject: Phaser.GameObjects.Image;
+  /* START-USER-CODE */
 
-	/* START-USER-CODE */
+  pointerOver() {
+    if (this.setAlpha) {
+      this.gameObject.setAlpha(0.8);
+    }
 
-	pointerOver()
-	{
-		this.gameObject.setAlpha(.8);
+    // Component can have settings for visual feedback
+  }
 
-		// Component can have settings for visual feedback
-	}
+  pointerOut() {
+    if (this.setAlpha) {
+      this.gameObject.setAlpha(1);
+    }
+  }
 
-	pointerOut()
-	{
-		this.gameObject.setAlpha(1);
-	}
+  pointerDown() {
+    if (this.setAlpha) {
+      this.gameObject.setAlpha(0.6);
+    }
+  }
 
-	pointerDown()
-	{
-		this.gameObject.setAlpha(.6);
-	}
+  pointerUp() {
+    if (this.setAlpha) {
+      this.gameObject.setAlpha(1);
+    }
 
-	pointerUp()
-	{
-		this.gameObject.setAlpha(1);
+    this.gameObject.emit("click");
+  }
 
-		this.gameObject.emit('click');
-	}
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

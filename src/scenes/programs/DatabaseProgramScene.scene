@@ -1,0 +1,305 @@
+{
+    "id": "9e4ea72c-11cf-436c-af2c-5ee58d9c38e8",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "ProgramBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "database-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60,
+        "borderWidth": 700,
+        "borderHeight": 500
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "d17a129a-eb8f-40b7-b1c8-a14b7c97a50b",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "caed3f07-a9c8-43d1-a907-3578b7e5df18",
+                    "label": "rectangle_1",
+                    "y": 60,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#2c342b",
+                    "width": 700,
+                    "height": 500
+                },
+                {
+                    "type": "Image",
+                    "id": "485094a8-d2d0-48a1-b587-88b2b02be991",
+                    "label": "employeeButton4",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 113,
+                    "y": 368,
+                    "scaleX": 4.803429437818358,
+                    "scaleY": 1.3980935992090544
+                },
+                {
+                    "type": "Image",
+                    "id": "2eb49cb4-f016-486e-99ad-61cbf2650426",
+                    "label": "employeeButton3",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 113,
+                    "y": 318,
+                    "scaleX": 4.803429437818358,
+                    "scaleY": 1.3980935992090544
+                },
+                {
+                    "type": "Image",
+                    "id": "b5f4673e-8986-4f18-bbe2-ad5739f266b7",
+                    "label": "employeeButton2",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 113,
+                    "y": 268,
+                    "scaleX": 4.803429437818358,
+                    "scaleY": 1.3980935992090544
+                },
+                {
+                    "type": "Image",
+                    "id": "a89bad1d-2a48-4f1a-9bdb-cb78f9b2f3c5",
+                    "label": "employeeButton1",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 113,
+                    "y": 217,
+                    "scaleX": 4.803429437818358,
+                    "scaleY": 1.3980935992090544
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "e5ec0782-066d-4b97-926d-d20b73169f10",
+                    "label": "bitmaptext_1",
+                    "x": 31,
+                    "y": 83,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "EMPLOYEE \nDATABASE",
+                    "font": "nokia",
+                    "fontSize": -32
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "849d98a2-ff75-4b37-ab90-cbbb01c5cd6b",
+                    "label": "bitmaptext",
+                    "x": 56,
+                    "y": 203,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "Name",
+                    "font": "nokia",
+                    "fontSize": -24
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "5c784281-101e-4486-8a6b-701a6a7cc8cf",
+                    "label": "bitmaptext_2",
+                    "x": 56,
+                    "y": 253,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "Name",
+                    "font": "nokia",
+                    "fontSize": -24
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "d5709a7f-c887-4a1d-bbf1-46be3347616c",
+                    "label": "bitmaptext_3",
+                    "x": 56,
+                    "y": 303,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "Name",
+                    "font": "nokia",
+                    "fontSize": -24
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "717ead29-1cf8-4ec3-8aa9-039209327b5d",
+                    "label": "bitmaptext_4",
+                    "x": 56,
+                    "y": 353,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "Name",
+                    "font": "nokia",
+                    "fontSize": -24
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "09c82b84-50de-4e32-a0e0-5d63541b3d47",
+                    "label": "instructionsText",
+                    "scope": "CLASS",
+                    "x": 477,
+                    "y": 310,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "INSTRUCTIONS TEXT",
+                    "font": "nokia",
+                    "align": 1,
+                    "fontSize": -16,
+                    "maxWidth": 300
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d32148d2-4141-4e83-9dfb-94a478354d04",
+                    "label": "rectangle_2",
+                    "x": 250,
+                    "y": 60,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.1,
+                    "isFilled": true,
+                    "fillColor": "#00f533",
+                    "width": 450,
+                    "height": 500
+                },
+                {
+                    "type": "Container",
+                    "id": "fb45c76d-2b1c-4de0-9be1-11b2be23de66",
+                    "label": "scrollField",
+                    "scope": "CLASS",
+                    "components": [
+                        "ScrollField"
+                    ],
+                    "ScrollField.BGRect": "rectangle",
+                    "ScrollField.scrollbarRect": "rectangle_3",
+                    "x": 250,
+                    "y": 60,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "b7147f07-47b4-4eb7-9f2e-30f0774c0564",
+                            "label": "rectangle",
+                            "originX": 0,
+                            "originY": 0,
+                            "alpha": 0.1,
+                            "isFilled": true,
+                            "fillColor": "#00f533",
+                            "width": 450,
+                            "height": 1000
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "e4a34e62-f486-4879-b212-a03ca9594138",
+                            "label": "dataEntryText",
+                            "scope": "CLASS",
+                            "x": 41,
+                            "y": 35,
+                            "font": "nokia",
+                            "fontSize": -16,
+                            "maxWidth": 340
+                        }
+                    ]
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "5c438028-ee9a-4bb3-8b04-e7b681b87627",
+                    "label": "rectangle_3",
+                    "x": 639,
+                    "y": 126,
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 4,
+                    "height": 128
+                },
+                {
+                    "type": "Image",
+                    "id": "d28cab84-6501-4215-b642-2d4324382d8e",
+                    "label": "hackButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 119,
+                    "y": 502,
+                    "scaleX": 4.803429437818358,
+                    "scaleY": 1.3980935992090544
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "56d04ac5-86d7-47da-b07f-0a2717bca6c9",
+                    "label": "bitmaptext_5",
+                    "x": 82,
+                    "y": 487,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "HACK",
+                    "font": "nokia",
+                    "fontSize": -24
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "a7803cf1-17dd-4b26-a6dc-d941c290ffb5",
+            "label": "employeeButtonList",
+            "objectIds": [
+                "a89bad1d-2a48-4f1a-9bdb-cb78f9b2f3c5",
+                "b5f4673e-8986-4f18-bbe2-ad5739f266b7",
+                "2eb49cb4-f016-486e-99ad-61cbf2650426",
+                "485094a8-d2d0-48a1-b587-88b2b02be991"
+            ]
+        },
+        {
+            "id": "ff95fbcd-0f8a-4c9b-9aef-1b266af9c273",
+            "label": "employeeButtonTextList",
+            "objectIds": [
+                "849d98a2-ff75-4b37-ab90-cbbb01c5cd6b",
+                "5c784281-101e-4486-8a6b-701a6a7cc8cf",
+                "d5709a7f-c887-4a1d-bbf1-46be3347616c",
+                "717ead29-1cf8-4ec3-8aa9-039209327b5d"
+            ]
+        }
+    ]
+}

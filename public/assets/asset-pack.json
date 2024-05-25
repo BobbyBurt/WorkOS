@@ -2,9 +2,154 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/camera/bossman-absent.png",
+                "type": "image",
+                "key": "bossman-absent"
+            },
+            {
+                "url": "assets/images/camera/bossman-leaving.png",
+                "type": "image",
+                "key": "bossman-leaving"
+            },
+            {
+                "url": "assets/images/camera/bossman-returning.png",
+                "type": "image",
+                "key": "bossman-returning"
+            },
+            {
+                "url": "assets/images/camera/bossman-watching.png",
+                "type": "image",
+                "key": "bossman-watching"
+            },
+            {
+                "url": "assets/images/desktop-icons/camera.png",
+                "type": "image",
+                "key": "camera-icon"
+            },
+            {
                 "url": "assets/images/Desktop_BG0001(1).png",
                 "type": "image",
                 "key": "desktop-bg"
+            },
+            {
+                "url": "assets/images/camera/bertina-distracted.png",
+                "type": "image",
+                "key": "employee-B-distracted"
+            },
+            {
+                "url": "assets/images/camera/bertina-trouble.png",
+                "type": "image",
+                "key": "employee-B-trouble"
+            },
+            {
+                "url": "assets/images/camera/bertina-working.png",
+                "type": "image",
+                "key": "employee-B-working"
+            },
+            {
+                "url": "assets/images/camera/fafferd-distracted.png",
+                "type": "image",
+                "key": "employee-F-distracted"
+            },
+            {
+                "url": "assets/images/camera/fafferd-trouble.png",
+                "type": "image",
+                "key": "employee-F-trouble"
+            },
+            {
+                "url": "assets/images/camera/fafferd-working.png",
+                "type": "image",
+                "key": "employee-F-working"
+            },
+            {
+                "url": "assets/images/camera/guy-distracted.png",
+                "type": "image",
+                "key": "employee-G-distracted"
+            },
+            {
+                "url": "assets/images/camera/guy-trouble.png",
+                "type": "image",
+                "key": "employee-G-trouble"
+            },
+            {
+                "url": "assets/images/camera/guy-working.png",
+                "type": "image",
+                "key": "employee-G-working"
+            },
+            {
+                "url": "assets/images/camera/juff-distracted.png",
+                "type": "image",
+                "key": "employee-J-distracted"
+            },
+            {
+                "url": "assets/images/camera/juff-trouble.png",
+                "type": "image",
+                "key": "employee-J-trouble"
+            },
+            {
+                "url": "assets/images/camera/juff-working.png",
+                "type": "image",
+                "key": "employee-J-working"
+            },
+            {
+                "url": "assets/images/camera/kalfin-distracted.png",
+                "type": "image",
+                "key": "employee-K-distracted"
+            },
+            {
+                "url": "assets/images/camera/kalfin-trouble.png",
+                "type": "image",
+                "key": "employee-K-trouble"
+            },
+            {
+                "url": "assets/images/camera/kalfin-working.png",
+                "type": "image",
+                "key": "employee-K-working"
+            },
+            {
+                "url": "assets/images/camera/lillylou-distracted.png",
+                "type": "image",
+                "key": "employee-L-distracted"
+            },
+            {
+                "url": "assets/images/camera/lillylou-trouble.png",
+                "type": "image",
+                "key": "employee-L-trouble"
+            },
+            {
+                "url": "assets/images/camera/lillylou-working.png",
+                "type": "image",
+                "key": "employee-L-working"
+            },
+            {
+                "url": "assets/images/camera/o'mallory-distracted.png",
+                "type": "image",
+                "key": "employee-O-distracted"
+            },
+            {
+                "url": "assets/images/camera/o'mallory-trouble.png",
+                "type": "image",
+                "key": "employee-O-trouble"
+            },
+            {
+                "url": "assets/images/camera/o'mallory-working.png",
+                "type": "image",
+                "key": "employee-O-working"
+            },
+            {
+                "url": "assets/images/camera/xanderson-distracted.png",
+                "type": "image",
+                "key": "employee-X-distracted"
+            },
+            {
+                "url": "assets/images/camera/xanderson-trouble.png",
+                "type": "image",
+                "key": "employee-X-trouble"
+            },
+            {
+                "url": "assets/images/camera/xanderson-working.png",
+                "type": "image",
+                "key": "employee-X-working"
             },
             {
                 "url": "assets/images/icon-temp.png",
@@ -12,31 +157,11 @@
                 "key": "icon-temp"
             },
             {
-                "url": "assets/images/meeting/meeting-boss-1.png",
-                "type": "image",
-                "key": "meeting-boss-1"
-            },
-            {
-                "url": "assets/images/meeting/meeting-boss-2.png",
-                "type": "image",
-                "key": "meeting-boss-2"
-            },
-            {
                 "url": [
                     "assets/sfx/meeting-busted-TEMP.mp3"
                 ],
                 "type": "audio",
                 "key": "meeting-busted"
-            },
-            {
-                "url": "assets/images/meeting/meeting-distracted.png",
-                "type": "image",
-                "key": "meeting-distracted"
-            },
-            {
-                "url": "assets/images/meeting/meeting-working.png",
-                "type": "image",
-                "key": "meeting-working"
             },
             {
                 "url": "assets/images/Moniter0001(1).png",
@@ -55,6 +180,11 @@
                 ],
                 "type": "audio",
                 "key": "office-ambience"
+            },
+            {
+                "url": "assets/images/desktop-icons/skull.png",
+                "type": "image",
+                "key": "skull-icon"
             },
             {
                 "url": [

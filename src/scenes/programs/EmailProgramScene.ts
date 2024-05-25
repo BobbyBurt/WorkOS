@@ -107,7 +107,7 @@ export default class EmailProgramScene extends ProgramBaseScene {
 
     // test
     this.start_button.on("click", () => {
-      EmployeeDirectory.getEmployee("template").sendEmail("distraction");
+      EmployeeDirectory.getEmployee("employee-B").sendEmail("distraction");
     });
   }
 

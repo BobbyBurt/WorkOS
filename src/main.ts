@@ -11,6 +11,7 @@ import OverlapScene from "./scenes/OverlapScene";
 import Preload from "./scenes/Preload";
 import PrototypeScene from "./scenes/PrototypeScene";
 import CameraProgramScene from "./scenes/programs/CameraProgramScene";
+import DatabaseProgramScene from "./scenes/programs/DatabaseProgramScene";
 import EmailProgramScene from "./scenes/programs/EmailProgramScene";
 import ProgramScene from "./scenes/programs/ProgramScene";
 import TemplateProgramScene from "./scenes/programs/TemplateProgramScene";
@@ -50,6 +51,7 @@ window.addEventListener("load", function () {
   game.scene.add("template-program", TemplateProgramScene);
   game.scene.add("email-program", EmailProgramScene);
   game.scene.add("camera-program", CameraProgramScene);
+  game.scene.add("database-program", DatabaseProgramScene);
 });
 
 class Boot extends Phaser.Scene {

@@ -11,11 +11,12 @@ import { ProgramBaseScene } from "~/scenes/programs/ProgramScene";
 /* END-USER-IMPORTS */
 
 export default class ScrollField {
-  constructor(gameObject: Phaser.GameObjects.Container) {
-    this.gameObject = gameObject;
-    (gameObject as any)["__ScrollField"] = this;
 
-    /* START-USER-CTR-CODE */
+	constructor(gameObject: Phaser.GameObjects.Container) {
+		this.gameObject = gameObject;
+		(gameObject as any)["__ScrollField"] = this;
+
+		/* START-USER-CTR-CODE */
 
     this.gameObject.scene.events.once(
       Phaser.Scenes.Events.UPDATE,
@@ -24,17 +25,17 @@ export default class ScrollField {
     );
 
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  static getComponent(gameObject: Phaser.GameObjects.Container): ScrollField {
-    return (gameObject as any)["__ScrollField"];
-  }
+	static getComponent(gameObject: Phaser.GameObjects.Container): ScrollField {
+		return (gameObject as any)["__ScrollField"];
+	}
 
-  private gameObject: Phaser.GameObjects.Container;
-  public BGRect!: Phaser.GameObjects.Rectangle;
-  public scrollbarRect!: Phaser.GameObjects.Rectangle;
+	private gameObject: Phaser.GameObjects.Container;
+	public BGRect!: Phaser.GameObjects.Rectangle;
+	public scrollbarRect!: Phaser.GameObjects.Rectangle;
 
-  /* START-USER-CODE */
+	/* START-USER-CODE */
 
   private initalY: number;
 
@@ -68,9 +69,12 @@ export default class ScrollField {
       -this.BGRect.height + this.parentScene.height,
       this.initalY
     );
-
     // this.scrollbarRect.setY((this.parentScene.height - this.scrollbarRect.height) + this.initalY);
     // LEFTOFF:
+  }
+
+  public resetPosition() {
+    this.gameObject.y = this.initalY;
   }
 
   /* END-USER-CODE */

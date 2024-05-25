@@ -1,7 +1,10 @@
 /** @format */
 
 export default class dataManagerKeys {
-  static readonly objects = {
-    example: "example",
+  static readonly employees = {
+    /** @type boolean
+     * + ': <employee key>'
+     */
+    databaseHacked: "database-hacked",
   };
 }

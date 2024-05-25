@@ -115,6 +115,13 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   // program info
   public name = "Cool Program";
+  private _hackProgram = false;
+  public get hackProgram() {
+    return this._hackProgram;
+  }
+  protected set hackProgram(value: boolean) {
+    this._hackProgram = value;
+  }
 
   // state
   private minimized: boolean;

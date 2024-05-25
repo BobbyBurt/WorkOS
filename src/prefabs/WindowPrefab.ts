@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -74,11 +75,11 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 
-		this.create();
+    this.create();
 
-		this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
+    this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
-		/* END-USER-CTR-CODE */
+    /* END-USER-CTR-CODE */
 	}
 
 	public insideRect: Phaser.GameObjects.Rectangle;
@@ -91,40 +92,44 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
-	private programScene: ProgramBaseScene;
+  private programScene: ProgramBaseScene;
 
-	create() {
-		this.programScene = this.scene as ProgramBaseScene;
+  create() {
+    this.programScene = this.scene as ProgramBaseScene;
 
-		this.closeButton.on(eventKeys.UI.click, this.onCloseButton, this);
-		this.minimizeButton.on(eventKeys.UI.click, this.onMinimizeButton, this);
+    this.closeButton.on(eventKeys.UI.click, this.onCloseButton, this);
+    this.minimizeButton.on(eventKeys.UI.click, this.onMinimizeButton, this);
 
-		this.programNameText.setText(this.programScene.name);
-		// TODO: set icon
-	}
+    this.programNameText.setText(this.programScene.name);
+    // TODO: set icon
 
-	private onCloseButton() {
-		this.programScene.close();
-	}
+    if (this.programScene.hackProgram) {
+      this.windowBorder.setTint(0x15ff06);
+    }
+  }
 
-	private onMinimizeButton() {
-		this.programScene.setMinimize(true);
-	}
+  private onCloseButton() {
+    this.programScene.close();
+  }
 
-	/**
-	 * To be called after create, before render
-	 * @param width 
-	 * @param height 
-	 */
-	public setWindowSize(width: number, height: number) {
-		this.windowBorder.setSize(width, height);
-		this.minimizeButton.setX(width - 138);
-		this.closeButton.setX(width - 75);
-		this.insideRect.setSize(width - 17, height - 63);
-		this.dragRect.setSize(width - 150, this.dragRect.height);
-	}
+  private onMinimizeButton() {
+    this.programScene.setMinimize(true);
+  }
 
-	/* END-USER-CODE */
+  /**
+   * To be called after create, before render
+   * @param width
+   * @param height
+   */
+  public setWindowSize(width: number, height: number) {
+    this.windowBorder.setSize(width, height);
+    this.minimizeButton.setX(width - 138);
+    this.closeButton.setX(width - 75);
+    this.insideRect.setSize(width - 17, height - 63);
+    this.dragRect.setSize(width - 150, this.dragRect.height);
+  }
+
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

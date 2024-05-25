@@ -95,7 +95,18 @@
             "objectDisplayFormat": "",
             "baseClass": "",
             "gameObjectType": "Phaser.GameObjects.Image",
-            "properties": []
+            "properties": [
+                {
+                    "name": "setAlpha",
+                    "label": "Set alpha",
+                    "tooltip": "Sets button alpha as feedback",
+                    "defValue": false,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                }
+            ]
         },
         {
             "name": "ScrollField",

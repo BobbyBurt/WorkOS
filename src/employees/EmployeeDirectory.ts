@@ -1,12 +1,11 @@
 /** @format */
 
 import Employee from "./Employee";
+import { employeeKey } from "./EmployeeData";
 import EmployeeTemplate from "./EmployeeTemplate";
 
-export type employeeName = "" | "template";
-
 export default class EmployeeDirectory {
-  private static employeeMap: Map<employeeName, Employee>;
+  private static employeeMap: Map<employeeKey, Employee>;
 
   /**
    * To be called once in `Boot`
@@ -18,12 +17,12 @@ export default class EmployeeDirectory {
       return;
     }
 
-    EmployeeDirectory.employeeMap = new Map<employeeName, Employee>([
-      ["template", new EmployeeTemplate(game, "template")],
+    EmployeeDirectory.employeeMap = new Map<employeeKey, Employee>([
+      ["employee-B", new EmployeeTemplate(game, "employee-B")],
     ]);
   }
 
-  public static getEmployee(name: employeeName): Employee {
+  public static getEmployee(name: employeeKey): Employee {
     return EmployeeDirectory.employeeMap.get(name)!;
   }
 }

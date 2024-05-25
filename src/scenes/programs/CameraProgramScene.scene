@@ -23,10 +23,10 @@
                 {
                     "type": "Sprite",
                     "id": "a586cdb8-0234-48a7-b4ca-8caa9003db36",
-                    "label": "meeting_working",
+                    "label": "cameraBoss",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "bossman-watching"
                     },
                     "x": 1.5,
                     "y": 61.5,
@@ -36,44 +36,36 @@
                 {
                     "type": "Sprite",
                     "id": "1ce04096-9ee2-43bf-a861-43bc9704e332",
-                    "label": "meeting_working_1",
+                    "label": "cameraB",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-B-working"
                     },
                     "x": 234.5,
                     "y": 61.5,
                     "originX": 0,
-                    "originY": 0,
-                    "tintTopLeft": "#ff7777",
-                    "tintTopRight": "#ff7777",
-                    "tintBottomLeft": "#ff7777",
-                    "tintBottomRight": "#ff7777"
+                    "originY": 0
                 },
                 {
                     "type": "Sprite",
                     "id": "02027fa8-4285-44e1-8f4b-391103f4bc0d",
-                    "label": "meeting_working_2",
+                    "label": "cameraF",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-F-working"
                     },
                     "x": 467.5,
                     "y": 61.5,
                     "originX": 0,
-                    "originY": 0,
-                    "tintTopLeft": "#f8ff77",
-                    "tintTopRight": "#f8ff77",
-                    "tintBottomLeft": "#f8ff77",
-                    "tintBottomRight": "#f8ff77"
+                    "originY": 0
                 },
                 {
                     "type": "Sprite",
                     "id": "ac365ab3-0727-4f17-a724-3968144c8f46",
-                    "label": "meeting_working_3",
+                    "label": "cameraG",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-G-working"
                     },
                     "x": 1.5,
                     "y": 214.5,
@@ -83,44 +75,36 @@
                 {
                     "type": "Sprite",
                     "id": "a86640e1-c152-4481-876c-01cdc4c123e7",
-                    "label": "meeting_working_4",
+                    "label": "cameraJ",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-J-working"
                     },
                     "x": 234.5,
                     "y": 214.5,
                     "originX": 0,
-                    "originY": 0,
-                    "tintTopLeft": "#77ff8b",
-                    "tintTopRight": "#77ff8b",
-                    "tintBottomLeft": "#77ff8b",
-                    "tintBottomRight": "#77ff8b"
+                    "originY": 0
                 },
                 {
                     "type": "Sprite",
                     "id": "0ec7a285-86c5-431b-8832-00b7f7f30199",
-                    "label": "meeting_working_5",
+                    "label": "cameraK",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-K-working"
                     },
                     "x": 467.5,
                     "y": 214.5,
                     "originX": 0,
-                    "originY": 0,
-                    "tintTopLeft": "#77d3ff",
-                    "tintTopRight": "#77d3ff",
-                    "tintBottomLeft": "#77d3ff",
-                    "tintBottomRight": "#77d3ff"
+                    "originY": 0
                 },
                 {
                     "type": "Sprite",
                     "id": "c2d8bdb3-eeb5-4371-bc14-5dea0b46d835",
-                    "label": "meeting_working_6",
+                    "label": "cameraL",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-L-working"
                     },
                     "x": 1.5,
                     "y": 367.5,
@@ -130,10 +114,10 @@
                 {
                     "type": "Sprite",
                     "id": "c58ecf4c-3efd-4ef2-ac37-4cee788e40d0",
-                    "label": "meeting_working_7",
+                    "label": "cameraO",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-O-working"
                     },
                     "x": 234.5,
                     "y": 367.5,
@@ -143,10 +127,10 @@
                 {
                     "type": "Sprite",
                     "id": "f93b2cb2-366d-4129-b8a6-a9c5816c01e6",
-                    "label": "meeting_working_8",
+                    "label": "cameraX",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "meeting-working"
+                        "key": "employee-X-working"
                     },
                     "x": 467.5,
                     "y": 367.5,

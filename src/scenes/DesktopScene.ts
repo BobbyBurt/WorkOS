@@ -33,7 +33,7 @@ export default class DesktopScene extends Phaser.Scene {
 		desktop_bg.setOrigin(0, 0);
 
 		// icon
-		const icon = new IconPrefab(this, 758, 65);
+		const icon = new IconPrefab(this, 758, 113);
 		this.add.existing(icon);
 
 		// icon_1
@@ -62,8 +62,12 @@ export default class DesktopScene extends Phaser.Scene {
 		desktopRect.isFilled = true;
 
 		// icon_3
-		const icon_3 = new IconPrefab(this, 416, 90);
+		const icon_3 = new IconPrefab(this, 475, 116);
 		this.add.existing(icon_3);
+
+		// icon_4
+		const icon_4 = new IconPrefab(this, 516, 686);
+		this.add.existing(icon_4);
 
 		// icon (prefab fields)
 		icon.programName = "Browser";
@@ -80,9 +84,14 @@ export default class DesktopScene extends Phaser.Scene {
 		icon_2.sceneKey = "template-program";
 
 		// icon_3 (prefab fields)
-		icon_3.programName = "Zoom";
-		icon_3.iconTextureKey = "Tank";
+		icon_3.programName = "Camera";
+		icon_3.iconTextureKey = "camera-icon";
 		icon_3.sceneKey = "camera-program";
+
+		// icon_4 (prefab fields)
+		icon_4.programName = "DATABASE";
+		icon_4.iconTextureKey = "skull-icon";
+		icon_4.sceneKey = "database-program";
 
 		this.windowMask = windowMask;
 		this.desktopRect = desktopRect;
