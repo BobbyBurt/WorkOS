@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -14,9 +15,9 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 		super(scene, x ?? 0, y ?? 0);
 
 		// iconImage
-		const iconImage = scene.add.image(0, 0, "ToidSketch");
-		iconImage.scaleX = 0.2919594302647729;
-		iconImage.scaleY = 0.2919594302647729;
+		const iconImage = scene.add.image(9, 5, "picture-icon");
+		iconImage.scaleX = 4.115525366501524;
+		iconImage.scaleY = 4.115525366501524;
 		iconImage.setOrigin(0, 0);
 		this.add(iconImage);
 
@@ -47,9 +48,9 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 
-		this.scene.events.once('scene-awake', this.start, this);
+    this.scene.events.once("scene-awake", this.start, this);
 
-		/* END-USER-CTR-CODE */
+    /* END-USER-CTR-CODE */
 	}
 
 	private iconImage: Phaser.GameObjects.Image;
@@ -61,52 +62,45 @@ export default class IconPrefab extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
-	private start()
-	{
-		// apply properties
-		this.iconImage.setTexture(this.iconTextureKey);
-		this.nameText.setText(this.programName);
+  private start() {
+    // apply properties
+    this.iconImage.setTexture(this.iconTextureKey);
+    this.nameText.setText(this.programName);
 
-		// setup input
-		this.selectRect.setInteractive();
-		this.selectRect.on('pointerover', this.pointerOver, this);
-		this.selectRect.on('pointerout', this.pointerOut, this);
-		this.selectRect.on('pointerdown', this.pointerDown, this);
-		this.selectRect.on('pointerup', this.pointerUp, this);
-	}
+    // setup input
+    this.selectRect.setInteractive();
+    this.selectRect.on("pointerover", this.pointerOver, this);
+    this.selectRect.on("pointerout", this.pointerOut, this);
+    this.selectRect.on("pointerdown", this.pointerDown, this);
+    this.selectRect.on("pointerup", this.pointerUp, this);
+  }
 
-	private pointerOver()
-	{
-		this.selectRect.setAlpha(.5);
-	}
+  private pointerOver() {
+    this.selectRect.setAlpha(0.5);
+  }
 
-	private pointerOut()
-	{
-		this.selectRect.setAlpha(.001);
-	}
+  private pointerOut() {
+    this.selectRect.setAlpha(0.001);
+  }
 
-	private pointerDown()
-	{
-		this.selectRect.setAlpha(1);
-	}
+  private pointerDown() {
+    this.selectRect.setAlpha(1);
+  }
 
-	private pointerUp()
-	{
-		// fullscreen
-		if (this.programName === 'Fullscreen')
-		{
-			this.scene.scale.startFullscreen();
+  private pointerUp() {
+    // fullscreen
+    if (this.programName === "Fullscreen") {
+      this.scene.scale.startFullscreen();
 
-			return;
-		}
-		// TODO: put this somewhere else
+      return;
+    }
+    // TODO: put this somewhere else
 
-		let desktopScene = this.scene as DesktopScene;
-		desktopScene.addWindow(this.sceneKey);
-	}
+    let desktopScene = this.scene as DesktopScene;
+    desktopScene.addWindow(this.sceneKey);
+  }
 
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

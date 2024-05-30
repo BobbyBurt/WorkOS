@@ -28,6 +28,12 @@ export default class DesktopScene extends Phaser.Scene {
 		monitorEdge1.isFilled = true;
 		monitorEdge1.fillColor = 13882323;
 
+		// wallpaperColour
+		const wallpaperColour = this.add.rectangle(0, 0, 1920, 1080);
+		wallpaperColour.setOrigin(0, 0);
+		wallpaperColour.isFilled = true;
+		wallpaperColour.fillColor = 3303823;
+
 		// desktop_bg
 		const desktop_bg = this.add.image(334, 0, "desktop-bg");
 		desktop_bg.setOrigin(0, 0);
@@ -40,10 +46,6 @@ export default class DesktopScene extends Phaser.Scene {
 		const icon_1 = new IconPrefab(this, 1420, 759);
 		this.add.existing(icon_1);
 
-		// icon_2
-		const icon_2 = new IconPrefab(this, 1419, 86);
-		this.add.existing(icon_2);
-
 		// windowMask
 		const windowMask = this.add.image(456, 209, "white-px");
 		windowMask.scaleX = 1400;
@@ -52,11 +54,12 @@ export default class DesktopScene extends Phaser.Scene {
 		windowMask.visible = false;
 
 		// moniter
-		const moniter = this.add.image(127, 0, "moniter");
-		moniter.setOrigin(0, 0);
+		const moniter = this.add.image(970.5, 540, "moniter");
+		moniter.scaleX = 1.4;
+		moniter.scaleY = 1.1;
 
 		// desktopRect
-		const desktopRect = this.add.rectangle(387, 70, 1165, 860);
+		const desktopRect = this.add.rectangle(143, 19, 1630, 970);
 		desktopRect.setOrigin(0, 0);
 		desktopRect.visible = false;
 		desktopRect.isFilled = true;
@@ -70,27 +73,22 @@ export default class DesktopScene extends Phaser.Scene {
 		this.add.existing(icon_4);
 
 		// icon (prefab fields)
-		icon.programName = "Browser";
-		icon.iconTextureKey = "Tank";
+		icon.programName = "Email";
+		icon.iconTextureKey = "page-go-icon_1";
 		icon.sceneKey = "email-program";
 
 		// icon_1 (prefab fields)
 		icon_1.programName = "Fullscreen";
-		icon_1.iconTextureKey = "ToidSketch";
-
-		// icon_2 (prefab fields)
-		icon_2.programName = "Program";
-		icon_2.iconTextureKey = "Tank";
-		icon_2.sceneKey = "template-program";
+		icon_1.iconTextureKey = "window-icon";
 
 		// icon_3 (prefab fields)
 		icon_3.programName = "Camera";
-		icon_3.iconTextureKey = "camera-icon";
+		icon_3.iconTextureKey = "picture-icon";
 		icon_3.sceneKey = "camera-program";
 
 		// icon_4 (prefab fields)
 		icon_4.programName = "DATABASE";
-		icon_4.iconTextureKey = "skull-icon";
+		icon_4.iconTextureKey = "terminal-icon";
 		icon_4.sceneKey = "database-program";
 
 		this.windowMask = windowMask;

@@ -21,12 +21,16 @@ export default class Employee {
   protected state = "working";
 
   /**
-   * Triggers default response
+   * If distraction condition is met, will set camera image to distracted.
    * @param to
    * @param content TEMP
    */
   public sendEmail(content: string) {
-    console.log(`email from ${this.data.name}: Please don't bother me.`);
+    // console.log(`email from ${this.data.name}: Please don't bother me.`);
+
+    if (content === this.data.distractableFile) {
+      this.setCameraImage("distracted");
+    }
   }
 
   protected setCameraImage(state: string) {

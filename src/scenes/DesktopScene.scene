@@ -24,6 +24,17 @@
             "height": 1080
         },
         {
+            "type": "Rectangle",
+            "id": "5ef135b5-02aa-40d2-8a0f-2c18ca239b6c",
+            "label": "wallpaperColour",
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#32698F",
+            "width": 1920,
+            "height": 1080
+        },
+        {
             "type": "Image",
             "id": "00da9b37-1eae-430a-8a36-cfb5abfd0197",
             "label": "desktop_bg",
@@ -46,8 +57,8 @@
                 "sceneKey"
             ],
             "label": "icon",
-            "programName": "Browser",
-            "iconTextureKey": "Tank",
+            "programName": "Email",
+            "iconTextureKey": "page-go-icon_1",
             "sceneKey": "email-program",
             "x": 758,
             "y": 113
@@ -63,27 +74,9 @@
             ],
             "label": "icon_1",
             "programName": "Fullscreen",
-            "iconTextureKey": "ToidSketch",
+            "iconTextureKey": "window-icon",
             "x": 1420,
             "y": 759
-        },
-        {
-            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
-            "id": "03bb0a27-7ca9-483f-9b60-fa2afd37c3ed",
-            "unlock": [
-                "x",
-                "y",
-                "iconTextureKey",
-                "programName",
-                "pageKey",
-                "sceneKey"
-            ],
-            "label": "icon_2",
-            "programName": "Program",
-            "iconTextureKey": "Tank",
-            "sceneKey": "template-program",
-            "x": 1419,
-            "y": 86
         },
         {
             "type": "Image",
@@ -108,23 +101,24 @@
             "texture": {
                 "key": "moniter"
             },
-            "x": 127,
-            "originX": 0,
-            "originY": 0
+            "x": 970.5,
+            "y": 540,
+            "scaleX": 1.4,
+            "scaleY": 1.1
         },
         {
             "type": "Rectangle",
             "id": "635682f2-3ffb-449a-8620-97f4bf413692",
             "label": "desktopRect",
             "scope": "PUBLIC",
-            "x": 387,
-            "y": 70,
+            "x": 143,
+            "y": 19,
             "originX": 0,
             "originY": 0,
             "visible": false,
             "isFilled": true,
-            "width": 1165,
-            "height": 860
+            "width": 1630,
+            "height": 970
         },
         {
             "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
@@ -139,7 +133,7 @@
             ],
             "label": "icon_3",
             "programName": "Camera",
-            "iconTextureKey": "camera-icon",
+            "iconTextureKey": "picture-icon",
             "sceneKey": "camera-program",
             "x": 475,
             "y": 116
@@ -157,7 +151,7 @@
             ],
             "label": "icon_4",
             "programName": "DATABASE",
-            "iconTextureKey": "skull-icon",
+            "iconTextureKey": "terminal-icon",
             "sceneKey": "database-program",
             "x": 516,
             "y": 686

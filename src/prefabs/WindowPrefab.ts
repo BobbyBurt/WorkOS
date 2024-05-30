@@ -48,7 +48,7 @@ export default class WindowPrefab extends Phaser.GameObjects.Container {
 		this.add(dragRect);
 
 		// icon_temp
-		const icon_temp = scene.add.image(38, 35, "icon-temp");
+		const icon_temp = scene.add.image(38, 35, "picture-icon");
 		icon_temp.scaleX = 1.7389250244694119;
 		icon_temp.scaleY = 1.7389250244694119;
 		this.add(icon_temp);

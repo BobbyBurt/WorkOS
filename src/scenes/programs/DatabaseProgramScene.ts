@@ -10,6 +10,7 @@ import ScrollField from "../../components/ScrollField";
 import { ProgramBaseScene } from "./ProgramScene";
 import { employeeDataMap, employeeKey } from "~/employees/EmployeeData";
 import dataManagerKeys from "~/data/dataManagerKeys";
+import HackingProgramScene from "./HackingProgramScene";
 /* END-USER-IMPORTS */
 
 export default class DatabaseProgramScene extends ProgramBaseScene {
@@ -248,10 +249,10 @@ export default class DatabaseProgramScene extends ProgramBaseScene {
   private readonly initialInstructionString = "USE MOUSE TO SELECT EMPLOYEE.";
 
   private readonly employeeButtonOrder: Array<employeeKey> = [
-    "employee-B",
-    "employee-F",
     "employee-K",
+    "employee-B",
     "employee-J",
+    "employee-F",
   ];
   selectedEmployee: employeeKey;
 
@@ -279,6 +280,12 @@ export default class DatabaseProgramScene extends ProgramBaseScene {
     this.setupHackButton();
   }
 
+  override close(): void {
+    this.scene.stop("hacking-program");
+
+    super.close();
+  }
+
   /** Set text, input callbacks */
   setupEmployeeButtons() {
     this.employeeButtonList.forEach((button, index) => {
@@ -304,14 +311,24 @@ export default class DatabaseProgramScene extends ProgramBaseScene {
           `${dataManagerKeys.employees.databaseHacked}: ${this.selectedEmployee}`
         )
       ) {
-        // start hacking program
-        this.registry.set(
-          `${dataManagerKeys.employees.databaseHacked}: ${this.selectedEmployee}`,
-          true
-        );
-        this.showEntry(this.selectedEmployee);
+        this.startHackingProgram();
       }
     });
+  }
+
+  private startHackingProgram() {
+    if (!this.scene.get("hacking-program").scene.isActive()) {
+      this.scene.launch("hacking-program", {
+        employee: this.selectedEmployee,
+      });
+    }
+  }
+
+  public unlockEntry(employee: employeeKey) {
+    this.registry.set(
+      `${dataManagerKeys.employees.databaseHacked}: ${this.selectedEmployee}`,
+      true
+    );
   }
 
   employeeSelect(key: employeeKey) {
@@ -327,7 +344,7 @@ export default class DatabaseProgramScene extends ProgramBaseScene {
     this.selectedEmployee = key;
   }
 
-  showEntry(employeeKey: employeeKey) {
+  public showEntry(employeeKey: employeeKey) {
     this.instructionsText.setText("");
     this.dataEntryText.setText(
       `${employeeDataMap.get(employeeKey)?.databaseEntry}`

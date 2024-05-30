@@ -13,6 +13,7 @@ import PrototypeScene from "./scenes/PrototypeScene";
 import CameraProgramScene from "./scenes/programs/CameraProgramScene";
 import DatabaseProgramScene from "./scenes/programs/DatabaseProgramScene";
 import EmailProgramScene from "./scenes/programs/EmailProgramScene";
+import HackingProgramScene from "./scenes/programs/HackingProgramScene";
 import ProgramScene from "./scenes/programs/ProgramScene";
 import TemplateProgramScene from "./scenes/programs/TemplateProgramScene";
 
@@ -52,6 +53,7 @@ window.addEventListener("load", function () {
   game.scene.add("email-program", EmailProgramScene);
   game.scene.add("camera-program", CameraProgramScene);
   game.scene.add("database-program", DatabaseProgramScene);
+  game.scene.add("hacking-program", HackingProgramScene);
 });
 
 class Boot extends Phaser.Scene {

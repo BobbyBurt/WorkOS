@@ -24,6 +24,7 @@
                     "texture": {
                         "key": "taskbar"
                     },
+                    "scaleX": 1.2864508095472043,
                     "originX": 0,
                     "originY": 0
                 },

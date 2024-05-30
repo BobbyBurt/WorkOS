@@ -19,6 +19,9 @@ export default class EmployeeDirectory {
 
     EmployeeDirectory.employeeMap = new Map<employeeKey, Employee>([
       ["employee-B", new EmployeeTemplate(game, "employee-B")],
+      ["employee-F", new EmployeeTemplate(game, "employee-F")],
+      ["employee-J", new EmployeeTemplate(game, "employee-J")],
+      ["employee-K", new EmployeeTemplate(game, "employee-K")],
     ]);
   }
 

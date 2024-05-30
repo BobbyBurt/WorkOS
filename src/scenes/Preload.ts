@@ -5,8 +5,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import fullscreenHandler from "~/FullscreenHandler";
 /* START-USER-IMPORTS */
+import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class Preload extends Phaser.Scene {
@@ -19,6 +19,10 @@ export default class Preload extends Phaser.Scene {
   }
 
   editorPreload(): void {
+    this.load.pack(
+      "prototype-asset-pack",
+      "assets/prototype/prototype-asset-pack.json"
+    );
     this.load.pack("asset-pack", "assets/asset-pack.json");
   }
 
@@ -31,7 +35,7 @@ export default class Preload extends Phaser.Scene {
     progress.tintBottomLeft = 9737364;
     progress.tintBottomRight = 9737364;
     progress.text = "0%";
-    progress.setStyle({ fontSize: "-32px" });
+    progress.setStyle({ fontSize: "-64px" });
 
     this.events.emit("scene-awake");
   }

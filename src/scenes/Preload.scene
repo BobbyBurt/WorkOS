@@ -6,7 +6,8 @@
         "autoImport": true,
         "preloadMethodName": "editorPreload",
         "preloadPackFiles": [
-            "starter-template-basic-typescript/assets/asset-pack.json"
+            "WorkOS-source/public/assets/prototype/prototype-asset-pack.json",
+            "WorkOS-source/public/assets/asset-pack.json"
         ],
         "createMethodName": "editorCreate",
         "sceneKey": "preload",
@@ -31,7 +32,7 @@
             "tintBottomLeft": "#949494",
             "tintBottomRight": "#949494",
             "text": "0%",
-            "fontSize": "-32px"
+            "fontSize": "-64px"
         }
     ],
     "plainObjects": [],

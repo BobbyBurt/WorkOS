@@ -23,10 +23,12 @@
                     "label": "iconImage",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "ToidSketch"
+                        "key": "picture-icon"
                     },
-                    "scaleX": 0.2919594302647729,
-                    "scaleY": 0.2919594302647729,
+                    "x": 9,
+                    "y": 5,
+                    "scaleX": 4.115525366501524,
+                    "scaleY": 4.115525366501524,
                     "originX": 0,
                     "originY": 0
                 },

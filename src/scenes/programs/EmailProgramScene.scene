@@ -9,9 +9,7 @@
         "createMethodName": "editorCreate",
         "sceneKey": "email-program",
         "compilerOutputLanguage": "TYPE_SCRIPT",
-        "borderY": 60,
-        "borderWidth": 700,
-        "borderHeight": 500
+        "borderY": 60
     },
     "displayList": [
         {
@@ -21,18 +19,17 @@
             "scope": "CLASS",
             "list": [
                 {
-                    "type": "Image",
-                    "id": "97345c33-528f-47a8-ad78-e62dd23f3c06",
-                    "label": "start_button",
-                    "scope": "CLASS",
-                    "components": [
-                        "PointerButton"
-                    ],
-                    "texture": {
-                        "key": "start-button"
-                    },
-                    "x": 182,
-                    "y": 245
+                    "type": "Rectangle",
+                    "id": "ffc75f11-b59b-437f-a1c0-031e0f229f5b",
+                    "label": "rectangle_3",
+                    "y": 60,
+                    "scaleX": 6.268546640869119,
+                    "scaleY": 4.751692683213684,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
                 },
                 {
                     "type": "Container",
@@ -51,6 +48,7 @@
                             "label": "rectangle_1",
                             "x": 389,
                             "y": 60,
+                            "scaleX": 1.2797974774988319,
                             "originX": 0,
                             "originY": 0,
                             "isFilled": true,
@@ -59,19 +57,802 @@
                             "height": 1000
                         },
                         {
+                            "type": "Image",
+                            "id": "31ff9a73-9feb-4430-a114-e5bcf7defd58",
+                            "label": "attachmentButton",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 421.97027587890625,
+                            "y": 108.41703033447266,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3f0f9af5-6dc0-43a9-9008-4ea72637dc13",
+                            "label": "page_go_icon_1",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 126
+                        },
+                        {
                             "type": "BitmapText",
-                            "id": "2a8c6491-6796-476e-9086-83de76857aaf",
+                            "id": "1c4f6513-4a04-4d39-a963-7a46fe40c34a",
                             "label": "bitmaptext_1",
-                            "x": 404,
-                            "y": 80,
+                            "x": 432,
+                            "y": 116,
                             "tintTopLeft": "#000000",
                             "tintTopRight": "#000000",
                             "tintBottomLeft": "#000000",
                             "tintBottomRight": "#000000",
-                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, dolor ac egestas tincidunt, felis magna vehicula nunc, quis lobortis erat arcu vel odio. Vestibulum vestibulum ultrices quam, euismod viverra diam fringilla in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas ultricies sem nec mauris aliquet mattis. Duis at dolor posuere, efficitur lacus id, lacinia tellus. Pellentesque quis tristique dui. Vivamus molestie lacus eu dolor eleifend, vel mattis est blandit.\n\nPraesent a varius lacus. Sed efficitur lorem in eros dictum, facilisis tempor odio vulputate. Proin justo ex, interdum ut quam in, tempus molestie velit. Aenean iaculis tortor in condimentum suscipit. Phasellus sagittis lacinia massa. Nullam euismod nisl eget nunc vehicula fringilla. Mauris eget fermentum libero. In tellus ipsum, pharetra a sodales ut, placerat vitae nibh. Fusce porta congue nulla sodales dictum. Sed in interdum augue. Phasellus dapibus tincidunt orci, in condimentum metus scelerisque a. Sed dignissim leo sit amet elit lacinia, vel pharetra mi viverra. Mauris mollis lacinia tellus vel efficitur. Morbi ultrices dui enim, sed pulvinar nisi aliquet at.",
+                            "text": "quarterly_report.doc",
                             "font": "nokia",
-                            "fontSize": -16,
-                            "maxWidth": 270
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3bc24dd8-e275-4a56-a3a7-6e75abc28d8d",
+                            "label": "attachmentButton_1",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 157,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "158d6ab6-e6c3-48ed-9822-74723f27af39",
+                            "label": "bitmaptext_3",
+                            "x": 432,
+                            "y": 164,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Beetles-DogHotCar.mp3",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1be12638-1638-47bf-8909-1c326d8e8530",
+                            "label": "page_go_icon",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 174
+                        },
+                        {
+                            "type": "Image",
+                            "id": "96e4c577-6a98-4fe5-9bb8-c61851b5a66f",
+                            "label": "attachmentButton_2",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 205,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "27fdd49c-3c1a-40c6-a9e0-d2c83b06e6cf",
+                            "label": "bitmaptext_4",
+                            "x": 432,
+                            "y": 212,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Halo2CheatCodes-SECRET.pdf",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "88840d35-bbee-42da-a4c2-e0b82543cac8",
+                            "label": "page_go_icon_2",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 222
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ef544cdb-fb81-4251-94ba-5870bf59a6e7",
+                            "label": "attachmentButton_3",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 250,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "2ee7bdc3-7dfa-4215-aa45-764b9a128456",
+                            "label": "bitmaptext_5",
+                            "x": 432,
+                            "y": 257,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Host_protocall.exe",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ec040a75-9eaf-49ec-990a-8f97ecb413b1",
+                            "label": "page_go_icon_3",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 267
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d34d0852-7cc9-457c-8e0d-a913a2515db0",
+                            "label": "attachmentButton_4",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 298,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "1e36e8f5-f225-4a2e-872a-94cc58d5cefa",
+                            "label": "bitmaptext_6",
+                            "x": 432,
+                            "y": 306,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "CoolMathGames.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "54c2de73-8f56-4f05-9593-06ba84881b0d",
+                            "label": "page_go_icon_4",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 316
+                        },
+                        {
+                            "type": "Image",
+                            "id": "34bfafc5-399f-4c4f-a229-04699eb53102",
+                            "label": "attachmentButton_5",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 343,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "6022502f-6679-467a-a714-586caa2e9910",
+                            "label": "bitmaptext_7",
+                            "x": 432,
+                            "y": 351,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Wordle.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "0a6f29e2-1aff-4128-8a99-c6396aa26801",
+                            "label": "page_go_icon_5",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 361
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8d502417-5dfa-4583-bc7b-c16cf22b96c4",
+                            "label": "attachmentButton_6",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 392,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "25f374f4-69ff-4d3f-b43e-7b0df80ea25e",
+                            "label": "bitmaptext_8",
+                            "x": 432,
+                            "y": 399,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "ConservativeNews.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ac9bcde9-baa7-4994-ac0c-421ae4867b71",
+                            "label": "page_go_icon_6",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 409
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b1c6d40f-ec8d-411d-9dd8-b466a35c7f68",
+                            "label": "attachmentButton_7",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 438,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "dbee2330-5679-400b-8cc6-8394921ea833",
+                            "label": "bitmaptext_9",
+                            "x": 432,
+                            "y": 446,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Moon Shoes promo.mp4",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8e353f2c-74dd-4897-bf7d-3667f9be8e88",
+                            "label": "page_go_icon_7",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 456
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1b0d2510-228d-487d-8160-04361f7b9172",
+                            "label": "attachmentButton_8",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 490,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "8432950a-91cd-4ee5-b210-13ca738765cc",
+                            "label": "bitmaptext_10",
+                            "x": 432,
+                            "y": 498,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "EmployeeTraining.pdf",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3fa01766-fe54-4ffa-be92-98763ec22f2e",
+                            "label": "page_go_icon_8",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 508
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b4b63bfc-f5a9-47ea-ad9b-f0f1003e97b1",
+                            "label": "attachmentButton_9",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 536,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "d7b96333-ed34-4e7d-8bf0-cdc27a4642cc",
+                            "label": "bitmaptext_11",
+                            "x": 432,
+                            "y": 544,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "worldofpoetryandrhyme.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "0bb7fcba-9104-44c0-a42d-67412e96068d",
+                            "label": "page_go_icon_9",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 554
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2d0ef534-e8b2-4cff-a6c2-030272459f6e",
+                            "label": "attachmentButton_10",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 588,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "90377708-6b1d-4aff-baf8-88b8d69f378d",
+                            "label": "bitmaptext_12",
+                            "x": 432,
+                            "y": 596,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "OMalloryFeet.mp4",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "917e3682-95b2-46bf-9bf6-b4d6bc82f6cb",
+                            "label": "page_go_icon_10",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 606
+                        },
+                        {
+                            "type": "Image",
+                            "id": "40e68416-70e8-4afd-9cc8-e3ea81361e10",
+                            "label": "attachmentButton_11",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 635,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "0a434128-f0d9-4131-a54d-a9cd1ba343e4",
+                            "label": "bitmaptext_13",
+                            "x": 432,
+                            "y": 642,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "vid.com/top-10-locomotives",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3ca37cd9-2051-44ef-998c-f311da001c35",
+                            "label": "page_go_icon_11",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 652
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4a2b65dd-b3c4-4240-8acf-d774b1da4e78",
+                            "label": "attachmentButton_12",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 681,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "e03f02f9-7646-4daf-8b43-a97e9bb4cbea",
+                            "label": "bitmaptext_14",
+                            "x": 432,
+                            "y": 688,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "zombocom.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b36473ac-9060-499f-be36-a3251afe45c8",
+                            "label": "page_go_icon_12",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 698
+                        },
+                        {
+                            "type": "Image",
+                            "id": "ae85000c-56e7-4065-b884-4df274a95544",
+                            "label": "attachmentButton_13",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 739,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "3b65575c-f4af-40b5-8d7a-0fc51224852a",
+                            "label": "bitmaptext_15",
+                            "x": 432,
+                            "y": 746,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "JuffsStuff.com",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e1911c8e-8f7a-482c-9c27-f74e942141aa",
+                            "label": "page_go_icon_13",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 756
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b4a48f1f-7552-464f-85cc-4cfc3451eb07",
+                            "label": "attachmentButton_14",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 792,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "0e8ef31e-4f5f-43d8-a447-de18045a84d0",
+                            "label": "bitmaptext_16",
+                            "x": 432,
+                            "y": 800,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Meeting Minutes 4/1/2003.doc",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5d20c86b-3d48-47ed-bde9-9ebc23ed28a6",
+                            "label": "page_go_icon_14",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 810
+                        },
+                        {
+                            "type": "Image",
+                            "id": "28f97017-b8a2-444e-b1d1-02d6f789acac",
+                            "label": "attachmentButton_15",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 847,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "90634a19-7e15-4590-9a1f-cb7ba996683f",
+                            "label": "bitmaptext_17",
+                            "x": 432,
+                            "y": 854,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Secret Diary of Lillylou.txt",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e3a1389d-74f9-4f03-b9c6-4011575e0a52",
+                            "label": "page_go_icon_15",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 864
+                        },
+                        {
+                            "type": "Image",
+                            "id": "dffb6b82-487d-4e9e-9397-d320f335f00b",
+                            "label": "attachmentButton_16",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 899,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "b5d79e9c-ac23-4157-826b-fbfdd0e4240f",
+                            "label": "bitmaptext_18",
+                            "x": 432,
+                            "y": 907,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "WizQuest.exe",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "14f16815-9b49-4e9d-836a-7658939eb28d",
+                            "label": "page_go_icon_16",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 917
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7ed219ed-97ab-4b05-b091-9c512a479edb",
+                            "label": "attachmentButton_17",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 953,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "08cc9cc9-e88e-44ea-bd66-840e4f2b6686",
+                            "label": "bitmaptext_19",
+                            "x": 432,
+                            "y": 961,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "funnimonke.png",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "6bd286fd-da69-4e5e-9b4c-72a03e90f47d",
+                            "label": "page_go_icon_17",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 971
+                        },
+                        {
+                            "type": "Image",
+                            "id": "f2d6f848-a9e8-456f-a59c-fc7408353131",
+                            "label": "attachmentButton_18",
+                            "scope": "CLASS",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "texture": {
+                                "key": "white-px"
+                            },
+                            "x": 422,
+                            "y": 1006,
+                            "scaleX": 322.35755178196104,
+                            "scaleY": 33.165943827273765,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "2b88122d-1322-4e53-8669-a8f615257861",
+                            "label": "bitmaptext_20",
+                            "x": 432,
+                            "y": 1014,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Office Memo 5-25-2003.txt",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a794dd01-fe3a-4f18-9a32-76d0ffedacf2",
+                            "label": "page_go_icon_18",
+                            "texture": {
+                                "key": "page-go-icon_1"
+                            },
+                            "x": 406,
+                            "y": 1024
                         }
                     ]
                 },
@@ -79,7 +860,7 @@
                     "type": "Rectangle",
                     "id": "a8daf815-b03e-42d3-82c5-cf11a08591e8",
                     "label": "rectangle_2",
-                    "x": 687,
+                    "x": 831,
                     "y": 70,
                     "originX": 0,
                     "originY": 0,
@@ -87,6 +868,249 @@
                     "fillColor": "#ababab",
                     "width": 4,
                     "height": 128
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "41fe8d77-aeda-4a97-9f7c-c5c3af8d7b51",
+                    "label": "bitmaptext",
+                    "x": 42,
+                    "y": 93,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Select a recipient:",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "1f0376c7-d31a-43e4-9946-f1e98e7c9436",
+                    "label": "employeeButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 132,
+                    "scaleX": 112.54928657502772,
+                    "scaleY": 35.60368392358997,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#dfdfdf",
+                    "tintTopRight": "#dfdfdf",
+                    "tintBottomLeft": "#dfdfdf",
+                    "tintBottomRight": "#dfdfdf"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "94e1e235-227d-47fe-8edb-799b4ac6a0c9",
+                    "label": "employeeName",
+                    "x": 56,
+                    "y": 140,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Bertina-",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "de55c1f4-cced-4815-912f-13ed41e3d90e",
+                    "label": "employeeButton_1",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 187,
+                    "scaleX": 112.54928657502772,
+                    "scaleY": 35.60368392358997,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#dfdfdf",
+                    "tintTopRight": "#dfdfdf",
+                    "tintBottomLeft": "#dfdfdf",
+                    "tintBottomRight": "#dfdfdf"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "74e0143c-bda1-432d-893f-c769a37101dc",
+                    "label": "employeeName_1",
+                    "x": 56,
+                    "y": 195,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Bertina-",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "d51fdfe0-b757-452e-90f9-4c4c9666bdc9",
+                    "label": "employeeButton_2",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 235,
+                    "scaleX": 112.54928657502772,
+                    "scaleY": 35.60368392358997,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#dfdfdf",
+                    "tintTopRight": "#dfdfdf",
+                    "tintBottomLeft": "#dfdfdf",
+                    "tintBottomRight": "#dfdfdf"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "e78d08d8-e2c6-499e-a9db-b454ab967207",
+                    "label": "employeeName_2",
+                    "x": 56,
+                    "y": 243,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Bertina-",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "b9c013dc-9fff-49e1-b874-c88fadb5a2b5",
+                    "label": "employeeButton_3",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 280,
+                    "scaleX": 112.54928657502772,
+                    "scaleY": 35.60368392358997,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#dfdfdf",
+                    "tintTopRight": "#dfdfdf",
+                    "tintBottomLeft": "#dfdfdf",
+                    "tintBottomRight": "#dfdfdf"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "8a5e0f7a-f007-4e21-bd49-40c657aa6483",
+                    "label": "employeeName_3",
+                    "x": 56,
+                    "y": 288,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Bertina-",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "6b8c7071-6a77-44f0-9672-9a7a70e44f1e",
+                    "label": "bitmaptext_2",
+                    "x": 42,
+                    "y": 365,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Select an attachment --->",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "193dbb0f-5bd0-46fb-8888-fb1b51893afb",
+                    "label": "attachmentDisplayRect",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 418,
+                    "scaleX": 304.120839270683,
+                    "scaleY": 35.60368392358997,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#dfdfdf",
+                    "tintTopRight": "#dfdfdf",
+                    "tintBottomLeft": "#dfdfdf",
+                    "tintBottomRight": "#dfdfdf"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "a54e27e4-81d7-4082-8a7b-7c0bd58673d1",
+                    "label": "attachmentDisplayText",
+                    "scope": "CLASS",
+                    "x": 56,
+                    "y": 426,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "- none -",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "274dda2d-315d-4f32-91b6-2a07be3ba438",
+                    "label": "sendButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 43,
+                    "y": 540,
+                    "scaleX": 304.120839270683,
+                    "scaleY": 62.987626910673015,
+                    "originX": 0,
+                    "originY": 0,
+                    "tintTopLeft": "#b2f3b6",
+                    "tintTopRight": "#b2f3b6",
+                    "tintBottomLeft": "#b2f3b6",
+                    "tintBottomRight": "#b2f3b6"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "f2765a38-9692-4e88-8ab3-d48c135a73ff",
+                    "label": "attachmentDisplayText_1",
+                    "scope": "CLASS",
+                    "x": 154,
+                    "y": 554,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Send",
+                    "font": "nokia",
+                    "fontSize": -24
                 }
             ]
         }
@@ -97,5 +1121,77 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "lists": [
+        {
+            "id": "08290487-2515-47d4-a1a4-2d4334d09f30",
+            "label": "attachmentButtonList",
+            "objectIds": [
+                "31ff9a73-9feb-4430-a114-e5bcf7defd58",
+                "3bc24dd8-e275-4a56-a3a7-6e75abc28d8d",
+                "96e4c577-6a98-4fe5-9bb8-c61851b5a66f",
+                "ef544cdb-fb81-4251-94ba-5870bf59a6e7",
+                "d34d0852-7cc9-457c-8e0d-a913a2515db0",
+                "34bfafc5-399f-4c4f-a229-04699eb53102",
+                "8d502417-5dfa-4583-bc7b-c16cf22b96c4",
+                "b1c6d40f-ec8d-411d-9dd8-b466a35c7f68",
+                "1b0d2510-228d-487d-8160-04361f7b9172",
+                "b4b63bfc-f5a9-47ea-ad9b-f0f1003e97b1",
+                "2d0ef534-e8b2-4cff-a6c2-030272459f6e",
+                "40e68416-70e8-4afd-9cc8-e3ea81361e10",
+                "4a2b65dd-b3c4-4240-8acf-d774b1da4e78",
+                "ae85000c-56e7-4065-b884-4df274a95544",
+                "b4a48f1f-7552-464f-85cc-4cfc3451eb07",
+                "28f97017-b8a2-444e-b1d1-02d6f789acac",
+                "dffb6b82-487d-4e9e-9397-d320f335f00b",
+                "7ed219ed-97ab-4b05-b091-9c512a479edb",
+                "f2d6f848-a9e8-456f-a59c-fc7408353131"
+            ]
+        },
+        {
+            "id": "03b7df1f-a338-46aa-9ba1-92f9fa72f5f9",
+            "label": "attachmentTextList",
+            "objectIds": [
+                "1c4f6513-4a04-4d39-a963-7a46fe40c34a",
+                "158d6ab6-e6c3-48ed-9822-74723f27af39",
+                "27fdd49c-3c1a-40c6-a9e0-d2c83b06e6cf",
+                "2ee7bdc3-7dfa-4215-aa45-764b9a128456",
+                "1e36e8f5-f225-4a2e-872a-94cc58d5cefa",
+                "6022502f-6679-467a-a714-586caa2e9910",
+                "25f374f4-69ff-4d3f-b43e-7b0df80ea25e",
+                "dbee2330-5679-400b-8cc6-8394921ea833",
+                "8432950a-91cd-4ee5-b210-13ca738765cc",
+                "d7b96333-ed34-4e7d-8bf0-cdc27a4642cc",
+                "90377708-6b1d-4aff-baf8-88b8d69f378d",
+                "0a434128-f0d9-4131-a54d-a9cd1ba343e4",
+                "e03f02f9-7646-4daf-8b43-a97e9bb4cbea",
+                "3b65575c-f4af-40b5-8d7a-0fc51224852a",
+                "0e8ef31e-4f5f-43d8-a447-de18045a84d0",
+                "90634a19-7e15-4590-9a1f-cb7ba996683f",
+                "b5d79e9c-ac23-4157-826b-fbfdd0e4240f",
+                "08cc9cc9-e88e-44ea-bd66-840e4f2b6686",
+                "2b88122d-1322-4e53-8669-a8f615257861"
+            ]
+        },
+        {
+            "id": "9b8c22b6-0fb0-4082-8475-af2eba05dcdf",
+            "label": "employeeButtonList",
+            "objectIds": [
+                "1f0376c7-d31a-43e4-9946-f1e98e7c9436",
+                "de55c1f4-cced-4815-912f-13ed41e3d90e",
+                "d51fdfe0-b757-452e-90f9-4c4c9666bdc9",
+                "b9c013dc-9fff-49e1-b874-c88fadb5a2b5"
+            ]
+        },
+        {
+            "id": "cc2220c8-b266-403f-945f-8f8b6f401d9c",
+            "label": "employeeTextList",
+            "objectIds": [
+                "94e1e235-227d-47fe-8edb-799b4ac6a0c9",
+                "74e0143c-bda1-432d-893f-c769a37101dc",
+                "e78d08d8-e2c6-499e-a9db-b454ab967207",
+                "8a5e0f7a-f007-4e21-bd49-40c657aa6483"
+            ]
+        }
+    ]
 }

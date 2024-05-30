@@ -115,6 +115,7 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   // program info
   public name = "Cool Program";
+  public taskBarName = "Program";
   private _hackProgram = false;
   public get hackProgram() {
     return this._hackProgram;
@@ -135,7 +136,14 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   init(data: any) {}
 
-  create(width: number, height: number, name: string) {
+  /**
+   *
+   * @param width
+   * @param height
+   * @param name
+   * @param taskbarName shorter name for taskbar. If `undefined`, will use `name`
+   */
+  create(width: number, height: number, name: string, taskBarName?: string) {
     // I have a feeling I'll need to have need to access the width and height in this class later on, which isn't possible this way. But I don't want duplicate vars.
 
     // usually I'd call editorCreate() here but for some reason when the child calls super.create() then editorCreate() doesn't seem to run? So I'm calling both in the child class
@@ -144,6 +152,11 @@ export class ProgramBaseScene extends Phaser.Scene {
     this.desktopScene = this.scene.get("desktop") as DesktopScene;
 
     this.name = name;
+    if (taskBarName) {
+      this.taskBarName = taskBarName;
+    } else {
+      this.taskBarName = this.name;
+    }
     this.minimized = false;
 
     fullscreenHandler.adjustCamera(this.cameras.main);
@@ -293,6 +306,8 @@ export class ProgramBaseScene extends Phaser.Scene {
         focusedSceneKey: this.scene.key,
       });
     }
+
+    this.taskButton?.setFocused(value);
   }
 
   /** Keep the window origin from jumping to the pointer */

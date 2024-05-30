@@ -32,6 +32,11 @@
                 "key": "desktop-bg"
             },
             {
+                "url": "assets/images/desktop-icons/drive-icon.png",
+                "type": "image",
+                "key": "drive-icon"
+            },
+            {
                 "url": "assets/images/camera/bertina-distracted.png",
                 "type": "image",
                 "key": "employee-B-distracted"
@@ -152,7 +157,50 @@
                 "key": "employee-X-working"
             },
             {
-                "url": "assets/images/icon-temp.png",
+                "url": "assets/images/desktop-icons/film-icon.png",
+                "type": "image",
+                "key": "film-icon"
+            },
+            {
+                "url": "assets/images/desktop-icons/folder-icon.png",
+                "type": "image",
+                "key": "folder-icon"
+            },
+            {
+                "url": "assets/images/desktop-icons/gamepad-icon.png",
+                "type": "image",
+                "key": "gamepad-icon"
+            },
+            {
+                "url": [
+                    "assets/sfx/Data_Point_04.wav"
+                ],
+                "type": "audio",
+                "key": "hacking-sfx-1"
+            },
+            {
+                "url": [
+                    "assets/sfx/Data_Point_02.wav"
+                ],
+                "type": "audio",
+                "key": "hacking-sfx-2"
+            },
+            {
+                "url": [
+                    "assets/sfx/Confirm_01.wav"
+                ],
+                "type": "audio",
+                "key": "hacking-sfx-3"
+            },
+            {
+                "url": [
+                    "assets/sfx/Data_Point_05.wav"
+                ],
+                "type": "audio",
+                "key": "hacking-sfx-4"
+            },
+            {
+                "url": "assets/images/desktop-icons/icon-temp.png",
                 "type": "image",
                 "key": "icon-temp"
             },
@@ -180,6 +228,21 @@
                 ],
                 "type": "audio",
                 "key": "office-ambience"
+            },
+            {
+                "url": "assets/images/desktop-icons/page_white_go.png",
+                "type": "image",
+                "key": "page-go-icon"
+            },
+            {
+                "url": "assets/images/desktop-icons/page-go-icon.png",
+                "type": "image",
+                "key": "page-go-icon_1"
+            },
+            {
+                "url": "assets/images/desktop-icons/picture-icon.png",
+                "type": "image",
+                "key": "picture-icon"
             },
             {
                 "url": "assets/images/desktop-icons/skull.png",
@@ -214,6 +277,11 @@
                 "key": "taskbar-window-button"
             },
             {
+                "url": "assets/images/desktop-icons/terminal-icon.png",
+                "type": "image",
+                "key": "terminal-icon"
+            },
+            {
                 "url": "assets/ToidSketch.png",
                 "type": "image",
                 "key": "ToidSketch"
@@ -227,6 +295,11 @@
                 "url": "assets/images/Window_Close_Button0001(1).png",
                 "type": "image",
                 "key": "window-close-button"
+            },
+            {
+                "url": "assets/images/desktop-icons/window-icon.png",
+                "type": "image",
+                "key": "window-icon"
             },
             {
                 "url": "assets/images/Window_Minimize_Button0001(1).png",

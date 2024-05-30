@@ -13,12 +13,12 @@ export default class EmployeeTemplate extends Employee {
    * @param to
    * @param content TODO: make this an object or something.
    */
-  public override sendEmail(content: string) {
-    if (content === "distraction") {
-      if (this.state === "working") {
-        this.state = "distracted";
-        super.setCameraImage("distracted");
-      }
-    }
-  }
+  // public override sendEmail(content: string) {
+  //   if (content === "distraction") {
+  //     if (this.state === "working") {
+  //       this.state = "distracted";
+  //       super.setCameraImage("distracted");
+  //     }
+  //   }
+  // }
 }

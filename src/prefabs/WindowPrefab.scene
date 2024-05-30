@@ -103,7 +103,7 @@
                     "label": "icon_temp",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "icon-temp"
+                        "key": "picture-icon"
                     },
                     "x": 38,
                     "y": 35,
