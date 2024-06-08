@@ -50,8 +50,10 @@ export default class TaskButton extends TaskButtonPrefab {
     this.programScene.setMinimize();
   }
 
-  public appear() {
+  public appear(name: string) {
     this.setVisible(true);
+
+    this.nameText.setText(name);
 
     this.scene.time.delayedCall(1, () => {
       this.TaskbarPrefab.repositionTaskButtons();

@@ -4,9 +4,12 @@
 
 /* START OF COMPILED CODE */
 
+import EmployeeB from "~/employee/EmployeeB";
+import PointerButton from "../../components/PointerButton";
 /* START-USER-IMPORTS */
 import { ProgramBaseScene } from "./ProgramScene";
-import { employeeKey } from "~/employees/EmployeeData";
+import { employeeKey, employeeKeys } from "~/employee/EmployeeData";
+import EmployeeDirectory from "~/employee/EmployeeDirectory";
 /* END-USER-IMPORTS */
 
 export default class CameraProgramScene extends ProgramBaseScene {
@@ -20,83 +23,104 @@ export default class CameraProgramScene extends ProgramBaseScene {
 
   editorCreate(): void {
     // mainContainer
-    const mainContainer = this.add.container(0, 0);
+    const mainContainer = this.add.container(1, 0);
 
-    // cameraBoss
-    const cameraBoss = this.add.sprite(1.5, 61.5, "bossman-watching");
-    cameraBoss.setOrigin(0, 0);
-    mainContainer.add(cameraBoss);
+    // cameraFeed
+    const cameraFeed = this.add.sprite(1.5, 63.5, "bossman-watching");
+    cameraFeed.scaleX = 2;
+    cameraFeed.scaleY = 2;
+    cameraFeed.setOrigin(0, 0);
+    cameraFeed.visible = false;
+    mainContainer.add(cameraFeed);
 
-    // cameraB
-    const cameraB = this.add.sprite(234.5, 61.5, "employee-B-working");
-    cameraB.setOrigin(0, 0);
-    mainContainer.add(cameraB);
+    // bg
+    const bg = this.add.rectangle(0, 59, 470, 300);
+    bg.setOrigin(0, 0);
+    bg.isFilled = true;
+    mainContainer.add(bg);
 
-    // cameraF
-    const cameraF = this.add.sprite(467.5, 61.5, "employee-F-working");
-    cameraF.setOrigin(0, 0);
-    mainContainer.add(cameraF);
+    // rightButton
+    const rightButton = this.add.image(402, 166, "white-px");
+    rightButton.scaleX = 50;
+    rightButton.scaleY = 50;
+    rightButton.setOrigin(0, 0);
+    rightButton.alpha = 0.3;
+    rightButton.alphaTopLeft = 0.3;
+    rightButton.alphaTopRight = 0.3;
+    rightButton.alphaBottomLeft = 0.3;
+    rightButton.alphaBottomRight = 0.3;
+    rightButton.tintTopLeft = 0;
+    rightButton.tintTopRight = 0;
+    rightButton.tintBottomLeft = 0;
+    rightButton.tintBottomRight = 0;
+    mainContainer.add(rightButton);
 
-    // cameraG
-    const cameraG = this.add.sprite(1.5, 214.5, "employee-G-working");
-    cameraG.setOrigin(0, 0);
-    mainContainer.add(cameraG);
+    // leftButton
+    const leftButton = this.add.image(8, 166, "white-px");
+    leftButton.scaleX = 50;
+    leftButton.scaleY = 50;
+    leftButton.setOrigin(0, 0);
+    leftButton.alpha = 0.3;
+    leftButton.alphaTopLeft = 0.3;
+    leftButton.alphaTopRight = 0.3;
+    leftButton.alphaBottomLeft = 0.3;
+    leftButton.alphaBottomRight = 0.3;
+    leftButton.tintTopLeft = 0;
+    leftButton.tintTopRight = 0;
+    leftButton.tintBottomLeft = 0;
+    leftButton.tintBottomRight = 0;
+    mainContainer.add(leftButton);
 
-    // cameraJ
-    const cameraJ = this.add.sprite(234.5, 214.5, "employee-J-working");
-    cameraJ.setOrigin(0, 0);
-    mainContainer.add(cameraJ);
+    // bitmaptext_1
+    const bitmaptext_1 = this.add.bitmapText(16, 172, "nokia", "<");
+    bitmaptext_1.text = "<";
+    bitmaptext_1.fontSize = -32;
+    mainContainer.add(bitmaptext_1);
 
-    // cameraK
-    const cameraK = this.add.sprite(467.5, 214.5, "employee-K-working");
-    cameraK.setOrigin(0, 0);
-    mainContainer.add(cameraK);
+    // bitmaptext
+    const bitmaptext = this.add.bitmapText(425, 172, "nokia", ">");
+    bitmaptext.text = ">";
+    bitmaptext.fontSize = -32;
+    mainContainer.add(bitmaptext);
 
-    // cameraL
-    const cameraL = this.add.sprite(1.5, 367.5, "employee-L-working");
-    cameraL.setOrigin(0, 0);
-    mainContainer.add(cameraL);
+    // employee
+    const employee = this.add.sprite(
+      234,
+      212,
+      "employee-animation-test",
+      "working-fidget/0000"
+    );
+    employee.visible = false;
+    mainContainer.add(employee);
 
-    // cameraO
-    const cameraO = this.add.sprite(234.5, 367.5, "employee-O-working");
-    cameraO.setOrigin(0, 0);
-    mainContainer.add(cameraO);
+    // rightButton (components)
+    new PointerButton(rightButton);
 
-    // cameraX
-    const cameraX = this.add.sprite(467.5, 367.5, "employee-X-working");
-    cameraX.setOrigin(0, 0);
-    mainContainer.add(cameraX);
+    // leftButton (components)
+    new PointerButton(leftButton);
 
-    this.cameraBoss = cameraBoss;
-    this.cameraB = cameraB;
-    this.cameraF = cameraF;
-    this.cameraG = cameraG;
-    this.cameraJ = cameraJ;
-    this.cameraK = cameraK;
-    this.cameraL = cameraL;
-    this.cameraO = cameraO;
-    this.cameraX = cameraX;
+    this.cameraFeed = cameraFeed;
+    this.bg = bg;
+    this.rightButton = rightButton;
+    this.leftButton = leftButton;
+    this.employee = employee;
     this.mainContainer = mainContainer;
 
     this.events.emit("scene-awake");
   }
 
-  private cameraBoss!: Phaser.GameObjects.Sprite;
-  private cameraB!: Phaser.GameObjects.Sprite;
-  private cameraF!: Phaser.GameObjects.Sprite;
-  private cameraG!: Phaser.GameObjects.Sprite;
-  private cameraJ!: Phaser.GameObjects.Sprite;
-  private cameraK!: Phaser.GameObjects.Sprite;
-  private cameraL!: Phaser.GameObjects.Sprite;
-  private cameraO!: Phaser.GameObjects.Sprite;
-  private cameraX!: Phaser.GameObjects.Sprite;
+  private cameraFeed!: Phaser.GameObjects.Sprite;
+  private bg!: Phaser.GameObjects.Rectangle;
+  private rightButton!: Phaser.GameObjects.Image;
+  private leftButton!: Phaser.GameObjects.Image;
+  private employee!: Phaser.GameObjects.Sprite;
   private mainContainer!: Phaser.GameObjects.Container;
 
   /* START-USER-CODE */
 
   private mask: Phaser.Display.Masks.GeometryMask;
 
-  private employeeCameraMap: Map<employeeKey, Phaser.GameObjects.Sprite>;
+  public employeeSpriteMap: Map<employeeKey, Phaser.GameObjects.Sprite>;
 
   /**
    * Boilerplate setup for all program classes
@@ -104,32 +128,45 @@ export default class CameraProgramScene extends ProgramBaseScene {
   setup() {
     // create
     super.editorCreate();
-    super.create(700, 500, "Desktop Camera Feed");
+    super.create(700, 300, "Desktop Camera Feed", "Camera", true);
     this.editorCreate();
 
     super.programContainer = this.mainContainer;
     super.setMask();
+
+    super.setWindowPosition(1300, 22);
   }
 
   create() {
     this.setup();
 
-    this.employeeCameraMap = new Map<employeeKey, Phaser.GameObjects.Sprite>([
-      ["employee-B", this.cameraB],
-      ["employee-F", this.cameraF],
-      ["employee-G", this.cameraG],
-      ["employee-J", this.cameraJ],
-      ["employee-K", this.cameraK],
-      ["employee-L", this.cameraL],
-      ["employee-O", this.cameraO],
-      ["employee-X", this.cameraX],
-    ]);
+    this.createEmployeeSprites();
+
+    let employee = EmployeeDirectory.getEmployee("employee-B") as EmployeeB;
+    employee.createAnim();
+    // TEMP
   }
 
-  public setCameraImage(employee: employeeKey, imageKey: string) {
-    let employeeCameraSprite = this.employeeCameraMap.get(employee);
-    employeeCameraSprite?.setTexture(imageKey);
+  createEmployeeSprites() {
+    this.employeeSpriteMap = new Map<employeeKey, Phaser.GameObjects.Sprite>();
+    employeeKeys.forEach((employeeKey: employeeKey) => {
+      let newSprite = this.add.sprite(0, 0, "");
+      this.mainContainer.add(newSprite);
+      newSprite.setPosition(234, 212);
+      newSprite.setVisible(false);
+      this.employeeSpriteMap.set(employeeKey, newSprite);
+      if (EmployeeDirectory.getEmployee(employeeKey)) {
+        // TEMP: currently not all employees are set up in directory so I need undefined check
+
+        EmployeeDirectory.getEmployee(employeeKey).sprite = newSprite;
+      }
+    });
   }
+
+  // public setCameraImage(employee: employeeKey, imageKey: string) {
+  //   let employeeCameraSprite = this.employeeCameraMap.get(employee);
+  //   employeeCameraSprite?.setTexture(imageKey);
+  // }
 
   /* END-USER-CODE */
 }

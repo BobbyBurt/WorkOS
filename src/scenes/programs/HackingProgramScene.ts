@@ -5,7 +5,7 @@
 /* START OF COMPILED CODE */
 
 /* START-USER-IMPORTS */
-import { employeeKey } from "~/employees/EmployeeData";
+import { employeeKey } from "~/employee/EmployeeData";
 import DatabaseProgramScene from "./DatabaseProgramScene";
 import { ProgramBaseScene } from "./ProgramScene";
 /* END-USER-IMPORTS */

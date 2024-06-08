@@ -37,6 +37,12 @@
                 "key": "drive-icon"
             },
             {
+                "type": "multiatlas",
+                "url": "assets/animation/employee-animation-test.json",
+                "path": "assets/animation",
+                "key": "employee-animation-test"
+            },
+            {
                 "url": "assets/images/camera/bertina-distracted.png",
                 "type": "image",
                 "key": "employee-B-distracted"

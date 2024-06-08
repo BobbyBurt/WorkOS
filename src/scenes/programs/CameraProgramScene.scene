@@ -10,8 +10,8 @@
         "sceneKey": "camera-program",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderY": 60,
-        "borderWidth": 700,
-        "borderHeight": 500
+        "borderWidth": 470,
+        "borderHeight": 300
     },
     "displayList": [
         {
@@ -19,123 +19,122 @@
             "id": "3b4353a9-b00d-4449-a91f-a28ae84af1fd",
             "label": "mainContainer",
             "scope": "CLASS",
+            "x": 1,
             "list": [
                 {
                     "type": "Sprite",
                     "id": "a586cdb8-0234-48a7-b4ca-8caa9003db36",
-                    "label": "cameraBoss",
+                    "label": "cameraFeed",
                     "scope": "CLASS",
                     "texture": {
                         "key": "bossman-watching"
                     },
                     "x": 1.5,
-                    "y": 61.5,
+                    "y": 63.5,
+                    "scaleX": 2,
+                    "scaleY": 2,
                     "originX": 0,
-                    "originY": 0
+                    "originY": 0,
+                    "visible": false
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "75229367-8d2e-4309-bc18-dc0e1f0b985a",
+                    "label": "bg",
+                    "scope": "CLASS",
+                    "y": 59,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 470,
+                    "height": 300
+                },
+                {
+                    "type": "Image",
+                    "id": "453f96c6-0806-4f2f-ac20-11ab94a209eb",
+                    "label": "rightButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 402,
+                    "y": 166,
+                    "scaleX": 50,
+                    "scaleY": 50,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.3,
+                    "alphaTopLeft": 0.3,
+                    "alphaTopRight": 0.3,
+                    "alphaBottomLeft": 0.3,
+                    "alphaBottomRight": 0.3,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000"
+                },
+                {
+                    "type": "Image",
+                    "id": "cb20bf51-cefc-4803-8976-e7c15cfd72b3",
+                    "label": "leftButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": 8,
+                    "y": 166,
+                    "scaleX": 50,
+                    "scaleY": 50,
+                    "originX": 0,
+                    "originY": 0,
+                    "alpha": 0.3,
+                    "alphaTopLeft": 0.3,
+                    "alphaTopRight": 0.3,
+                    "alphaBottomLeft": 0.3,
+                    "alphaBottomRight": 0.3,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "477de2c0-dfa4-4cbf-8196-85c5c114c911",
+                    "label": "bitmaptext_1",
+                    "x": 16,
+                    "y": 172,
+                    "text": "<",
+                    "font": "nokia",
+                    "fontSize": -32
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "115ba9ad-7bda-4f59-a0a0-c6c515040737",
+                    "label": "bitmaptext",
+                    "x": 425,
+                    "y": 172,
+                    "text": ">",
+                    "font": "nokia",
+                    "fontSize": -32
                 },
                 {
                     "type": "Sprite",
-                    "id": "1ce04096-9ee2-43bf-a861-43bc9704e332",
-                    "label": "cameraB",
+                    "id": "7f8356e5-9bd6-4828-b401-095ca61c6bf4",
+                    "label": "employee",
                     "scope": "CLASS",
                     "texture": {
-                        "key": "employee-B-working"
+                        "key": "employee-animation-test",
+                        "frame": "working-fidget/0000"
                     },
-                    "x": 234.5,
-                    "y": 61.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "02027fa8-4285-44e1-8f4b-391103f4bc0d",
-                    "label": "cameraF",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-F-working"
-                    },
-                    "x": 467.5,
-                    "y": 61.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "ac365ab3-0727-4f17-a724-3968144c8f46",
-                    "label": "cameraG",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-G-working"
-                    },
-                    "x": 1.5,
-                    "y": 214.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "a86640e1-c152-4481-876c-01cdc4c123e7",
-                    "label": "cameraJ",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-J-working"
-                    },
-                    "x": 234.5,
-                    "y": 214.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "0ec7a285-86c5-431b-8832-00b7f7f30199",
-                    "label": "cameraK",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-K-working"
-                    },
-                    "x": 467.5,
-                    "y": 214.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "c2d8bdb3-eeb5-4371-bc14-5dea0b46d835",
-                    "label": "cameraL",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-L-working"
-                    },
-                    "x": 1.5,
-                    "y": 367.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "c58ecf4c-3efd-4ef2-ac37-4cee788e40d0",
-                    "label": "cameraO",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-O-working"
-                    },
-                    "x": 234.5,
-                    "y": 367.5,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Sprite",
-                    "id": "f93b2cb2-366d-4129-b8a6-a9c5816c01e6",
-                    "label": "cameraX",
-                    "scope": "CLASS",
-                    "texture": {
-                        "key": "employee-X-working"
-                    },
-                    "x": 467.5,
-                    "y": 367.5,
-                    "originX": 0,
-                    "originY": 0
+                    "x": 234,
+                    "y": 212,
+                    "visible": false
                 }
             ]
         }

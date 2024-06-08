@@ -13,8 +13,8 @@ import {
   employeeData,
   employeeDataMap,
   employeeKey,
-} from "~/employees/EmployeeData";
-import EmployeeDirectory from "~/employees/EmployeeDirectory";
+} from "~/employee/EmployeeData";
+import EmployeeDirectory from "~/employee/EmployeeDirectory";
 /* END-USER-IMPORTS */
 
 export default class EmailProgramScene extends ProgramBaseScene {

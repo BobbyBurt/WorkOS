@@ -5,6 +5,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import EmployeeDefaultAnimations from "~/employee/EmployeeAnim";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
@@ -85,17 +86,20 @@ export default class Preload extends Phaser.Scene {
     });
 
     this.load.on("complete", (key: string, type: string, data: any) => {
-      this.cameras.main.fadeOut(200, 255, 255, 255);
-      this.time.delayedCall(1000, () => {
-        this.scene.stop(this);
-        this.scene.launch("desktop");
-        this.scene.launch("overlap");
-      });
+      this.processFiles();
+      this.scene.stop(this);
+      this.scene.launch("desktop");
+      this.scene.launch("overlap");
     });
 
     this.scene.launch("medal");
 
     this.scene.launch("debug");
+  }
+
+  /** Anything that needs to be done before launching DesktopScene */
+  processFiles() {
+    // EmployeeDefaultAnimations.createEmployeeAnimations("", this.game);
   }
 
   /**

@@ -5,6 +5,7 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import DummyInteractive from "../../components/DummyInteractive";
 /* START-USER-IMPORTS */
 import WindowPrefab from "~/prefabs/WindowPrefab";
 import DebugScene from "../DebugScene";
@@ -35,6 +36,11 @@ export class ProgramBaseScene extends Phaser.Scene {
   }
 
   editorCreate(): void {
+    // dummyInteractive
+    const dummyInteractive = this.add.rectangle(0, 60, 700, 500);
+    dummyInteractive.setOrigin(0, 0);
+    dummyInteractive.isFilled = true;
+
     // programMaskRect
     const programMaskRect = this.add.rectangle(0, 60, 700, 500);
     programMaskRect.setOrigin(0, 0);
@@ -45,12 +51,17 @@ export class ProgramBaseScene extends Phaser.Scene {
     refocusInputRect.setOrigin(0, 0);
     refocusInputRect.isFilled = true;
 
+    // dummyInteractive (components)
+    new DummyInteractive(dummyInteractive);
+
+    this.dummyInteractive = dummyInteractive;
     this.programMaskRect = programMaskRect;
     this.refocusInputRect = refocusInputRect;
 
     this.events.emit("scene-awake");
   }
 
+  private dummyInteractive!: Phaser.GameObjects.Rectangle;
   private programMaskRect!: Phaser.GameObjects.Rectangle;
   private refocusInputRect!: Phaser.GameObjects.Rectangle;
 
@@ -123,6 +134,8 @@ export class ProgramBaseScene extends Phaser.Scene {
   protected set hackProgram(value: boolean) {
     this._hackProgram = value;
   }
+  /** Allow player to drag window? */
+  private immobile = false;
 
   // state
   private minimized: boolean;
@@ -143,7 +156,13 @@ export class ProgramBaseScene extends Phaser.Scene {
    * @param name
    * @param taskbarName shorter name for taskbar. If `undefined`, will use `name`
    */
-  create(width: number, height: number, name: string, taskBarName?: string) {
+  create(
+    width: number,
+    height: number,
+    name: string,
+    taskBarName?: string,
+    immobile?: boolean
+  ) {
     // I have a feeling I'll need to have need to access the width and height in this class later on, which isn't possible this way. But I don't want duplicate vars.
 
     // usually I'd call editorCreate() here but for some reason when the child calls super.create() then editorCreate() doesn't seem to run? So I'm calling both in the child class
@@ -171,7 +190,15 @@ export class ProgramBaseScene extends Phaser.Scene {
       this.windowInitialPosition.x + this.programMaskOffset.x,
       this.windowInitialPosition.y + this.programMaskOffset.y
     );
+    this.dummyInteractive.setSize(width, height);
+    this.dummyInteractive.setPosition(
+      this.windowInitialPosition.x + this.programMaskOffset.x,
+      this.windowInitialPosition.y + this.programMaskOffset.y
+    );
 
+    if (immobile) {
+      this.immobile = true;
+    }
     this.windowPrefab.dragRect.setInteractive({ draggable: true });
     this.windowPrefab.dragRect.on("drag", this.dragWindow, this);
     this.windowPrefab.dragRect.on("pointerdown", this.setdragOffset, this);
@@ -196,7 +223,7 @@ export class ProgramBaseScene extends Phaser.Scene {
     this.taskButton = overlapScene.taskbarPrefab.taskButtonMap.get(
       this.scene.key
     )!;
-    this.taskButton.appear();
+    this.taskButton.appear(this.taskBarName);
   }
 
   update() {}
@@ -213,6 +240,9 @@ export class ProgramBaseScene extends Phaser.Scene {
       return;
     }
     if (this.minimized) {
+      return;
+    }
+    if (this.immobile) {
       return;
     }
 
@@ -233,9 +263,11 @@ export class ProgramBaseScene extends Phaser.Scene {
         this.desktopScene.desktopRect.height -
         65
     );
-    // let x = pointer.x;
-    // let y = pointer.y;
 
+    this.setWindowPosition(x, y);
+  }
+
+  protected setWindowPosition(x: number, y: number) {
     this.windowPrefab.setPosition(x, y);
     this.programContainer.setPosition(x, y);
     this.refocusInputRect.setPosition(
@@ -243,6 +275,10 @@ export class ProgramBaseScene extends Phaser.Scene {
       y + this.programMaskOffset.y
     );
     this.programMaskRect.setPosition(
+      x + this.programMaskOffset.x,
+      y + this.programMaskOffset.y
+    );
+    this.dummyInteractive.setPosition(
       x + this.programMaskOffset.x,
       y + this.programMaskOffset.y
     );

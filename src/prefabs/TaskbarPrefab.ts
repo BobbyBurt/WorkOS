@@ -32,7 +32,7 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
 
     // taskbar_window_button
     const taskbar_window_button = scene.add.image(
-      340,
+      0,
       155,
       "taskbar-window-button"
     );
@@ -98,7 +98,6 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
     let taskButton = new TaskButton(this.scene, programScene, this, 200, 15);
     this.add(taskButton);
     taskButton.setVisible(false);
-    taskButton.nameText.setText(programScene.taskBarName);
     return taskButton;
   }
 

@@ -17,6 +17,21 @@
     "displayList": [
         {
             "type": "Rectangle",
+            "id": "87d254cc-6a35-4def-9844-5b9c019f84fe",
+            "label": "dummyInteractive",
+            "scope": "CLASS",
+            "components": [
+                "DummyInteractive"
+            ],
+            "y": 60,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "width": 700,
+            "height": 500
+        },
+        {
+            "type": "Rectangle",
             "id": "1e5c9896-2610-4789-8b01-ddc2432f462d",
             "label": "programMaskRect",
             "scope": "CLASS",

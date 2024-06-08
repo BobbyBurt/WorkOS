@@ -1,14 +1,25 @@
 /** @format */
 
-export type employeeKey =
-  | "employee-B"
-  | "employee-F"
-  | "employee-G"
-  | "employee-J"
-  | "employee-K"
-  | "employee-L"
-  | "employee-O"
-  | "employee-X";
+/** Forms `employeeKey` user type.
+ *
+ * Use this to iterate employeeKeys. Solution from https://danielbarta.com/literal-iteration-typescript/
+ */
+export const employeeKeys = [
+  "employee-B",
+  "employee-F",
+  "employee-G",
+  "employee-J",
+  "employee-K",
+  "employee-L",
+  "employee-O",
+  "employee-X",
+] as const;
+
+/** Created from `employeeKeys` array
+ *
+ * Solution from https://danielbarta.com/literal-iteration-typescript/
+ */
+export type employeeKey = (typeof employeeKeys)[number];
 
 export type employeeData = {
   readonly name: string;

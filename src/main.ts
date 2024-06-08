@@ -4,7 +4,7 @@ import cloudSaves from "./API/SavesData";
 import medalScene from "./API/medalScene";
 import { newgroundsIOWrapper } from "./API/newgroundsIOWrapper";
 import fullscreenHandler from "./FullscreenHandler";
-import EmployeeDirectory from "./employees/EmployeeDirectory";
+import EmployeeDirectory from "./employee/EmployeeDirectory";
 import DebugScene from "./scenes/DebugScene";
 import DesktopScene from "./scenes/DesktopScene";
 import OverlapScene from "./scenes/OverlapScene";
@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
   var game = new Phaser.Game({
     title: "Work OS",
     // url: 'https://www.newgrounds.com/projects/games/1923225/preview',
-    version: "0",
+    version: "2",
 
     // type: __DEV__ ? Phaser.CANVAS : Phaser.AUTO,
     type: Phaser.AUTO,
@@ -85,6 +85,8 @@ class Boot extends Phaser.Scene {
     this.setSaveDataKeys();
 
     EmployeeDirectory.createEmployees(this.game);
+
+    this.input.setGlobalTopOnly(true);
   }
 
   /**

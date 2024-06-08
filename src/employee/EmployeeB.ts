@@ -2,11 +2,26 @@
 
 import Employee from "./Employee";
 import { employeeKey } from "./EmployeeData";
+import EmployeeBAnim from "./employees/EmployeeBAnim";
 
-export default class EmployeeTemplate extends Employee {
+export default class EmployeeB extends Employee {
   constructor(game: Phaser.Game, key: employeeKey) {
     super(game, key);
   }
+
+  private thisEmployeeAnim = new EmployeeBAnim();
+
+  /**
+   *
+   *
+   * High level
+   */
+  public createAnim() {
+    let animationMap = this.thisEmployeeAnim.getAnim();
+    super.createAnimFromMap(animationMap, "employee-animation-test");
+  }
+
+  public initialAni;
 
   /**
    * Distracts if condition is met.
@@ -21,4 +36,8 @@ export default class EmployeeTemplate extends Employee {
   //     }
   //   }
   // }
+
+  override animationCompleteCallback(animationKey: string) {
+    console.debug("subclass");
+  }
 }

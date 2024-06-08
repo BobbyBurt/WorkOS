@@ -8,7 +8,7 @@ import PointerButton from "../../components/PointerButton";
 import ScrollField from "../../components/ScrollField";
 /* START-USER-IMPORTS */
 import { ProgramBaseScene } from "./ProgramScene";
-import { employeeDataMap, employeeKey } from "~/employees/EmployeeData";
+import { employeeDataMap, employeeKey } from "~/employee/EmployeeData";
 import dataManagerKeys from "~/data/dataManagerKeys";
 import HackingProgramScene from "./HackingProgramScene";
 /* END-USER-IMPORTS */
@@ -263,7 +263,7 @@ export default class DatabaseProgramScene extends ProgramBaseScene {
     // create
     super.hackProgram = true;
     super.editorCreate();
-    super.create(700, 500, "EMPLOYEE DATABASE");
+    super.create(700, 500, "EMPLOYEE DATABASE", "DATABASE");
     this.editorCreate();
 
     super.programContainer = this.mainContainer;

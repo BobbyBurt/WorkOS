@@ -9,11 +9,12 @@ import Phaser from "phaser";
 /* END-USER-IMPORTS */
 
 export default class PointerButton {
-  constructor(gameObject: Phaser.GameObjects.Image) {
-    this.gameObject = gameObject;
-    (gameObject as any)["__PointerButton"] = this;
 
-    /* START-USER-CTR-CODE */
+	constructor(gameObject: Phaser.GameObjects.Image) {
+		this.gameObject = gameObject;
+		(gameObject as any)["__PointerButton"] = this;
+
+		/* START-USER-CTR-CODE */
 
     this.gameObject.setInteractive({ useHandCursor: true });
     this.gameObject.on("pointerover", this.pointerOver, this);
@@ -22,16 +23,16 @@ export default class PointerButton {
     this.gameObject.on("pointerup", this.pointerUp, this);
 
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
-    return (gameObject as any)["__PointerButton"];
-  }
+	static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
+		return (gameObject as any)["__PointerButton"];
+	}
 
-  private gameObject: Phaser.GameObjects.Image;
-  public setAlpha: boolean = false;
+	private gameObject: Phaser.GameObjects.Image;
+	public setAlpha: boolean = false;
 
-  /* START-USER-CODE */
+	/* START-USER-CODE */
 
   pointerOver() {
     if (this.setAlpha) {

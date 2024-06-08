@@ -2,7 +2,7 @@
 
 import Employee from "./Employee";
 import { employeeKey } from "./EmployeeData";
-import EmployeeTemplate from "./EmployeeTemplate";
+import EmployeeB from "./EmployeeB";
 
 export default class EmployeeDirectory {
   private static employeeMap: Map<employeeKey, Employee>;
@@ -18,10 +18,10 @@ export default class EmployeeDirectory {
     }
 
     EmployeeDirectory.employeeMap = new Map<employeeKey, Employee>([
-      ["employee-B", new EmployeeTemplate(game, "employee-B")],
-      ["employee-F", new EmployeeTemplate(game, "employee-F")],
-      ["employee-J", new EmployeeTemplate(game, "employee-J")],
-      ["employee-K", new EmployeeTemplate(game, "employee-K")],
+      ["employee-B", new EmployeeB(game, "employee-B")],
+      ["employee-F", new EmployeeB(game, "employee-F")],
+      ["employee-J", new EmployeeB(game, "employee-J")],
+      ["employee-K", new EmployeeB(game, "employee-K")],
     ]);
   }
 
