@@ -4,9 +4,9 @@
 
 /* START OF COMPILED CODE */
 
-import EmployeeB from "~/employee/EmployeeB";
 import PointerButton from "../../components/PointerButton";
 /* START-USER-IMPORTS */
+import Employee from "~/employee/Employee";
 import { ProgramBaseScene } from "./ProgramScene";
 import { employeeKey, employeeKeys } from "~/employee/EmployeeData";
 import EmployeeDirectory from "~/employee/EmployeeDirectory";
@@ -33,14 +33,15 @@ export default class CameraProgramScene extends ProgramBaseScene {
     cameraFeed.visible = false;
     mainContainer.add(cameraFeed);
 
-    // bg
-    const bg = this.add.rectangle(0, 59, 470, 300);
-    bg.setOrigin(0, 0);
-    bg.isFilled = true;
-    mainContainer.add(bg);
+    // background
+    const background = this.add.image(-1, 60, "white-px");
+    background.scaleX = 470;
+    background.scaleY = 300;
+    background.setOrigin(0, 0);
+    mainContainer.add(background);
 
     // rightButton
-    const rightButton = this.add.image(402, 166, "white-px");
+    const rightButton = this.add.image(407, 166, "white-px");
     rightButton.scaleX = 50;
     rightButton.scaleY = 50;
     rightButton.setOrigin(0, 0);
@@ -56,7 +57,7 @@ export default class CameraProgramScene extends ProgramBaseScene {
     mainContainer.add(rightButton);
 
     // leftButton
-    const leftButton = this.add.image(8, 166, "white-px");
+    const leftButton = this.add.image(13, 166, "white-px");
     leftButton.scaleX = 50;
     leftButton.scaleY = 50;
     leftButton.setOrigin(0, 0);
@@ -72,13 +73,13 @@ export default class CameraProgramScene extends ProgramBaseScene {
     mainContainer.add(leftButton);
 
     // bitmaptext_1
-    const bitmaptext_1 = this.add.bitmapText(16, 172, "nokia", "<");
+    const bitmaptext_1 = this.add.bitmapText(21, 172, "nokia", "<");
     bitmaptext_1.text = "<";
     bitmaptext_1.fontSize = -32;
     mainContainer.add(bitmaptext_1);
 
     // bitmaptext
-    const bitmaptext = this.add.bitmapText(425, 172, "nokia", ">");
+    const bitmaptext = this.add.bitmapText(430, 172, "nokia", ">");
     bitmaptext.text = ">";
     bitmaptext.fontSize = -32;
     mainContainer.add(bitmaptext);
@@ -93,6 +94,10 @@ export default class CameraProgramScene extends ProgramBaseScene {
     employee.visible = false;
     mainContainer.add(employee);
 
+    // aCDC_poster
+    const aCDC_poster = this.add.image(-95, -51, "ACDC-poster");
+    mainContainer.add(aCDC_poster);
+
     // rightButton (components)
     new PointerButton(rightButton);
 
@@ -100,20 +105,22 @@ export default class CameraProgramScene extends ProgramBaseScene {
     new PointerButton(leftButton);
 
     this.cameraFeed = cameraFeed;
-    this.bg = bg;
+    this.background = background;
     this.rightButton = rightButton;
     this.leftButton = leftButton;
     this.employee = employee;
+    this.aCDC_poster = aCDC_poster;
     this.mainContainer = mainContainer;
 
     this.events.emit("scene-awake");
   }
 
   private cameraFeed!: Phaser.GameObjects.Sprite;
-  private bg!: Phaser.GameObjects.Rectangle;
+  private background!: Phaser.GameObjects.Image;
   private rightButton!: Phaser.GameObjects.Image;
   private leftButton!: Phaser.GameObjects.Image;
   private employee!: Phaser.GameObjects.Sprite;
+  private aCDC_poster!: Phaser.GameObjects.Image;
   private mainContainer!: Phaser.GameObjects.Container;
 
   /* START-USER-CODE */
@@ -121,12 +128,35 @@ export default class CameraProgramScene extends ProgramBaseScene {
   private mask: Phaser.Display.Masks.GeometryMask;
 
   public employeeSpriteMap: Map<employeeKey, Phaser.GameObjects.Sprite>;
+  private employeeBGColourMap: Map<employeeKey, number> = new Map([
+    ["employee-B", 0xe5b7ff],
+    ["employee-F", 0xb2ffa8],
+    ["employee-G", 0xffcc99],
+    ["employee-J", 0xfff6a3],
+    ["employee-K", 0xaefdff],
+    ["employee-L", 0xffa5f4],
+    ["employee-O", 0xffb2b2],
+    ["employee-X", 0xbec1ff],
+  ]);
+  public selectedEmployee: employeeKey;
+  private viewableEmployees: Array<employeeKey> = [
+    "employee-B",
+    "employee-F",
+    "employee-K",
+    "employee-J",
+  ];
+
+  /**
+   * Index for employeeKeys array
+   */
+  public visibleEmployee = 0;
 
   /**
    * Boilerplate setup for all program classes
    */
   setup() {
     // create
+    super.hackProgram = true;
     super.editorCreate();
     super.create(700, 300, "Desktop Camera Feed", "Camera", true);
     this.editorCreate();
@@ -142,9 +172,26 @@ export default class CameraProgramScene extends ProgramBaseScene {
 
     this.createEmployeeSprites();
 
-    let employee = EmployeeDirectory.getEmployee("employee-B") as EmployeeB;
-    employee.createAnim();
-    // TEMP
+    employeeKeys.forEach((employeeKey: employeeKey) => {
+      let employee = EmployeeDirectory.getEmployee(employeeKey) as Employee;
+      // TODO: remove any type assertation. I may move this function to the employee class.
+      employee.createAnims(employeeKey);
+      employee.playInitialAnim();
+    });
+
+    this.selectedEmployee = "employee-K";
+    this.setVisibleEmployeeSprite(this.selectedEmployee);
+
+    this.leftButton.on("click", () => {
+      this.incrementSelectedEmployee(false);
+      this.setVisibleEmployeeSprite(this.selectedEmployee);
+    });
+    this.rightButton.on("click", () => {
+      this.incrementSelectedEmployee(true);
+      this.setVisibleEmployeeSprite(this.selectedEmployee);
+    });
+
+    this.aCDC_poster.setVisible(false);
   }
 
   createEmployeeSprites() {
@@ -161,6 +208,33 @@ export default class CameraProgramScene extends ProgramBaseScene {
         EmployeeDirectory.getEmployee(employeeKey).sprite = newSprite;
       }
     });
+  }
+
+  setVisibleEmployeeSprite(employeeKey: employeeKey) {
+    this.employeeSpriteMap.forEach((sprite, key) => {
+      sprite.setVisible(key === employeeKey);
+    });
+    this.background.setTint(this.employeeBGColourMap.get(employeeKey));
+    this.aCDC_poster.setVisible(employeeKey === "employee-J");
+  }
+
+  /**
+   * Increment or decrement selected employee as defined by `visibleEmployee`
+   * @param increment or decrement
+   */
+  incrementSelectedEmployee(increment: boolean) {
+    let index = this.viewableEmployees.findIndex((value) => {
+      if (value === this.selectedEmployee) {
+        return true;
+      }
+    }, this);
+    index += increment ? 1 : -1;
+    if (increment && index > this.viewableEmployees.length - 1) {
+      index = 0;
+    } else if (!increment && index < 0) {
+      index = this.viewableEmployees.length - 1;
+    }
+    this.selectedEmployee = this.viewableEmployees[index];
   }
 
   // public setCameraImage(employee: employeeKey, imageKey: string) {

@@ -38,16 +38,19 @@
                     "visible": false
                 },
                 {
-                    "type": "Rectangle",
-                    "id": "75229367-8d2e-4309-bc18-dc0e1f0b985a",
-                    "label": "bg",
+                    "type": "Image",
+                    "id": "76ee9051-554b-4d55-b45c-0ac84c2ea0f2",
+                    "label": "background",
                     "scope": "CLASS",
-                    "y": 59,
+                    "texture": {
+                        "key": "white-px"
+                    },
+                    "x": -1,
+                    "y": 60,
+                    "scaleX": 470,
+                    "scaleY": 300,
                     "originX": 0,
-                    "originY": 0,
-                    "isFilled": true,
-                    "width": 470,
-                    "height": 300
+                    "originY": 0
                 },
                 {
                     "type": "Image",
@@ -60,7 +63,7 @@
                     "texture": {
                         "key": "white-px"
                     },
-                    "x": 402,
+                    "x": 407,
                     "y": 166,
                     "scaleX": 50,
                     "scaleY": 50,
@@ -87,7 +90,7 @@
                     "texture": {
                         "key": "white-px"
                     },
-                    "x": 8,
+                    "x": 13,
                     "y": 166,
                     "scaleX": 50,
                     "scaleY": 50,
@@ -107,7 +110,7 @@
                     "type": "BitmapText",
                     "id": "477de2c0-dfa4-4cbf-8196-85c5c114c911",
                     "label": "bitmaptext_1",
-                    "x": 16,
+                    "x": 21,
                     "y": 172,
                     "text": "<",
                     "font": "nokia",
@@ -117,7 +120,7 @@
                     "type": "BitmapText",
                     "id": "115ba9ad-7bda-4f59-a0a0-c6c515040737",
                     "label": "bitmaptext",
-                    "x": 425,
+                    "x": 430,
                     "y": 172,
                     "text": ">",
                     "font": "nokia",
@@ -135,6 +138,17 @@
                     "x": 234,
                     "y": 212,
                     "visible": false
+                },
+                {
+                    "type": "Image",
+                    "id": "a070ebfd-f364-44aa-aa95-859dba92dac7",
+                    "label": "aCDC_poster",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "ACDC-poster"
+                    },
+                    "x": -95,
+                    "y": -51
                 }
             ]
         }

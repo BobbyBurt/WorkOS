@@ -107,9 +107,10 @@ export default class TaskbarPrefab extends Phaser.GameObjects.Container {
   public repositionTaskButtons() {
     let buttonNumber = 0;
     this.taskButtonMap.forEach((button) => {
-      if (button.programScene.scene.isActive()) {
+      let scene = button.programScene as ProgramBaseScene;
+      if (scene.scene.isActive() || scene.minimized) {
+        // minimized scenes aren't considered active (apparently?)
         button.setPosition(300 + buttonNumber * 220, button.y);
-
         buttonNumber++;
       }
     });

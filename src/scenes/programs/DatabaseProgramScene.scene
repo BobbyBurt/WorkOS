@@ -10,8 +10,7 @@
         "sceneKey": "database-program",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderY": 60,
-        "borderWidth": 700,
-        "borderHeight": 500
+        "borderWidth": 900
     },
     "displayList": [
         {
@@ -29,8 +28,8 @@
                     "originY": 0,
                     "isFilled": true,
                     "fillColor": "#2c342b",
-                    "width": 700,
-                    "height": 500
+                    "width": 900,
+                    "height": 600
                 },
                 {
                     "type": "Image",
@@ -42,7 +41,7 @@
                     ],
                     "texture": {},
                     "x": 113,
-                    "y": 368,
+                    "y": 310,
                     "scaleX": 4.803429437818358,
                     "scaleY": 1.3980935992090544
                 },
@@ -56,7 +55,7 @@
                     ],
                     "texture": {},
                     "x": 113,
-                    "y": 318,
+                    "y": 260,
                     "scaleX": 4.803429437818358,
                     "scaleY": 1.3980935992090544
                 },
@@ -70,7 +69,7 @@
                     ],
                     "texture": {},
                     "x": 113,
-                    "y": 268,
+                    "y": 210,
                     "scaleX": 4.803429437818358,
                     "scaleY": 1.3980935992090544
                 },
@@ -84,7 +83,7 @@
                     ],
                     "texture": {},
                     "x": 113,
-                    "y": 217,
+                    "y": 159,
                     "scaleX": 4.803429437818358,
                     "scaleY": 1.3980935992090544
                 },
@@ -98,16 +97,16 @@
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
                     "tintBottomRight": "#15ff06",
-                    "text": "EMPLOYEE \nDATABASE",
+                    "text": "EMPLOYEE DATABASE",
                     "font": "nokia",
-                    "fontSize": -32
+                    "fontSize": -26
                 },
                 {
                     "type": "BitmapText",
                     "id": "849d98a2-ff75-4b37-ab90-cbbb01c5cd6b",
                     "label": "bitmaptext",
                     "x": 56,
-                    "y": 203,
+                    "y": 145,
                     "tintTopLeft": "#15ff06",
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
@@ -121,7 +120,7 @@
                     "id": "5c784281-101e-4486-8a6b-701a6a7cc8cf",
                     "label": "bitmaptext_2",
                     "x": 56,
-                    "y": 253,
+                    "y": 195,
                     "tintTopLeft": "#15ff06",
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
@@ -135,7 +134,7 @@
                     "id": "d5709a7f-c887-4a1d-bbf1-46be3347616c",
                     "label": "bitmaptext_3",
                     "x": 56,
-                    "y": 303,
+                    "y": 245,
                     "tintTopLeft": "#15ff06",
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
@@ -149,7 +148,7 @@
                     "id": "717ead29-1cf8-4ec3-8aa9-039209327b5d",
                     "label": "bitmaptext_4",
                     "x": 56,
-                    "y": 353,
+                    "y": 295,
                     "tintTopLeft": "#15ff06",
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
@@ -163,8 +162,8 @@
                     "id": "09c82b84-50de-4e32-a0e0-5d63541b3d47",
                     "label": "instructionsText",
                     "scope": "CLASS",
-                    "x": 477,
-                    "y": 310,
+                    "x": 628,
+                    "y": 352,
                     "originX": 0.5,
                     "originY": 0.5,
                     "tintTopLeft": "#15ff06",
@@ -181,15 +180,15 @@
                     "type": "Rectangle",
                     "id": "d32148d2-4141-4e83-9dfb-94a478354d04",
                     "label": "rectangle_2",
-                    "x": 250,
+                    "x": 401,
                     "y": 60,
                     "originX": 0,
                     "originY": 0,
                     "alpha": 0.1,
                     "isFilled": true,
                     "fillColor": "#00f533",
-                    "width": 450,
-                    "height": 500
+                    "width": 500,
+                    "height": 600
                 },
                 {
                     "type": "Container",
@@ -201,7 +200,7 @@
                     ],
                     "ScrollField.BGRect": "rectangle",
                     "ScrollField.scrollbarRect": "rectangle_3",
-                    "x": 250,
+                    "x": 401,
                     "y": 60,
                     "list": [
                         {
@@ -213,8 +212,8 @@
                             "alpha": 0.1,
                             "isFilled": true,
                             "fillColor": "#00f533",
-                            "width": 450,
-                            "height": 1000
+                            "width": 500,
+                            "height": 1300
                         },
                         {
                             "type": "BitmapText",
@@ -226,6 +225,19 @@
                             "font": "nokia",
                             "fontSize": -16,
                             "maxWidth": 340
+                        },
+                        {
+                            "type": "Image",
+                            "id": "1329263c-9562-4374-8268-c0f8bf51cdcb",
+                            "label": "profileEntryImage",
+                            "scope": "CLASS",
+                            "texture": {
+                                "key": "employee-G-trouble"
+                            },
+                            "x": 125,
+                            "y": 115,
+                            "originX": 0,
+                            "originY": 0
                         }
                     ]
                 },
@@ -251,17 +263,19 @@
                         "PointerButton"
                     ],
                     "texture": {},
-                    "x": 119,
-                    "y": 502,
-                    "scaleX": 4.803429437818358,
-                    "scaleY": 1.3980935992090544
+                    "x": 42,
+                    "y": 576,
+                    "scaleX": 10.019942171468859,
+                    "scaleY": 1.745357513280117,
+                    "originX": 0,
+                    "originY": 0
                 },
                 {
                     "type": "BitmapText",
                     "id": "56d04ac5-86d7-47da-b07f-0a2717bca6c9",
                     "label": "bitmaptext_5",
-                    "x": 82,
-                    "y": 487,
+                    "x": 167,
+                    "y": 587,
                     "tintTopLeft": "#15ff06",
                     "tintTopRight": "#15ff06",
                     "tintBottomLeft": "#15ff06",
@@ -269,6 +283,139 @@
                     "text": "HACK",
                     "font": "nokia",
                     "fontSize": -24
+                },
+                {
+                    "type": "Image",
+                    "id": "f1aab053-5d86-4ba7-9f3a-df3506788140",
+                    "label": "optionButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 207.14512634277344,
+                    "y": 136.63050270080566,
+                    "scaleX": 5.106851213835601,
+                    "scaleY": 1.3980935992090544,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "394c9dbc-443f-4457-9699-f8a7e00bba75",
+                    "label": "optionButton_1",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 207.14512634277344,
+                    "y": 186.63050270080566,
+                    "scaleX": 5.106851213835601,
+                    "scaleY": 1.3980935992090544,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "63a3bf4f-a0a9-420b-9006-2bcb933b7381",
+                    "label": "optionButton_2",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 207.14512634277344,
+                    "y": 237.63050270080566,
+                    "scaleX": 5.106851213835601,
+                    "scaleY": 1.3980935992090544,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "2d2226e4-65ef-4b0f-b507-b60588047ff9",
+                    "label": "optionButton_3",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "texture": {},
+                    "x": 207.14512634277344,
+                    "y": 287.63050270080566,
+                    "scaleX": 5.106851213835601,
+                    "scaleY": 1.3980935992090544,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "b69cd97f-7344-446f-b58c-4fe808e673ba",
+                    "label": "optionText",
+                    "x": 218,
+                    "y": 149,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "profile",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "e2fea4a2-8579-47e9-b463-4277448be745",
+                    "label": "optionText_1",
+                    "x": 218,
+                    "y": 200,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "search history",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "2b99eb73-7e23-463e-9c5a-8a5853c9f838",
+                    "label": "optionText_2",
+                    "x": 218,
+                    "y": 253,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "screen peek",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "66db04a8-bb62-4912-8e4d-5c431e3e17be",
+                    "label": "optionText_3",
+                    "x": 218,
+                    "y": 302,
+                    "tintTopLeft": "#15ff06",
+                    "tintTopRight": "#15ff06",
+                    "tintBottomLeft": "#15ff06",
+                    "tintBottomRight": "#15ff06",
+                    "text": "surveillance ",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Image",
+                    "id": "a09a0f0b-44a0-4ff0-a643-e049d92fb169",
+                    "label": "entryImage",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "office-camera"
+                    },
+                    "x": 452,
+                    "y": 255,
+                    "originX": 0,
+                    "originY": 0
                 }
             ]
         }
@@ -299,6 +446,26 @@
                 "5c784281-101e-4486-8a6b-701a6a7cc8cf",
                 "d5709a7f-c887-4a1d-bbf1-46be3347616c",
                 "717ead29-1cf8-4ec3-8aa9-039209327b5d"
+            ]
+        },
+        {
+            "id": "efbe8909-665f-4ed6-a893-995647968dfd",
+            "label": "optionButtonTextList",
+            "objectIds": [
+                "b69cd97f-7344-446f-b58c-4fe808e673ba",
+                "e2fea4a2-8579-47e9-b463-4277448be745",
+                "2b99eb73-7e23-463e-9c5a-8a5853c9f838",
+                "66db04a8-bb62-4912-8e4d-5c431e3e17be"
+            ]
+        },
+        {
+            "id": "045684d5-c566-49d0-9da5-59afaf94e5b8",
+            "label": "optionButtonList",
+            "objectIds": [
+                "f1aab053-5d86-4ba7-9f3a-df3506788140",
+                "394c9dbc-443f-4457-9699-f8a7e00bba75",
+                "63a3bf4f-a0a9-420b-9006-2bcb933b7381",
+                "2d2226e4-65ef-4b0f-b507-b60588047ff9"
             ]
         }
     ]

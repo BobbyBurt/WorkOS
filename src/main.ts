@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
   var game = new Phaser.Game({
     title: "Work OS",
     // url: 'https://www.newgrounds.com/projects/games/1923225/preview',
-    version: "2",
+    version: "4",
 
     // type: __DEV__ ? Phaser.CANVAS : Phaser.AUTO,
     type: Phaser.AUTO,

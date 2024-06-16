@@ -229,14 +229,22 @@ export default class HackingProgramScene extends ProgramBaseScene {
         }
       });
     });
+    this.input.keyboard?.on("keydown-ENTER", () => {
+      let debugScene = this.scene.get("debug");
+      if (debugScene) {
+        if (debugScene.scene.isVisible()) {
+          this.completeHacking();
+        }
+      }
+    });
   }
 
   completeHacking() {
     let databaseScene = this.scene.get(
       "database-program"
     ) as DatabaseProgramScene;
-    databaseScene.unlockEntry(this.hackingTarget);
-    databaseScene.showEntry(this.hackingTarget);
+    databaseScene.unlockEntry(this.hackingTarget, databaseScene.selectedOption);
+    databaseScene.showEntry(this.hackingTarget, databaseScene.selectedOption);
     super.close();
   }
 

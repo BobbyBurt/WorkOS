@@ -57,6 +57,11 @@ export default class DebugScene extends Phaser.Scene {
         this.scene.bringToTop();
       }
     });
+
+    // this.DisplayVar(
+    //   "instructions",
+    //   "Use the enter key to complete hacking scene"
+    // );
   }
 
   /**

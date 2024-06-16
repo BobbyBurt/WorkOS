@@ -3,22 +3,20 @@
 import CameraProgramScene from "~/scenes/programs/CameraProgramScene";
 import EmailProgramScene from "~/scenes/programs/EmailProgramScene";
 import { employeeData, employeeDataMap, employeeKey } from "./EmployeeData";
-import EmployeeDefaultAnimations, {
-  employeeAnimationConfig,
-} from "./EmployeeAnim";
+import EmployeeDefaultAnimations, { employeeAnimConfig } from "./EmployeeAnim";
+import EmployeeAnim from "./EmployeeAnim";
+import EmployeeBAnim from "./employees/EmployeeBAnim";
 
 export default class Employee {
   private game: Phaser.Game;
 
   protected readonly data: employeeData;
-  protected readonly key: employeeKey;
-
-  /** 'working', 'distracted', 'in-trouble', 'fired'
-   * TODO: Make this into a union type. Trouble is that employee subclass will need to assign custom states. */
-  protected state = "working";
+  public readonly key: employeeKey;
 
   /** Ref to sprite in `CameraProgramScene`. Set once the sprite is created. */
   public sprite: Phaser.GameObjects.Sprite;
+
+  public queueDistraction = false;
 
   /**
    * `key`: Animation key
@@ -41,23 +39,48 @@ export default class Employee {
     // console.log(`email from ${this.data.name}: Please don't bother me.`);
 
     if (content === this.data.distractableFile) {
-      this.setCameraImage("distracted");
+      this.queueDistraction = true;
+    }
+  }
+
+  public thisEmployeeAnim = new EmployeeBAnim();
+
+  /**
+   *
+   *
+   * High level
+   */
+  public createAnims(employeeKey: employeeKey) {
+    this.thisEmployeeAnim.employee = this;
+    let animationMap = this.thisEmployeeAnim.getAnimsMap();
+    if (employeeKey === "employee-B") {
+      this.createAnimsFromMap(animationMap, "employee-animation-test-B");
+    } else {
+      this.createAnimsFromMap(animationMap, "employee-animation-test");
     }
   }
 
   /**
-   * Creates the employee's animations from a map
    *
-   * To be called from the employee subclass
+   */
+  public playInitialAnim() {
+    this.sprite.play("working-loop");
+  }
+
+  /**
+   * Creates the employee's animations from a map.
+   * Also sets up the onComplete callbacks.
+   *
+   * To be called from the employee subclass.
    * @param animations
    * @param atlasKey
    */
-  protected createAnimFromMap(
-    animations: Map<string, employeeAnimationConfig>,
+  protected createAnimsFromMap(
+    animations: Map<string, employeeAnimConfig>,
     atlasKey: string
   ) {
     animations.forEach((value, key) => {
-      this.game.anims.create({
+      this.sprite.anims.create({
         key: key,
         repeat: value.repeat,
         frameRate: value.frameRate,
@@ -73,10 +96,14 @@ export default class Employee {
 
     this.sprite.on(
       Phaser.Animations.Events.ANIMATION_COMPLETE,
-      (animation: any) => {
-        let func = this.animCompleteCallbacks.get(animation.key);
-        if (func) {
-          func();
+      (animation: { key: string }) => {
+        let onComplete = this.animCompleteCallbacks.get(animation.key);
+        if (onComplete) {
+          onComplete(this);
+        } else {
+          console.warn(
+            `No onComplete callback exists for animation ${animation.key}, employee: ${this.key}`
+          );
         }
       }
     );
@@ -97,15 +124,6 @@ export default class Employee {
     //     break;
     //   }
     // }
-  }
-
-  protected setCameraImage(state: string) {
-    let cameraProgram = this.game.scene.getScene(
-      "camera-program"
-    ) as CameraProgramScene;
-    if (cameraProgram) {
-      // cameraProgram.setCameraImage(this.key, `${this.key}-${state}`);
-    }
   }
 
   protected templateSandboxMethod() {

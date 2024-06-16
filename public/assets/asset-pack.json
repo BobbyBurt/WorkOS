@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/ACDC-poster.png",
+                "type": "image",
+                "key": "ACDC-poster"
+            },
+            {
                 "url": "assets/images/camera/bossman-absent.png",
                 "type": "image",
                 "key": "bossman-absent"
@@ -27,6 +32,11 @@
                 "key": "camera-icon"
             },
             {
+                "url": "assets/images/data-not-found.png",
+                "type": "image",
+                "key": "data-not-found"
+            },
+            {
                 "url": "assets/images/Desktop_BG0001(1).png",
                 "type": "image",
                 "key": "desktop-bg"
@@ -41,6 +51,12 @@
                 "url": "assets/animation/employee-animation-test.json",
                 "path": "assets/animation",
                 "key": "employee-animation-test"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/animation/employee-animation-test-B.json",
+                "path": "assets/animation",
+                "key": "employee-animation-test-B"
             },
             {
                 "url": "assets/images/camera/bertina-distracted.png",
@@ -168,6 +184,11 @@
                 "key": "film-icon"
             },
             {
+                "url": "assets/images/desktop-icons/find-icon.png",
+                "type": "image",
+                "key": "find-icon"
+            },
+            {
                 "url": "assets/images/desktop-icons/folder-icon.png",
                 "type": "image",
                 "key": "folder-icon"
@@ -236,6 +257,11 @@
                 "key": "office-ambience"
             },
             {
+                "url": "assets/images/security-camera/office-camera.png",
+                "type": "image",
+                "key": "office-camera"
+            },
+            {
                 "url": "assets/images/desktop-icons/page_white_go.png",
                 "type": "image",
                 "key": "page-go-icon"
@@ -249,6 +275,36 @@
                 "url": "assets/images/desktop-icons/picture-icon.png",
                 "type": "image",
                 "key": "picture-icon"
+            },
+            {
+                "url": "assets/images/screen-peek/screen-peek.png",
+                "type": "image",
+                "key": "screen-peek"
+            },
+            {
+                "url": "assets/images/screen-peek/screen-peek-hint.png",
+                "type": "image",
+                "key": "screen-peek-hint"
+            },
+            {
+                "url": "assets/images/security-camera/security-camera-B.png",
+                "type": "image",
+                "key": "security-camera-B"
+            },
+            {
+                "url": "assets/images/security-camera/security-camera-F.png",
+                "type": "image",
+                "key": "security-camera-F"
+            },
+            {
+                "url": "assets/images/security-camera/security-camera-J.png",
+                "type": "image",
+                "key": "security-camera-J"
+            },
+            {
+                "url": "assets/images/security-camera/security-camera-K.png",
+                "type": "image",
+                "key": "security-camera-K"
             },
             {
                 "url": "assets/images/desktop-icons/skull.png",

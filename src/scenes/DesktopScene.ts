@@ -8,97 +8,109 @@ import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
+import { ProgramBaseScene } from "./programs/ProgramScene";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
-  constructor() {
-    super("desktop");
 
-    /* START-USER-CTR-CODE */
+	constructor() {
+		super("desktop");
+
+		/* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  editorCreate(): void {
-    // monitorEdge1
-    const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
-    monitorEdge1.setOrigin(0, 0);
-    monitorEdge1.isFilled = true;
-    monitorEdge1.fillColor = 13882323;
+	editorCreate(): void {
 
-    // wallpaperColour
-    const wallpaperColour = this.add.rectangle(0, 0, 1920, 1080);
-    wallpaperColour.setOrigin(0, 0);
-    wallpaperColour.isFilled = true;
-    wallpaperColour.fillColor = 3303823;
+		// monitorEdge1
+		const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
+		monitorEdge1.setOrigin(0, 0);
+		monitorEdge1.isFilled = true;
+		monitorEdge1.fillColor = 13882323;
 
-    // desktop_bg
-    const desktop_bg = this.add.image(334, 0, "desktop-bg");
-    desktop_bg.setOrigin(0, 0);
+		// wallpaperColour
+		const wallpaperColour = this.add.rectangle(0, 0, 1920, 1080);
+		wallpaperColour.setOrigin(0, 0);
+		wallpaperColour.isFilled = true;
+		wallpaperColour.fillColor = 3303823;
 
-    // icon
-    const icon = new IconPrefab(this, 758, 113);
-    this.add.existing(icon);
+		// desktop_bg
+		const desktop_bg = this.add.image(334, 0, "desktop-bg");
+		desktop_bg.setOrigin(0, 0);
 
-    // icon_1
-    const icon_1 = new IconPrefab(this, 1420, 759);
-    this.add.existing(icon_1);
+		// icon
+		const icon = new IconPrefab(this, 758, 113);
+		this.add.existing(icon);
 
-    // windowMask
-    const windowMask = this.add.image(456, 209, "white-px");
-    windowMask.scaleX = 1400;
-    windowMask.scaleY = 800;
-    windowMask.setOrigin(0, 0);
-    windowMask.visible = false;
+		// icon_1
+		const icon_1 = new IconPrefab(this, 1420, 759);
+		this.add.existing(icon_1);
 
-    // moniter
-    const moniter = this.add.image(970.5, 540, "moniter");
-    moniter.scaleX = 1.4;
-    moniter.scaleY = 1.1;
+		// windowMask
+		const windowMask = this.add.image(456, 209, "white-px");
+		windowMask.scaleX = 1400;
+		windowMask.scaleY = 800;
+		windowMask.setOrigin(0, 0);
+		windowMask.visible = false;
 
-    // desktopRect
-    const desktopRect = this.add.rectangle(143, 19, 1630, 970);
-    desktopRect.setOrigin(0, 0);
-    desktopRect.visible = false;
-    desktopRect.isFilled = true;
+		// moniter
+		const moniter = this.add.image(970.5, 540, "moniter");
+		moniter.scaleX = 1.4;
+		moniter.scaleY = 1.1;
 
-    // icon_3
-    const icon_3 = new IconPrefab(this, 475, 116);
-    this.add.existing(icon_3);
+		// desktopRect
+		const desktopRect = this.add.rectangle(143, 19, 1630, 970);
+		desktopRect.setOrigin(0, 0);
+		desktopRect.visible = false;
+		desktopRect.isFilled = true;
 
-    // icon_4
-    const icon_4 = new IconPrefab(this, 516, 686);
-    this.add.existing(icon_4);
+		// icon_3
+		const icon_3 = new IconPrefab(this, 475, 116);
+		this.add.existing(icon_3);
 
-    // icon (prefab fields)
-    icon.programName = "Email";
-    icon.iconTextureKey = "page-go-icon_1";
-    icon.sceneKey = "email-program";
+		// icon_4
+		const icon_4 = new IconPrefab(this, 516, 686);
+		this.add.existing(icon_4);
 
-    // icon_1 (prefab fields)
-    icon_1.programName = "Fullscreen";
-    icon_1.iconTextureKey = "window-icon";
+		// icon_2
+		const icon_2 = new IconPrefab(this, 275, 409);
+		this.add.existing(icon_2);
 
-    // icon_3 (prefab fields)
-    icon_3.programName = "Camera";
-    icon_3.iconTextureKey = "picture-icon";
-    icon_3.sceneKey = "camera-program";
+		// icon (prefab fields)
+		icon.programName = "Email";
+		icon.iconTextureKey = "page-go-icon_1";
+		icon.sceneKey = "email-program";
 
-    // icon_4 (prefab fields)
-    icon_4.programName = "DATABASE";
-    icon_4.iconTextureKey = "terminal-icon";
-    icon_4.sceneKey = "database-program";
+		// icon_1 (prefab fields)
+		icon_1.programName = "Fullscreen";
+		icon_1.iconTextureKey = "window-icon";
 
-    this.windowMask = windowMask;
-    this.desktopRect = desktopRect;
+		// icon_3 (prefab fields)
+		icon_3.programName = "Camera";
+		icon_3.iconTextureKey = "picture-icon";
+		icon_3.sceneKey = "camera-program";
 
-    this.events.emit("scene-awake");
-  }
+		// icon_4 (prefab fields)
+		icon_4.programName = "DATABASE";
+		icon_4.iconTextureKey = "terminal-icon";
+		icon_4.sceneKey = "database-program";
 
-  private windowMask!: Phaser.GameObjects.Image;
-  public desktopRect!: Phaser.GameObjects.Rectangle;
+		// icon_2 (prefab fields)
+		icon_2.programName = "Browser";
+		icon_2.iconTextureKey = "find-icon";
+		icon_2.sceneKey = "search-program";
 
-  /* START-USER-CODE */
+		this.windowMask = windowMask;
+		this.desktopRect = desktopRect;
+
+		this.events.emit("scene-awake");
+	}
+
+	private windowMask!: Phaser.GameObjects.Image;
+	public desktopRect!: Phaser.GameObjects.Rectangle;
+
+	/* START-USER-CODE */
 
   public desktopGeomRect!: Phaser.Geom.Rectangle;
 
@@ -130,9 +142,12 @@ export default class DesktopScene extends Phaser.Scene {
 
   public addWindow(sceneKey: string) {
     // this.scene.launch(sceneKey);
+    let programScene = this.scene.get(sceneKey) as ProgramBaseScene;
     if (!this.scene.isActive(sceneKey)) {
       this.scene.launch(sceneKey);
       this.scene.bringToTop("overlap");
+    } else if (programScene.minimized) {
+      programScene.setMinimize(false);
     }
   }
 

@@ -1,6 +1,7 @@
 /** @format */
 
 import Employee from "./Employee";
+import EmployeeAnim from "./EmployeeAnim";
 import { employeeKey } from "./EmployeeData";
 import EmployeeBAnim from "./employees/EmployeeBAnim";
 
@@ -9,35 +10,23 @@ export default class EmployeeB extends Employee {
     super(game, key);
   }
 
-  private thisEmployeeAnim = new EmployeeBAnim();
+  // public thisEmployeeAnim = new EmployeeBAnim();
 
-  /**
-   *
-   *
-   * High level
-   */
-  public createAnim() {
-    let animationMap = this.thisEmployeeAnim.getAnim();
-    super.createAnimFromMap(animationMap, "employee-animation-test");
-  }
-
-  public initialAni;
-
-  /**
-   * Distracts if condition is met.
-   * @param to
-   * @param content TODO: make this an object or something.
-   */
-  // public override sendEmail(content: string) {
-  //   if (content === "distraction") {
-  //     if (this.state === "working") {
-  //       this.state = "distracted";
-  //       super.setCameraImage("distracted");
-  //     }
-  //   }
+  // /**
+  //  *
+  //  *
+  //  * High level
+  //  */
+  // public createAnims() {
+  //   this.thisEmployeeAnim.employee = this;
+  //   let animationMap = this.thisEmployeeAnim.getAnimsMap();
+  //   super.createAnimsFromMap(animationMap, "employee-animation-test");
   // }
 
-  override animationCompleteCallback(animationKey: string) {
-    console.debug("subclass");
-  }
+  // /**
+  //  *
+  //  */
+  // public playInitialAnim() {
+  //   this.sprite.play("working-loop");
+  // }
 }

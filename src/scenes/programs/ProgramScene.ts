@@ -138,7 +138,7 @@ export class ProgramBaseScene extends Phaser.Scene {
   private immobile = false;
 
   // state
-  private minimized: boolean;
+  public minimized: boolean;
   private focused: boolean;
 
   // scenes
@@ -298,6 +298,13 @@ export class ProgramBaseScene extends Phaser.Scene {
     if (value == undefined) {
       value = !this.minimized;
     }
+
+    if (value) {
+      this.scene.pause(this.scene.key);
+    } else {
+      this.scene.resume(this.scene.key);
+    }
+
     this.scene.setVisible(!value);
     this.minimized = value;
     return value;

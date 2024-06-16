@@ -5,6 +5,9 @@ export default class dataManagerKeys {
     /** @type boolean
      * + ': <employee key>'
      */
-    databaseHacked: "database-hacked",
+    // profileHacked: "profile-hacked",
+    // screenPeekHacked: "screen-peek-hacked",
+    // internetHistoryHacked: "internet-history-hacked",
+    // officeSurveillanceHacked: "office-surveillance-hacked",
   };
 }

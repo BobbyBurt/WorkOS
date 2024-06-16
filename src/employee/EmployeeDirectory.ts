@@ -20,8 +20,12 @@ export default class EmployeeDirectory {
     EmployeeDirectory.employeeMap = new Map<employeeKey, Employee>([
       ["employee-B", new EmployeeB(game, "employee-B")],
       ["employee-F", new EmployeeB(game, "employee-F")],
+      ["employee-G", new EmployeeB(game, "employee-G")],
       ["employee-J", new EmployeeB(game, "employee-J")],
       ["employee-K", new EmployeeB(game, "employee-K")],
+      ["employee-L", new EmployeeB(game, "employee-L")],
+      ["employee-O", new EmployeeB(game, "employee-O")],
+      ["employee-X", new EmployeeB(game, "employee-X")],
     ]);
   }
 

@@ -11,36 +11,34 @@ import fullscreenHandler from "~/FullscreenHandler";
 /* END-USER-IMPORTS */
 
 export default class OverlapScene extends Phaser.Scene {
+  constructor() {
+    super("overlap");
 
-	constructor() {
-		super("overlap");
-
-		/* START-USER-CTR-CODE */
+    /* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-	}
+  }
 
-	editorCreate(): void {
+  editorCreate(): void {
+    // taskbarPrefab
+    const taskbarPrefab = new TaskbarPrefab(this, 135, 974);
+    this.add.existing(taskbarPrefab);
+    taskbarPrefab.scaleX = 1;
+    taskbarPrefab.scaleY = 1;
 
-		// taskbarPrefab
-		const taskbarPrefab = new TaskbarPrefab(this, 135, 974);
-		this.add.existing(taskbarPrefab);
-		taskbarPrefab.scaleX = 1;
-		taskbarPrefab.scaleY = 1;
+    // moniter
+    const moniter = this.add.image(970.5, 540, "moniter");
+    moniter.scaleX = 1.4;
+    moniter.scaleY = 1.1;
 
-		// moniter
-		const moniter = this.add.image(970.5, 540, "moniter");
-		moniter.scaleX = 1.4;
-		moniter.scaleY = 1.1;
+    this.taskbarPrefab = taskbarPrefab;
 
-		this.taskbarPrefab = taskbarPrefab;
+    this.events.emit("scene-awake");
+  }
 
-		this.events.emit("scene-awake");
-	}
+  public taskbarPrefab!: TaskbarPrefab;
 
-	public taskbarPrefab!: TaskbarPrefab;
-
-	/* START-USER-CODE */
+  /* START-USER-CODE */
 
   // Write your code here
 
@@ -56,12 +54,12 @@ export default class OverlapScene extends Phaser.Scene {
     this.sound.play("office-ambience", { loop: true, volume: 0.2 });
 
     // this.cameras.main.postFX.addBarrel(1.05);
-    // this.createBossDelay();
+    this.createBossDelay();
   }
 
   createBossDelay() {
-    this.bossTimer = this.time.addEvent({
-      delay: Phaser.Math.RND.between(30000, 40000),
+    let bossTimer = this.time.addEvent({
+      delay: Phaser.Math.RND.between(40000, 70000),
       callback: this.bossAppear,
       callbackScope: this,
     });
