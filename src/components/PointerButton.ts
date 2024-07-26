@@ -10,7 +10,7 @@ import Phaser from "phaser";
 
 export default class PointerButton {
 
-	constructor(gameObject: Phaser.GameObjects.Image) {
+	constructor(gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle) {
 		this.gameObject = gameObject;
 		(gameObject as any)["__PointerButton"] = this;
 
@@ -25,11 +25,11 @@ export default class PointerButton {
     /* END-USER-CTR-CODE */
 	}
 
-	static getComponent(gameObject: Phaser.GameObjects.Image): PointerButton {
+	static getComponent(gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle): PointerButton {
 		return (gameObject as any)["__PointerButton"];
 	}
 
-	private gameObject: Phaser.GameObjects.Image;
+	private gameObject: Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle;
 	public setAlpha: boolean = false;
 
 	/* START-USER-CODE */

@@ -1,0 +1,87 @@
+{
+    "id": "601edc05-6145-4607-ba61-133a7522789e",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 900
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "a38abd56-2871-4633-b4e0-7d67373b02d5",
+            "label": "browserBar",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "4841a154-83d9-48fb-acd8-010535f49693",
+                    "label": "rectangle_1",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#adcaec",
+                    "width": 900,
+                    "height": 50
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "48ddf154-64f4-4eab-9300-3aff3bc1bd85",
+                    "label": "rectangle",
+                    "x": 443,
+                    "y": 26,
+                    "isFilled": true,
+                    "fillColor": "#4969a7",
+                    "width": 700,
+                    "height": 30
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "aa686aa2-c86e-42c2-b67b-1668b27abc33",
+                    "label": "linkText",
+                    "scope": "PUBLIC",
+                    "x": 108,
+                    "y": 18,
+                    "text": "New BitmapText",
+                    "font": "nokia",
+                    "fontSize": -12
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "bc842248-9550-470f-a038-f510772a8c32",
+                    "label": "backButton",
+                    "scope": "PUBLIC",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "x": 31,
+                    "y": 26,
+                    "isFilled": true,
+                    "fillColor": "#4f49a7",
+                    "width": 40,
+                    "height": 30
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "81dd8953-56b3-4068-87e6-7211c15c76d6",
+                    "label": "bitmaptext_5",
+                    "x": 24,
+                    "y": 13,
+                    "text": "<",
+                    "font": "nokia",
+                    "fontSize": -22
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

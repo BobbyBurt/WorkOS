@@ -1,0 +1,37 @@
+{
+    "id": "39dbbbe8-72b6-4654-a3a3-0eb3aa4be473",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60,
+        "borderWidth": 900
+    },
+    "displayList": [
+        {
+            "type": "BitmapText",
+            "id": "c3fbc748-1aad-4687-ad6a-921c3462fee1",
+            "label": "throbber",
+            "originX": 0.5,
+            "originY": 0.5,
+            "tintTopLeft": "#dcdcdc",
+            "tintTopRight": "#b4b4b4",
+            "tintBottomLeft": "#616161",
+            "tintBottomRight": "#505050",
+            "text": ".ili.",
+            "font": "nokia",
+            "fontSize": -32
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

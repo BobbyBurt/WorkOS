@@ -1,0 +1,250 @@
+{
+    "id": "b2442122-ee3f-42f6-9d9b-3ba00fbebee3",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "ProgramBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "search-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "58e1a708-5d33-488e-9561-3e37a63b3808",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "ffc75f11-b59b-437f-a1c0-031e0f229f5b",
+                    "label": "rectangle_3",
+                    "y": 60,
+                    "scaleX": 6.268546640869119,
+                    "scaleY": 4.751692683213684,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Container",
+                    "id": "81a241e2-9068-4fe7-a749-5ee7a2253613",
+                    "label": "scrollTest",
+                    "scope": "CLASS",
+                    "components": [
+                        "ScrollField"
+                    ],
+                    "ScrollField.BGRect": "rectangle_1",
+                    "ScrollField.scrollbarRect": "rectangle_2",
+                    "x": 965,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "4060799e-2a9d-4831-ac6b-bc0bf6fe527e",
+                            "label": "rectangle_1",
+                            "x": 389,
+                            "y": 60,
+                            "scaleX": 1.2797974774988319,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#dfdfdf",
+                            "width": 330,
+                            "height": 1500
+                        }
+                    ]
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "a8daf815-b03e-42d3-82c5-cf11a08591e8",
+                    "label": "rectangle_2",
+                    "x": 831,
+                    "y": 70,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#ababab",
+                    "width": 4,
+                    "height": 128
+                },
+                {
+                    "type": "Container",
+                    "id": "77a0b29e-e642-4127-8c01-f0c2e07cc8ae",
+                    "label": "searchResult",
+                    "x": 43,
+                    "y": 236,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "2b243dec-dd6a-42ea-bbfe-84c0a74fa36b",
+                            "label": "rectangle_4",
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#e2e2e2",
+                            "strokeColor": "#9bb5cd",
+                            "lineWidth": 2,
+                            "isStroked": true,
+                            "width": 700,
+                            "height": 70
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "87400b42-67bb-44e7-9f4e-931675aaba16",
+                            "label": "searchBarText_1",
+                            "scope": "CLASS",
+                            "x": 21,
+                            "y": 24,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "awsome_file_best.pdf",
+                            "font": "nokia",
+                            "fontSize": -16
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "43f25cbc-bdab-4c76-b8e9-d38efc55e757",
+                            "label": "rectangle_5",
+                            "components": [
+                                "PointerButton"
+                            ],
+                            "x": 488,
+                            "y": 16,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#38b44b",
+                            "strokeColor": "#3bf52b",
+                            "lineWidth": 2,
+                            "isStroked": true,
+                            "width": 180,
+                            "height": 40
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "4bb94d43-e0d2-41c7-a286-5ccf86c7926d",
+                            "label": "bitmaptext_1",
+                            "x": 554,
+                            "y": 26,
+                            "text": "send",
+                            "font": "nokia",
+                            "fontSize": -16
+                        }
+                    ]
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "43ae780e-4681-4a43-ac12-6358914ab00e",
+                    "label": "searchBarRect",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "x": 45,
+                    "y": 107,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#e2e2e2",
+                    "strokeColor": "#9bb5cd",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 500,
+                    "height": 40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "ac8f772c-bd46-4aca-b545-f66a6e244020",
+                    "label": "searchBarText",
+                    "scope": "CLASS",
+                    "x": 58,
+                    "y": 117,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "example text is here",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "fd9afa70-7dab-4a78-ac55-10d14ac14fd4",
+                    "label": "searchButtonRect",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "x": 582,
+                    "y": 107,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#5891cc",
+                    "strokeColor": "#2badf5",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 180,
+                    "height": 40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "2b973fee-8ca7-404b-9338-7187cbb1bebc",
+                    "label": "bitmaptext",
+                    "x": 641,
+                    "y": 117,
+                    "text": "search",
+                    "font": "nokia",
+                    "fontSize": -16
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "9de57b5f-9353-42cf-ae6b-1e49fcef4490",
+                    "label": "searchBarText_2",
+                    "scope": "CLASS",
+                    "x": 58,
+                    "y": 191,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "Results",
+                    "font": "nokia",
+                    "fontSize": -24
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "lists": [
+        {
+            "id": "08290487-2515-47d4-a1a4-2d4334d09f30",
+            "label": "attachmentButtonList"
+        },
+        {
+            "id": "03b7df1f-a338-46aa-9ba1-92f9fa72f5f9",
+            "label": "attachmentTextList"
+        },
+        {
+            "id": "9b8c22b6-0fb0-4082-8475-af2eba05dcdf",
+            "label": "employeeButtonList"
+        },
+        {
+            "id": "cc2220c8-b266-403f-945f-8f8b6f401d9c",
+            "label": "employeeTextList"
+        }
+    ]
+}

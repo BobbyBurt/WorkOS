@@ -15,7 +15,10 @@ import DatabaseProgramScene from "./scenes/programs/DatabaseProgramScene";
 import EmailProgramScene from "./scenes/programs/EmailProgramScene";
 import HackingProgramScene from "./scenes/programs/HackingProgramScene";
 import ProgramScene from "./scenes/programs/ProgramScene";
+import SearchProgramScene from "./scenes/programs/SearchProgramScene";
 import TemplateProgramScene from "./scenes/programs/TemplateProgramScene";
+import TestWebsite2Scene from "./scenes/programs/websites/TestWebsite2Scene";
+import TestWebsiteScene from "./scenes/programs/websites/TestWebsiteScene";
 
 window.addEventListener("load", function () {
   if (__DEV__) {
@@ -54,6 +57,11 @@ window.addEventListener("load", function () {
   game.scene.add("camera-program", CameraProgramScene);
   game.scene.add("database-program", DatabaseProgramScene);
   game.scene.add("hacking-program", HackingProgramScene);
+  game.scene.add("search-program", SearchProgramScene);
+
+  // websites
+  game.scene.add("test-website-program", TestWebsiteScene);
+  game.scene.add("test-website-2-program", TestWebsite2Scene);
 });
 
 class Boot extends Phaser.Scene {

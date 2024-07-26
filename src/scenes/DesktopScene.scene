@@ -173,6 +173,24 @@
             "sceneKey": "search-program",
             "x": 275,
             "y": 409
+        },
+        {
+            "prefabId": "1c778c1d-634f-4e3a-a705-52e0e66c936b",
+            "id": "cf09823e-28fa-46d8-8863-f2ced59a12fa",
+            "unlock": [
+                "x",
+                "y",
+                "iconTextureKey",
+                "programName",
+                "pageKey",
+                "sceneKey"
+            ],
+            "label": "icon_5",
+            "programName": "Test Site",
+            "iconTextureKey": "page-go-icon_1",
+            "sceneKey": "test-website-program",
+            "x": 1298.0170944683855,
+            "y": 304.40579401652747
         }
     ],
     "plainObjects": [],

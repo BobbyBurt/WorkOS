@@ -77,6 +77,10 @@ export default class DesktopScene extends Phaser.Scene {
 		const icon_2 = new IconPrefab(this, 275, 409);
 		this.add.existing(icon_2);
 
+		// icon_5
+		const icon_5 = new IconPrefab(this, 1298.0170944683855, 304.40579401652747);
+		this.add.existing(icon_5);
+
 		// icon (prefab fields)
 		icon.programName = "Email";
 		icon.iconTextureKey = "page-go-icon_1";
@@ -100,6 +104,11 @@ export default class DesktopScene extends Phaser.Scene {
 		icon_2.programName = "Browser";
 		icon_2.iconTextureKey = "find-icon";
 		icon_2.sceneKey = "search-program";
+
+		// icon_5 (prefab fields)
+		icon_5.programName = "Test Site";
+		icon_5.iconTextureKey = "page-go-icon_1";
+		icon_5.sceneKey = "test-website-program";
 
 		this.windowMask = windowMask;
 		this.desktopRect = desktopRect;

@@ -15,6 +15,7 @@ import eventKeys from "~/data/eventKeys";
 import TaskButton from "~/prefabs/TaskButton";
 import OverlapScene from "../OverlapScene";
 import fullscreenHandler from "~/FullscreenHandler";
+import BrowserBarPrefab from "~/prefabs/BrowserBarPrefab";
 /* END-USER-IMPORTS */
 
 export default class ProgramScene extends Phaser.Scene {
@@ -98,7 +99,7 @@ export class ProgramBaseScene extends Phaser.Scene {
     y: 0,
   };
 
-  private windowPrefab!: WindowPrefab;
+  protected windowPrefab!: WindowPrefab;
 
   private programMask!: Phaser.Display.Masks.GeometryMask;
 
@@ -117,6 +118,9 @@ export class ProgramBaseScene extends Phaser.Scene {
       this.windowInitialPosition.y
     );
   }
+
+  /** Created / set by `WebsiteBaseScene` */
+  public browserBar: BrowserBarPrefab;
 
   /**
    * The objects to move on drag.
@@ -184,7 +188,6 @@ export class ProgramBaseScene extends Phaser.Scene {
     this.width = width;
     this.height = height;
 
-    // program mask
     this.programMaskRect.setSize(width, height);
     this.programMaskRect.setPosition(
       this.windowInitialPosition.x + this.programMaskOffset.x,
@@ -195,6 +198,12 @@ export class ProgramBaseScene extends Phaser.Scene {
       this.windowInitialPosition.x + this.programMaskOffset.x,
       this.windowInitialPosition.y + this.programMaskOffset.y
     );
+    if (this.browserBar) {
+      this.browserBar.setPosition(
+        this.windowInitialPosition.x + this.programMaskOffset.x,
+        this.windowInitialPosition.y + this.programMaskOffset.y
+      );
+    }
 
     if (immobile) {
       this.immobile = true;
@@ -282,6 +291,12 @@ export class ProgramBaseScene extends Phaser.Scene {
       x + this.programMaskOffset.x,
       y + this.programMaskOffset.y
     );
+    if (this.browserBar) {
+      this.browserBar.setPosition(
+        x + this.programMaskOffset.x,
+        y + this.programMaskOffset.y
+      );
+    }
   }
 
   public close() {
@@ -393,6 +408,15 @@ export class ProgramBaseScene extends Phaser.Scene {
       },
       this
     );
+  }
+
+  /**
+   * Sets focus to the topmost program
+   *
+   * To be called when this program closes or minimized
+   */
+  delegateFocus() {
+    this.scene.get;
   }
 
   /* END-USER-CODE */

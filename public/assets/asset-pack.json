@@ -2,6 +2,11 @@
     "section1": {
         "files": [
             {
+                "url": "assets/images/websites/2024-07-07 20_35_58-ipad evolution 2010 ipad - Google Search — Mozilla Firefox.png",
+                "type": "image",
+                "key": "2024-07-07 20_35_58-ipad evolution 2010 ipad - Google Search — Mozilla Firefox"
+            },
+            {
                 "url": "assets/images/ACDC-poster.png",
                 "type": "image",
                 "key": "ACDC-poster"
@@ -199,6 +204,11 @@
                 "key": "gamepad-icon"
             },
             {
+                "url": "assets/images/websites/gettyimages-96210883-612x612.jpg",
+                "type": "image",
+                "key": "gettyimages-96210883-612x612"
+            },
+            {
                 "url": [
                     "assets/sfx/Data_Point_04.wav"
                 ],
@@ -244,10 +254,20 @@
                 "key": "moniter"
             },
             {
+                "url": "assets/images/websites/More_dodgy_from_the_web.png",
+                "type": "image",
+                "key": "More_dodgy_from_the_web"
+            },
+            {
                 "textureURL": "assets/fonts/nokia.png",
                 "fontDataURL": "assets/fonts/nokia.xml",
                 "type": "bitmapFont",
                 "key": "nokia"
+            },
+            {
+                "url": "assets/images/websites/OE_Mem_Cake__Slow_Your_Roll__Mole.png",
+                "type": "image",
+                "key": "OE_Mem_Cake__Slow_Your_Roll__Mole"
             },
             {
                 "url": [

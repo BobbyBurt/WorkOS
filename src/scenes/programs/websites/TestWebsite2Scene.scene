@@ -1,0 +1,132 @@
+{
+    "id": "7be8909f-f34d-40fc-a92a-daba1815c42b",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "WebsiteBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "test-website-2-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 110,
+        "borderWidth": 900,
+        "borderHeight": 550
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "410572c8-55aa-4b73-b12b-b2417fd9490c",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "d917ee4a-3e50-4437-8e91-f67de8be6d51",
+                    "label": "scrollBG",
+                    "y": 110,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 900,
+                    "height": 800
+                },
+                {
+                    "type": "Container",
+                    "id": "9eef1509-6810-41af-b641-21115458e035",
+                    "label": "scrollContainer",
+                    "components": [
+                        "ScrollField"
+                    ],
+                    "ScrollField.BGRect": "scrollBG",
+                    "list": [
+                        {
+                            "type": "Image",
+                            "id": "be1a9641-1659-4581-adaa-e688beb3a243",
+                            "label": "taskbar_window_button_1",
+                            "texture": {
+                                "key": "taskbar-window-button"
+                            },
+                            "x": 449,
+                            "y": 581,
+                            "scaleX": 3.3235539759041517,
+                            "scaleY": 1.4697440443720686
+                        },
+                        {
+                            "type": "Image",
+                            "id": "17c673f4-78ea-44d5-bf92-09e3f1f0ef70",
+                            "label": "gettyimages_96210883_612x612",
+                            "texture": {
+                                "key": "gettyimages-96210883-612x612"
+                            },
+                            "x": 580,
+                            "y": 787,
+                            "scaleX": 1.6543551081479264,
+                            "scaleY": 0.4514301677650977
+                        },
+                        {
+                            "type": "Image",
+                            "id": "9db4fb3f-0f89-4dfd-b737-b256f8766292",
+                            "label": "ipad",
+                            "texture": {
+                                "key": "2024-07-07 20_35_58-ipad evolution 2010 ipad - Google Search — Mozilla Firefox"
+                            },
+                            "x": 195,
+                            "y": 333,
+                            "scaleX": 0.47488888122671047,
+                            "scaleY": 0.47488888122671047
+                        },
+                        {
+                            "type": "Text",
+                            "id": "ba386ec9-d04c-47f0-b9d5-e792d9e1b7d6",
+                            "label": "text_1",
+                            "x": 68,
+                            "y": 140,
+                            "tintTopLeft": "#0373ff",
+                            "tintTopRight": "#0373ff",
+                            "tintBottomLeft": "#0373ff",
+                            "tintBottomRight": "#0373ff",
+                            "text": "YOUR A LUCKY WINNER!",
+                            "fontFamily": "arial",
+                            "fontSize": "64px",
+                            "fontStyle": "bold"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "a5cc345a-0146-4314-aa29-c90f3550c93f",
+                            "label": "text",
+                            "x": 161,
+                            "y": 560,
+                            "text": "CLICK HERE TO RECIEVE YOUR IPAD",
+                            "fontFamily": "arial",
+                            "fontSize": "32px",
+                            "fontStyle": "bold"
+                        },
+                        {
+                            "type": "Text",
+                            "id": "59c0cd53-56f6-4a30-b42c-d0d871841327",
+                            "label": "text_2",
+                            "x": 388,
+                            "y": 265,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "You have been selected to win a FREE 2010 Apple iPad, no strings attached! The iPad is perfect for business or pleasure.",
+                            "fontFamily": "arial",
+                            "fontSize": "20px",
+                            "wordWrapWidth": 500
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

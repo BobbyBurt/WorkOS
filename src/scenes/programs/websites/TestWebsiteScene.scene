@@ -1,0 +1,206 @@
+{
+    "id": "6ee625c0-f0cd-47d3-bf7f-a961511c5b95",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "superClassName": "WebsiteBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "test-website-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 110,
+        "borderWidth": 900
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "4d0bbb32-117f-4d23-8e5a-41763aaa2838",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "59014bc0-9da4-41e8-bef3-e48a743c059c",
+                    "label": "scrollContainer",
+                    "components": [
+                        "ScrollField"
+                    ],
+                    "ScrollField.BGRect": "scrollRect",
+                    "y": 110,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "49d6ff82-0f28-4131-928b-666cf714abb5",
+                            "label": "scrollRect",
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "width": 900,
+                            "height": 1200
+                        },
+                        {
+                            "type": "Container",
+                            "id": "9760f2d5-41e2-4d92-8c89-d100dbb8526c",
+                            "label": "homePage",
+                            "scope": "CLASS",
+                            "y": -110,
+                            "list": [
+                                {
+                                    "type": "Rectangle",
+                                    "id": "9341d4d6-cb43-4316-9176-9a47d5c8cc74",
+                                    "label": "internalLinkButton",
+                                    "scope": "CLASS",
+                                    "components": [
+                                        "PointerButton"
+                                    ],
+                                    "x": 435,
+                                    "y": 321,
+                                    "scaleX": 0.43658394584127047,
+                                    "scaleY": 0.2981200392985649,
+                                    "originX": 0,
+                                    "originY": 0,
+                                    "alpha": 0.001,
+                                    "isFilled": true,
+                                    "fillColor": "#e2e2e2",
+                                    "width": 300,
+                                    "height": 100
+                                },
+                                {
+                                    "type": "BitmapText",
+                                    "id": "0c3c23be-5a3f-42b4-b94a-6e021fcf91cf",
+                                    "label": "bitmaptext",
+                                    "x": 442,
+                                    "y": 326,
+                                    "tintTopLeft": "#437ff5",
+                                    "tintTopRight": "#437ff5",
+                                    "tintBottomLeft": "#437ff5",
+                                    "tintBottomRight": "#437ff5",
+                                    "text": "internal link",
+                                    "font": "nokia",
+                                    "fontSize": -16,
+                                    "dropShadowAlpha": 0,
+                                    "dropShadowColor": "#393939ff"
+                                },
+                                {
+                                    "type": "Rectangle",
+                                    "id": "aa3598cb-b428-43e4-9873-b4a796052e18",
+                                    "label": "externalLinkButton",
+                                    "scope": "CLASS",
+                                    "components": [
+                                        "PointerButton"
+                                    ],
+                                    "x": 77,
+                                    "y": 420,
+                                    "originX": 0,
+                                    "originY": 0,
+                                    "isFilled": true,
+                                    "fillColor": "#aaaaaa",
+                                    "width": 300,
+                                    "height": 100
+                                },
+                                {
+                                    "type": "BitmapText",
+                                    "id": "1a29b679-ea7d-4529-af1f-2c3cb9fe426b",
+                                    "label": "bitmaptext_2",
+                                    "x": 98,
+                                    "y": 451,
+                                    "tintTopLeft": "#424242",
+                                    "tintTopRight": "#424242",
+                                    "tintBottomLeft": "#424242",
+                                    "tintBottomRight": "#424242",
+                                    "text": "external link",
+                                    "font": "nokia",
+                                    "fontSize": -32
+                                },
+                                {
+                                    "type": "BitmapText",
+                                    "id": "dd00bc80-0ae7-4b7f-99b3-d1053e5dc2e6",
+                                    "label": "bitmaptext_4",
+                                    "x": 341,
+                                    "y": 326,
+                                    "tintTopLeft": "#3e3e3e",
+                                    "tintTopRight": "#3e3e3e",
+                                    "tintBottomLeft": "#3e3e3e",
+                                    "tintBottomRight": "#3e3e3e",
+                                    "text": "click the ",
+                                    "font": "nokia",
+                                    "fontSize": -16,
+                                    "dropShadowAlpha": 1,
+                                    "dropShadowColor": "#393939ff"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Container",
+                            "id": "1c340c7e-3567-4ce0-b3ff-01d7d9456dc8",
+                            "label": "infoPage",
+                            "scope": "CLASS",
+                            "y": -110,
+                            "visible": false,
+                            "list": [
+                                {
+                                    "type": "BitmapText",
+                                    "id": "fd5ca91c-c524-431b-a279-d3b53c79f0c3",
+                                    "label": "bitmaptext_3",
+                                    "x": 61,
+                                    "y": 298,
+                                    "tintTopLeft": "#393939",
+                                    "tintTopRight": "#393939",
+                                    "tintBottomLeft": "#393939",
+                                    "tintBottomRight": "#393939",
+                                    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum, dolor ac egestas tincidunt, felis magna vehicula nunc, quis lobortis erat arcu vel odio. Vestibulum vestibulum ultrices quam, euismod viverra diam fringilla in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas ultricies sem nec mauris aliquet mattis. Duis at dolor posuere, efficitur lacus id, lacinia tellus. Pellentesque quis tristique dui. Vivamus molestie lacus eu dolor eleifend, vel mattis est blandit.",
+                                    "font": "nokia",
+                                    "fontSize": -16,
+                                    "maxWidth": 700
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4e6992a5-cf4b-4f2b-badf-cf6b061dc83a",
+                            "label": "oE_Mem_Cake__Slow_Your_Roll__Mole",
+                            "texture": {
+                                "key": "OE_Mem_Cake__Slow_Your_Roll__Mole"
+                            },
+                            "x": 767,
+                            "y": 104,
+                            "flipX": true
+                        },
+                        {
+                            "type": "Image",
+                            "id": "2dad0e53-59d8-48a7-90f3-f8e7e518b991",
+                            "label": "oE_Mem_Cake__Slow_Your_Roll__Mole_1",
+                            "texture": {
+                                "key": "OE_Mem_Cake__Slow_Your_Roll__Mole"
+                            },
+                            "x": 96,
+                            "y": 107
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "0f50eb15-30fb-4bc7-af71-e3ee5281a135",
+                            "label": "bitmaptext_1",
+                            "x": 179,
+                            "y": 68,
+                            "tintTopLeft": "#cd0000",
+                            "tintTopRight": "#cd0000",
+                            "tintBottomLeft": "#cd0000",
+                            "tintBottomRight": "#cd0000",
+                            "text": "BEWARE THE \n\"AMONG US\" IMPOSTER!",
+                            "font": "nokia",
+                            "fontSize": -32
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

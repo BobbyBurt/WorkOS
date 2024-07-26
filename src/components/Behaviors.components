@@ -94,7 +94,7 @@
             "displayName": "",
             "objectDisplayFormat": "",
             "baseClass": "",
-            "gameObjectType": "Phaser.GameObjects.Image",
+            "gameObjectType": "Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle",
             "properties": [
                 {
                     "name": "setAlpha",
