@@ -10,6 +10,7 @@ import DesktopScene from "./scenes/DesktopScene";
 import OverlapScene from "./scenes/OverlapScene";
 import Preload from "./scenes/Preload";
 import PrototypeScene from "./scenes/PrototypeScene";
+import AirTrafficProgramScene from "./scenes/programs/AirTrafficProgramScene";
 import CameraProgramScene from "./scenes/programs/CameraProgramScene";
 import DatabaseProgramScene from "./scenes/programs/DatabaseProgramScene";
 import EmailProgramScene from "./scenes/programs/EmailProgramScene";
@@ -58,6 +59,7 @@ window.addEventListener("load", function () {
   game.scene.add("database-program", DatabaseProgramScene);
   game.scene.add("hacking-program", HackingProgramScene);
   game.scene.add("search-program", SearchProgramScene);
+  game.scene.add("air-control-program", AirTrafficProgramScene);
 
   // websites
   game.scene.add("test-website-program", TestWebsiteScene);

@@ -1,0 +1,66 @@
+{
+    "id": "24b6b8fc-9c01-4cf6-9147-c165ad905850",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "displayName": "",
+        "superClassName": "ProgramBaseScene",
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "air-traffic-program",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderY": 60,
+        "borderWidth": 700,
+        "borderHeight": 500
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "5628b6df-975c-4c9a-975f-a7121e68bded",
+            "label": "mainContainer",
+            "scope": "CLASS",
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "1c9867ac-c853-49d7-b192-c95298990022",
+                    "label": "backing",
+                    "y": 60,
+                    "originX": 0,
+                    "originY": 0,
+                    "visible": false,
+                    "isFilled": true,
+                    "width": 700,
+                    "height": 500
+                },
+                {
+                    "type": "Image",
+                    "id": "051e7697-88b1-4cfb-8fb5-bd305804a078",
+                    "label": "toidSketch_1",
+                    "texture": {
+                        "key": "ToidSketch"
+                    },
+                    "x": 366,
+                    "y": 353
+                },
+                {
+                    "type": "Image",
+                    "id": "1b0a5c1e-b9e3-4649-aba9-b17bef70f148",
+                    "label": "tank",
+                    "texture": {
+                        "key": "Tank"
+                    },
+                    "x": 481,
+                    "y": 387
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

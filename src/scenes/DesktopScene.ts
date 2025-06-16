@@ -4,7 +4,6 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
 import IconPrefab from "../prefabs/IconPrefab";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
@@ -40,7 +39,7 @@ export default class DesktopScene extends Phaser.Scene {
 		desktop_bg.setOrigin(0, 0);
 
 		// icon
-		const icon = new IconPrefab(this, 758, 113);
+		const icon = new IconPrefab(this, 789, 364);
 		this.add.existing(icon);
 
 		// icon_1
@@ -82,9 +81,9 @@ export default class DesktopScene extends Phaser.Scene {
 		this.add.existing(icon_5);
 
 		// icon (prefab fields)
-		icon.programName = "Email";
+		icon.programName = "ATC";
 		icon.iconTextureKey = "page-go-icon_1";
-		icon.sceneKey = "email-program";
+		icon.sceneKey = "air-control-program";
 
 		// icon_1 (prefab fields)
 		icon_1.programName = "Fullscreen";
