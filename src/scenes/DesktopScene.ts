@@ -83,7 +83,7 @@ export default class DesktopScene extends Phaser.Scene {
 		// icon (prefab fields)
 		icon.programName = "ATC";
 		icon.iconTextureKey = "page-go-icon_1";
-		icon.sceneKey = "air-control-program";
+		icon.sceneKey = "air-traffic-program";
 
 		// icon_1 (prefab fields)
 		icon_1.programName = "Fullscreen";

@@ -59,7 +59,7 @@
             "label": "icon",
             "programName": "ATC",
             "iconTextureKey": "page-go-icon_1",
-            "sceneKey": "air-control-program",
+            "sceneKey": "air-traffic-program",
             "x": 789,
             "y": 364
         },

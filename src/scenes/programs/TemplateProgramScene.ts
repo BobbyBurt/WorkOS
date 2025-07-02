@@ -1,3 +1,4 @@
+/** @format */
 
 // You can write more code here
 
@@ -8,67 +9,66 @@ import { ProgramBaseScene } from "./ProgramScene";
 /* END-USER-IMPORTS */
 
 export default class TemplateProgramScene extends ProgramBaseScene {
+  constructor() {
+    super("template-program");
 
-	constructor() {
-		super("template-program");
+    /* START-USER-CTR-CODE */
 
-		/* START-USER-CTR-CODE */
+    /* END-USER-CTR-CODE */
+  }
 
-		/* END-USER-CTR-CODE */
-	}
+  editorCreate(): void {
+    // mainContainer
+    const mainContainer = this.add.container(0, 0);
 
-	editorCreate(): void {
+    // backing
+    const backing = this.add.rectangle(0, 60, 700, 500);
+    backing.setOrigin(0, 0);
+    backing.visible = false;
+    backing.isFilled = true;
+    mainContainer.add(backing);
 
-		// mainContainer
-		const mainContainer = this.add.container(0, 0);
+    // toidSketch_1
+    const toidSketch_1 = this.add.image(53, 312, "ToidSketch");
+    mainContainer.add(toidSketch_1);
 
-		// backing
-		const backing = this.add.rectangle(0, 60, 700, 500);
-		backing.setOrigin(0, 0);
-		backing.visible = false;
-		backing.isFilled = true;
-		mainContainer.add(backing);
+    // tank
+    const tank = this.add.image(481, 387, "Tank");
+    mainContainer.add(tank);
 
-		// toidSketch_1
-		const toidSketch_1 = this.add.image(53, 312, "ToidSketch");
-		mainContainer.add(toidSketch_1);
+    this.mainContainer = mainContainer;
 
-		// tank
-		const tank = this.add.image(481, 387, "Tank");
-		mainContainer.add(tank);
+    this.events.emit("scene-awake");
+  }
 
-		this.mainContainer = mainContainer;
+  private mainContainer!: Phaser.GameObjects.Container;
 
-		this.events.emit("scene-awake");
-	}
+  /* START-USER-CODE */
 
-	private mainContainer!: Phaser.GameObjects.Container;
+  readonly width = 700;
+  readonly height = 500;
 
-	/* START-USER-CODE */
+  /**
+   * Boilerplate setup for all program classes
+   */
+  setup() {
+    // create
+    super.editorCreate();
+    super.create(this.width, this.height, "Template Program.exe");
+    this.editorCreate();
 
-	readonly width = 700;
-	readonly height = 500;
+    // mask
+    super.programContainer = this.mainContainer;
+    super.setMask();
+  }
 
-	/**
-	 * Boilerplate setup for all program classes
-	 */
-	setup() {
-		// create
-		super.editorCreate();
-		super.create(this.width, this.height, 'Template Program.exe');
-		this.editorCreate();
+  create() {
+    this.setup();
+  }
 
-		// mask
-		super.programContainer = this.mainContainer;
-		super.setMask();
+  asdf() {}
 
-	}
-
-	create() {
-		this.setup();
-	}
-
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

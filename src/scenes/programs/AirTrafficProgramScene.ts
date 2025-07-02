@@ -5,7 +5,9 @@
 /* START OF COMPILED CODE */
 
 /* START-USER-IMPORTS */
+import PlaneIcon from "~/air-control/PlaneIcon";
 import { ProgramBaseScene } from "./ProgramScene";
+import PlaneManager from "~/air-control/PlaneManager";
 /* END-USER-IMPORTS */
 
 export default class AirTrafficProgramScene extends ProgramBaseScene {
@@ -28,14 +30,6 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
     backing.isFilled = true;
     mainContainer.add(backing);
 
-    // toidSketch_1
-    const toidSketch_1 = this.add.image(366, 353, "ToidSketch");
-    mainContainer.add(toidSketch_1);
-
-    // tank
-    const tank = this.add.image(481, 387, "Tank");
-    mainContainer.add(tank);
-
     this.mainContainer = mainContainer;
 
     this.events.emit("scene-awake");
@@ -45,10 +39,62 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
 
   /* START-USER-CODE */
 
-  // Write your code here
+  private line: Phaser.Curves.Line;
+  private path: Phaser.Curves.Path;
+  private tween: Phaser.Tweens.Tween;
+
+  private planeManager: PlaneManager;
+
+  /**
+   * Boilerplate setup for all program classes
+   */
+  setup() {
+    // create
+    super.editorCreate();
+    super.create(900, 700, "Air Traffic Control.exe");
+    this.editorCreate();
+
+    this.planeManager = new PlaneManager(this, this.mainContainer);
+
+    // mask
+    super.programContainer = this.mainContainer;
+    super.setMask();
+  }
 
   create() {
-    this.editorCreate();
+    this.setup();
+
+    this.input.keyboard?.on("keydown-ENTER", () => {
+      let coordinates = this.planeManager.generateCoordinates();
+      this.planeManager.activatePlane(coordinates.startPos, coordinates.endPos);
+    });
+  }
+
+  update(): void {
+    // if (
+    //   Phaser.Geom.Intersects.CircleToCircle(
+    //     this.plane.hitCircle,
+    //     this.plane2.hitCircle
+    //   )
+    // ) {
+    //   this.plane.hitCircleGraphic.alpha = 0.3;
+    //   this.plane2.hitCircleGraphic.alpha = 0.3;
+    // } else {
+    //   this.plane.hitCircleGraphic.alpha = 0.1;
+    //   this.plane2.hitCircleGraphic.alpha = 0.1;
+    // }
+    // if (
+    //   Phaser.Geom.Intersects.CircleToCircle(
+    //     this.plane.warningCircle,
+    //     this.plane2.warningCircle
+    //   )
+    // ) {
+    //   this.plane.warningCircleGraphic.alpha = 0.3;
+    //   this.plane2.warningCircleGraphic.alpha = 0.3;
+    // } else {
+    //   this.plane.warningCircleGraphic.alpha = 0.1;
+    //   this.plane2.warningCircleGraphic.alpha = 0.1;
+    // }
   }
 
   /* END-USER-CODE */

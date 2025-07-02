@@ -32,26 +32,6 @@
                     "isFilled": true,
                     "width": 700,
                     "height": 500
-                },
-                {
-                    "type": "Image",
-                    "id": "051e7697-88b1-4cfb-8fb5-bd305804a078",
-                    "label": "toidSketch_1",
-                    "texture": {
-                        "key": "ToidSketch"
-                    },
-                    "x": 366,
-                    "y": 353
-                },
-                {
-                    "type": "Image",
-                    "id": "1b0a5c1e-b9e3-4649-aba9-b17bef70f148",
-                    "label": "tank",
-                    "texture": {
-                        "key": "Tank"
-                    },
-                    "x": 481,
-                    "y": 387
                 }
             ]
         }
