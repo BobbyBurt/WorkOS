@@ -1,6 +1,7 @@
 /** @format */
 
 import PlaneIcon from "./PlaneIcon";
+import planePairDistances from "./planePairDistances";
 
 /** Manages the array of planes.
  *
@@ -19,7 +20,7 @@ export default class PlaneManager {
 
     this.container = container;
 
-    this.planes = new Array();
+    this.array = new Array();
 
     this.spawnCircle = new Phaser.Geom.Circle(450, 400, 300);
     let circleGraphic = this.scene.add.graphics({
@@ -29,7 +30,9 @@ export default class PlaneManager {
     circleGraphic.setAlpha(0.1);
     this.container.add(circleGraphic);
 
-    this.createPlanes(10);
+    this.planePairDistances = new planePairDistances();
+
+    this.createPlanes(99);
   }
 
   private scene: Phaser.Scene;
@@ -37,10 +40,12 @@ export default class PlaneManager {
 
   private spawnCircle: Phaser.Geom.Circle;
 
-  private planes: Array<PlaneIcon>;
+  private array: Array<PlaneIcon>;
+
+  private planePairDistances: planePairDistances;
 
   update() {
-    this.checkPlanesIntersection();
+    this.planePairDistances.update();
   }
 
   /**  */
@@ -54,6 +59,8 @@ export default class PlaneManager {
       return;
     }
     plane.setupPlane(startPos, endPos);
+    plane.setAltitude(Phaser.Math.RND.pick([0, 1, 2]));
+    this.planePairDistances.addPlane(plane, this.array);
   }
 
   private checkPlanesIntersection() {
@@ -77,28 +84,41 @@ export default class PlaneManager {
    */
   private createPlanes(amount: number) {
     for (let i = 0; i < amount - 1; i++) {
-      this.createPlane();
+      this.createPlane(i);
     }
   }
 
-  private createPlane() {
-    let plane = new PlaneIcon(this.scene, 0, 0);
+  private createPlane(index: number) {
+    let plane = new PlaneIcon(this.scene, index, 0, 0);
     this.scene.add.existing(plane);
     this.container.add(plane);
     this.container.add(plane.warningCircleGraphic);
     this.container.add(plane.hitCircleGraphic);
-    this.planes.push(plane);
+    this.array.push(plane);
     plane.setActive(false);
+
+    plane.on("finish", () => {
+      this.routeCompleteHandler(plane);
+    });
   }
 
   private getInactivePlane(): PlaneIcon | undefined {
     let returnPlane: PlaneIcon | undefined = undefined;
-    this.planes.forEach((plane, index) => {
+    this.array.forEach((plane, index) => {
       if (!plane.active && !returnPlane) {
         returnPlane = plane;
       }
     });
     return returnPlane;
+  }
+
+  routeCompleteHandler(plane: PlaneIcon) {
+    plane.setActive(false);
+    plane.setVisible(false);
+
+    this.planePairDistances.removePlane(plane, this.array);
+
+    // get this out of the plane pairs array
   }
 
   public generateCoordinates(): {

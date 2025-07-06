@@ -302,6 +302,11 @@
                 "key": "plane-icon"
             },
             {
+                "url": "assets/images/plane-icon-2.png",
+                "type": "image",
+                "key": "plane-icon-2"
+            },
+            {
                 "url": "assets/images/screen-peek/screen-peek.png",
                 "type": "image",
                 "key": "screen-peek"

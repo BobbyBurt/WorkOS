@@ -1,8 +1,15 @@
 /** @format */
 
 export default class PlaneIcon extends Phaser.GameObjects.Image {
-  constructor(scene: Phaser.Scene, x?: number, y?: number) {
-    super(scene, x ?? 0, y ?? 0, "plane-icon");
+  constructor(
+    scene: Phaser.Scene,
+    managerIndex: number,
+    x?: number,
+    y?: number
+  ) {
+    super(scene, x ?? 0, y ?? 0, "plane-icon-2");
+
+    this.managerIndex = managerIndex;
 
     // this.setScale(0.05, 0.05);
 
@@ -34,6 +41,9 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
 
   public altitude: 0 | 1 | 2;
 
+  /** So PlaneManager can find this plane in the array. Will be unique to this instance. */
+  readonly managerIndex: number;
+
   update(): void {
     if (!this.active) {
       return;
@@ -52,6 +62,7 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
 
   public setupPlane(start: Phaser.Math.Vector2, end: Phaser.Math.Vector2) {
     this.setActive(true);
+    this.setVisible(true);
 
     this.line = new Phaser.Curves.Line([start.x, start.y, end.x, end.y]);
     this.path = this.scene.add.path(0, 0);
@@ -71,9 +82,23 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
       ease: Phaser.Math.Easing.Linear,
       // repeat: -1,
       onComplete: () => {
-        this.setActive(false);
+        // this.setActive(false);
+        this.emit("finish");
       },
     });
+  }
+
+  setAltitude(altitude: 0 | 1 | 2) {
+    this.altitude = altitude;
+    let tint = 0x000000;
+    if (altitude === 0) {
+      tint = 0xff0000;
+    } else if (altitude === 1) {
+      tint = 0x00ff00;
+    } else if (altitude === 2) {
+      tint = 0x0000ff;
+    }
+    this.setTint(tint);
   }
 
   private lineToAngle(
