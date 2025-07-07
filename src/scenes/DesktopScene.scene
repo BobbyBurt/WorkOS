@@ -70,11 +70,13 @@
                 "x",
                 "y",
                 "iconTextureKey",
-                "programName"
+                "programName",
+                "sceneKey"
             ],
             "label": "icon_1",
             "programName": "Fullscreen",
             "iconTextureKey": "window-icon",
+            "sceneKey": "email-program",
             "x": 1420,
             "y": 759
         },

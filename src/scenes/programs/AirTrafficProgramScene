@@ -32,6 +32,39 @@
                     "isFilled": true,
                     "width": 700,
                     "height": 500
+                },
+                {
+                    "type": "Container",
+                    "id": "46687750-8e61-469f-a1c6-acafbbfd004f",
+                    "label": "warningContainer",
+                    "scope": "CLASS",
+                    "x": -397,
+                    "y": -224,
+                    "visible": false,
+                    "list": [
+                        {
+                            "type": "Rectangle",
+                            "id": "0e7df851-b78b-4111-9560-5194e21b5495",
+                            "label": "rectangle_1",
+                            "x": 499,
+                            "y": 367,
+                            "isFilled": true,
+                            "fillColor": "#ff0a0a",
+                            "width": 113,
+                            "height": 65
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "9e0310d5-5d92-4374-a77a-92b6ab811021",
+                            "label": "bitmaptext_1",
+                            "x": 454,
+                            "y": 347,
+                            "text": "Collision \nImminent",
+                            "font": "nokia",
+                            "align": 1,
+                            "fontSize": -16
+                        }
+                    ]
                 }
             ]
         }

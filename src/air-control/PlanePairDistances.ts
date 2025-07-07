@@ -5,23 +5,14 @@ import PlaneIcon from "./PlaneIcon";
 /**
  * Contains array of plane pairs and the distance between them to be updated each frame
  * **/
-export default class planePairDistances extends Array {
-  /**
-   *
-   * @param scene
-   * @param container to put plane objects into; Pass program's mainContainer
-   */
+export default class PlanePairDistances extends Array {
   constructor() {
     super();
 
     this.array = new Array();
   }
 
-  public array: Array<{
-    planeA: PlaneIcon;
-    planeB: PlaneIcon;
-    distance: number | undefined;
-  }>;
+  public array: Array<planePair>;
 
   public addPlane(planeToAdd: PlaneIcon, planeArray: Array<PlaneIcon>) {
     if (!planeToAdd.active) {
@@ -65,3 +56,9 @@ export default class planePairDistances extends Array {
     });
   }
 }
+
+export type planePair = {
+  planeA: PlaneIcon;
+  planeB: PlaneIcon;
+  distance: number | undefined;
+};

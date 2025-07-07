@@ -1,7 +1,7 @@
 /** @format */
 
 import PlaneIcon from "./PlaneIcon";
-import planePairDistances from "./planePairDistances";
+import PlanePairDistances, { planePair } from "./PlanePairDistances";
 
 /** Manages the array of planes.
  *
@@ -30,7 +30,7 @@ export default class PlaneManager {
     circleGraphic.setAlpha(0.1);
     this.container.add(circleGraphic);
 
-    this.planePairDistances = new planePairDistances();
+    this.planePairDistances = new PlanePairDistances();
 
     this.createPlanes(99);
   }
@@ -42,10 +42,18 @@ export default class PlaneManager {
 
   private array: Array<PlaneIcon>;
 
-  private planePairDistances: planePairDistances;
+  private planePairDistances: PlanePairDistances;
 
   update() {
     this.planePairDistances.update();
+
+    this.planePairDistances.array.forEach((pair) => {
+      if (pair.distance !== undefined) {
+        if (pair.distance < 25) {
+          this.handleCrashedPlanes(pair);
+        }
+      }
+    });
   }
 
   /**  */
@@ -61,6 +69,7 @@ export default class PlaneManager {
     plane.setupPlane(startPos, endPos);
     plane.setAltitude(Phaser.Math.RND.pick([0, 1, 2]));
     this.planePairDistances.addPlane(plane, this.array);
+    console.log(this.planePairDistances.array.length);
   }
 
   private checkPlanesIntersection() {
@@ -128,15 +137,22 @@ export default class PlaneManager {
     let randomFloat = Phaser.Math.RND.frac();
     let randomPoint = this.spawnCircle.getPoint(randomFloat);
     let start = new Phaser.Math.Vector2(randomPoint.x, randomPoint.y);
-    console.debug(randomFloat, start);
 
     let oppositeFloat = randomFloat + 0.5;
     oppositeFloat += Phaser.Math.RND.normal() * 0.2;
     if (oppositeFloat > 1) oppositeFloat -= 1;
     let endPoint = this.spawnCircle.getPoint(oppositeFloat);
     let end = new Phaser.Math.Vector2(endPoint.x, endPoint.y);
-    console.debug(oppositeFloat, end);
 
     return { startPos: start, endPos: end };
+  }
+
+  private handleCrashedPlanes(pair: planePair) {
+    pair.planeA.setVisible(false);
+    pair.planeA.setActive(false);
+    pair.planeB.setVisible(false);
+    pair.planeB.setActive(false);
+    this.planePairDistances.removePlane(pair.planeA, this.array);
+    this.planePairDistances.removePlane(pair.planeB, this.array);
   }
 }

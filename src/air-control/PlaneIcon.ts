@@ -78,7 +78,7 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
     this.tween = this.scene.tweens.addCounter({
       from: 0,
       to: 1,
-      duration: 10000,
+      duration: 15000,
       ease: Phaser.Math.Easing.Linear,
       // repeat: -1,
       onComplete: () => {

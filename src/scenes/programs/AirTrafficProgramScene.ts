@@ -11,33 +11,55 @@ import PlaneManager from "~/air-control/PlaneManager";
 /* END-USER-IMPORTS */
 
 export default class AirTrafficProgramScene extends ProgramBaseScene {
-  constructor() {
-    super("air-traffic-program");
 
-    /* START-USER-CTR-CODE */
+	constructor() {
+		super("air-traffic-program");
+
+		/* START-USER-CTR-CODE */
     // Write your code here.
     /* END-USER-CTR-CODE */
-  }
+	}
 
-  editorCreate(): void {
-    // mainContainer
-    const mainContainer = this.add.container(0, 0);
+	editorCreate(): void {
 
-    // backing
-    const backing = this.add.rectangle(0, 60, 700, 500);
-    backing.setOrigin(0, 0);
-    backing.visible = false;
-    backing.isFilled = true;
-    mainContainer.add(backing);
+		// mainContainer
+		const mainContainer = this.add.container(0, 0);
 
-    this.mainContainer = mainContainer;
+		// backing
+		const backing = this.add.rectangle(0, 60, 700, 500);
+		backing.setOrigin(0, 0);
+		backing.visible = false;
+		backing.isFilled = true;
+		mainContainer.add(backing);
 
-    this.events.emit("scene-awake");
-  }
+		// warningContainer
+		const warningContainer = this.add.container(-397, -224);
+		warningContainer.visible = false;
+		mainContainer.add(warningContainer);
 
-  private mainContainer!: Phaser.GameObjects.Container;
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(499, 367, 113, 65);
+		rectangle_1.isFilled = true;
+		rectangle_1.fillColor = 16714250;
+		warningContainer.add(rectangle_1);
 
-  /* START-USER-CODE */
+		// bitmaptext_1
+		const bitmaptext_1 = this.add.bitmapText(454, 347, "nokia", "Collision \nImminent");
+		bitmaptext_1.text = "Collision \nImminent";
+		bitmaptext_1.fontSize = -16;
+		bitmaptext_1.align = 1;
+		warningContainer.add(bitmaptext_1);
+
+		this.warningContainer = warningContainer;
+		this.mainContainer = mainContainer;
+
+		this.events.emit("scene-awake");
+	}
+
+	private warningContainer!: Phaser.GameObjects.Container;
+	private mainContainer!: Phaser.GameObjects.Container;
+
+	/* START-USER-CODE */
 
   private line: Phaser.Curves.Line;
   private path: Phaser.Curves.Path;
