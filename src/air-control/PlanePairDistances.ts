@@ -1,6 +1,6 @@
 /** @format */
 
-import PlaneIcon from "./PlaneIcon";
+import Plane from "./Plane";
 
 /**
  * Contains array of plane pairs and the distance between them to be updated each frame
@@ -14,7 +14,7 @@ export default class PlanePairDistances extends Array {
 
   public array: Array<planePair>;
 
-  public addPlane(planeToAdd: PlaneIcon, planeArray: Array<PlaneIcon>) {
+  public addPlane(planeToAdd: Plane, planeArray: Array<Plane>) {
     if (!planeToAdd.active) {
       console.warn("plane should be active.");
       return;
@@ -35,7 +35,7 @@ export default class PlanePairDistances extends Array {
     });
   }
 
-  public removePlane(planeToRemove: PlaneIcon, planeArray: Array<PlaneIcon>) {
+  public removePlane(planeToRemove: Plane, planeArray: Array<Plane>) {
     let newArray = this.array.filter(
       (item, index) =>
         item.planeA.managerIndex !== planeToRemove.managerIndex &&
@@ -58,7 +58,7 @@ export default class PlanePairDistances extends Array {
 }
 
 export type planePair = {
-  planeA: PlaneIcon;
-  planeB: PlaneIcon;
+  planeA: Plane;
+  planeB: Plane;
   distance: number | undefined;
 };

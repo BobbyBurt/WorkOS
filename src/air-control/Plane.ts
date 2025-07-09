@@ -1,6 +1,6 @@
 /** @format */
 
-export default class PlaneIcon extends Phaser.GameObjects.Image {
+export default class Plane extends Phaser.GameObjects.Image {
   constructor(
     scene: Phaser.Scene,
     managerIndex: number,
@@ -11,29 +11,10 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
 
     this.managerIndex = managerIndex;
 
-    // this.setScale(0.05, 0.05);
-
-    // this.scene.events.once(Phaser.Scenes.Events.UPDATE, this.start, this);
     this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
-    // geom
-    this.warningCircle = new Phaser.Geom.Circle(this.x, this.y, 100);
-    this.warningCircleGraphic = this.scene.add.graphics({
-      fillStyle: { color: 0xaa0000 },
-    });
-    this.warningCircleGraphic.setDepth(-1);
-
-    this.hitCircle = new Phaser.Geom.Circle(this.x, this.y, 20);
-    this.hitCircleGraphic = this.scene.add.graphics({
-      fillStyle: { color: 0xaa0000 },
-    });
-    this.hitCircleGraphic.setDepth(-1);
+    this.setInteractive({ useHandCursor: true });
   }
-
-  public warningCircle: Phaser.Geom.Circle;
-  public warningCircleGraphic: Phaser.GameObjects.Graphics;
-  public hitCircle: Phaser.Geom.Circle;
-  public hitCircleGraphic: Phaser.GameObjects.Graphics;
 
   private tween: Phaser.Tweens.Tween;
   private line: Phaser.Curves.Line;
@@ -45,22 +26,10 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
   readonly managerIndex: number;
 
   update(): void {
-    if (!this.active) {
-      return;
-    }
-
-    var _point = this.path.getPoint(this.tween.getValue());
-    this.setPosition(_point.x, _point.y);
-
-    this.warningCircle.setPosition(this.x, this.y);
-    this.warningCircleGraphic.clear();
-    // this.warningCircleGraphic.fillCircleShape(this.warningCircle);
-    this.hitCircle.setPosition(this.x, this.y);
-    this.hitCircleGraphic.clear();
-    // this.hitCircleGraphic.fillCircleShape(this.hitCircle);
+    this.setPositionFromTween();
   }
 
-  public setupPlane(start: Phaser.Math.Vector2, end: Phaser.Math.Vector2) {
+  public startRoute(start: Phaser.Math.Vector2, end: Phaser.Math.Vector2) {
     this.setActive(true);
     this.setVisible(true);
 
@@ -68,7 +37,6 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
     this.path = this.scene.add.path(0, 0);
     this.path.add(this.line);
 
-    // rotate
     let angle = this.lineToAngle(start, end);
     this.setRotation(angle);
 
@@ -82,13 +50,22 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
       ease: Phaser.Math.Easing.Linear,
       // repeat: -1,
       onComplete: () => {
-        // this.setActive(false);
         this.emit("finish");
       },
     });
   }
 
-  setAltitude(altitude: 0 | 1 | 2) {
+  public handleRouteEnd() {
+    this.setActive(false);
+    this.setVisible(false);
+  }
+
+  public handleCrash() {
+    this.setActive(false);
+    this.setVisible(false);
+  }
+
+  public setAltitude(altitude: 0 | 1 | 2) {
     this.altitude = altitude;
     let tint = 0x000000;
     if (altitude === 0) {
@@ -101,6 +78,15 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
     this.setTint(tint);
   }
 
+  private setPositionFromTween() {
+    if (!this.active) {
+      return;
+    }
+
+    var _point = this.path.getPoint(this.tween.getValue());
+    this.setPosition(_point.x, _point.y);
+  }
+
   private lineToAngle(
     start: Phaser.Math.Vector2,
     end: Phaser.Math.Vector2
@@ -109,7 +95,5 @@ export default class PlaneIcon extends Phaser.GameObjects.Image {
     let x = end.x - start.x;
     let y = end.y - start.y;
     return Math.atan2(y, x);
-
-    // return Math.tan(m) ** -1;
   }
 }
