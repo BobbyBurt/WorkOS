@@ -65,6 +65,80 @@
                             "fontSize": -16
                         }
                     ]
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "8f80fd82-3f0a-41fc-b65d-e8f7cd1a5e8b",
+                    "label": "upButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "PointerButton.setAlpha": true,
+                    "x": 39,
+                    "y": 95,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#bebebe",
+                    "strokeColor": "#7b7b7b",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 180,
+                    "height": 70
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "f10988b9-afbc-481f-8d8e-5842bb8ca257",
+                    "label": "bitmaptext_2",
+                    "x": 130,
+                    "y": 110,
+                    "originX": 0.5,
+                    "tintTopLeft": "#5a5a5a",
+                    "tintTopRight": "#5a5a5a",
+                    "tintBottomLeft": "#5a5a5a",
+                    "tintBottomRight": "#5a5a5a",
+                    "text": "Ascend",
+                    "font": "nokia",
+                    "align": 1,
+                    "fontSize": -32
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "4fb8bfe0-198b-44da-a13d-c679c6e366da",
+                    "label": "downButton",
+                    "scope": "CLASS",
+                    "components": [
+                        "PointerButton"
+                    ],
+                    "PointerButton.setAlpha": true,
+                    "x": 40,
+                    "y": 180,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#bebebe",
+                    "strokeColor": "#7b7b7b",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 180,
+                    "height": 70
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "639bc0e9-9bf1-44d7-b137-f810d76a778a",
+                    "label": "bitmaptext",
+                    "x": 131,
+                    "y": 195,
+                    "originX": 0.5,
+                    "tintTopLeft": "#5a5a5a",
+                    "tintTopRight": "#5a5a5a",
+                    "tintBottomLeft": "#5a5a5a",
+                    "tintBottomRight": "#5a5a5a",
+                    "text": "Descend",
+                    "font": "nokia",
+                    "align": 1,
+                    "fontSize": -32
                 }
             ]
         }

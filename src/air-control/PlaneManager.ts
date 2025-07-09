@@ -57,6 +57,30 @@ export default class PlaneManager {
     this.planePairDistances.addPlane(plane, this.array);
   }
 
+  public changeSelectedPlaneAltitude(up: boolean) {
+    if (this.selectedPlaneIndex == undefined) {
+      return;
+    }
+
+    let currentAlt = this.array[this.selectedPlaneIndex].altitude;
+    if (currentAlt === 2 && up) {
+      return;
+    } else if (currentAlt === 0 && !up) {
+      return;
+    }
+    let newAlt = currentAlt + (up ? 1 : -1);
+
+    this.planePairDistances.removePlane(
+      this.array[this.selectedPlaneIndex],
+      this.array
+    );
+    this.array[this.selectedPlaneIndex].setAltitude(newAlt as 0 | 1 | 2);
+    this.planePairDistances.addPlane(
+      this.array[this.selectedPlaneIndex],
+      this.array
+    );
+  }
+
   private createPlanes(amount: number) {
     for (let i = 0; i < amount - 1; i++) {
       this.createPlane(i);
