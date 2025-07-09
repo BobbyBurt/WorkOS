@@ -4,6 +4,7 @@ export default class Plane extends Phaser.GameObjects.Image {
   constructor(
     scene: Phaser.Scene,
     managerIndex: number,
+    programContainer: Phaser.GameObjects.Container,
     x?: number,
     y?: number
   ) {
@@ -13,12 +14,23 @@ export default class Plane extends Phaser.GameObjects.Image {
 
     this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
 
-    this.setInteractive({ useHandCursor: true });
+    this.setupSelectIcons();
+
+    this.scene.add.existing(this);
+    programContainer.add(this);
+    programContainer.add(this.selectIcon);
+    programContainer.add(this.hoverIcon);
+    this.setActive(false);
+
+    this.setupPointerEvents();
   }
 
   private tween: Phaser.Tweens.Tween;
   private line: Phaser.Curves.Line;
   private path: Phaser.Curves.Path;
+
+  public selectIcon: Phaser.GameObjects.Image;
+  private hoverIcon: Phaser.GameObjects.Image;
 
   public altitude: 0 | 1 | 2;
 
@@ -50,7 +62,7 @@ export default class Plane extends Phaser.GameObjects.Image {
       ease: Phaser.Math.Easing.Linear,
       // repeat: -1,
       onComplete: () => {
-        this.emit("finish");
+        this.emit("finished");
       },
     });
   }
@@ -85,6 +97,8 @@ export default class Plane extends Phaser.GameObjects.Image {
 
     var _point = this.path.getPoint(this.tween.getValue());
     this.setPosition(_point.x, _point.y);
+    this.selectIcon.setPosition(_point.x, _point.y);
+    this.hoverIcon.setPosition(_point.x, _point.y);
   }
 
   private lineToAngle(
@@ -95,5 +109,35 @@ export default class Plane extends Phaser.GameObjects.Image {
     let x = end.x - start.x;
     let y = end.y - start.y;
     return Math.atan2(y, x);
+  }
+
+  private setupSelectIcons() {
+    this.selectIcon = this.scene.add.image(0, 0, "plane-select-icon");
+    this.hoverIcon = this.scene.add.image(0, 0, "plane-select-icon");
+    this.selectIcon.setTint(0x000000);
+    this.hoverIcon.setTint(0x000000);
+    this.hoverIcon.setAlpha(0.4);
+    this.selectIcon.setVisible(false);
+    this.hoverIcon.setVisible(false);
+  }
+
+  private setupPointerEvents() {
+    this.setInteractive({ useHandCursor: true });
+    this.on("pointerover", this.pointerOver, this);
+    this.on("pointerout", this.pointerOut, this);
+    // this.on("pointerdown", this.pointerDown, this);
+    this.on("pointerup", this.pointerUp, this);
+  }
+
+  private pointerOver() {
+    this.hoverIcon.setVisible(true);
+  }
+
+  private pointerOut() {
+    this.hoverIcon.setVisible(false);
+  }
+
+  private pointerUp() {
+    this.emit("selected");
   }
 }

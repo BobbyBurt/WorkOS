@@ -16,7 +16,7 @@ export default class PlaneManager {
    */
   constructor(scene: Phaser.Scene, container: Phaser.GameObjects.Container) {
     this.scene = scene;
-    this.container = container;
+    this.programContainer = container;
     this.planePairDistances = new PlanePairDistances();
     this.array = new Array();
 
@@ -27,12 +27,14 @@ export default class PlaneManager {
   }
 
   private scene: Phaser.Scene;
-  private container: Phaser.GameObjects.Container;
+  private programContainer: Phaser.GameObjects.Container;
 
   private circle: Phaser.Geom.Circle;
 
   private array: Array<Plane>;
   private planePairDistances: PlanePairDistances;
+
+  private selectedPlaneIndex: number | null;
 
   update() {
     this.planePairDistances.update();
@@ -66,14 +68,17 @@ export default class PlaneManager {
    * @param index of PlaneManager array will this be?
    */
   private createPlane(index: number) {
-    let plane = new Plane(this.scene, index, 0, 0);
-    this.scene.add.existing(plane);
-    this.container.add(plane);
+    let plane = new Plane(this.scene, index, this.programContainer, 0, 0);
+    // this.scene.add.existing(plane);
+    // this.programContainer.add(plane);
     this.array.push(plane);
-    plane.setActive(false);
+    // plane.setActive(false);
 
-    plane.on("finish", () => {
+    plane.on("finished", () => {
       this.handleRouteEnd(plane);
+    });
+    plane.on("selected", () => {
+      this.handleSelect(plane);
     });
   }
 
@@ -90,6 +95,10 @@ export default class PlaneManager {
   handleRouteEnd(plane: Plane) {
     plane.handleRouteEnd();
 
+    if (this.selectedPlaneIndex === plane.managerIndex) {
+      this.deselect();
+    }
+
     this.planePairDistances.removePlane(plane, this.array);
   }
 
@@ -98,6 +107,27 @@ export default class PlaneManager {
     pair.planeB.handleCrash();
     this.planePairDistances.removePlane(pair.planeA, this.array);
     this.planePairDistances.removePlane(pair.planeB, this.array);
+
+    if (this.selectedPlaneIndex === pair.planeA.managerIndex) {
+      this.deselect();
+    }
+    if (this.selectedPlaneIndex === pair.planeB.managerIndex) {
+      this.deselect();
+    }
+  }
+
+  private handleSelect(plane: Plane) {
+    this.deselect();
+
+    this.selectedPlaneIndex = plane.managerIndex;
+    plane.selectIcon.setVisible(true);
+  }
+
+  private deselect() {
+    if (this.selectedPlaneIndex != undefined) {
+      this.array[this.selectedPlaneIndex!].selectIcon.setVisible(false);
+    }
+    this.selectedPlaneIndex = null;
   }
 
   public generateCoordinates(): {
@@ -138,6 +168,6 @@ export default class PlaneManager {
     });
     circleGraphic.fillCircleShape(this.circle);
     circleGraphic.setAlpha(0.1);
-    this.container.add(circleGraphic);
+    this.programContainer.add(circleGraphic);
   }
 }
