@@ -342,6 +342,16 @@
                 "key": "security-camera-K"
             },
             {
+                "url": "assets/animation/skeleton.json",
+                "type": "spineJson",
+                "key": "skeleton"
+            },
+            {
+                "url": "assets/animation/skeleton.atlas",
+                "type": "spineAtlas",
+                "key": "skeleton-atlas"
+            },
+            {
                 "url": "assets/images/desktop-icons/skull.png",
                 "type": "image",
                 "key": "skull-icon"

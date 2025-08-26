@@ -39,12 +39,25 @@
             "y": 540,
             "scaleX": 1.4,
             "scaleY": 1.1
+        },
+        {
+            "type": "SpineGameObject",
+            "id": "d6c83a80-0f1f-4b8a-9a82-a99ff422a68d",
+            "label": "skeleton",
+            "scope": "CLASS",
+            "dataKey": "skeleton",
+            "atlasKey": "skeleton-atlas",
+            "skinName": "default",
+            "bpType": 1,
+            "previewAnimation": "",
+            "x": 1554,
+            "y": 950
         }
     ],
     "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
-        "url": "https://phasereditor2d.com",
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
     }

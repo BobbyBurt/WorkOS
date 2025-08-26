@@ -1,0 +1,33 @@
+skeleton.png
+size: 2048, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+arm-fist
+  rotate: false
+  xy: 2, 2
+  size: 666, 842
+  orig: 666, 842
+  offset: 0, 0
+  index: -1
+arm-point
+  rotate: true
+  xy: 670, 502
+  size: 342, 897
+  orig: 342, 897
+  offset: 0, 0
+  index: -1
+coffee-mug
+  rotate: false
+  xy: 670, 41
+  size: 500, 459
+  orig: 500, 459
+  offset: 0, 0
+  index: -1
+sticky-note
+  rotate: false
+  xy: 1172, 149
+  size: 356, 351
+  orig: 356, 351
+  offset: 0, 0
+  index: -1

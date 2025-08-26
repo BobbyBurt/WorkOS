@@ -20,6 +20,7 @@ import SearchProgramScene from "./scenes/programs/SearchProgramScene";
 import TemplateProgramScene from "./scenes/programs/TemplateProgramScene";
 import TestWebsite2Scene from "./scenes/programs/websites/TestWebsite2Scene";
 import TestWebsiteScene from "./scenes/programs/websites/TestWebsiteScene";
+import { SpinePlugin } from "@esotericsoftware/spine-phaser";
 
 window.addEventListener("load", function () {
   if (__DEV__) {
@@ -34,6 +35,7 @@ window.addEventListener("load", function () {
     // type: __DEV__ ? Phaser.CANVAS : Phaser.AUTO,
     type: Phaser.AUTO,
     backgroundColor: "#333333",
+    // pixelArt: true,
     scale: {
       mode: Phaser.Scale.ScaleModes.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -41,6 +43,15 @@ window.addEventListener("load", function () {
       width: fullscreenHandler.windowedRes.width,
       // width: 1920,
       // height: 1080,
+    },
+    plugins: {
+      scene: [
+        {
+          key: "spine.SpinePlugin",
+          plugin: SpinePlugin,
+          mapping: "spine",
+        },
+      ],
     },
   });
 

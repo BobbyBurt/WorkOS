@@ -8,7 +8,7 @@ export default class Plane extends Phaser.GameObjects.Image {
     x?: number,
     y?: number
   ) {
-    super(scene, x ?? 0, y ?? 0, "plane-icon-2");
+    super(scene, x ?? 0, y ?? 0, "plane-icon");
 
     this.managerIndex = managerIndex;
 
@@ -41,7 +41,11 @@ export default class Plane extends Phaser.GameObjects.Image {
     this.setPositionFromTween();
   }
 
-  public startRoute(start: Phaser.Math.Vector2, end: Phaser.Math.Vector2) {
+  public startRoute(
+    start: Phaser.Math.Vector2,
+    end: Phaser.Math.Vector2,
+    duration: number
+  ) {
     this.setActive(true);
     this.setVisible(true);
 
@@ -58,7 +62,7 @@ export default class Plane extends Phaser.GameObjects.Image {
     this.tween = this.scene.tweens.addCounter({
       from: 0,
       to: 1,
-      duration: 15000,
+      duration: duration,
       ease: Phaser.Math.Easing.Linear,
       // repeat: -1,
       onComplete: () => {

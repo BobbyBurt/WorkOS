@@ -1,6 +1,8 @@
 /** @format */
 
 import Plane from "./Plane";
+import PlaneGeneration from "./PlaneGeneration";
+import { planeGenSettings } from "./PlaneGenerationSettings";
 import PlanePairDistances, { planePair } from "./PlanePairDistances";
 
 /** Manages the array of planes.
@@ -20,21 +22,25 @@ export default class PlaneManager {
     this.planePairDistances = new PlanePairDistances();
     this.array = new Array();
 
-    this.makeCircle();
     this.createPlanes(99);
 
     this.scene.events.on(Phaser.Scenes.Events.UPDATE, this.update, this);
+
+    this.generation = new PlaneGeneration(scene, this);
+    this.generation.startRound();
   }
 
   private scene: Phaser.Scene;
-  private programContainer: Phaser.GameObjects.Container;
+  public programContainer: Phaser.GameObjects.Container;
 
-  private circle: Phaser.Geom.Circle;
+  private generation: PlaneGeneration;
 
   private array: Array<Plane>;
   private planePairDistances: PlanePairDistances;
 
   private selectedPlaneIndex: number | null;
+
+  public genTimer!: Phaser.Time.TimerEvent;
 
   update() {
     this.planePairDistances.update();
@@ -45,15 +51,18 @@ export default class PlaneManager {
   /**  */
   public activatePlane(
     startPos: Phaser.Math.Vector2,
-    endPos: Phaser.Math.Vector2
+    endPos: Phaser.Math.Vector2,
+    altitude: 0 | 1 | 2,
+    duration: number
   ) {
     let plane = this.getInactivePlane();
     if (plane === undefined) {
       console.warn(`Plane array full!`);
       return;
     }
-    plane.startRoute(startPos, endPos);
-    plane.setAltitude(Phaser.Math.RND.pick([0, 1, 2]));
+    plane.startRoute(startPos, endPos, duration);
+    // plane.setAltitude(Phaser.Math.RND.pick([0, 1, 2]));
+    plane.setAltitude(altitude);
     this.planePairDistances.addPlane(plane, this.array);
   }
 
@@ -63,12 +72,18 @@ export default class PlaneManager {
     }
 
     let currentAlt = this.array[this.selectedPlaneIndex].altitude;
-    if (currentAlt === 2 && up) {
-      return;
-    } else if (currentAlt === 0 && !up) {
-      return;
+    // if (currentAlt === 2 && up) {
+    //   return;
+    // } else if (currentAlt === 0 && !up) {
+    //   return;
+    // }
+    // let newAlt = currentAlt + (up ? 1 : -1);
+    let newAlt = 1;
+    if (currentAlt == 1) {
+      newAlt = 0;
+    } else if (currentAlt == 0) {
+      newAlt = 1;
     }
-    let newAlt = currentAlt + (up ? 1 : -1);
 
     this.planePairDistances.removePlane(
       this.array[this.selectedPlaneIndex],
@@ -154,44 +169,25 @@ export default class PlaneManager {
     this.selectedPlaneIndex = null;
   }
 
-  public generateCoordinates(): {
-    startPos: Phaser.Math.Vector2;
-    endPos: Phaser.Math.Vector2;
-  } {
-    let randomFloat = Phaser.Math.RND.frac();
-    let randomPoint = this.circle.getPoint(randomFloat);
-    let start = new Phaser.Math.Vector2(randomPoint.x, randomPoint.y);
-
-    let oppositeFloat = randomFloat + 0.5;
-    oppositeFloat += Phaser.Math.RND.normal() * 0.2;
-    if (oppositeFloat > 1) oppositeFloat -= 1;
-    let endPoint = this.circle.getPoint(oppositeFloat);
-    let end = new Phaser.Math.Vector2(endPoint.x, endPoint.y);
-
-    return { startPos: start, endPos: end };
-  }
-  // This probably belongs in another class
+  // private startGeneationTimer() {
+  //   this.genTimer = this.scene.time.addEvent({
+  //     delay: 5000,
+  //     loop: true,
+  //     callback: () => {
+  //       let coordinates = this.generateCoordinatePair();
+  //       this.activatePlane(coordinates.startPos, coordinates.endPos);
+  //       this.activatePlane(coordinates.startPos2, coordinates.endPos2);
+  //     },
+  //   });
+  // }
 
   private checkPairsForCollision() {
     this.planePairDistances.array.forEach((pair) => {
       if (pair.distance !== undefined) {
-        if (pair.distance < 25) {
+        if (pair.distance < 35) {
           this.handleCrash(pair);
         }
       }
     });
-  }
-
-  /**
-   * Temp
-   */
-  private makeCircle() {
-    this.circle = new Phaser.Geom.Circle(450, 400, 300);
-    let circleGraphic = this.scene.add.graphics({
-      fillStyle: { color: 0xaa0000 },
-    });
-    circleGraphic.fillCircleShape(this.circle);
-    circleGraphic.setAlpha(0.1);
-    this.programContainer.add(circleGraphic);
   }
 }

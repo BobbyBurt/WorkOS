@@ -52,7 +52,7 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
 		warningContainer.add(bitmaptext_1);
 
 		// upButton
-		const upButton = this.add.rectangle(39, 95, 180, 70);
+		const upButton = this.add.rectangle(39, 95, 250, 70);
 		upButton.setOrigin(0, 0);
 		upButton.isFilled = true;
 		upButton.fillColor = 12500670;
@@ -62,13 +62,13 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
 		mainContainer.add(upButton);
 
 		// bitmaptext_2
-		const bitmaptext_2 = this.add.bitmapText(130, 110, "nokia", "Ascend");
+		const bitmaptext_2 = this.add.bitmapText(165, 110, "nokia", "Change alt");
 		bitmaptext_2.setOrigin(0.5, 0);
 		bitmaptext_2.tintTopLeft = 5921370;
 		bitmaptext_2.tintTopRight = 5921370;
 		bitmaptext_2.tintBottomLeft = 5921370;
 		bitmaptext_2.tintBottomRight = 5921370;
-		bitmaptext_2.text = "Ascend";
+		bitmaptext_2.text = "Change alt";
 		bitmaptext_2.fontSize = -32;
 		bitmaptext_2.align = 1;
 		mainContainer.add(bitmaptext_2);
@@ -76,6 +76,7 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
 		// downButton
 		const downButton = this.add.rectangle(40, 180, 180, 70);
 		downButton.setOrigin(0, 0);
+		downButton.visible = false;
 		downButton.isFilled = true;
 		downButton.fillColor = 12500670;
 		downButton.isStroked = true;
@@ -86,6 +87,7 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
 		// bitmaptext
 		const bitmaptext = this.add.bitmapText(131, 195, "nokia", "Descend");
 		bitmaptext.setOrigin(0.5, 0);
+		bitmaptext.visible = false;
 		bitmaptext.tintTopLeft = 5921370;
 		bitmaptext.tintTopRight = 5921370;
 		bitmaptext.tintBottomLeft = 5921370;
@@ -130,7 +132,7 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
   setup() {
     // create
     super.editorCreate();
-    super.create(900, 700, "Air Traffic Control.exe");
+    super.create(1000, 850, "Air Traffic Control.exe");
     this.editorCreate();
 
     this.planeManager = new PlaneManager(this, this.mainContainer);
@@ -143,10 +145,10 @@ export default class AirTrafficProgramScene extends ProgramBaseScene {
   create() {
     this.setup();
 
-    this.input.keyboard?.on("keydown-ENTER", () => {
-      let coordinates = this.planeManager.generateCoordinates();
-      this.planeManager.activatePlane(coordinates.startPos, coordinates.endPos);
-    });
+    // this.input.keyboard?.on("keydown-ENTER", () => {
+    //   let coordinates = this.planeManager.generateCoordinatePair();
+    //   this.planeManager.activatePlane(coordinates.startPos, coordinates.endPos);
+    // });
 
     this.upButton.on("click", () => {
       this.planeManager.changeSelectedPlaneAltitude(true);

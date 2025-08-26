@@ -4,10 +4,13 @@
 
 /* START OF COMPILED CODE */
 
-import Phaser from "phaser";
 import TaskbarPrefab from "../prefabs/TaskbarPrefab";
+import { SkinsAndAnimationBoundsProvider } from "@esotericsoftware/spine-phaser";
+import { SpineGameObject } from "@esotericsoftware/spine-phaser";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
+import DistractionAnim from "~/spine/DistractionAnim";
+import SpecificDistractionAnim from "~/spine/specificDistractionTest";
 /* END-USER-IMPORTS */
 
 export default class OverlapScene extends Phaser.Scene {
@@ -31,12 +34,24 @@ export default class OverlapScene extends Phaser.Scene {
     moniter.scaleX = 1.4;
     moniter.scaleY = 1.1;
 
+    // skeleton
+    const skeleton = this.add.spine(
+      1554,
+      950,
+      "skeleton",
+      "skeleton-atlas",
+      new SkinsAndAnimationBoundsProvider(null, ["default"])
+    );
+    skeleton.skeleton.setSkinByName("default");
+
     this.taskbarPrefab = taskbarPrefab;
+    this.skeleton = skeleton;
 
     this.events.emit("scene-awake");
   }
 
   public taskbarPrefab!: TaskbarPrefab;
+  private skeleton!: SpineGameObject;
 
   /* START-USER-CODE */
 
@@ -52,6 +67,17 @@ export default class OverlapScene extends Phaser.Scene {
     });
 
     this.sound.play("office-ambience", { loop: true, volume: 0.2 });
+
+    // this.skeleton.animationState.setAnimation(0, "animation", true);
+
+    let spineTest = new SpecificDistractionAnim(
+      this,
+      1554,
+      950,
+      "skeleton",
+      "skeleton-atlas"
+    );
+    spineTest.spineObject.animationState.setAnimation(0, "animation", true);
 
     // this.cameras.main.postFX.addBarrel(1.05);
     // this.createBossDelay();
