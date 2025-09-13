@@ -23,35 +23,86 @@
             ],
             "label": "taskbarPrefab",
             "scope": "PUBLIC",
-            "x": 135,
-            "y": 974,
+            "x": 706,
+            "y": 708,
             "scaleX": 1,
             "scaleY": 1
         },
         {
             "type": "Image",
-            "id": "8d7d822e-b9c1-4bbb-b485-73ca8650a13d",
-            "label": "moniter",
+            "id": "18d767d7-02a1-4664-a454-826736fd1df9",
+            "label": "white_px_3",
             "texture": {
-                "key": "moniter"
+                "key": "white-px"
             },
-            "x": 970.5,
-            "y": 540,
-            "scaleX": 1.4,
-            "scaleY": 1.1
+            "x": 1781,
+            "scaleX": 631.0923374481011,
+            "scaleY": 1085.7225496613185,
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "#909090",
+            "tintTopRight": "#909090",
+            "tintBottomLeft": "#909090",
+            "tintBottomRight": "#909090"
         },
         {
-            "type": "SpineGameObject",
-            "id": "d6c83a80-0f1f-4b8a-9a82-a99ff422a68d",
-            "label": "skeleton",
-            "scope": "CLASS",
-            "dataKey": "skeleton",
-            "atlasKey": "skeleton-atlas",
-            "skinName": "default",
-            "bpType": 1,
-            "previewAnimation": "",
-            "x": 1554,
-            "y": 950
+            "type": "Image",
+            "id": "a891d7fa-27cb-4b8f-873d-e44d74b93999",
+            "label": "white_px",
+            "texture": {
+                "key": "white-px"
+            },
+            "scaleX": 631.0923374481011,
+            "scaleY": 1085.7225496613185,
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "#909090",
+            "tintTopRight": "#909090",
+            "tintBottomLeft": "#909090",
+            "tintBottomRight": "#909090"
+        },
+        {
+            "type": "Image",
+            "id": "336350e9-7fd6-435b-ade0-2614cf7538a3",
+            "label": "white_px_1",
+            "texture": {
+                "key": "white-px"
+            },
+            "scaleX": 1933.781709232816,
+            "scaleY": 119.24776403989915,
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "#909090",
+            "tintTopRight": "#909090",
+            "tintBottomLeft": "#909090",
+            "tintBottomRight": "#909090"
+        },
+        {
+            "type": "Image",
+            "id": "5974e429-e9ef-4eda-b5ee-c7a83044e09f",
+            "label": "white_px_2",
+            "texture": {
+                "key": "white-px"
+            },
+            "y": 969,
+            "scaleX": 1933.781709232816,
+            "scaleY": 119.24776403989915,
+            "originX": 0,
+            "originY": 0,
+            "tintTopLeft": "#909090",
+            "tintTopRight": "#909090",
+            "tintBottomLeft": "#909090",
+            "tintBottomRight": "#909090"
+        },
+        {
+            "type": "Image",
+            "id": "3bea96db-4059-4527-a15c-e54d52a10d3c",
+            "label": "monitor",
+            "texture": {
+                "key": "monitor"
+            },
+            "originX": 0,
+            "originY": 0
         }
     ],
     "plainObjects": [],

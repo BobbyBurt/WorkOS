@@ -8,7 +8,7 @@ export default class Plane extends Phaser.GameObjects.Image {
     x?: number,
     y?: number
   ) {
-    super(scene, x ?? 0, y ?? 0, "plane-icon");
+    super(scene, x ?? 0, y ?? 0, "plane-icon-2");
 
     this.managerIndex = managerIndex;
 

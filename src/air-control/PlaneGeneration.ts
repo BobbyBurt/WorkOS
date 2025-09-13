@@ -131,7 +131,7 @@ export default class PlaneGeneration {
   }
 
   private makeCircle() {
-    this.circle = new Phaser.Geom.Circle(500, 485, 400);
+    this.circle = new Phaser.Geom.Circle(360, 285, 205);
     let circleGraphic = this.scene.add.graphics({
       fillStyle: { color: 0xaa0000 },
     });

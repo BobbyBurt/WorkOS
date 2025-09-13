@@ -90,8 +90,8 @@ export class ProgramBaseScene extends Phaser.Scene {
   };
 
   readonly windowInitialPosition = {
-    x: 387,
-    y: 70,
+    x: 725,
+    y: 175,
   };
 
   private dragOffset = {
@@ -245,7 +245,16 @@ export class ProgramBaseScene extends Phaser.Scene {
    * @returns
    */
   private dragWindow(pointer: Phaser.Input.Pointer, dragX: any, dragY: any) {
-    if (!this.desktopScene.desktopGeomRect.contains(pointer.x, pointer.y)) {
+    let pointerCameraPos = pointer.positionToCamera(
+      this.cameras.main
+    ) as Phaser.Math.Vector2;
+
+    if (
+      !this.desktopScene.desktopGeomRect.contains(
+        pointerCameraPos.x,
+        pointerCameraPos.y
+      )
+    ) {
       return;
     }
     if (this.minimized) {
@@ -254,10 +263,6 @@ export class ProgramBaseScene extends Phaser.Scene {
     if (this.immobile) {
       return;
     }
-
-    let pointerCameraPos = pointer.positionToCamera(
-      this.cameras.main
-    ) as Phaser.Math.Vector2;
 
     let x = Phaser.Math.Clamp(
       pointerCameraPos.x - this.dragOffset.x,
@@ -274,6 +279,8 @@ export class ProgramBaseScene extends Phaser.Scene {
     );
 
     this.setWindowPosition(x, y);
+
+    // Window stops dragging when pointer is over interactable objects which are above the draggable window bar
   }
 
   protected setWindowPosition(x: number, y: number) {
@@ -370,12 +377,17 @@ export class ProgramBaseScene extends Phaser.Scene {
 
   /** Keep the window origin from jumping to the pointer */
   setdragOffset(pointer: Phaser.Input.Pointer) {
-    if (!this.desktopScene.desktopGeomRect.contains(pointer.x, pointer.y)) {
-      return;
-    }
     let pointerCameraPos = pointer.positionToCamera(
       this.cameras.main
     ) as Phaser.Math.Vector2;
+    if (
+      !this.desktopScene.desktopGeomRect.contains(
+        pointerCameraPos.x,
+        pointerCameraPos.y
+      )
+    ) {
+      return;
+    }
     this.dragOffset.x = pointerCameraPos.x - this.windowPrefab.x;
     this.dragOffset.y = pointerCameraPos.y - this.windowPrefab.y;
   }

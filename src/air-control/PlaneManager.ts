@@ -184,7 +184,7 @@ export default class PlaneManager {
   private checkPairsForCollision() {
     this.planePairDistances.array.forEach((pair) => {
       if (pair.distance !== undefined) {
-        if (pair.distance < 35) {
+        if (pair.distance < 15) {
           this.handleCrash(pair);
         }
       }

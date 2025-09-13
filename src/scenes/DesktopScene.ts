@@ -8,6 +8,7 @@ import IconPrefab from "../prefabs/IconPrefab";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
 import { ProgramBaseScene } from "./programs/ProgramScene";
+import DebugScene from "./DebugScene";
 /* END-USER-IMPORTS */
 
 export default class DesktopScene extends Phaser.Scene {
@@ -21,19 +22,21 @@ export default class DesktopScene extends Phaser.Scene {
 
   editorCreate(): void {
     // monitorEdge1
-    const monitorEdge1 = this.add.rectangle(0, 0, 1920, 1080);
+    const monitorEdge1 = this.add.rectangle(700, 148, 1050, 670);
     monitorEdge1.setOrigin(0, 0);
     monitorEdge1.isFilled = true;
     monitorEdge1.fillColor = 13882323;
 
     // wallpaperColour
-    const wallpaperColour = this.add.rectangle(0, 0, 1920, 1080);
+    const wallpaperColour = this.add.rectangle(700, 148, 1050, 670);
     wallpaperColour.setOrigin(0, 0);
     wallpaperColour.isFilled = true;
     wallpaperColour.fillColor = 3303823;
 
     // desktop_bg
-    const desktop_bg = this.add.image(334, 0, "desktop-bg");
+    const desktop_bg = this.add.image(832, 150, "desktop-bg");
+    desktop_bg.scaleX = 0.627023628394695;
+    desktop_bg.scaleY = 0.627023628394695;
     desktop_bg.setOrigin(0, 0);
 
     // icon
@@ -41,41 +44,30 @@ export default class DesktopScene extends Phaser.Scene {
     this.add.existing(icon);
 
     // icon_1
-    const icon_1 = new IconPrefab(this, 1420, 759);
+    const icon_1 = new IconPrefab(this, 1446, 306);
     this.add.existing(icon_1);
 
-    // windowMask
-    const windowMask = this.add.image(456, 209, "white-px");
-    windowMask.scaleX = 1400;
-    windowMask.scaleY = 800;
-    windowMask.setOrigin(0, 0);
-    windowMask.visible = false;
-
-    // moniter
-    const moniter = this.add.image(970.5, 540, "moniter");
-    moniter.scaleX = 1.4;
-    moniter.scaleY = 1.1;
-
     // desktopRect
-    const desktopRect = this.add.rectangle(143, 19, 1630, 970);
+    const desktopRect = this.add.rectangle(700, 148, 1050, 600);
     desktopRect.setOrigin(0, 0);
-    desktopRect.visible = false;
-    desktopRect.isFilled = true;
+    desktopRect.fillColor = 16711937;
+    desktopRect.fillAlpha = 0.2;
+    desktopRect.strokeColor = 16726843;
 
     // icon_3
-    const icon_3 = new IconPrefab(this, 475, 116);
+    const icon_3 = new IconPrefab(this, 1022, 244);
     this.add.existing(icon_3);
 
     // icon_4
-    const icon_4 = new IconPrefab(this, 516, 686);
+    const icon_4 = new IconPrefab(this, 1097, 592);
     this.add.existing(icon_4);
 
     // icon_2
-    const icon_2 = new IconPrefab(this, 275, 409);
+    const icon_2 = new IconPrefab(this, 1326, 512);
     this.add.existing(icon_2);
 
     // icon_5
-    const icon_5 = new IconPrefab(this, 1298.0170944683855, 304.40579401652747);
+    const icon_5 = new IconPrefab(this, 1546, 492);
     this.add.existing(icon_5);
 
     // icon (prefab fields)
@@ -108,18 +100,18 @@ export default class DesktopScene extends Phaser.Scene {
     icon_5.iconTextureKey = "page-go-icon_1";
     icon_5.sceneKey = "test-website-program";
 
-    this.windowMask = windowMask;
     this.desktopRect = desktopRect;
 
     this.events.emit("scene-awake");
   }
 
-  private windowMask!: Phaser.GameObjects.Image;
   public desktopRect!: Phaser.GameObjects.Rectangle;
 
   /* START-USER-CODE */
 
   public desktopGeomRect!: Phaser.Geom.Rectangle;
+
+  private debugScene: DebugScene;
 
   create() {
     this.editorCreate();
@@ -128,6 +120,8 @@ export default class DesktopScene extends Phaser.Scene {
     // this.scale.on("leavefullscreen", this.unFullscreen, this);
 
     fullscreenHandler.adjustCamera(this.cameras.main);
+
+    this.debugScene = this.scene.get("debug") as DebugScene;
 
     this.desktopGeomRect = new Phaser.Geom.Rectangle(
       this.desktopRect.x,
@@ -143,6 +137,11 @@ export default class DesktopScene extends Phaser.Scene {
     // this.window.setWindowSize(700, 300);
     // this.window_1.setWindowSize(500, 500);
     // this.window_2.setWindowSize(700, 500);
+
+    this.input.on("pointermove", () => {
+      this.debugScene.DisplayVar("pointerX", this.input.activePointer.x);
+      this.debugScene.DisplayVar("pointerY", this.input.activePointer.y);
+    });
   }
 
   update() {}

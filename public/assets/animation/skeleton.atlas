@@ -1,33 +1,72 @@
 skeleton.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+2025-08-26 17_23_22-Work-OS - Work - Microsoft​ Edge
+  rotate: false
+  xy: 2, 704
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+skeleton/coffee-arm-2
+  rotate: false
+  xy: 2, 2
+  size: 1920, 700
+  orig: 1920, 700
+  offset: 0, 0
+  index: -1
+
+skeleton_2.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+skeleton/coffee-arm-1
+  rotate: false
+  xy: 2, 877
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+skeleton/coffee-arm-5
+  rotate: false
+  xy: 2, 2
+  size: 1746, 873
+  orig: 1746, 873
+  offset: 0, 0
+  index: -1
+
+skeleton_3.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+skeleton/coffee
+  rotate: false
+  xy: 2, 2
+  size: 510, 486
+  orig: 510, 486
+  offset: 0, 0
+  index: -1
+skeleton/coffee-arm-3
+  rotate: false
+  xy: 2, 490
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+
+skeleton_4.png
 size: 2048, 1024
 format: RGBA8888
 filter: Linear, Linear
 repeat: none
-arm-fist
+skeleton/coffee-arm-4
   rotate: false
   xy: 2, 2
-  size: 666, 842
-  orig: 666, 842
-  offset: 0, 0
-  index: -1
-arm-point
-  rotate: true
-  xy: 670, 502
-  size: 342, 897
-  orig: 342, 897
-  offset: 0, 0
-  index: -1
-coffee-mug
-  rotate: false
-  xy: 670, 41
-  size: 500, 459
-  orig: 500, 459
-  offset: 0, 0
-  index: -1
-sticky-note
-  rotate: false
-  xy: 1172, 149
-  size: 356, 351
-  orig: 356, 351
+  size: 1917, 972
+  orig: 1917, 972
   offset: 0, 0
   index: -1

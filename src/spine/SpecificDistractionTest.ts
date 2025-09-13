@@ -27,9 +27,11 @@ export default class SpecificDistractionAnim extends DistractionAnim {
     this.spineObject.animationState.addListener({
       event: (entry, event) => this.onCupDownEvent(),
     });
+
+    this.scene.sound.play("morning-sam-dialogue");
   }
 
   private onCupDownEvent() {
-    // this.scene.sound.play("StanleyParable-ExploringStanley");
+    this.scene.sound.play("cup-hitting-table");
   }
 }

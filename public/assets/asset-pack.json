@@ -37,6 +37,13 @@
                 "key": "camera-icon"
             },
             {
+                "url": [
+                    "assets/sfx/cup-hitting-table.mp3"
+                ],
+                "type": "audio",
+                "key": "cup-hitting-table"
+            },
+            {
                 "url": "assets/images/data-not-found.png",
                 "type": "image",
                 "key": "data-not-found"
@@ -254,9 +261,21 @@
                 "key": "moniter"
             },
             {
+                "url": "assets/images/monitor.png",
+                "type": "image",
+                "key": "monitor"
+            },
+            {
                 "url": "assets/images/websites/More_dodgy_from_the_web.png",
                 "type": "image",
                 "key": "More_dodgy_from_the_web"
+            },
+            {
+                "url": [
+                    "assets/sfx/morning-sam-dialogue.mp3"
+                ],
+                "type": "audio",
+                "key": "morning-sam-dialogue"
             },
             {
                 "textureURL": "assets/fonts/nokia.png",
