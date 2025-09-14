@@ -266,6 +266,23 @@
                 "key": "monitor"
             },
             {
+                "textureURL": "assets/fonts/monogram.png",
+                "fontDataURL": "assets/fonts/monogram.xml",
+                "type": "bitmapFont",
+                "key": "monogram"
+            },
+            {
+                "url": "assets/fonts/monogram-bitmap.json",
+                "type": "json",
+                "key": "monogram-bitmap"
+            },
+            {
+                "textureURL": "assets/fonts/monogram-italic.png",
+                "fontDataURL": "assets/fonts/monogram-italic.xml",
+                "type": "bitmapFont",
+                "key": "monogram-italic"
+            },
+            {
                 "url": "assets/images/websites/More_dodgy_from_the_web.png",
                 "type": "image",
                 "key": "More_dodgy_from_the_web"
@@ -363,7 +380,8 @@
             {
                 "url": "assets/animation/skeleton.json",
                 "type": "spineJson",
-                "key": "skeleton"
+                "key": "skeleton",
+                "previewAtlasKey": "skeleton-atlas"
             },
             {
                 "url": "assets/animation/skeleton.atlas",

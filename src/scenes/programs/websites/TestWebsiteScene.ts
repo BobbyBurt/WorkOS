@@ -116,15 +116,138 @@ export default class TestWebsiteScene extends WebsiteBaseScene {
 		const oE_Mem_Cake__Slow_Your_Roll__Mole_1 = this.add.image(96, 107, "OE_Mem_Cake__Slow_Your_Roll__Mole");
 		scrollContainer.add(oE_Mem_Cake__Slow_Your_Roll__Mole_1);
 
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(0, 452, 1000, 250);
+		rectangle_1.setOrigin(0, 0);
+		rectangle_1.isFilled = true;
+		rectangle_1.fillColor = 0;
+		scrollContainer.add(rectangle_1);
+
 		// bitmaptext_1
-		const bitmaptext_1 = this.add.bitmapText(179, 68, "nokia", "BEWARE THE \n\"AMONG US\" IMPOSTER!");
-		bitmaptext_1.tintTopLeft = 13434880;
-		bitmaptext_1.tintTopRight = 13434880;
-		bitmaptext_1.tintBottomLeft = 13434880;
-		bitmaptext_1.tintBottomRight = 13434880;
-		bitmaptext_1.text = "BEWARE THE \n\"AMONG US\" IMPOSTER!";
-		bitmaptext_1.fontSize = -32;
+		const bitmaptext_1 = this.add.bitmapText(37, 508, "nokia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_1.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_1.fontSize = -16;
 		scrollContainer.add(bitmaptext_1);
+
+		// bitmaptext_5
+		const bitmaptext_5 = this.add.bitmapText(37, 474, "monogram", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_5.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_5.fontSize = 12;
+		scrollContainer.add(bitmaptext_5);
+
+		// bitmaptext_6
+		const bitmaptext_6 = this.add.bitmapText(37, 493, "monogram-italic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_6.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_6.fontSize = 12;
+		scrollContainer.add(bitmaptext_6);
+
+		// bitmaptext_7
+		const bitmaptext_7 = this.add.bitmapText(37, 599, "nokia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_7.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_7.fontSize = -32;
+		scrollContainer.add(bitmaptext_7);
+
+		// bitmaptext_8
+		const bitmaptext_8 = this.add.bitmapText(37, 542, "monogram", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_8.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_8.fontSize = 24;
+		scrollContainer.add(bitmaptext_8);
+
+		// bitmaptext_9
+		const bitmaptext_9 = this.add.bitmapText(37, 564, "monogram-italic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_9.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_9.fontSize = 24;
+		scrollContainer.add(bitmaptext_9);
+
+		// bitmaptext_10
+		const bitmaptext_10 = this.add.bitmapText(44, 758, "nokia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_10.tintTopLeft = 0;
+		bitmaptext_10.tintTopRight = 0;
+		bitmaptext_10.tintBottomLeft = 0;
+		bitmaptext_10.tintBottomRight = 0;
+		bitmaptext_10.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_10.fontSize = -16;
+		scrollContainer.add(bitmaptext_10);
+
+		// bitmaptext_11
+		const bitmaptext_11 = this.add.bitmapText(44, 724, "monogram", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_11.tintTopLeft = 0;
+		bitmaptext_11.tintTopRight = 0;
+		bitmaptext_11.tintBottomLeft = 0;
+		bitmaptext_11.tintBottomRight = 0;
+		bitmaptext_11.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_11.fontSize = 12;
+		scrollContainer.add(bitmaptext_11);
+
+		// bitmaptext_12
+		const bitmaptext_12 = this.add.bitmapText(44, 743, "monogram-italic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_12.tintTopLeft = 0;
+		bitmaptext_12.tintTopRight = 0;
+		bitmaptext_12.tintBottomLeft = 0;
+		bitmaptext_12.tintBottomRight = 0;
+		bitmaptext_12.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_12.fontSize = 12;
+		scrollContainer.add(bitmaptext_12);
+
+		// bitmaptext_13
+		const bitmaptext_13 = this.add.bitmapText(44, 849, "nokia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_13.tintTopLeft = 0;
+		bitmaptext_13.tintTopRight = 0;
+		bitmaptext_13.tintBottomLeft = 0;
+		bitmaptext_13.tintBottomRight = 0;
+		bitmaptext_13.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_13.fontSize = -32;
+		scrollContainer.add(bitmaptext_13);
+
+		// bitmaptext_14
+		const bitmaptext_14 = this.add.bitmapText(44, 792, "monogram", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_14.tintTopLeft = 0;
+		bitmaptext_14.tintTopRight = 0;
+		bitmaptext_14.tintBottomLeft = 0;
+		bitmaptext_14.tintBottomRight = 0;
+		bitmaptext_14.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_14.fontSize = 24;
+		scrollContainer.add(bitmaptext_14);
+
+		// bitmaptext_15
+		const bitmaptext_15 = this.add.bitmapText(44, 814, "monogram-italic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_15.tintTopLeft = 0;
+		bitmaptext_15.tintTopRight = 0;
+		bitmaptext_15.tintBottomLeft = 0;
+		bitmaptext_15.tintBottomRight = 0;
+		bitmaptext_15.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_15.fontSize = 24;
+		scrollContainer.add(bitmaptext_15);
+
+		// bitmaptext_16
+		const bitmaptext_16 = this.add.bitmapText(44, 944, "nokia", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_16.tintTopLeft = 0;
+		bitmaptext_16.tintTopRight = 0;
+		bitmaptext_16.tintBottomLeft = 0;
+		bitmaptext_16.tintBottomRight = 0;
+		bitmaptext_16.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_16.fontSize = -16;
+		scrollContainer.add(bitmaptext_16);
+
+		// bitmaptext_17
+		const bitmaptext_17 = this.add.bitmapText(44, 910, "monogram", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_17.tintTopLeft = 0;
+		bitmaptext_17.tintTopRight = 0;
+		bitmaptext_17.tintBottomLeft = 0;
+		bitmaptext_17.tintBottomRight = 0;
+		bitmaptext_17.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_17.fontSize = 12;
+		scrollContainer.add(bitmaptext_17);
+
+		// bitmaptext_18
+		const bitmaptext_18 = this.add.bitmapText(44, 929, "monogram-italic", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_18.tintTopLeft = 0;
+		bitmaptext_18.tintTopRight = 0;
+		bitmaptext_18.tintBottomLeft = 0;
+		bitmaptext_18.tintBottomRight = 0;
+		bitmaptext_18.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_18.fontSize = 16;
+		scrollContainer.add(bitmaptext_18);
 
 		// scrollContainer (components)
 		const scrollContainerScrollField = new ScrollField(scrollContainer);

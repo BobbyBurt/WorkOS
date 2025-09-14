@@ -6,6 +6,7 @@ export default class fullscreenHandler {
 
   static readonly fullscreenRes = { width: 1920, height: 1080, zoom: 1 };
   static readonly windowedRes = { width: 1280, height: 720, zoom: 0.67 };
+  // static readonly windowedRes = { width: 1280, height: 720, zoom: 0.5 };
   // I don't know why the windowed zoom is a weird number like this.
   // static readonly fullscreenRes = { width: 1920, height: 1080, zoom: 0.75 };
   // static readonly windowedRes = { width: 1280, height: 720, zoom: 0.5025 };
