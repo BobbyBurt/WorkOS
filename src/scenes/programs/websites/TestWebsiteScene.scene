@@ -37,7 +37,7 @@
                             "originY": 0,
                             "isFilled": true,
                             "width": 900,
-                            "height": 1200
+                            "height": 1500
                         },
                         {
                             "type": "Container",
@@ -374,6 +374,34 @@
                             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                             "font": "monogram-italic",
                             "fontSize": 16
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "da10455d-5cf0-4fd0-956a-2d4835bbb2bf",
+                            "label": "bitmaptext_20",
+                            "x": 40,
+                            "y": 1122,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Full size - 26px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "font": "IBMPlexMono",
+                            "fontSize": 26
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "89fe7ef9-0d64-4c8c-bfa7-0578c170f424",
+                            "label": "bitmaptext_19",
+                            "x": 39.163883209228516,
+                            "y": 1055.2469482421875,
+                            "tintTopLeft": "#000000",
+                            "tintTopRight": "#000000",
+                            "tintBottomLeft": "#000000",
+                            "tintBottomRight": "#000000",
+                            "text": "Full size - 24px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                            "font": "opensans",
+                            "fontSize": 23
                         }
                     ]
                 }

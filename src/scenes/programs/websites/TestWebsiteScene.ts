@@ -31,7 +31,7 @@ export default class TestWebsiteScene extends WebsiteBaseScene {
 		mainContainer.add(scrollContainer);
 
 		// scrollRect
-		const scrollRect = this.add.rectangle(0, 0, 900, 1200);
+		const scrollRect = this.add.rectangle(0, 0, 900, 1500);
 		scrollRect.setOrigin(0, 0);
 		scrollRect.isFilled = true;
 		scrollContainer.add(scrollRect);
@@ -248,6 +248,26 @@ export default class TestWebsiteScene extends WebsiteBaseScene {
 		bitmaptext_18.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 		bitmaptext_18.fontSize = 16;
 		scrollContainer.add(bitmaptext_18);
+
+		// bitmaptext_20
+		const bitmaptext_20 = this.add.bitmapText(40, 1122, "IBMPlexMono", "Full size - 26px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_20.tintTopLeft = 0;
+		bitmaptext_20.tintTopRight = 0;
+		bitmaptext_20.tintBottomLeft = 0;
+		bitmaptext_20.tintBottomRight = 0;
+		bitmaptext_20.text = "Full size - 26px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_20.fontSize = 26;
+		scrollContainer.add(bitmaptext_20);
+
+		// bitmaptext_19
+		const bitmaptext_19 = this.add.bitmapText(39.163883209228516, 1055.2469482421875, "opensans", "Full size - 24px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+		bitmaptext_19.tintTopLeft = 0;
+		bitmaptext_19.tintTopRight = 0;
+		bitmaptext_19.tintBottomLeft = 0;
+		bitmaptext_19.tintBottomRight = 0;
+		bitmaptext_19.text = "Full size - 24px - Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+		bitmaptext_19.fontSize = 23;
+		scrollContainer.add(bitmaptext_19);
 
 		// scrollContainer (components)
 		const scrollContainerScrollField = new ScrollField(scrollContainer);

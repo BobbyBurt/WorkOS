@@ -8,27 +8,31 @@ import {
   TrackEntry,
 } from "@esotericsoftware/spine-phaser";
 import { SpineGameObject } from "@esotericsoftware/spine-phaser";
-import DistractionAnim from "./DistractionAnim";
+import DistractionObject, {
+  distractionAnimSettings,
+} from "./DistractionObject";
 
-export default class SpecificDistractionAnim extends DistractionAnim {
-  constructor(
-    scene: Phaser.Scene,
-    x: number,
-    y: number,
-    dataKey: string,
-    atlasKey: string
-  ) {
-    super(scene, x, y, dataKey, atlasKey);
+export default class SpecificDistractionAnim extends DistractionObject {
+  constructor(scene: Phaser.Scene) {
+    super(
+      scene,
+      960,
+      540,
+      "skeleton",
+      "skeleton-atlas",
+      new Map<string, distractionAnimSettings>([["asdf", { sound: true }]])
+      // LEFT OFF: can i change this string type to literal union so it only accepts a few animation names?
+    );
 
     this.scene = scene;
+
+    this.playAnimation();
 
     // EVERYTHING ABOVE IS TEMPLATE
 
     this.spineObject.animationState.addListener({
       event: (entry, event) => this.onCupDownEvent(),
     });
-
-    this.scene.sound.play("morning-sam-dialogue");
   }
 
   private onCupDownEvent() {

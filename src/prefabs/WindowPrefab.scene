@@ -25,8 +25,8 @@
                     "id": "b3d1e332-f720-465d-93c8-f8de62237cb0",
                     "label": "insideRect",
                     "scope": "PUBLIC",
-                    "x": 9,
-                    "y": 60,
+                    "x": 4,
+                    "y": 43,
                     "originX": 0,
                     "originY": 0,
                     "visible": false,
@@ -37,21 +37,20 @@
                 },
                 {
                     "type": "NineSlice",
-                    "id": "0cc1d3fc-3d3a-4105-9da7-f28b2978cc74",
+                    "id": "9a62c548-5535-4ab6-82ac-138043d00241",
                     "label": "windowBorder",
-                    "scope": "PUBLIC",
+                    "scope": "CLASS",
                     "texture": {
-                        "key": "window-title-bar"
+                        "key": "window"
                     },
-                    "y": 7,
                     "originX": 0,
                     "originY": 0,
-                    "width": 1000,
-                    "height": 300,
-                    "leftWidth": 43,
-                    "rightWidth": 39,
-                    "topHeight": 63,
-                    "bottomHeight": 20
+                    "leftWidth": 16,
+                    "rightWidth": 18,
+                    "topHeight": 45,
+                    "bottomHeight": 6,
+                    "width": 256,
+                    "height": 256
                 },
                 {
                     "type": "Image",
@@ -67,7 +66,8 @@
                     "x": 862,
                     "y": 1,
                     "originX": 0,
-                    "originY": 0
+                    "originY": 0,
+                    "visible": false
                 },
                 {
                     "type": "Image",
@@ -83,7 +83,8 @@
                     "x": 925,
                     "y": 5,
                     "originX": 0,
-                    "originY": 0
+                    "originY": 0,
+                    "visible": false
                 },
                 {
                     "type": "Rectangle",
@@ -105,29 +106,62 @@
                     "texture": {
                         "key": "picture-icon"
                     },
-                    "x": 38,
-                    "y": 35,
+                    "x": 25,
+                    "y": 23,
                     "scaleX": 1.7389250244694119,
-                    "scaleY": 1.7389250244694119
+                    "scaleY": 1.7389250244694119,
+                    "visible": false
                 },
                 {
                     "type": "BitmapText",
                     "id": "4d7ddf47-6a31-4a7f-9843-fdd40fb7b3c4",
                     "label": "programNameText",
                     "scope": "PUBLIC",
-                    "x": 63,
-                    "y": 27,
+                    "x": 22,
+                    "y": 11,
                     "text": "New BitmapText",
-                    "font": "nokia",
-                    "fontSize": -16
+                    "font": "IBMPlexMono-bold",
+                    "fontSize": 24
+                },
+                {
+                    "type": "NineSlice",
+                    "id": "73e14a0f-4457-40b6-ac9e-900db6f50514",
+                    "label": "button",
+                    "texture": {
+                        "key": "button"
+                    },
+                    "x": 222,
+                    "y": 11,
+                    "originX": 0,
+                    "originY": 0,
+                    "leftWidth": 5,
+                    "rightWidth": 5,
+                    "topHeight": 7,
+                    "width": 35,
+                    "height": 35
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "1acf64cf-53f1-45e5-b79f-c38b03fa8b00",
+                    "label": "newCloseButton",
+                    "scope": "PUBLIC",
+                    "x": 231,
+                    "y": 6,
+                    "tintTopLeft": "#000000",
+                    "tintTopRight": "#000000",
+                    "tintBottomLeft": "#000000",
+                    "tintBottomRight": "#000000",
+                    "text": "x",
+                    "font": "IBMPlexMono",
+                    "fontSize": 36
                 }
             ]
         }
     ],
     "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
-        "url": "https://phasereditor2d.com",
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
     }

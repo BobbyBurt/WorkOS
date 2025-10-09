@@ -9,13 +9,19 @@ import {
 } from "@esotericsoftware/spine-phaser";
 import { SpineGameObject } from "@esotericsoftware/spine-phaser";
 
-export default class DistractionAnim {
+/* 
+anim / sound key: <distraction>-<animation>
+exit anim / sound key: <distraction>-<animation>-exit
+*/
+
+export default class DistractionObject {
   constructor(
     scene: Phaser.Scene,
     x: number,
     y: number,
     dataKey: string,
-    atlasKey: string
+    atlasKey: string,
+    animations: Map<any, distractionAnimSettings>
   ) {
     this.scene = scene;
 
@@ -32,4 +38,19 @@ export default class DistractionAnim {
   protected scene: Phaser.Scene;
 
   public spineObject: SpineGameObject;
+
+  protected animations = new Map<string, distractionAnimSettings>();
+
+  public playAnimation() {
+    // if (this.soundKey) {
+    //   this.scene.sound.play(this.soundKey);
+    // }
+    this.spineObject.animationState.setAnimation(0, "animation", false);
+  }
 }
+
+export type distractionAnimSettings = {
+  sound?: boolean;
+  exitAnim?: boolean;
+  exitSound?: boolean;
+};

@@ -32,6 +32,11 @@
                 "key": "bossman-watching"
             },
             {
+                "url": "assets/images/OS/button.png",
+                "type": "image",
+                "key": "button"
+            },
+            {
                 "url": "assets/images/desktop-icons/camera.png",
                 "type": "image",
                 "key": "camera-icon"
@@ -244,6 +249,18 @@
                 "key": "hacking-sfx-4"
             },
             {
+                "textureURL": "assets/fonts/IBMPlexMono.png",
+                "fontDataURL": "assets/fonts/IBMPlexMono.xml",
+                "type": "bitmapFont",
+                "key": "IBMPlexMono"
+            },
+            {
+                "textureURL": "assets/fonts/IBMPlexMono-bold.png",
+                "fontDataURL": "assets/fonts/IBMPlexMono-bold.xml",
+                "type": "bitmapFont",
+                "key": "IBMPlexMono-bold"
+            },
+            {
                 "url": "assets/images/desktop-icons/icon-temp.png",
                 "type": "image",
                 "key": "icon-temp"
@@ -318,6 +335,12 @@
                 "key": "office-camera"
             },
             {
+                "textureURL": "assets/fonts/opensans.png",
+                "fontDataURL": "assets/fonts/opensans.xml",
+                "type": "bitmapFont",
+                "key": "opensans"
+            },
+            {
                 "url": "assets/images/desktop-icons/page_white_go.png",
                 "type": "image",
                 "key": "page-go-icon"
@@ -331,6 +354,11 @@
                 "url": "assets/images/desktop-icons/picture-icon.png",
                 "type": "image",
                 "key": "picture-icon"
+            },
+            {
+                "url": "assets/images/pixel.png",
+                "type": "image",
+                "key": "pixel"
             },
             {
                 "url": "assets/images/plane-icon.png",
@@ -434,6 +462,11 @@
                 "url": "assets/white-px.png",
                 "type": "image",
                 "key": "white-px"
+            },
+            {
+                "url": "assets/images/OS/window.png",
+                "type": "image",
+                "key": "window"
             },
             {
                 "url": "assets/images/Window_Close_Button0001(1).png",

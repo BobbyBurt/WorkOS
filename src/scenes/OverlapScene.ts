@@ -7,7 +7,8 @@
 import TaskbarPrefab from "../prefabs/TaskbarPrefab";
 /* START-USER-IMPORTS */
 import fullscreenHandler from "~/FullscreenHandler";
-import DistractionAnim from "~/spine/DistractionAnim";
+import DistractionObject from "~/distraction/DistractionObject";
+import DistractionManager from "~/distraction/DistractionManager";
 import SpecificDistractionAnim from "~/spine/specificDistractionTest";
 /* END-USER-IMPORTS */
 
@@ -69,6 +70,10 @@ export default class OverlapScene extends Phaser.Scene {
 		white_px_2.tintBottomLeft = 9474192;
 		white_px_2.tintBottomRight = 9474192;
 
+		// tilesprite_1
+		const tilesprite_1 = this.add.tileSprite(699, 154, 1050, 670, "pixel");
+		tilesprite_1.setOrigin(0, 0);
+
 		// monitor
 		const monitor = this.add.image(0, 0, "monitor");
 		monitor.setOrigin(0, 0);
@@ -82,7 +87,7 @@ export default class OverlapScene extends Phaser.Scene {
 
 	/* START-USER-CODE */
 
-  // Write your code here
+  private distractionManager: DistractionManager;
 
   create() {
     this.editorCreate();
@@ -95,36 +100,7 @@ export default class OverlapScene extends Phaser.Scene {
 
     this.sound.play("office-ambience", { loop: true, volume: 0.2 });
 
-    // let spineTest = new SpecificDistractionAnim(
-    //   this,
-    //   960,
-    //   540,
-    //   "skeleton",
-    //   "skeleton-atlas"
-    // );
-    // spineTest.spineObject.animationState.setAnimation(0, "animation", false);
-
-    // this.cameras.main.postFX.addBarrel(1.05);
-    // this.createBossDelay();
-  }
-
-  createBossDelay() {
-    let bossTimer = this.time.addEvent({
-      delay: Phaser.Math.RND.between(40000, 70000),
-      callback: this.bossAppear,
-      callbackScope: this,
-    });
-  }
-
-  bossAppear() {
-    this.sound.play("boss-appear-long");
-    this.time.addEvent({
-      delay: 10000,
-      callback: () => {
-        this.sound.play("boss-disappear");
-        this.createBossDelay();
-      },
-    });
+    this.distractionManager = new DistractionManager(this);
   }
 
   /* END-USER-CODE */

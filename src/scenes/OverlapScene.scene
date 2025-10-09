@@ -95,6 +95,20 @@
             "tintBottomRight": "#909090"
         },
         {
+            "type": "TileSprite",
+            "id": "85b4339c-2b93-4db3-a013-01875fa09a8d",
+            "label": "tilesprite_1",
+            "texture": {
+                "key": "pixel"
+            },
+            "x": 699,
+            "y": 154,
+            "originX": 0,
+            "originY": 0,
+            "width": 1050,
+            "height": 670
+        },
+        {
             "type": "Image",
             "id": "3bea96db-4059-4527-a15c-e54d52a10d3c",
             "label": "monitor",
