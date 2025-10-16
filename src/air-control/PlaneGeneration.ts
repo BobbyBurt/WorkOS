@@ -69,6 +69,7 @@ export default class PlaneGeneration {
       coordinates.endPos,
       Phaser.Math.RND.pick([0, 1]),
       15000
+      // this.debug.adjustableNumbers[0]?
     );
     // if (Phaser.Math.RND.frac() < 0.5) {
     //   let coordinates2 = this.generateStartEndVectors();

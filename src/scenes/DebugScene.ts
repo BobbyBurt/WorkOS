@@ -43,11 +43,14 @@ export default class DebugScene extends Phaser.Scene {
 
   private timeAtLastDisplay: number;
 
+  public adjustableNumbers: Array<number | string>;
+
   create() {
     this.editorCreate();
 
     this.displayVarMap = new Map<string, any>();
     this.displayVarTextMap = new Map<string, Phaser.GameObjects.BitmapText>();
+    this.adjustableNumbers = [0];
 
     // Hide scene
     this.scene.setVisible(false);
@@ -58,10 +61,7 @@ export default class DebugScene extends Phaser.Scene {
       }
     });
 
-    // this.DisplayVar(
-    //   "instructions",
-    //   "Use the enter key to complete hacking scene"
-    // );
+    this.createNumberInputEvents();
   }
 
   /**
@@ -107,6 +107,62 @@ export default class DebugScene extends Phaser.Scene {
     this.displayVarMap.set(label, variable);
 
     // Is there any way to show objects?
+  }
+
+  private createNumberInputEvents() {
+    // loop creates keydown event for each entry in this map, event key coordinates to output number
+    let _keyCodeToNumberMap = new Map<string, string>([
+      ["ONE", "1"],
+      ["NUMPAD_ONE", "1"],
+      ["TWO", "2"],
+      ["NUMPAD_TWO", "2"],
+      ["THREE", "3"],
+      ["NUMPAD_THREE", "3"],
+      ["FOUR", "4"],
+      ["NUMPAD_FOUR", "4"],
+      ["FIVE", "5"],
+      ["NUMPAD_FIVE", "5"],
+      ["SIX", "6"],
+      ["NUMPAD_SIX", "6"],
+      ["SEVEN", "7"],
+      ["NUMPAD_SEVEN", "7"],
+      ["EIGHT", "8"],
+      ["NUMPAD_EIGHT", "8"],
+      ["NINE", "9"],
+      ["NUMPAD_NINE", "9"],
+      ["ZERO", "0"],
+      ["NUMPAD_ZERO", "0"],
+      ["PERIOD", "."],
+      ["NUMPAD_PERIOD", "."],
+    ]);
+
+    _keyCodeToNumberMap.forEach((value, key) => {
+      this.input.keyboard!.on("keydown-" + key, () => {
+        if (this.scene.isVisible()) {
+          if (
+            this.adjustableNumbers[0] == undefined ||
+            this.adjustableNumbers[0] == 0
+          ) {
+            this.adjustableNumbers[0] = "" + value;
+          } else {
+            this.adjustableNumbers[0] += "" + value;
+          }
+          this.adjustableNumbers[0] = Number(this.adjustableNumbers[0]);
+          this.DisplayVar("adjust", this.adjustableNumbers[0]);
+        }
+      });
+    });
+
+    this.input.keyboard!.on("keydown-BACKSPACE", () => {
+      if (this.scene.isVisible()) {
+        this.adjustableNumbers[0] = String(this.adjustableNumbers[0]);
+        this.adjustableNumbers[0] = this.adjustableNumbers[0].slice(
+          0,
+          this.adjustableNumbers[0].length - 1
+        );
+        this.DisplayVar("adjust", Number(this.adjustableNumbers[0]));
+      }
+    });
   }
 
   /* END-USER-CODE */
