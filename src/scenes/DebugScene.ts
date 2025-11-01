@@ -50,7 +50,7 @@ export default class DebugScene extends Phaser.Scene {
 
     this.displayVarMap = new Map<string, any>();
     this.displayVarTextMap = new Map<string, Phaser.GameObjects.BitmapText>();
-    this.adjustableNumbers = [0];
+    this.adjustableNumbers = [""];
 
     // Hide scene
     this.scene.setVisible(false);
@@ -133,21 +133,20 @@ export default class DebugScene extends Phaser.Scene {
       ["ZERO", "0"],
       ["NUMPAD_ZERO", "0"],
       ["PERIOD", "."],
-      ["NUMPAD_PERIOD", "."],
+      // ["NUMPAD_DECIMAL", "."],
+      //  Doesn't work for some reason? It used to
     ]);
 
     _keyCodeToNumberMap.forEach((value, key) => {
       this.input.keyboard!.on("keydown-" + key, () => {
         if (this.scene.isVisible()) {
-          if (
-            this.adjustableNumbers[0] == undefined ||
-            this.adjustableNumbers[0] == 0
-          ) {
-            this.adjustableNumbers[0] = "" + value;
+          if (value == ".") {
+            console.debug(`${key}`);
+            this.adjustableNumbers[0] += ".";
           } else {
             this.adjustableNumbers[0] += "" + value;
           }
-          this.adjustableNumbers[0] = Number(this.adjustableNumbers[0]);
+          // this.adjustableNumbers[0] = Number(this.adjustableNumbers[0]);
           this.DisplayVar("adjust", this.adjustableNumbers[0]);
         }
       });
@@ -160,7 +159,7 @@ export default class DebugScene extends Phaser.Scene {
           0,
           this.adjustableNumbers[0].length - 1
         );
-        this.DisplayVar("adjust", Number(this.adjustableNumbers[0]));
+        this.DisplayVar("adjust", this.adjustableNumbers[0]);
       }
     });
   }
